@@ -1,6 +1,6 @@
 title: Guida Implementativa FHIR per SGDT - Sviluppo
 description: Questa IG fa riferimento all'ambiente di sviluppo.
-version: 3.18.0
+version: 3.18.1
 style-root: project
 style-name: RL-css
 numbered-headings: false

@@ -1,0 +1,44 @@
+{
+  "resourceType": "CarePlan",
+  "id": "Example-CarePlan-2-PTI",
+  "meta": {
+    "profile": [
+      "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCarePlanPti"
+    ]
+  },
+  "extension": [
+    {
+      "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCarePlanFlagPrescrizione",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.15.6.3",
+            "code": "@cd_flag_prescrizione@",
+            "display": "@ds_flag_prescrizione@"
+          }
+        ]
+      }
+    }
+  ],
+  "status": "revoked",
+  "intent": "plan",
+  "subject": {
+    "reference": "Patient/patient-pti-002"
+  },
+  "period": {
+    "end": "2027-04-28"
+  },
+  "addresses": [
+    {
+      "reference": "Condition/Example-Condition-CondizioniErogabilita-2-PTI"
+    }
+  ],
+  "supportingInfo": [
+    {
+      "reference": "Condition/Example-Condition-CriteriEsclusione-1-PTI"
+    },
+    {
+      "reference": "Condition/Example-Condition-CriteriEsclusione-2-PTI"
+    }
+  ]
+}

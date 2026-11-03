@@ -65,6 +65,209 @@
       <td>{{link:Observation/Example-Observation-PrecedentiEsamiEseguiti-1-RAD}}</td>
     </tr>
     <tr>
+     <td>RAD</td>
+     <td>Observation</td>
+    <td>Precedenti Esami Eseguiti (2)</td>
+    <td>{{link:Observation/Example-Observation-PrecedentiEsamiEseguiti-2-RAD}}</td>
+  </tr>
+  <tr>
+   <td>RAD</td>
+   <td>Observation</td>
+   <td>Complicanze (1)</td>
+   <td>{{link:Observation/Example-Observation-Complicanze-1-RAD}}</td>
+  </tr>
+  <tr>
+   <td>RAD</td>
+   <td>Observation</td>
+   <td>Complicanze (2)</td>
+   <td>{{link:Observation/Example-Observation-Complicanze-2-RAD}}</td>
+  </tr>
+  <tr>
+   <td>RAD</td>
+   <td>ImagingStudy</td>
+   <td>ImagingStudy (1)</td>
+   <td>{{link:ImagingStudy/Example-ImagingStudy-1-RAD}}</td>
+  </tr>
+  <tr>
+   <td>RAD</td>
+   <td>ImagingStudy</td>
+   <td>ImagingStudy (2)</td>
+   <td>{{link:ImagingStudy/Example-ImagingStudy-2-RAD}}</td>
+</tr>
+<tr>
+ <td>RAD</td>
+ <td>Observation</td>
+ <td>Quesito Diagnostico</td>
+ <td>{{link:Observation/Example-Observation-QuesitoDiagnostico-1-RAD}}</td>
+</tr>
+  <tr>
+   <td>PTI</td>
+   <td>Composition</td>
+   <td>Piano Terapeutico Individuale (1)</td>
+   <td>{{link:Composition/Example-Composition-1-PTI}}</td>
+  </tr>
+  <tr>
+   <td>PTI</td>
+   <td>Composition</td>
+   <td>Piano Terapeutico Individuale (2)</td>
+   <td>{{link:Composition/Example-Composition-2-PTI}}</td>
+  </tr>
+  <tr>
+   <td>PTI</td>
+   <td>CarePlan</td>
+   <td>Piano Terapeutico (1)</td>
+   <td>{{link:CarePlan/Example-CarePlan-1-PTI}}</td>
+  </tr>
+  <tr>
+   <td>PTI</td>
+   <td>CarePlan</td>
+   <td>Piano Terapeutico (2)</td>
+   <td>{{link:CarePlan/Example-CarePlan-2-PTI}}</td>
+  </tr>
+  <tr>
+   <td>PTI</td>
+   <td>Condition</td>
+   <td>Condizioni di Erogabilità (1)</td>
+   <td>{{link:Condition/Example-Condition-CondizioniErogabilita-1-PTI}}</td>
+  </tr>
+  <tr>
+   <td>PTI</td>
+   <td>Condition</td>
+   <td>Condizioni di Erogabilità (2)</td>
+   <td>{{link:Condition/Example-Condition-CondizioniErogabilita-2-PTI}}</td>
+  </tr>
+  <tr>
+   <td>PTI</td>
+   <td>Condition</td>
+   <td>Criteri di Esclusione (1)</td>
+   <td>{{link:Condition/Example-Condition-CriteriEsclusione-1-PTI}}</td>
+  </tr>
+  <tr>
+   <td>PTI</td>
+   <td>Condition</td>
+   <td>Criteri di Esclusione (2)</td>
+   <td>{{link:Condition/Example-Condition-CriteriEsclusione-2-PTI}}</td>
+  </tr>
+  <tr>
+   <td>PTI</td>
+   <td>Observation</td>
+   <td>Peso (1)</td>
+   <td>{{link:Observation/Example-Observation-Peso-1-PTI}}</td>
+  </tr>
+  <tr>
+   <td>PTI</td>
+   <td>Observation</td>
+   <td>Peso (2)</td>
+   <td>{{link:Observation/Example-Observation-Peso-2-PTI}}</td>
+  </tr>
+  <tr>
+   <td>PTI</td>
+   <td>Observation</td>
+   <td>Durata Malattia (1)</td>
+   <td>{{link:Observation/Example-Observation-DurataMalattia-1-PTI}}</td>
+  </tr>
+  <tr>
+   <td>PTI</td>
+   <td>Observation</td>
+   <td>Durata Malattia (2)</td>
+   <td>{{link:Observation/Example-Observation-DurataMalattia-2-PTI}}</td>
+  </tr>
+  <tr>
+   <td>PTI</td>
+   <td>MedicationRequest</td>
+   <td>Programma Terapeutico (1)</td>
+   <td>{{link:MedicationRequest/Example-MedicationRequest-1-PTI}}</td>
+  </tr>
+  <tr>
+   <td>PTI</td>
+   <td>MedicationRequest</td>
+   <td>Programma Terapeutico (2)</td>
+   <td>{{link:MedicationRequest/Example-MedicationRequest-2-PTI}}</td>
+  </tr>
+  <tr>
+   <td>PTI</td>
+   <td>Medication</td>
+   <td>Farmaco (1)</td>
+   <td>{{link:Medication/Example-Medication-1-PTI}}</td>
+  </tr>
+  <tr>
+   <td>PTI</td>
+   <td>Medication</td>
+   <td>Farmaco (2)</td>
+   <td>{{link:Medication/Example-Medication-2-PTI}}</td>
+  </tr>
+    <tr>
+   <td>LDO</td>
+   <td>Composition</td>
+   <td>Lettera di Dimissione Ospedaliera</td>
+   <td>{{link:Composition/Example-Composition-LDO}}</td>
+  </tr>
+  <tr>
+   <td>LDO</td>
+   <td>MedicationAdministration</td>
+   <td>Terapia Farmacologica somministrata durante il Ricovero</td>
+   <td>{{link:MedicationAdministration/Example-MedicationAdministration-Ricovero-LDO}}</td>
+  </tr>
+  <tr>
+   <td>LDO</td>
+   <td>MedicationRequest</td>
+   <td>Terapia Farmacologica alla Dimissione</td>
+   <td>{{link:MedicationRequest/Example-MedicationRequest-Dimissione-LDO}}</td>
+  </tr>
+  <tr>
+   <td>LDO</td>
+   <td>MedicationRequest</td>
+   <td>Terapia Farmacologica prescritta durante il Ricovero</td>
+   <td>{{link:MedicationRequest/Example-MedicationRequest-Ricovero-LDO}}</td>
+  </tr>
+  <tr>
+   <td>LDO</td>
+   <td>Observation</td>
+   <td>Complicanze</td>
+   <td>{{link:Observation/Example-Observation-Complicanze-LDO}}</td>
+  </tr>
+  <tr>
+   <td>LDO</td>
+   <td>Observation</td>
+   <td>Consulenza</td>
+   <td>{{link:Observation/Example-Observation-Consulenza-LDO}}</td>
+  </tr>
+  <tr>
+   <td>LDO</td>
+   <td>Observation</td>
+   <td>Decorso Clinico</td>
+   <td>{{link:Observation/Example-Observation-DecorsoClinico-LDO}}</td>
+  </tr>
+  <tr>
+   <td>LDO</td>
+   <td>Observation</td>
+   <td>Diagnosi alla Dimissione</td>
+   <td>{{link:Observation/Example-Observation-DiagnosiDimissione-LDO}}</td>
+  </tr>
+  <tr>
+   <td>LDO</td>
+   <td>Observation</td>
+   <td>Esami Eseguiti durante il Ricovero</td>
+   <td>{{link:Observation/Example-Observation-EsamiEseguitiRicovero-LDO}}</td>
+  </tr>
+  <tr>
+   <td>LDO</td>
+   <td>Observation</td>
+   <td>Motivo del Ricovero</td>
+   <td>{{link:Observation/Example-Observation-MotivoRicovero-LDO}}</td>
+  </tr>
+  <tr>
+   <td>LDO</td>
+   <td>Observation</td>
+   <td>Procedure durante il Ricovero</td>
+   <td>{{link:Observation/Example-Observation-ProcedureRicovero-LDO}}</td>
+  </tr>
+  <tr>
+   <td>LDO</td>
+   <td>Procedure</td>
+   <td>Procedure Eseguite durante il Ricovero</td>
+   <td>{{link:Procedure/Example-Procedure-LDO}}</td>
+  </tr>
       <td>RAD</td>
       <td>Observation</td>
       <td>Precedenti Esami Eseguiti (2)</td>

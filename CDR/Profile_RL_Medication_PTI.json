@@ -1,0 +1,221 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLMedicationPti",
+  "name": "RLMedicationPti",
+  "title": "Medication PTI - Piano Terapeutico Individuale",
+  "status": "draft",
+  "date": "2026-10-28",
+  "description": "Profilo della risorsa Medication per il farmaco prescritto nella sezione Programma Terapeutico del Piano Terapeutico Individuale.",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Medication",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Medication",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Medication",
+        "path": "Medication"
+      },
+      {
+        "id": "Medication.code",
+        "path": "Medication.code",
+        "short": "Codice farmaco (ATC/AIC/GE)",
+        "comment": "CDA2 4.6. ATC richiesto: Cannabis N02BG10; Antiepilettici N03AX22 (Perampanel) e N03AF04 (Eslicarbazepina acetato); Antitrombotici B01AC22 (Prasugrel) e B01AC24 (Ticagrel); Antivirali D06BB10; BPCO R03AL04 (Indacaterolo/glicopirronio) e R03AL03 (Umeclidinio/vilanterolo); Ranelato di stronzio M05BX03; Sedativi N05CD08.",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Medication.code.coding",
+        "path": "Medication.code.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            }
+          ],
+          "rules": "open"
+        },
+        "short": "Codici del farmaco",
+        "comment": "CDA2: code (codice principale) e code/translation (codice alternativo). Slicing per system, come RLMedicationLDO.",
+        "min": 1,
+        "max": "*"
+      },
+      {
+        "id": "Medication.code.coding:atc",
+        "path": "Medication.code.coding",
+        "sliceName": "atc",
+        "short": "Codifica ATC",
+        "comment": "Usata quando @OID_codifica_farmaco@ è la codifica ATC.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Medication.code.coding:atc.system",
+        "path": "Medication.code.coding.system",
+        "short": "Sistema di codifica",
+        "min": 1,
+        "max": "1",
+        "fixedUri": "https://fhir.siss.regione.lombardia.it/CodeSystem/DDC-FarmacoATC"
+      },
+      {
+        "id": "Medication.code.coding:atc.code",
+        "path": "Medication.code.coding.code",
+        "short": "Codice del farmaco",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Medication.code.coding:atc.display",
+        "path": "Medication.code.coding.display",
+        "short": "Descrizione del farmaco",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Medication.code.coding:aic",
+        "path": "Medication.code.coding",
+        "sliceName": "aic",
+        "short": "Codifica AIC",
+        "comment": "Usata quando @OID_codifica_farmaco@ è la codifica AIC.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Medication.code.coding:aic.system",
+        "path": "Medication.code.coding.system",
+        "short": "Sistema di codifica",
+        "min": 1,
+        "max": "1",
+        "fixedUri": "https://fhir.siss.regione.lombardia.it/CodeSystem/DDC-FarmacoAIC"
+      },
+      {
+        "id": "Medication.code.coding:aic.code",
+        "path": "Medication.code.coding.code",
+        "short": "Codice del farmaco",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Medication.code.coding:aic.display",
+        "path": "Medication.code.coding.display",
+        "short": "Descrizione del farmaco",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Medication.code.coding:gruppoEquivalenza",
+        "path": "Medication.code.coding",
+        "sliceName": "gruppoEquivalenza",
+        "short": "Codifica Gruppo di Equivalenza",
+        "comment": "Usata quando @OID_codifica_farmaco@ è la codifica GE.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Medication.code.coding:gruppoEquivalenza.system",
+        "path": "Medication.code.coding.system",
+        "short": "Sistema di codifica",
+        "min": 1,
+        "max": "1",
+        "fixedUri": "https://fhir.siss.regione.lombardia.it/CodeSystem/DDC-FarmacoGE"
+      },
+      {
+        "id": "Medication.code.coding:gruppoEquivalenza.code",
+        "path": "Medication.code.coding.code",
+        "short": "Codice del farmaco",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Medication.code.coding:gruppoEquivalenza.display",
+        "path": "Medication.code.coding.display",
+        "short": "Descrizione del farmaco",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Medication.form",
+        "path": "Medication.form",
+        "short": "Forma farmaceutica",
+        "comment": "CDA2 4.5. Cannabis: valori accettati cd 10 (Dizionario \"Forme Farmaceutiche\") e cd 01, 02 (Dizionario \"Altre Forme Farmaceutiche\").",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Medication.form.coding",
+        "path": "Medication.form.coding",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Medication.form.coding.system",
+        "path": "Medication.form.coding.system",
+        "short": "Sistema di codifica",
+        "comment": "Valore previsto: urn:oid:@OID_codifica_forma_farmaceutica@.",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Medication.form.coding.code",
+        "path": "Medication.form.coding.code",
+        "short": "Valore del codice",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Medication.form.coding.display",
+        "path": "Medication.form.coding.display",
+        "short": "Descrizione leggibile del codice",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Medication.amount",
+        "path": "Medication.amount",
+        "short": "Quantità nella confezione"
+      },
+      {
+        "id": "Medication.amount.numerator",
+        "path": "Medication.amount.numerator",
+        "short": "Quantità nella confezione",
+        "comment": "CDA2 4.8 (code 02, codeSystem 2.16.840.1.113883.2.9.2.30.3.1.3.15.6.10, @quantita_confezione@, REAL). Cannabis: obbligatorio se la Forma Farmaceutica è \"01\" (Dizionario \"Altre Forme Farmaceutiche\").",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Medication.ingredient",
+        "path": "Medication.ingredient",
+        "short": "Principio attivo e grammatura"
+      },
+      {
+        "id": "Medication.ingredient.item[x]",
+        "path": "Medication.ingredient.item[x]",
+        "short": "Principio attivo",
+        "comment": "Cannabis: stesso contenuto di Medication.code. Obbligatorio in FHIR quando ingredient è valorizzato.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "Medication.ingredient.strength",
+        "path": "Medication.ingredient.strength",
+        "short": "Grammatura"
+      },
+      {
+        "id": "Medication.ingredient.strength.numerator",
+        "path": "Medication.ingredient.strength.numerator",
+        "short": "Grammatura",
+        "comment": "CDA2 4.7 (code 01, codeSystem 2.16.840.1.113883.2.9.2.30.3.1.3.15.6.10, @grammatura@, REAL). Cannabis: obbligatorio ingredient.itemCodeableConcept con lo stesso contenuto di Medication.code. Antiepilettici: obbligatorio per ATC N03AF04. Antitrombotici: obbligatorio per ATC B01AC24 (60 per Ticagrel 60 mg, 90 per Ticagrel 90 mg).",
+        "min": 0,
+        "max": "1"
+      }
+    ]
+  }
+}

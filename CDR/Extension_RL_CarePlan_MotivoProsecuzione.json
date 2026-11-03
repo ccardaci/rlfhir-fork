@@ -1,0 +1,46 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCarePlanMotivoProsecuzione",
+  "name": "RLCarePlanMotivoProsecuzione",
+  "title": "Extension PTI - Motivo Prosecuzione",
+  "status": "draft",
+  "date": "2026-10-28",
+  "description": "Motivo prosecuzione del Piano Terapeutico Individuale. CDA2 code 04 (@motivo_prescrizione@, ST). Antitrombotici: obbligatorio per ATC B01AC24 (Ticagrel) e B01AC22 (Prasugrel). Utilizzabile solo se Flag Prescrizione = \"Prosecuzione della cura\".",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "CarePlan"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Motivo prosecuzione"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCarePlanMotivoProsecuzione"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "short": "Motivo prosecuzione",
+        "min": 1,
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      }
+    ]
+  }
+}

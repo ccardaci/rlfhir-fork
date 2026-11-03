@@ -1,0 +1,297 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLMedicationRequestPti",
+  "name": "RLMedicationRequestPti",
+  "title": "MedicationRequest PTI - Programma Terapeutico",
+  "status": "draft",
+  "date": "2026-10-28",
+  "description": "Profilo della risorsa MedicationRequest per la sezione Programma Terapeutico del Piano Terapeutico Individuale.",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "MedicationRequest",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/MedicationRequest",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "MedicationRequest",
+        "path": "MedicationRequest"
+      },
+      {
+        "id": "MedicationRequest.status",
+        "path": "MedicationRequest.status",
+        "short": "Stato della richiesta",
+        "min": 1,
+        "max": "1",
+        "fixedCode": "active"
+      },
+      {
+        "id": "MedicationRequest.intent",
+        "path": "MedicationRequest.intent",
+        "short": "Scopo della richiesta",
+        "min": 1,
+        "max": "1",
+        "fixedCode": "order"
+      },
+      {
+        "id": "MedicationRequest.medication[x]",
+        "path": "MedicationRequest.medication[x]",
+        "short": "Farmaco prescritto",
+        "comment": "Medication con forma farmaceutica (4.5), codice farmaco ATC/AIC/GE (4.6), grammatura (4.7) e quantità nella confezione (4.8).",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLMedicationPti"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationRequest.subject",
+        "path": "MedicationRequest.subject",
+        "short": "Paziente a cui si riferisce la prescrizione.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPatientCore"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationRequest.note",
+        "path": "MedicationRequest.note",
+        "short": "Descrizione della prescrizione",
+        "comment": "CDA2 4.10 (code 03, @descrizione_prescrizione@, ST).",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction",
+        "path": "MedicationRequest.dosageInstruction",
+        "short": "Posologia",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.timing",
+        "path": "MedicationRequest.dosageInstruction.timing",
+        "short": "Tempistica della somministrazione",
+        "min": 1
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.timing.repeat",
+        "path": "MedicationRequest.dosageInstruction.timing.repeat",
+        "short": "Ripetizione",
+        "min": 1
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.timing.repeat.bounds[x]",
+        "path": "MedicationRequest.dosageInstruction.timing.repeat.bounds[x]",
+        "short": "Durata trattamento",
+        "min": 1,
+        "type": [
+          {
+            "code": "Duration"
+          }
+        ]
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.timing.repeat.boundsDuration",
+        "path": "MedicationRequest.dosageInstruction.timing.repeat.boundsDuration",
+        "short": "Durata trattamento"
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.timing.repeat.boundsDuration.value",
+        "path": "MedicationRequest.dosageInstruction.timing.repeat.boundsDuration.value",
+        "short": "Durata trattamento",
+        "comment": "CDA2 4.1 (@durata_trattamento@, PIVL_TS). Antitrombotici: obbligatorio per ATC B01AC24 e B01AC22. Antivirali: 6 settimane se Condizione di erogabilità = 00, max 16 settimane se = 01. Ranelato di stronzio e sedativi: 12 mesi.",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.timing.repeat.boundsDuration.system",
+        "path": "MedicationRequest.dosageInstruction.timing.repeat.boundsDuration.system",
+        "short": "Sistema delle unità di misura",
+        "min": 1,
+        "max": "1",
+        "fixedUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.timing.repeat.boundsDuration.code",
+        "path": "MedicationRequest.dosageInstruction.timing.repeat.boundsDuration.code",
+        "short": "Unità della durata (UCUM)",
+        "comment": "CDA2: @unità_durata@, espressa in UCUM (es. mesi → mo).",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.route",
+        "path": "MedicationRequest.dosageInstruction.route",
+        "short": "Via di somministrazione",
+        "min": 1
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.route.coding",
+        "path": "MedicationRequest.dosageInstruction.route.coding",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.route.coding.system",
+        "path": "MedicationRequest.dosageInstruction.route.coding.system",
+        "short": "Sistema di codifica",
+        "min": 1,
+        "max": "1",
+        "fixedUri": "http://terminology.hl7.org/CodeSystem/v3-RouteOfAdministration"
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.route.coding.code",
+        "path": "MedicationRequest.dosageInstruction.route.coding.code",
+        "short": "Via di somministrazione - codice",
+        "comment": "CDA2 4.2.",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.route.coding.display",
+        "path": "MedicationRequest.dosageInstruction.route.coding.display",
+        "short": "Via di somministrazione - descrizione",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.doseAndRate",
+        "path": "MedicationRequest.dosageInstruction.doseAndRate",
+        "short": "Dosaggio cronico e, se presente, dosaggio di carico",
+        "comment": "Nessuna slice: il dosaggio cronico e mantenimento è l'elemento senza type (con dose e frequenza); il dosaggio di carico è l'elemento con type = 04.",
+        "min": 1,
+        "max": "2"
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.doseAndRate.type",
+        "path": "MedicationRequest.dosageInstruction.doseAndRate.type",
+        "short": "Tipo dosaggio",
+        "comment": "Valorizzato solo per il dosaggio di carico.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.doseAndRate.type.coding",
+        "path": "MedicationRequest.dosageInstruction.doseAndRate.type.coding",
+        "max": "1"
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.doseAndRate.type.coding.system",
+        "path": "MedicationRequest.dosageInstruction.doseAndRate.type.coding.system",
+        "short": "Sistema di codifica",
+        "min": 0,
+        "max": "1",
+        "fixedUri": "urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.15.6.10"
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.doseAndRate.type.coding.code",
+        "path": "MedicationRequest.dosageInstruction.doseAndRate.type.coding.code",
+        "short": "Tipo dosaggio - codice",
+        "comment": "CDA2 4.9 Dosaggio di carico. Antitrombotici: obbligatorio per ATC B01AC22 (Prasugrel).",
+        "min": 0,
+        "max": "1",
+        "fixedCode": "04"
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.doseAndRate.type.coding.display",
+        "path": "MedicationRequest.dosageInstruction.doseAndRate.type.coding.display",
+        "short": "Tipo dosaggio - descrizione",
+        "min": 0,
+        "max": "1",
+        "fixedString": "Dosaggio di Carico"
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.doseAndRate.dose[x]",
+        "path": "MedicationRequest.dosageInstruction.doseAndRate.dose[x]",
+        "short": "Dosaggio",
+        "comment": "Dosaggio cronico e mantenimento (@dosaggio_cronico@) oppure dosaggio di carico (@dosaggio_carico@).",
+        "min": 1,
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.doseAndRate.doseQuantity",
+        "path": "MedicationRequest.dosageInstruction.doseAndRate.doseQuantity",
+        "short": "Dosaggio"
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.doseAndRate.doseQuantity.value",
+        "path": "MedicationRequest.dosageInstruction.doseAndRate.doseQuantity.value",
+        "short": "Valore del dosaggio",
+        "comment": "CDA2 4.3 (REAL). Antitrombotici: obbligatorio per ATC B01AC24 e B01AC22. Il dosaggio cronico è il doseAndRate senza type. Per il dosaggio di carico: CDA2 4.9 (REAL).",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.doseAndRate.rate[x]",
+        "path": "MedicationRequest.dosageInstruction.doseAndRate.rate[x]",
+        "short": "Frequenza",
+        "comment": "Obbligatoria nel dosaggio cronico e mantenimento.",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.doseAndRate.rateQuantity",
+        "path": "MedicationRequest.dosageInstruction.doseAndRate.rateQuantity",
+        "short": "Frequenza"
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.doseAndRate.rateQuantity.value",
+        "path": "MedicationRequest.dosageInstruction.doseAndRate.rateQuantity.value",
+        "short": "Frequenza - valore",
+        "comment": "CDA2 4.4 (@frequenza@, ST). Antitrombotici: obbligatorio per ATC B01AC24 e B01AC22. Antivirali: 5 a settimana se Condizione di erogabilità = 00, 3 a settimana se = 01.",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.doseAndRate.rateQuantity.unit",
+        "path": "MedicationRequest.dosageInstruction.doseAndRate.rateQuantity.unit",
+        "short": "Frequenza - unità",
+        "comment": "CDA2: substanceAdministration/rateQuantity/@unit.",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "MedicationRequest.dispenseRequest",
+        "path": "MedicationRequest.dispenseRequest",
+        "short": "Numero di confezioni"
+      },
+      {
+        "id": "MedicationRequest.dispenseRequest.quantity",
+        "path": "MedicationRequest.dispenseRequest.quantity",
+        "short": "Numero di confezioni",
+        "comment": "CDA2 4.11. Antiepilettici: obbligatorio per ATC N03AF04 (Eslicarbazepina acetato).",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "MedicationRequest.dispenseRequest.quantity.value",
+        "path": "MedicationRequest.dispenseRequest.quantity.value",
+        "short": "Valore",
+        "comment": "CDA2: supply/quantity/@value (INT).",
+        "min": 1,
+        "max": "1",
+        "fixedDecimal": 1.0
+      }
+    ]
+  }
+}

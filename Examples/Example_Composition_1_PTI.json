@@ -1,0 +1,179 @@
+{
+  "resourceType": "Composition",
+  "id": "Example-Composition-1-PTI",
+  "meta": {
+    "profile": [
+      "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCompositionPti"
+    ]
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/composition-clinicaldocument-versionNumber",
+      "valueString": "2"
+    },
+    {
+      "url": "http://hl7.eu/fhir/StructureDefinition/information-recipient",
+      "valueReference": {
+        "reference": "Practitioner/practitioner-pti-mmg-001"
+      }
+    }
+  ],
+  "identifier": {
+    "system": "urn:oid:2.16.840.1.113883.2.9.2.30.4.4",
+    "value": "PTI-2026-000123",
+    "assigner": {
+      "display": "Regione Lombardia"
+    }
+  },
+  "status": "final",
+  "type": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "77604-7",
+        "display": "PIANO DI TRATTAMENTO FARMACOLOGICO.BREVE"
+      },
+      {
+        "system": "urn:oid:2.16.840.1.113883.2.9.2.30.3.1.6.10",
+        "code": "17",
+        "display": "PIANO TERAPEUTICO INDIVIDUALE"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-pti-001"
+  },
+  "date": "2026-10-28T10:30:00+01:00",
+  "author": [
+    {
+      "reference": "PractitionerRole/practitionerrole-pti-001"
+    }
+  ],
+  "title": "PIANO TERAPEUTICO",
+  "confidentiality": "N",
+  "attester": [
+    {
+      "mode": "legal",
+      "time": "2026-10-28T10:45:00+01:00",
+      "party": {
+        "reference": "PractitionerRole/practitionerrole-pti-001"
+      }
+    }
+  ],
+  "custodian": {
+    "reference": "Organization/organization-pti-001"
+  },
+  "relatesTo": [
+    {
+      "code": "replaces",
+      "targetIdentifier": {
+        "system": "urn:oid:2.16.840.1.113883.2.9.2.30.4.4",
+        "value": "PTI-2026-000098"
+      }
+    }
+  ],
+  "section": [
+    {
+      "title": "Dati Diagnosi e Condizione Clinica",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "55752-0",
+            "display": "Informazioni Cliniche"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Dati diagnosi e condizione clinica del piano.</div>"
+      },
+      "section": [
+        {
+          "title": "Condizioni Cliniche",
+          "code": {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "67804-5",
+                "display": "Condizioni relative alla salute"
+              }
+            ]
+          },
+          "text": {
+            "status": "generated",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Condizioni di erogabilità: vedi CarePlan.addresses.</div>"
+          },
+          "entry": [
+            {
+              "reference": "CarePlan/Example-CarePlan-1-PTI"
+            }
+          ]
+        },
+        {
+          "title": "Dati Anamnestici e Obiettivi",
+          "code": {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "11329-0",
+                "display": "STORIA GENERALE"
+              }
+            ]
+          },
+          "text": {
+            "status": "generated",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Peso: 72 kg.</div>"
+          },
+          "entry": [
+            {
+              "reference": "Observation/Example-Observation-Peso-1-PTI"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Programma Terapeutico",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "55753-8",
+            "display": "Terapia, Informazioni"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Prasugrel (ATC B01AC22): dosaggio cronico 10 mg, dosaggio di carico 60 mg, durata 12 mesi.</div>"
+      },
+      "entry": [
+        {
+          "reference": "MedicationRequest/Example-MedicationRequest-1-PTI"
+        }
+      ]
+    },
+    {
+      "title": "Attributi del Piano Terapeutico",
+      "code": {
+        "coding": [
+          {
+            "system": "urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.15.6.12",
+            "code": "1",
+            "display": "Attributi del Piano Terapeutico"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Scadenza piano: 28/10/2027. Flag prescrizione: Prosecuzione della cura.</div>"
+      },
+      "entry": [
+        {
+          "reference": "CarePlan/Example-CarePlan-1-PTI"
+        }
+      ]
+    }
+  ]
+}

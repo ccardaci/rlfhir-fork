@@ -1,0 +1,111 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLConditionCriteriEsclusionePti",
+  "name": "RLConditionCriteriEsclusionePti",
+  "title": "Condition PTI - Criteri di Esclusione",
+  "status": "draft",
+  "date": "2026-10-28",
+  "description": "Profilo della risorsa Condition per i criteri di esclusione del Piano Terapeutico Individuale (sezione Condizioni Cliniche, 5.2).",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Condition",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Condition",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Condition",
+        "path": "Condition"
+      },
+      {
+        "id": "Condition.category",
+        "path": "Condition.category",
+        "short": "Criterio di esclusione",
+        "comment": "Codice e code system variano per piano (es. PRJ_PT_CriteriEsclAntitromb_LOMB: 2.16.840.1.113883.2.9.2.30.3.1.3.15.6.21). Code system previsti: 2.16.840.1.113883.2.9.2.30.3.1.3.15.6.21, 22.",
+        "min": 1,
+        "max": "*"
+      },
+      {
+        "id": "Condition.category.coding",
+        "path": "Condition.category.coding",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Condition.category.coding.system",
+        "path": "Condition.category.coding.system",
+        "short": "Sistema di codifica",
+        "comment": "Valore previsto: urn:oid:<OID specifico per piano>.",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Condition.category.coding.code",
+        "path": "Condition.category.coding.code",
+        "short": "Valore del codice",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Condition.category.coding.display",
+        "path": "Condition.category.coding.display",
+        "short": "Descrizione leggibile del codice",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Condition.code",
+        "path": "Condition.code",
+        "short": "Stato del criterio di esclusione",
+        "comment": "CDA2: observation/value (xsi:type CD). Valorizzato con il dizionario \"Stato Criteri Esclusione\" (PRJ_PT_StCriteriEscl_LOMB, 2.16.840.1.113883.2.9.2.30.3.1.3.15.6.2). Antitrombotici: criterio richiesto per Ticagrel 60 mg (ATC B01AC24).",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Condition.code.coding",
+        "path": "Condition.code.coding",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Condition.code.coding.system",
+        "path": "Condition.code.coding.system",
+        "short": "Sistema di codifica",
+        "min": 1,
+        "max": "1",
+        "fixedUri": "urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.15.6.2"
+      },
+      {
+        "id": "Condition.code.coding.code",
+        "path": "Condition.code.coding.code",
+        "short": "Valore del codice",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Condition.code.coding.display",
+        "path": "Condition.code.coding.display",
+        "short": "Descrizione leggibile del codice",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Condition.subject",
+        "path": "Condition.subject",
+        "short": "Paziente a cui si riferisce la condizione.",
+        "comment": "Obbligatorio in FHIR.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPatientCore"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

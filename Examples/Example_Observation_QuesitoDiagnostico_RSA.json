@@ -1,0 +1,36 @@
+{
+  "resourceType": "Observation",
+  "id": "Example-ObservationQuesitoDiagnostico-1-RSA",
+  "meta": {
+    "lastUpdated": "2026-10-07T11:30:00+02:00",
+    "profile": [
+      "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationQuesitoDiagnosticoRSA"
+    ],
+    "versionId": "1"
+  },
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "29298-7",
+        "display": "Motivo della visita"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/a1b2c3d4-1234-5678-9abc-def012345678",
+    "display": "Mario Rossi"
+  },
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "system": "https://www.eumed.it/icd9cm/",
+        "version": "ICD9CM",
+        "code": "785.1",
+        "display": "Palpitazioni"
+      }
+    ],
+    "text": "Cardiopalmo in paziente iperteso"
+  }
+}

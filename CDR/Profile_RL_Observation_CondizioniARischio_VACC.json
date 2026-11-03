@@ -1,0 +1,134 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationCondizioniSanitarieRischio",
+  "name": "RLObservationCondizioniSanitarieRischio",
+  "title": "RL Observation Condizioni Sanitarie a Rischio",
+  "status": "draft",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "short": "Condizioni Sanitarie a Rischio",
+        "definition": "Evento o condizione sanitaria correlata alla vaccinazione."
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "min": 1,
+        "max": "1",
+        "definition": "Codice identificativo."
+      },
+      {
+        "id": "Observation.code.coding.system",
+        "path": "Observation.code.coding.system",
+        "min": 0,
+        "max": "1",
+        "fixedUri": "http://loinc.org",
+        "comment": "Fixed: LOINC (OID 2.16.840.1.113883.6.1)"
+      },
+      {
+        "id": "Observation.code.coding.version",
+        "path": "Observation.code.coding.version",
+        "min": 0,
+        "max": "1",
+        "example": [{"label": "Esempio", "valueString": "LOINC 2.19"}]
+      },
+      {
+        "id": "Observation.code.coding.code",
+        "path": "Observation.code.coding.code",
+        "min": 0,
+        "max": "1",
+        "fixedCode": "59785-6",
+        "comment": "Il foglio 'Certificato Vaccinale' non riportava questo codice in modo pulito (riga duplicata/mancante); ripreso dalla versione completa in 'Scheda Singola Vaccinazione'."
+      },
+      {
+        "id": "Observation.code.coding.display",
+        "path": "Observation.code.coding.display",
+        "min": 0,
+        "max": "1",
+        "fixedString": "Indicazioni per la vaccinazione"
+      },
+      {
+        "id": "Observation.status",
+        "path": "Observation.status",
+        "min": 1,
+        "max": "1",
+        "fixedCode": "final",
+        "definition": "Indica lo stato dell'osservazione.",
+        "comment": "La fonte riportava 'Fixed: completed' (codice non valido per Observation.status); corretto a 'final'."
+      },
+      {
+        "id": "Observation.effective[x]",
+        "path": "Observation.effective[x]",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Period"
+          }
+        ],
+        "definition": "Intervallo temporale clinicamente rilevante per l'osservazione."
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "definition": "Codice identificativo della condizione sanitaria a rischio."
+      },
+      {
+        "id": "Observation.value[x].coding.code",
+        "path": "Observation.value[x].coding.code",
+        "min": 0,
+        "max": "1",
+        "short": "Valore del codice (es. CODICE CONDIZIONE SANITARIA)"
+      },
+      {
+        "id": "Observation.value[x].coding.system",
+        "path": "Observation.value[x].coding.system",
+        "min": 0,
+        "max": "1",
+        "comment": "Opzioni dalla fonte: urn:oid:2.16.840.1.113883.6.103 (ICD-9CM) | urn:oid:2.16.840.1.113883.2.9.6.1.56.1 (regionale). Non fissato: binding da formalizzare."
+      },
+      {
+        "id": "Observation.value[x].coding.version",
+        "path": "Observation.value[x].coding.version",
+        "min": 0,
+        "max": "1",
+        "comment": "Opzioni dalla fonte: 'ICD-9CM' | 'AVN: Condizioni sanitarie a rischio'."
+      },
+      {
+        "id": "Observation.value[x].coding.display",
+        "path": "Observation.value[x].coding.display",
+        "min": 0,
+        "max": "1",
+        "short": "Descrizione leggibile del codice (es. DESCRIZIONE CONDIZIONE SANITARIA)"
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": ["https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPatientCore"]
+          }
+        ],
+        "definition": "Riferimento al paziente o soggetto dell'osservazione."
+      }
+    ]
+  }
+}

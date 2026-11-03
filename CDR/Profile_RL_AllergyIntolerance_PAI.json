@@ -1,0 +1,67 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLAllergyIntolerancePAI",
+  "name": "RLAllergyIntolerancePAI",
+  "title": "AllergyIntolerance PAI",
+  "status": "draft",
+  "date": "2026-10-28",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "AllergyIntolerance",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/AllergyIntolerance",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "AllergyIntolerance",
+        "path": "AllergyIntolerance",
+        "short": "Allergia del paziente"
+      },
+      {
+        "id": "AllergyIntolerance.clinicalStatus",
+        "path": "AllergyIntolerance.clinicalStatus",
+        "short": "Stato clinico dell'allergia",
+        "min": 1,
+        "max": "1",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+              "code": "active"
+            }
+          ]
+        }
+      },
+      {
+        "id": "AllergyIntolerance.code",
+        "path": "AllergyIntolerance.code",
+        "short": "Descrizione allergie",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "AllergyIntolerance.code.text",
+        "path": "AllergyIntolerance.code.text",
+        "short": "Descrizione allergie",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "AllergyIntolerance.patient",
+        "path": "AllergyIntolerance.patient",
+        "short": "Paziente a cui si riferisce l'allergia",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPatientCore"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

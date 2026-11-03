@@ -1,0 +1,35 @@
+{
+  "resourceType": "CarePlan",
+  "id": "Example-CarePlan-1-VPS",
+  "meta": {
+    "lastUpdated": "2026-10-05T11:00:00+02:00",
+    "profile": [
+      "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCarePlanVps"
+    ],
+    "versionId": "1"
+  },
+  "status": "active",
+  "intent": "plan",
+  "subject": {
+    "reference": "Patient/a1b2c3d4-1234-5678-9abc-def012345678",
+    "display": "Mario Rossi"
+  },
+  "author": {
+    "reference": "Practitioner/2e3f4a5b-6c7d-4e8f-9a0b-1c2d3e4f5a6b",
+    "display": "Laura Galli"
+  },
+  "activity": [
+    {
+      "reference": {
+        "reference": "MedicationRequest/Example-MedicationRequest-1-VPS",
+        "display": "Paracetamolo 1000 mg compresse, 1 cpr 3 volte al giorno per 5 giorni"
+      }
+    },
+    {
+      "reference": {
+        "reference": "ServiceRequest/4b5c6d7e-8f9a-4b0c-9d1e-2f3a4b5c6d7e",
+        "display": "Ecografia addome completo"
+      }
+    }
+  ]
+}

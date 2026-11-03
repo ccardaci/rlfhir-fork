@@ -1,0 +1,65 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLMedicationTerapiaConsigliataRSA",
+  "name": "RLMedicationTerapiaConsigliataRSA",
+  "title": "Medication Terapia Farmacologica Consigliata RSA",
+  "status": "draft",
+  "date": "2026-10-12",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Medication",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Medication",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Medication",
+        "path": "Medication",
+        "short": "Medicinale della Terapia Farmacologica Consigliata"
+      },
+      {
+        "id": "Medication.identifier",
+        "path": "Medication.identifier",
+        "short": "Identificatore univoco del medicinale",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Medication.code",
+        "path": "Medication.code",
+        "short": "Il codice del farmaco che identifica il medicinale",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Medication.form",
+        "path": "Medication.form",
+        "short": "Forma farmaceutica del medicinale",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Medication.amount",
+        "path": "Medication.amount",
+        "short": "Quantità totale del medicinale",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Medication.ingredient",
+        "path": "Medication.ingredient",
+        "short": "Ingrediente attivo o inattivo del medicinale",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Medication.ingredient.strength",
+        "path": "Medication.ingredient.strength",
+        "short": "Concentrazione/dosaggio dell'ingrediente attivo",
+        "min": 0,
+        "max": "1"
+      }
+    ]
+  }
+}

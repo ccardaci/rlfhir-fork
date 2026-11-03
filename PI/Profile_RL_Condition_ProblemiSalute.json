@@ -147,7 +147,7 @@
         "id": "Condition.code:patologia",
         "path": "Condition.code",
         "sliceName": "patologia",
-        "short": "La codifica della patologia può essere riportata secondo lo standard ICD9-CM oppure secondo la codifica regionale. Nel campo system viene indicata la codifica utilizzata.",
+        "short": "La codifica della patologia può essere riportata secondo lo standard ICD10-CM, ICD9-CM oppure secondo la codifica regionale. Nel campo system viene indicata la codifica utilizzata.",
         "comment": "La codifica delle patologie è riportata secondo lo standard ICD9-CM. Inoltre, è presente un elenco di patologie aggiuntive con codifica differente rispetto allo standard ICD9-CM, è possibile visualizzare la Tabella delle patologie non ICD9-CM tramite il link presente nella sezione ValueSet in fondo a questa pagina o nella sezione Terminologia - Libreria ValueSet",
         "min": 1
       },
@@ -165,13 +165,42 @@
         },
         "short": "Codifica della patologia secondo lo standard ICD9-CM. Di prassi viene utilizzata questa codifica.",
         "min": 1,
-        "max": "2"
+        "max": "3"
+      },
+      {
+        "id": "Condition.code:patologia.coding:patologiaICD10-CM",
+        "path": "Condition.code.coding",
+        "sliceName": "patologiaICD10-CM",
+        "short": "Codifica della patologia secondo lo standard ICD10-CM.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Condition.code:patologia.coding:patologiaICD10-CM.system",
+        "path": "Condition.code.coding.system",
+        "min": 1,
+        "fixedUri": "http://hl7.org/fhir/sid/icd-10-cm"
+      },
+      {
+        "id": "Condition.code:patologia.coding:patologiaICD10-CM.code",
+        "path": "Condition.code.coding.code",
+        "short": "Codice della patologia ICD10-CM",
+        "definition": "Stringa alfanumerica di al più 10 caratteri",
+        "comment": "Il dato è detenuto da SGDT",
+        "min": 1
+      },
+      {
+        "id": "Condition.code:patologia.coding:patologiaICD10-CM.display",
+        "path": "Condition.code.coding.display",
+        "short": "Descrizione della patologia ICD10-CM",
+        "definition": "Stringa alfanumerica di al più 250 caratteri",
+        "comment": "Il dato è detenuto da SGDT"
       },
       {
         "id": "Condition.code:patologia.coding:patologiaICD9-CM",
         "path": "Condition.code.coding",
         "sliceName": "patologiaICD9-CM",
-        "short": "Codifica della patologia secondo lo standard ICD9-CM. Di prassi viene utilizzata questa codifica.",
+        "short": "Codifica della patologia secondo lo standard ICD9-CM.",
         "max": "1"
       },
       {

@@ -1,0 +1,39 @@
+{
+  "resourceType": "Observation",
+  "id": "Example-ObservationRagioneVisita-1-VPS",
+  "meta": {
+    "lastUpdated": "2026-10-05T10:45:00+02:00",
+    "profile": [
+      "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationRagioneVisitaVPS"
+    ],
+    "versionId": "1"
+  },
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "29298-7",
+        "display": "Ragione della visita"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/a1b2c3d4-1234-5678-9abc-def012345678",
+    "display": "Mario Rossi"
+  },
+  "encounter": {
+    "reference": "Encounter/5d6e7f8a-9b0c-4d1e-8f2a-3b4c5d6e7f8a",
+    "display": "Accesso PS n. 2026012345"
+  },
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "21522001",
+        "display": "Abdominal pain"
+      }
+    ],
+    "text": "Dolore addominale insorto da circa 6 ore, non responsivo a terapia domiciliare"
+  }
+}

@@ -23,6 +23,8 @@
       {
         "id": "Observation.code",
         "path": "Observation.code",
+        "min": 1,
+        "max": "1",
         "short": "Codice identificativo",
         "definition": "Codice che identifica il tipo di osservazione."
       },
@@ -105,8 +107,18 @@
       {
         "id": "Observation.value[x]",
         "path": "Observation.value[x]",
+        "min": 1,
+        "max": "1",
         "short": "Valore dell'osservazione",
-        "definition": "Rappresenta il valore dell'osservazione."
+        "definition": "Rappresenta il valore dell'osservazione.",
+        "type": [
+          {
+            "code": "string"
+          },
+          {
+            "code": "CodeableConcept"
+          }
+        ]
       }
     ]
   }

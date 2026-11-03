@@ -1,0 +1,49 @@
+{
+  "resourceType": "Observation",
+  "id": "Example-ObservationAccertamenti-1-VPS",
+  "meta": {
+    "lastUpdated": "2026-10-05T10:15:00+02:00",
+    "profile": [
+      "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationAccertamentiVPS"
+    ],
+    "versionId": "1"
+  },
+  "basedOn": [
+    {
+      "reference": "ServiceRequest/9a0b1c2d-3e4f-4a5b-8c6d-7e8f9a0b1c2d",
+      "display": "Richiesta emocromo"
+    }
+  ],
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "718-7",
+        "display": "Hemoglobin [Mass/volume] in Blood"
+      }
+    ],
+    "text": "Emoglobina"
+  },
+  "subject": {
+    "reference": "Patient/a1b2c3d4-1234-5678-9abc-def012345678",
+    "display": "Mario Rossi"
+  },
+  "encounter": {
+    "reference": "Encounter/5d6e7f8a-9b0c-4d1e-8f2a-3b4c5d6e7f8a",
+    "display": "Accesso PS n. 2026012345"
+  },
+  "effectiveDateTime": "2026-10-04T13:50:00+02:00",
+  "performer": [
+    {
+      "reference": "Practitioner/2e3f4a5b-6c7d-4e8f-9a0b-1c2d3e4f5a6b",
+      "display": "Laura Galli"
+    }
+  ],
+  "valueQuantity": {
+    "value": 14.2,
+    "unit": "g/dL",
+    "system": "http://unitsofmeasure.org",
+    "code": "g/dL"
+  }
+}

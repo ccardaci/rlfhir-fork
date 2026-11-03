@@ -1,0 +1,18 @@
+{
+  "resourceType": "MedicationStatement",
+  "id": "rl-medicationstatement-001",
+  "meta": {
+    "profile": [
+      "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLMedicationStatementTerapiaFarmacologica"
+    ]
+  },
+  "status": "inactive",
+  "medicationReference": {
+    "reference": "Medication/med-metformina-01",
+    "display": "Metformina 500 mg compresse"
+  },
+  "subject": {
+    "reference": "Patient/pat-rossi-mario-01",
+    "display": "Mario Rossi"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "resourceType": "Observation",
+  "id": "Example-ObservationRaccomandazione-1-PAI",
+  "meta": {
+    "lastUpdated": "2026-10-27T09:30:00+01:00",
+    "profile": [
+      "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationRaccomandazionePAI"
+    ],
+    "versionId": "1"
+  },
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.13.6.37",
+        "version": "CRS-SISS",
+        "code": "1",
+        "display": "Raccomandazioni cliniche"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/a1b2c3d4-1234-5678-9abc-def012345678",
+    "display": "Mario Rossi"
+  },
+  "valueString": "Ridurre il consumo di sale e misurare la pressione a domicilio due volte a settimana."
+}

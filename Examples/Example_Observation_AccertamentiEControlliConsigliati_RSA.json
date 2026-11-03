@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "Example-ObservationAccertamentiControlliConsigliati-1-RSA",
+  "meta": {
+    "lastUpdated": "2026-10-08T12:30:00+02:00",
+    "profile": [
+      "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationAccertamentiControlliConsigliatiRSA"
+    ],
+    "versionId": "1"
+  },
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.2.9.2.30.6.11",
+        "version": "Nomenclatore Tariffario Regionale",
+        "code": "89.50",
+        "display": "ELETTROCARDIOGRAMMA DINAMICO (Holter)"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/a1b2c3d4-1234-5678-9abc-def012345678",
+    "display": "Mario Rossi"
+  }
+}

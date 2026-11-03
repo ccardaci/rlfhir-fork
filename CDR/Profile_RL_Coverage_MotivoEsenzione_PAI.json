@@ -1,0 +1,111 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCoveragePAI",
+  "name": "RLCoveragePAI",
+  "title": "Coverage PAI",
+  "status": "draft",
+  "date": "2026-10-28",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Coverage",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Coverage",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Coverage",
+        "path": "Coverage",
+        "short": "Motivo esenzione dal co-pagamento"
+      },
+      {
+        "id": "Coverage.status",
+        "path": "Coverage.status",
+        "short": "Stato della copertura",
+        "comment": "La StructureMap valorizza attualmente active.",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Coverage.beneficiary",
+        "path": "Coverage.beneficiary",
+        "short": "Assistito beneficiario",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPatientCore"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Coverage.payor",
+        "path": "Coverage.payor",
+        "short": "Ente pagatore",
+        "comment": "La StructureMap valorizza attualmente solo il display: Servizio Sanitario Nazionale.",
+        "min": 1,
+        "max": "*"
+      },
+      {
+        "id": "Coverage.costToBeneficiary",
+        "path": "Coverage.costToBeneficiary",
+        "short": "Esenzioni dell'assistito",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Coverage.costToBeneficiary.value[x]",
+        "path": "Coverage.costToBeneficiary.value[x]",
+        "short": "Importo a carico dell'assistito",
+        "comment": "Obbligatorio in FHIR R4. In caso di esenzione la StructureMap valorizza 0 EUR (valueMoney).",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Coverage.costToBeneficiary.exception",
+        "path": "Coverage.costToBeneficiary.exception",
+        "short": "Esenzione dell'assistito",
+        "min": 1,
+        "max": "*"
+      },
+      {
+        "id": "Coverage.costToBeneficiary.exception.type",
+        "path": "Coverage.costToBeneficiary.exception.type",
+        "short": "Codice di esenzione",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Coverage.costToBeneficiary.exception.type.coding",
+        "path": "Coverage.costToBeneficiary.exception.type.coding",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Coverage.costToBeneficiary.exception.type.coding.system",
+        "path": "Coverage.costToBeneficiary.exception.type.coding.system",
+        "short": "Sistema di codifica",
+        "min": 1,
+        "max": "1",
+        "fixedUri": "urn:oid:2.16.840.1.113883.2.9.2.30.6.22"
+      },
+      {
+        "id": "Coverage.costToBeneficiary.exception.type.coding.code",
+        "path": "Coverage.costToBeneficiary.exception.type.coding.code",
+        "short": "Codice di esenzione",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Coverage.costToBeneficiary.exception.type.coding.display",
+        "path": "Coverage.costToBeneficiary.exception.type.coding.display",
+        "short": "Descrizione leggibile del codice",
+        "min": 1,
+        "max": "1"
+      }
+    ]
+  }
+}

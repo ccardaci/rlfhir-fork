@@ -99,13 +99,13 @@ La tabella seguente riassume le modalità di utilizzo dell’API.
 |---|---|
 | **VERB** | GET |
 | **BASE URL** | https://api.servizirl.it/c/operatori.siss/portaleMMG/v1.0.0/stato-segnalazione |
-| **PARAMETRI** | `ServiceRequest?_profile=https://fhir.siss.regione.lombardia.it/StructureDefinition/RLServiceRequestServiziSocioAssistenziali&identifier=https://fhir.siss.regione.lombardia.it/sid/codiceIdentificativoPortaleMMG\|<identificativo Portale>&identifier=https://fhir.siss.regione.lombardia.it/sid/codiceIdentificativoSGDT\|<identificativo SGDT>` |
+| **PARAMETRI** | `ServiceRequest?_profile=https://fhir.siss.regione.lombardia.it/StructureDefinition/RLServiceRequestServiziSocioAssistenziali&identifier=`<br>`https://fhir.siss.regione.lombardia.it/sid/codiceIdentificativoPortaleMMG\|<identificativo Portale>&identifier=https://fhir.siss.regione.lombardia.it/sid/codiceIdentificativoSGDT\|<identificativo SGDT>` |
 
 # Endpoint dedicato
-
+```text
 Esempio chiamata:        
 https://api.servizirl.it/c/operatori.siss/portaleMMG/v1.0.0/stato-segnalazione/ServiceRequest?_profile=https://fhir.siss.regione.lombardia.it/StructureDefinition/RLServiceRequestServiziSocioAssistenziali&identifier=https://fhir.siss.regione.lombardia.it/sid/codiceIdentificativoPortaleMMG|PPP0001&identifier=https://fhir.siss.regione.lombardia.it/sid/codiceIdentificativoSGDT|SOC_0000002
-
+```
 <!-- ===================================================FINE SEZIONE=================================================== -->
 
 ## ValueSet

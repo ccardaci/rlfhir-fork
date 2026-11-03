@@ -1,0 +1,40 @@
+{
+        "resourceType": "Observation",
+        "meta": {
+          "profile": [
+            "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationCategorieRischio"
+          ]
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "version": "2.19",
+              "code": "95715-9",
+              "display": "Categorie a rischio"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:d27e91de-1863-5d21-b912-476ad4708ff7"
+        },
+        "referenceRange": [
+          {
+            "text": "Categoria a rischio per la vaccinazione",
+            "appliesTo": [
+              {
+                "coding": [
+                  {
+                    "system": "urn:oid:2.16.840.1.113883.2.9.6.1.56.2",
+                    "version": "AVN: Categorie a rischio",
+                    "code": "01",
+                    "display": "Operatori sanitari e sociosanitari"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "id": "observation-rischio"
+      }

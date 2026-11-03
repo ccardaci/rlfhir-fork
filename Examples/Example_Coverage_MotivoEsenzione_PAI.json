@@ -1,0 +1,42 @@
+{
+  "resourceType": "Coverage",
+  "id": "Example-Coverage-1-PAI",
+  "meta": {
+    "lastUpdated": "2026-10-27T09:30:00+01:00",
+    "profile": [
+      "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCoveragePAI"
+    ],
+    "versionId": "1"
+  },
+  "status": "active",
+  "beneficiary": {
+    "reference": "Patient/a1b2c3d4-1234-5678-9abc-def012345678",
+    "display": "Mario Rossi"
+  },
+  "payor": [
+    {
+      "display": "Servizio Sanitario Nazionale"
+    }
+  ],
+  "costToBeneficiary": [
+    {
+      "valueMoney": {
+        "value": 0,
+        "currency": "EUR"
+      },
+      "exception": [
+        {
+          "type": {
+            "coding": [
+              {
+                "system": "urn:oid:2.16.840.1.113883.2.9.2.30.6.22",
+                "code": "0031",
+                "display": "Ipertensione arteriosa"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

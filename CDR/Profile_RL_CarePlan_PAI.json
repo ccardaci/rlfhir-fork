@@ -1,0 +1,202 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCarePlanPAI",
+  "name": "RLCarePlanPAI",
+  "title": "CarePlan PAI",
+  "status": "draft",
+  "date": "2026-10-27",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "CarePlan",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/CarePlan",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "CarePlan",
+        "path": "CarePlan",
+        "short": "Piano Assistenziale Individuale"
+      },
+      {
+        "id": "CarePlan.meta",
+        "path": "CarePlan.meta"
+      },
+      {
+        "id": "CarePlan.meta.lastUpdated",
+        "path": "CarePlan.meta.lastUpdated",
+        "short": "Data di aggiornamento PAI",
+        "min": 0,
+        "max": "1",
+        "comment": "Sezione Attributi di Sistema."
+      },
+      {
+        "id": "CarePlan.extension",
+        "path": "CarePlan.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "CarePlan.extension:dataChiusura",
+        "path": "CarePlan.extension",
+        "sliceName": "dataChiusura",
+        "short": "Data di chiusura della programmazione",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCarePlanDataChiusura"
+            ]
+          }
+        ],
+        "comment": "Sezione Attributi di Sistema."
+      },
+      {
+        "id": "CarePlan.status",
+        "path": "CarePlan.status",
+        "short": "Stato del piano di cura",
+        "comment": "Sezione Attributi di Sistema. Suggerimento: active. Se è presente il motivo di chiusura della programmazione: completed.",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "CarePlan.intent",
+        "path": "CarePlan.intent",
+        "short": "Scopo del piano di cura",
+        "comment": "Sezione Attributi di Sistema. Suggerimento: plan",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "CarePlan.description",
+        "path": "CarePlan.description",
+        "short": "Descrizione programmazione",
+        "comment": "Sezione Intestazione Programmazione Clinico Assistenziale.",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "CarePlan.subject",
+        "path": "CarePlan.subject",
+        "short": "Paziente a cui si riferisce il piano assistenziale",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPatientCore"
+            ]
+          }
+        ],
+        "comment": "Sezione Attributi di Sistema."
+      },
+      {
+        "id": "CarePlan.period",
+        "path": "CarePlan.period",
+        "short": "Periodo di validità della pianificazione",
+        "min": 1,
+        "max": "1",
+        "comment": "Sezione Attributi di Sistema."
+      },
+      {
+        "id": "CarePlan.period.start",
+        "path": "CarePlan.period.start",
+        "short": "Data di inizio validità della pianificazione",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "CarePlan.period.end",
+        "path": "CarePlan.period.end",
+        "short": "Data di fine validità della pianificazione",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "CarePlan.created",
+        "path": "CarePlan.created",
+        "short": "Data di prima compilazione",
+        "min": 1,
+        "max": "1",
+        "comment": "Sezione Attributi di Sistema."
+      },
+      {
+        "id": "CarePlan.supportingInfo",
+        "path": "CarePlan.supportingInfo",
+        "short": "Raccomandazioni cliniche",
+        "comment": "Sezione Raccomandazioni Cliniche (opzionale).",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Observation"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "CarePlan.goal",
+        "path": "CarePlan.goal",
+        "short": "Obiettivi della presa in carico",
+        "comment": "Sezione Obiettivo Presa in Carico.",
+        "min": 1,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLGoalPAI"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "CarePlan.activity",
+        "path": "CarePlan.activity",
+        "short": "Attività programmate",
+        "comment": "Sezione Programmazione Clinico Assistenziale. Una activity per ciascuna risorsa programmata.",
+        "min": 1,
+        "max": "*"
+      },
+      {
+        "id": "CarePlan.activity.reference",
+        "path": "CarePlan.activity.reference",
+        "short": "Prestazioni programmate, terapia farmacologica programmata, protesica / ausili, contatto telefonico programmato",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/ServiceRequest",
+              "http://hl7.org/fhir/StructureDefinition/MedicationRequest",
+              "http://hl7.org/fhir/StructureDefinition/DeviceRequest",
+              "http://hl7.org/fhir/StructureDefinition/CommunicationRequest"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "CarePlan.note",
+        "path": "CarePlan.note",
+        "short": "Motivo di chiusura della programmazione",
+        "comment": "Sezione Attributi di Sistema. Valorizzato con la descrizione del motivo di chiusura (CRS-SISS, OID 2.16.840.1.113883.2.9.2.30.3.1.3.13.6.6).",
+        "min": 0,
+        "max": "1"
+      }
+    ]
+  }
+}

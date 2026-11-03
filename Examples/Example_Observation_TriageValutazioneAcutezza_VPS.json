@@ -1,0 +1,51 @@
+{
+  "resourceType": "Observation",
+  "id": "Example-ObservationTriage-1-VPS",
+  "meta": {
+    "lastUpdated": "2026-10-05T10:50:00+02:00",
+    "profile": [
+      "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationTriageVPS"
+    ],
+    "versionId": "1"
+  },
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "11283-9",
+        "display": "Valutazione acutezza"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/a1b2c3d4-1234-5678-9abc-def012345678",
+    "display": "Mario Rossi"
+  },
+  "encounter": {
+    "reference": "Encounter/5d6e7f8a-9b0c-4d1e-8f2a-3b4c5d6e7f8a",
+    "display": "Accesso PS n. 2026012345"
+  },
+  "effectiveDateTime": "2026-10-04T13:20:00+02:00",
+  "performer": [
+    {
+      "reference": "Practitioner/7c8d9e0f-1a2b-4c3d-8e4f-5a6b7c8d9e0f",
+      "display": "Sara Ferri"
+    }
+  ],
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.2.9.6.1.54.4",
+        "version": "CodiceTriage VPS",
+        "code": "3",
+        "display": "Azzurro"
+      }
+    ]
+  },
+  "note": [
+    {
+      "text": "Paziente vigile e orientato, dolore addominale NRS 7/10. Parametri vitali stabili all'ingresso."
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "resourceType": "AllergyIntolerance",
+  "id": "Example-AllergyIntolerance-1-PAI",
+  "meta": {
+    "lastUpdated": "2026-10-27T09:30:00+01:00",
+    "profile": [
+      "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLAllergyIntolerancePAI"
+    ],
+    "versionId": "1"
+  },
+  "clinicalStatus": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+        "code": "active",
+        "display": "Active"
+      }
+    ]
+  },
+  "code": {
+    "text": "Allergia alla penicillina"
+  },
+  "patient": {
+    "reference": "Patient/a1b2c3d4-1234-5678-9abc-def012345678",
+    "display": "Mario Rossi"
+  }
+}

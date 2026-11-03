@@ -1,0 +1,66 @@
+{
+  "resourceType": "MedicationRequest",
+  "id": "Example-MedicationRequestTerapiaDimissione-1-VPS",
+  "meta": {
+    "lastUpdated": "2026-10-05T10:10:00+02:00",
+    "profile": [
+      "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLMedicationRequestVPS"
+    ],
+    "versionId": "1"
+  },
+  "status": "active",
+  "intent": "order",
+  "medicationReference": {
+    "reference": "Medication/8b1c2d3e-4f5a-4b6c-9d7e-0f1a2b3c4d5e",
+    "display": "Paracetamolo 1000 mg compresse"
+  },
+  "subject": {
+    "reference": "Patient/a1b2c3d4-1234-5678-9abc-def012345678",
+    "display": "Mario Rossi"
+  },
+  "requester": {
+    "reference": "Practitioner/2e3f4a5b-6c7d-4e8f-9a0b-1c2d3e4f5a6b",
+    "display": "Laura Galli"
+  },
+  "dosageInstruction": [
+    {
+      "text": "1 compressa per bocca 3 volte al giorno per 5 giorni",
+      "timing": {
+        "repeat": {
+          "boundsPeriod": {
+            "start": "2026-10-04",
+            "end": "2026-10-08"
+          },
+          "frequency": 3,
+          "period": 1,
+          "periodUnit": "d"
+        }
+      },
+      "route": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-RouteOfAdministration",
+            "code": "PO",
+            "display": "Swallow, oral"
+          }
+        ]
+      },
+      "doseAndRate": [
+        {
+          "doseQuantity": {
+            "value": 1,
+            "unit": "compressa",
+            "system": "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
+            "code": "TAB"
+          }
+        }
+      ]
+    }
+  ],
+  "dispenseRequest": {
+    "quantity": {
+      "value": 1,
+      "unit": "confezione"
+    }
+  }
+}

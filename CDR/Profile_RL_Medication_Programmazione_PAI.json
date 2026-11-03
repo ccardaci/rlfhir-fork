@@ -1,0 +1,140 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLMedicationPAI",
+  "name": "RLMedicationPAI",
+  "title": "Medication PAI",
+  "status": "draft",
+  "date": "2026-10-28",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Medication",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Medication",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Medication",
+        "path": "Medication",
+        "short": "Farmaco programmato"
+      },
+      {
+        "id": "Medication.code",
+        "path": "Medication.code",
+        "short": "Identifica il farmaco tramite codici standard",
+        "comment": "Una coding per ciascun codice disponibile: ATC, AIC, GE.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Medication.code.coding",
+        "path": "Medication.code.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "max": "*"
+      },
+      {
+        "id": "Medication.code.coding:atc",
+        "path": "Medication.code.coding",
+        "sliceName": "atc",
+        "short": "Codice ATC",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Medication.code.coding:atc.system",
+        "path": "Medication.code.coding.system",
+        "short": "Sistema di codifica",
+        "comment": "ATC (OID 2.16.840.1.113883.6.73)",
+        "min": 1,
+        "max": "1",
+        "fixedUri": "http://www.whocc.no/atc"
+      },
+      {
+        "id": "Medication.code.coding:atc.code",
+        "path": "Medication.code.coding.code",
+        "short": "Codice ATC",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Medication.code.coding:atc.display",
+        "path": "Medication.code.coding.display",
+        "short": "Descrizione ATC",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Medication.code.coding:aic",
+        "path": "Medication.code.coding",
+        "sliceName": "aic",
+        "short": "Codice AIC",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Medication.code.coding:aic.system",
+        "path": "Medication.code.coding.system",
+        "short": "Sistema di codifica",
+        "comment": "AIC (OID 2.16.840.1.113883.2.9.6.1.5)",
+        "min": 1,
+        "max": "1",
+        "fixedUri": "urn:oid:2.16.840.1.113883.2.9.6.1.5"
+      },
+      {
+        "id": "Medication.code.coding:aic.code",
+        "path": "Medication.code.coding.code",
+        "short": "Codice AIC",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Medication.code.coding:aic.display",
+        "path": "Medication.code.coding.display",
+        "short": "Descrizione AIC",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Medication.code.coding:ge",
+        "path": "Medication.code.coding",
+        "sliceName": "ge",
+        "short": "Codice GE",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Medication.code.coding:ge.system",
+        "path": "Medication.code.coding.system",
+        "short": "Sistema di codifica",
+        "comment": "GE (OID 2.16.840.1.113883.2.9.6.1.51)",
+        "min": 1,
+        "max": "1",
+        "fixedUri": "urn:oid:2.16.840.1.113883.2.9.6.1.51"
+      },
+      {
+        "id": "Medication.code.coding:ge.code",
+        "path": "Medication.code.coding.code",
+        "short": "Codice GE",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Medication.code.coding:ge.display",
+        "path": "Medication.code.coding.display",
+        "short": "Descrizione GE",
+        "min": 1,
+        "max": "1"
+      }
+    ]
+  }
+}

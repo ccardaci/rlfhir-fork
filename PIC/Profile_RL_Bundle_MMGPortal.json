@@ -1,0 +1,235 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "RLBundleMMGPortal",
+  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLBundleMMGPortal",
+  "name": "RLBundleMMGPortal",
+  "status": "active",
+  "description": "Profilo volto a descrivere il contenuto del Bundle inviato dal Portale MMG a SGDT.",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Bundle",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Bundle",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Bundle.id",
+        "path": "Bundle.id",
+        "short": "UUID prodotto dal server FHIR (applicativo) che detiene la risorsa",
+        "min": 1
+      },
+      {
+        "id": "Bundle.meta",
+        "path": "Bundle.meta",
+        "short": "Metadati della risorsa",
+        "min": 1
+      },
+      {
+        "id": "Bundle.meta.profile",
+        "path": "Bundle.meta.profile",
+        "short": "Profilo al quale la risorsa si riferisce",
+        "min": 1,
+        "max": "1",
+        "fixedCanonical": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLBundleMMGPortal"
+      },
+      {
+        "id": "Bundle.type",
+        "path": "Bundle.type",
+        "short": "Tipo di Bundle",
+        "definition": "Valore fisso su \"message\"",
+        "fixedCode": "message"
+      },
+      {
+        "id": "Bundle.timestamp",
+        "path": "Bundle.timestamp",
+        "short": "Data di creazione del Bundle",
+        "definition": "Formato standard FHIR: YYYY-MM-DDThh:mm:ss.sss+zz:zz",
+        "min": 1
+      },
+      {
+        "id": "Bundle.entry",
+        "path": "Bundle.entry",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "resource.meta.profile"
+            }
+          ],
+          "rules": "open"
+        },
+        "short": "Profili contenuti nel Bundle",
+        "min": 7
+      },
+      {
+        "id": "Bundle.entry:RLMessageHeaderMMGPortal",
+        "path": "Bundle.entry",
+        "sliceName": "RLMessageHeaderMMGPortal",
+        "short": "Profilo volto a contenere le informazioni relative al messaggio scambiato tra il portale MMG e SGDT.",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Bundle.entry:RLMessageHeaderMMGPortal.resource",
+        "path": "Bundle.entry.resource",
+        "min": 1,
+        "type": [
+          {
+            "code": "Resource",
+            "profile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLMessageHeaderMMGPortal"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:RLServiceRequestServiziSocioAssistenziali",
+        "path": "Bundle.entry",
+        "sliceName": "RLServiceRequestServiziSocioAssistenziali",
+        "short": "Profilo volto a contenere le informazioni riguardanti il servizio da attivare ad un cittadino.",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Bundle.entry:RLServiceRequestServiziSocioAssistenziali.resource",
+        "path": "Bundle.entry.resource",
+        "min": 1,
+        "type": [
+          {
+            "code": "Resource",
+            "profile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLServiceRequestServiziSocioAssistenziali"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:RLPatientCittadino",
+        "path": "Bundle.entry",
+        "sliceName": "RLPatientCittadino",
+        "short": "Profilo contenente i dettagli anagrafici di base di un cittadino.",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Bundle.entry:RLPatientCittadino.resource",
+        "path": "Bundle.entry.resource",
+        "min": 1,
+        "type": [
+          {
+            "code": "Resource",
+            "profile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPatientCittadino"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:RLPractitionerProfessionistaSanitario",
+        "path": "Bundle.entry",
+        "sliceName": "RLPractitionerProfessionistaSanitario",
+        "short": "Profilo contenente i dettagli anagrafici di un professionista sanitario.",
+        "min": 1,
+        "max": "*"
+      },
+      {
+        "id": "Bundle.entry:RLPractitionerProfessionistaSanitario.resource",
+        "path": "Bundle.entry.resource",
+        "min": 1,
+        "type": [
+          {
+            "code": "Resource",
+            "profile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPractitionerProfessionistaSanitario"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:RLDocumentReferenceDocumento",
+        "path": "Bundle.entry",
+        "sliceName": "RLDocumentReferenceDocumento",
+        "short": "Profilo volto a descrivere il documento caricato.",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Bundle.entry:RLDocumentReferenceDocumento.resource",
+        "path": "Bundle.entry.resource",
+        "min": 1,
+        "type": [
+          {
+            "code": "Resource",
+            "profile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLDocumentReferenceDocumento"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:RLObservationEsitoValutazione",
+        "path": "Bundle.entry",
+        "sliceName": "RLObservationEsitoValutazione",
+        "short": "Profilo volto a descrivere l'esito della valutazione alla quale il paziente è stato sottoposto.",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Bundle.entry:RLObservationEsitoValutazione.resource",
+        "path": "Bundle.entry.resource",
+        "min": 1,
+        "type": [
+          {
+            "code": "Resource",
+            "profile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationEsitoValutazione"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:RLQuestionnaireValutazione",
+        "path": "Bundle.entry",
+        "sliceName": "RLQuestionnaireValutazione",
+        "short": "Profilo volto a descrivere la tipologia della valutazione al quale il paziente è stato sottoposto.",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Bundle.entry:RLQuestionnaireValutazione.resource",
+        "path": "Bundle.entry.resource",
+        "min": 1,
+        "type": [
+          {
+            "code": "Resource",
+            "profile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLQuestionnaireValutazione"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:RLQuestionnaireResponseValutazione",
+        "path": "Bundle.entry",
+        "sliceName": "RLQuestionnaireResponseValutazione",
+        "short": "Profilo volto a mostrare il dettaglio delle risposte ai quesiti della valutazione alla quale il paziente è stato sottoposto.",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Bundle.entry:RLQuestionnaireResponseValutazione.resource",
+        "path": "Bundle.entry.resource",
+        "min": 1,
+        "type": [
+          {
+            "code": "Resource",
+            "profile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLQuestionnaireResponseValutazione"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

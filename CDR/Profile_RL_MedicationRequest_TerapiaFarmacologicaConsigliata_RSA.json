@@ -1,0 +1,95 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLMedicationRequestTerapiaConsigliataRSA",
+  "name": "RLMedicationRequestTerapiaConsigliataRSA",
+  "title": "MedicationRequest Terapia Farmacologica Consigliata RSA",
+  "status": "draft",
+  "date": "2026-10-12",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "MedicationRequest",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/MedicationRequest",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "MedicationRequest",
+        "path": "MedicationRequest",
+        "short": "Terapia Farmacologica Consigliata"
+      },
+      {
+        "id": "MedicationRequest.status",
+        "path": "MedicationRequest.status",
+        "short": "Stato della richiesta",
+        "comment": "Suggerimento: completed",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "MedicationRequest.intent",
+        "path": "MedicationRequest.intent",
+        "short": "Serve a distinguere il grado di formalità e vincolatività della richiesta di farmaco",
+        "min": 1,
+        "max": "1",
+        "binding": {
+            "strength": "required",
+            "description": "Grado di formalità e vincolatività della richiesta di farmaco",
+            "valueSet": "https://www.hl7.org/fhir/R4/valueset-medicationrequest-intent.html"
+        }
+      },
+      {
+        "id": "MedicationRequest.medication[x]",
+        "path": "MedicationRequest.medication[x]",
+        "short": "Medicinale che deve essere preso",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Medication"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationRequest.subject",
+        "path": "MedicationRequest.subject",
+        "short": "Per chi è fatta la richiesta",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPatientCore"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationRequest.requester",
+        "path": "MedicationRequest.requester",
+        "short": "Richiedente",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPractitionerRoleCore"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationRequest.dispenseRequest.quantity",
+        "path": "MedicationRequest.dispenseRequest.quantity",
+        "short": "La quantità da dispensare richiesta in prescrizione",
+        "min": 0,
+        "max": "1"
+      }
+    ]
+  }
+}

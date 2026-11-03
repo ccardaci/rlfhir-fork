@@ -1,0 +1,144 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLDeviceImpianto",
+  "name": "RLDeviceImpianto",
+  "title": "RL Device Impianto",
+  "status": "draft",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Device",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Device",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Device",
+        "path": "Device",
+        "short": "Dispositivo impiantato",
+        "definition": "Rappresenta il dispositivo medico impiantato nell'ambito della Tessera Portatore Impianto."
+      },
+      {
+        "id": "Device.identifier",
+        "path": "Device.identifier",
+        "min": 0,
+        "max": "*",
+        "definition": "Identificativo univoco del dispositivo."
+      },
+      {
+        "id": "Device.identifier.system",
+        "path": "Device.identifier.system",
+        "min": 0,
+        "max": "1",
+        "definition": "Sistema che emette l'identificativo."
+      },
+      {
+        "id": "Device.identifier.value",
+        "path": "Device.identifier.value",
+        "min": 0,
+        "max": "1",
+        "definition": "Valore dell'identificativo del dispositivo."
+      },
+      {
+        "id": "Device.identifier.assigner",
+        "path": "Device.identifier.assigner",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Device.identifier.assigner.display",
+        "path": "Device.identifier.assigner.display",
+        "min": 0,
+        "max": "1",
+        "definition": "Nome dell'ente/sistema che ha assegnato l'identificativo."
+      },
+      {
+        "id": "Device.type",
+        "path": "Device.type",
+        "min": 0,
+        "max": "1",
+        "definition": "Tipo di dispositivo.",
+        "comment": "Da derivare dal value set definito nella Classificazione Nazionale dei Dispositivi medici (CND). Binding non ancora formalizzato nel foglio sorgente."
+      },
+      {
+        "id": "Device.type.coding.code",
+        "path": "Device.type.coding.code",
+        "min": 0,
+        "max": "1",
+        "definition": "Codice che rappresenta il tipo di dispositivo."
+      },
+      {
+        "id": "Device.type.coding.system",
+        "path": "Device.type.coding.system",
+        "min": 0,
+        "max": "1",
+        "definition": "Sistema di codifica utilizzato."
+      },
+      {
+        "id": "Device.type.coding.version",
+        "path": "Device.type.coding.version",
+        "min": 0,
+        "max": "1",
+        "definition": "Versione del sistema di codifica."
+      },
+      {
+        "id": "Device.type.coding.display",
+        "path": "Device.type.coding.display",
+        "min": 0,
+        "max": "1",
+        "definition": "Descrizione leggibile del tipo di dispositivo."
+      },
+      {
+        "id": "Device.deviceName",
+        "path": "Device.deviceName",
+        "min": 0,
+        "max": "*",
+        "definition": "Nome del dispositivo."
+      },
+      {
+        "id": "Device.lotNumber",
+        "path": "Device.lotNumber",
+        "min": 0,
+        "max": "1",
+        "definition": "Numero di lotto di produzione del dispositivo."
+      },
+      {
+        "id": "Device.owner",
+        "path": "Device.owner",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLOrganizationCore"
+            ]
+          }
+        ],
+        "definition": "Organizzazione responsabile del dispositivo."
+      },
+      {
+        "id": "Device.modelNumber",
+        "path": "Device.modelNumber",
+        "min": 0,
+        "max": "1",
+        "definition": "Numero/modello del dispositivo assegnato dal produttore."
+      },
+      {
+        "id": "Device.patient",
+        "path": "Device.patient",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPatientCore"
+            ]
+          }
+        ],
+        "definition": "Paziente su cui è impiantato il dispositivo medico."
+      }
+    ]
+  }
+}

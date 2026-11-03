@@ -1,0 +1,234 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLImmunizationVaccinazione",
+  "name": "RLImmunizationVaccinazione",
+  "title": "RL Immunization Vaccinazione",
+  "status": "draft",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Immunization",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Immunization",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Immunization",
+        "path": "Immunization",
+        "short": "Dati Vaccinazione",
+        "definition": "Rappresenta l'evento di somministrazione del vaccino."
+      },
+      {
+        "id": "Immunization.status",
+        "path": "Immunization.status",
+        "min": 1,
+        "max": "1",
+        "fixedCode": "completed",
+        "definition": "Stato dell'evento di immunizzazione - vaccinazione avvenuta."
+      },
+      {
+        "id": "Immunization.occurrence[x]",
+        "path": "Immunization.occurrence[x]",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ],
+        "definition": "Data e ora di somministrazione del vaccino."
+      },
+      {
+        "id": "Immunization.route",
+        "path": "Immunization.route",
+        "min": 0,
+        "max": "1",
+        "definition": "Via di somministrazione del vaccino.",
+        "comment": "L'attributo @code PUÒ essere valorizzato secondo il Value Set 'HL7 RouteOfAdministration'."
+      },
+      {
+        "id": "Immunization.site",
+        "path": "Immunization.site",
+        "min": 0,
+        "max": "1",
+        "definition": "Sede anatomica di somministrazione.",
+        "comment": "L'attributo @code PUÒ essere valorizzato secondo il Value Set 'ActSite'."
+      },
+      {
+        "id": "Immunization.doseQuantity",
+        "path": "Immunization.doseQuantity",
+        "min": 0,
+        "max": "1",
+        "definition": "Dose somministrata."
+      },
+      {
+        "id": "Immunization.vaccineCode",
+        "path": "Immunization.vaccineCode",
+        "min": 1,
+        "max": "1",
+        "definition": "Vaccino somministrato."
+      },
+      {
+        "id": "Immunization.vaccineCode.coding.code",
+        "path": "Immunization.vaccineCode.coding.code",
+        "min": 0,
+        "max": "1",
+        "short": "Codice identificativo del vaccino (es. CODICE AIC VACCINO)"
+      },
+      {
+        "id": "Immunization.vaccineCode.coding.system",
+        "path": "Immunization.vaccineCode.coding.system",
+        "min": 0,
+        "max": "1",
+        "fixedUri": "urn:oid:2.16.840.1.113883.2.9.6.1.5",
+        "definition": "Sistema di codifica del vaccino (tabella AIC)."
+      },
+      {
+        "id": "Immunization.vaccineCode.coding.version",
+        "path": "Immunization.vaccineCode.coding.version",
+        "min": 0,
+        "max": "1",
+        "fixedString": "AIC"
+      },
+      {
+        "id": "Immunization.vaccineCode.coding.display",
+        "path": "Immunization.vaccineCode.coding.display",
+        "min": 0,
+        "max": "1",
+        "short": "Descrizione del vaccino (es. DESCRIZIONE AIC VACCINO)"
+      },
+      {
+        "id": "Immunization.lotNumber",
+        "path": "Immunization.lotNumber",
+        "min": 0,
+        "max": "1",
+        "definition": "Numero di lotto del vaccino."
+      },
+      {
+        "id": "Immunization.manufacturer",
+        "path": "Immunization.manufacturer",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": ["https://fhir.siss.regione.lombardia.it/StructureDefinition/RLOrganizationCore"]
+          }
+        ],
+        "definition": "Produttore del vaccino."
+      },
+      {
+        "id": "Immunization.location",
+        "path": "Immunization.location",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": ["https://fhir.siss.regione.lombardia.it/StructureDefinition/RLLocationCore"]
+          }
+        ],
+        "definition": "Collocazione struttura esecuzione somministrazione."
+      },
+      {
+        "id": "Immunization.protocolApplied.doseNumber[x]",
+        "path": "Immunization.protocolApplied.doseNumber[x]",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "positiveInt"
+          }
+        ],
+        "definition": "Numero della dose somministrata."
+      },
+      {
+        "id": "Immunization.expirationDate",
+        "path": "Immunization.expirationDate",
+        "min": 0,
+        "max": "1",
+        "definition": "Periodo di copertura/prossimo appuntamento.",
+        "comment": "PUÒ essere valorizzato secondo il Value Set 'Immunization Recommendation'."
+      },
+      {
+        "id": "Immunization.reasonReference",
+        "path": "Immunization.reasonReference",
+        "min": 0,
+        "max": "*",
+        "slicing": {
+          "discriminator": [{"type": "profile", "path": "resolve()"}],
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Immunization.reasonReference:categorieRischio",
+        "path": "Immunization.reasonReference",
+        "sliceName": "categorieRischio",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": ["https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationCategorieRischio"]
+          }
+        ],
+        "definition": "Identificazione di categorie di soggetti a rischio.",
+        "comment": "Le categorie di rischio POSSONO essere valorizzate secondo la Circolare Ministeriale 31 luglio 2017; PUÒ essere considerato il ValueSet 'Allegato 3 - specifiche funzionali ANV'."
+      },
+      {
+        "id": "Immunization.reasonReference:condizioniSanitarieRischio",
+        "path": "Immunization.reasonReference",
+        "sliceName": "condizioniSanitarieRischio",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": ["https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationCondizioniSanitarieRischio"]
+          }
+        ],
+        "definition": "Evento o condizione sanitaria correlata alla vaccinazione.",
+        "comment": "Cardinalità discordante tra i due fogli sorgente (0..1 nel Certificato Vaccinale, 0..* nella Scheda Singola Vaccinazione); adottata 0..* come la più permissiva, essendo profilo condiviso."
+      },
+      {
+        "id": "Immunization.reaction",
+        "path": "Immunization.reaction",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Immunization.reaction.detail",
+        "path": "Immunization.reaction.detail",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": ["https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationReazioniAvverse"]
+          }
+        ],
+        "definition": "Descrizione delle reazioni, che sono la manifestazione al vaccino."
+      },
+      {
+        "id": "Immunization.protocolApplied.targetDisease",
+        "path": "Immunization.protocolApplied.targetDisease",
+        "min": 0,
+        "max": "*",
+        "definition": "Malattia per cui si effettua la vaccinazione."
+      },
+      {
+        "id": "Immunization.patient",
+        "path": "Immunization.patient",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": ["https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPatientCore"]
+          }
+        ],
+        "definition": "Soggetto che è stato vaccinato."
+      }
+    ]
+  }
+}

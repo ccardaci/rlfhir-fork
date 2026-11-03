@@ -1,0 +1,307 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCompositionCertificatoVaccinale",
+  "name": "RLCompositionCertificatoVaccinale",
+  "title": "RL Composition Certificato Vaccinale",
+  "status": "draft",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Composition",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Composition",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Composition",
+        "path": "Composition",
+        "short": "Certificato Vaccinale",
+        "definition": "Documento FHIR che rappresenta il Certificato Vaccinale prodotto nell'ambito SISS Regione Lombardia."
+      },
+      {
+        "id": "Composition.type",
+        "path": "Composition.type",
+        "short": "Identifica la tipologia di documento",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Composition.type.coding",
+        "path": "Composition.type.coding",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Composition.type.coding.system",
+        "path": "Composition.type.coding.system",
+        "min": 1,
+        "max": "1",
+        "fixedUri": "http://loinc.org",
+        "comment": "Fixed: LOINC (OID 2.16.840.1.113883.6.1)"
+      },
+      {
+        "id": "Composition.type.coding.version",
+        "path": "Composition.type.coding.version",
+        "min": 0,
+        "max": "1",
+        "example": [{"label": "Esempio", "valueString": "LOINC 2.19"}],
+        "comment": "La fonte riporta 'LOINC' come se fosse un valore fixed; corretto a solo esempio."
+      },
+      {
+        "id": "Composition.type.coding.code",
+        "path": "Composition.type.coding.code",
+        "min": 1,
+        "max": "1",
+        "fixedCode": "82593-5",
+        "short": "Codice locale per il tipo di documento."
+      },
+      {
+        "id": "Composition.type.coding.display",
+        "path": "Composition.type.coding.display",
+        "min": 0,
+        "max": "1",
+        "fixedString": "Immunization summary report"
+      },
+      {
+        "id": "Composition.title",
+        "path": "Composition.title",
+        "min": 1,
+        "max": "1",
+        "fixedString": "Certificato Vaccinale"
+      },
+      {
+        "id": "Composition.date",
+        "path": "Composition.date",
+        "min": 1,
+        "max": "1",
+        "definition": "Giorno e ora della creazione dell'istanza del documento.",
+        "comment": "La fonte riportava una seconda riga 'date' duplicata con la definizione di attester:legalAuthenticator.time ('quando è stato firmato'); rimossa come refuso, mantenuta solo la definizione di creazione documento."
+      },
+      {
+        "id": "Composition.subject",
+        "path": "Composition.subject",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": ["https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPatientCore"]
+          }
+        ],
+        "definition": "Codifica i dati identificativi ed anagrafici del paziente (Assistito).",
+        "comment": "Cardinalità corretta a 1..1 rispetto alla fonte (0..1)."
+      },
+      {
+        "id": "Composition.author",
+        "path": "Composition.author",
+        "min": 1,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPractitionerRoleCore",
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPractitionerCore",
+              "http://hl7.org/fhir/StructureDefinition/Device"
+            ]
+          }
+        ],
+        "definition": "Chi e/o cosa ha scritto la composizione: professionista sanitario e/o dispositivo/applicazione software che ha generato il documento.",
+        "comment": "La fonte riportava 3 righe separate per author (PractitionerRoleCore con definizione duplicata da dataEnterer, Device, PractitionerCore); unificate in un solo elemento con targetProfile multipli, coerente con RLCompositionRefertoRadiologia."
+      },
+      {
+        "id": "Composition.custodian",
+        "path": "Composition.custodian",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": ["https://fhir.siss.regione.lombardia.it/StructureDefinition/RLOrganizationCore"]
+          }
+        ],
+        "definition": "Organizzazione responsabile della conservazione dell'originale del documento, al momento della generazione."
+      },
+      {
+        "id": "Composition.attester",
+        "path": "Composition.attester",
+        "min": 1,
+        "max": "*",
+        "definition": "Professionisti che attestano la validità del documento. Se la risorsa è creata a fine documentale, uno degli attester dovrebbe essere il firmatario (chi allega la firma digitale al documento).",
+        "slicing": {
+          "discriminator": [{"type": "value", "path": "mode"}],
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Composition.attester:legalAuthenticator",
+        "path": "Composition.attester",
+        "sliceName": "legalAuthenticator",
+        "min": 0,
+        "max": "1",
+        "short": "Persona Responsabile della Vaccinazione",
+        "definition": "Rappresenta l'attore che ha legalmente autenticato il documento prodotto in locale."
+      },
+      {
+        "id": "Composition.attester:legalAuthenticator.mode",
+        "path": "Composition.attester.mode",
+        "min": 1,
+        "max": "1",
+        "fixedCode": "legal"
+      },
+      {
+        "id": "Composition.attester:legalAuthenticator.time",
+        "path": "Composition.attester.time",
+        "min": 1,
+        "max": "1",
+        "short": "Data e ora di firma",
+        "definition": "Quando è stato firmato il documento."
+      },
+      {
+        "id": "Composition.attester:legalAuthenticator.party",
+        "path": "Composition.attester.party",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": ["https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPractitionerRoleCore"]
+          }
+        ],
+        "definition": "Riferimento al firmatario."
+      },
+      {
+        "id": "Composition.encounter",
+        "path": "Composition.encounter",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": ["https://fhir.siss.regione.lombardia.it/StructureDefinition/RLEncounterCore"]
+          }
+        ],
+        "definition": "Rappresenta tutti coloro (persone od organizzazioni) che sono coinvolti nell'atto descritto."
+      },
+      {
+        "id": "Composition.extension:versionNumber",
+        "path": "Composition.extension",
+        "sliceName": "versionNumber",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": ["http://hl7.org/fhir/StructureDefinition/composition-clinicaldocument-versionNumber"]
+          }
+        ],
+        "definition": "Identificatore specifico della versione per la composizione, assegnato quando ciascuna versione viene creata o aggiornata."
+      },
+      {
+        "id": "Composition.status",
+        "path": "Composition.status",
+        "min": 1,
+        "max": "1",
+        "fixedCode": "final",
+        "definition": "Stato del documento."
+      },
+      {
+        "id": "Composition.section",
+        "path": "Composition.section",
+        "min": 1,
+        "max": "1",
+        "comment": "Cardinalità corretta a 1..1 rispetto alla fonte (0..*): il documento veicola sempre e solo questa sezione."
+      },
+      {
+        "id": "Composition.section.code",
+        "path": "Composition.section.code",
+        "min": 0,
+        "max": "1",
+        "definition": "Codice che identifica il tipo di sezione."
+      },
+      {
+        "id": "Composition.section.code.coding.system",
+        "path": "Composition.section.code.coding.system",
+        "min": 0,
+        "max": "1",
+        "fixedUri": "http://loinc.org",
+        "comment": "Fixed: LOINC (OID 2.16.840.1.113883.6.1)"
+      },
+      {
+        "id": "Composition.section.code.coding.version",
+        "path": "Composition.section.code.coding.version",
+        "min": 0,
+        "max": "1",
+        "example": [{"label": "Esempio", "valueString": "LOINC 2.19"}],
+        "comment": "La fonte riporta 'LOINC' come se fosse un valore fixed; corretto a solo esempio."
+      },
+      {
+        "id": "Composition.section.code.coding.code",
+        "path": "Composition.section.code.coding.code",
+        "min": 0,
+        "max": "1",
+        "fixedCode": "11369-6"
+      },
+      {
+        "id": "Composition.section.code.coding.display",
+        "path": "Composition.section.code.coding.display",
+        "min": 0,
+        "max": "1",
+        "fixedString": "Storia delle immunizzazioni"
+      },
+      {
+        "id": "Composition.section.title",
+        "path": "Composition.section.title",
+        "min": 1,
+        "max": "1",
+        "fixedString": "Certificato Vaccinale",
+        "comment": "La fonte riportava 'Fixed: Scheda della singola Vaccinazione' (copia-incolla dal documento Scheda Singola Vaccinazione); corretto a 'Certificato Vaccinale', coerente col valore letterale title=[\"Certificato Vaccinale\"] in tabella."
+      },
+      {
+        "id": "Composition.section.text",
+        "path": "Composition.section.text",
+        "min": 0,
+        "max": "1",
+        "definition": "Sintesi testuale della sezione."
+      },
+      {
+        "id": "Composition.section.entry",
+        "path": "Composition.section.entry",
+        "min": 0,
+        "max": "*",
+        "slicing": {
+          "discriminator": [{"type": "profile", "path": "resolve()"}],
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Composition.section.entry:datiVaccinazione",
+        "path": "Composition.section.entry",
+        "sliceName": "datiVaccinazione",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": ["https://fhir.siss.regione.lombardia.it/StructureDefinition/RLImmunizationVaccinazione"]
+          }
+        ],
+        "definition": "Riferimento ai contenuti della sezione relativo ai Dati Vaccinazione."
+      },
+      {
+        "id": "Composition.section.entry:datiEsonero",
+        "path": "Composition.section.entry",
+        "sliceName": "datiEsonero",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": ["https://fhir.siss.regione.lombardia.it/StructureDefinition/RLImmunizationEsonero"]
+          }
+        ],
+        "definition": "Riferimento ai contenuti della sezione relativo ai Dati Esonero/omissione o differimento."
+      }
+    ]
+  }
+}

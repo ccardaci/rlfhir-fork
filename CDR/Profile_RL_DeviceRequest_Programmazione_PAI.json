@@ -1,0 +1,125 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLDeviceRequestPAI",
+  "name": "RLDeviceRequestPAI",
+  "title": "DeviceRequest PAI",
+  "status": "draft",
+  "date": "2026-10-28",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "DeviceRequest",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/DeviceRequest",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "DeviceRequest",
+        "path": "DeviceRequest",
+        "short": "Richiesta di protesi o ausili"
+      },
+      {
+        "id": "DeviceRequest.extension",
+        "path": "DeviceRequest.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "DeviceRequest.extension:flagProtesica",
+        "path": "DeviceRequest.extension",
+        "sliceName": "flagProtesica",
+        "short": "Flag protesica",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLDeviceRequestFlagProtesica"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "DeviceRequest.status",
+        "path": "DeviceRequest.status",
+        "short": "Stato della richiesta",
+        "comment": "Valore da concordare. La StructureMap valorizza attualmente active.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "DeviceRequest.intent",
+        "path": "DeviceRequest.intent",
+        "short": "Scopo della richiesta",
+        "comment": "La StructureMap valorizza attualmente order.",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "DeviceRequest.code[x]",
+        "path": "DeviceRequest.code[x]",
+        "short": "Codifica ISO protesica",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "DeviceRequest.code[x].coding",
+        "path": "DeviceRequest.code[x].coding",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "DeviceRequest.code[x].coding.system",
+        "path": "DeviceRequest.code[x].coding.system",
+        "short": "Sistema di codifica",
+        "comment": "CRS-SISS (OID 2.16.840.1.113883.2.9.2.30.3.1.3.13.6.25)",
+        "min": 0,
+        "max": "1",
+        "fixedUri": "urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.13.6.25"
+      },
+      {
+        "id": "DeviceRequest.code[x].coding.code",
+        "path": "DeviceRequest.code[x].coding.code",
+        "short": "Valore del codice",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "DeviceRequest.code[x].coding.display",
+        "path": "DeviceRequest.code[x].coding.display",
+        "short": "Descrizione leggibile del codice",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "DeviceRequest.subject",
+        "path": "DeviceRequest.subject",
+        "short": "Paziente a cui si riferisce la richiesta",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPatientCore"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

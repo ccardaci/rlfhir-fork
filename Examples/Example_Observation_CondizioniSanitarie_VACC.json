@@ -1,0 +1,36 @@
+{
+    "resourceType": "Observation",
+    "meta": {
+        "profile": [
+            "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationCondizioniSanitarieRischio"
+        ]
+    },
+    "status": "final",
+    "code": {
+        "coding": [
+            {
+                "system": "http://loinc.org",
+                "version": "2.19",
+                "code": "59785-6",
+                "display": "Indicazioni per la vaccinazione"
+            }
+        ]
+    },
+    "subject": {
+        "reference": "urn:uuid:d27e91de-1863-5d21-b912-476ad4708ff7"
+    },
+    "effectivePeriod": {
+        "start": "2020-05-01"
+    },
+    "valueCodeableConcept": {
+        "coding": [
+            {
+                "system": "urn:oid:2.16.840.1.113883.6.103",
+                "version": "ICD-9CM",
+                "code": "250.00",
+                "display": "Diabete mellito senza menzione di complicanze"
+            }
+        ]
+    },
+    "id": "observation-condizione"
+}

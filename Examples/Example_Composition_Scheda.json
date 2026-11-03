@@ -1,0 +1,75 @@
+{
+    "resourceType": "Composition",
+    "id": "composition-scheda",
+    "meta": {
+        "profile": [
+            "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCompositionSchedaSingolaVaccinazione"
+        ]
+    },
+    "extension": [
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/composition-clinicaldocument-versionNumber",
+            "valueString": "1"
+        }
+    ],
+    "status": "final",
+    "type": {
+        "coding": [
+            {
+                "system": "http://loinc.org",
+                "version": "2.19",
+                "code": "87273-9",
+                "display": "Immunization note"
+            }
+        ]
+    },
+    "subject": {
+        "reference": "urn:uuid:6f890e62-462b-56d1-a233-407158ca9cb2"
+    },
+    "encounter": {
+        "reference": "urn:uuid:7b6203ff-b56f-5c01-bdf9-6f642a49288a"
+    },
+    "date": "2026-10-06T10:00:00+02:00",
+    "author": [
+        {
+            "reference": "urn:uuid:dbc2a77b-01f0-5f14-8be4-e14d680b0788"
+        }
+    ],
+    "title": "Scheda della singola Vaccinazione",
+    "attester": [
+        {
+            "mode": "legal",
+            "time": "2026-10-06T10:00:00+02:00",
+            "party": {
+                "reference": "urn:uuid:dbc2a77b-01f0-5f14-8be4-e14d680b0788"
+            }
+        }
+    ],
+    "custodian": {
+        "reference": "urn:uuid:122de8b5-f9c3-5ded-af06-854efa1f9bd2"
+    },
+    "section": [
+        {
+            "title": "Scheda della singola Vaccinazione",
+            "code": {
+                "coding": [
+                    {
+                        "system": "http://loinc.org",
+                        "version": "2.19",
+                        "code": "11369-6",
+                        "display": "Storia delle immunizzazioni"
+                    }
+                ]
+            },
+            "text": {
+                "status": "generated",
+                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Vaccinazione MPR (dose 1) somministrata il 05/10/2026. Reazione avversa segnalata: febbre.</p></div>"
+            },
+            "entry": [
+                {
+                    "reference": "urn:uuid:fe1e24c9-486a-5c62-8866-91511506b5cd"
+                }
+            ]
+        }
+    ]
+}

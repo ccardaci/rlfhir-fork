@@ -1,0 +1,61 @@
+{
+  "resourceType": "Medication",
+  "id": "Example-MedicationTerapiaConsigliata-1-RSA",
+  "meta": {
+    "lastUpdated": "2026-10-12T12:00:00+02:00",
+    "profile": [
+      "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLMedicationTerapiaConsigliataRSA"
+    ],
+    "versionId": "1"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://www.whocc.no/atc",
+        "code": "C09AA05",
+        "display": "Ramipril"
+      }
+    ],
+    "text": "Ramipril 5 mg compresse"
+  },
+  "form": {
+    "coding": [
+      {
+        "system": "http://standardterms.edqm.eu",
+        "code": "10219000",
+        "display": "Tablet"
+      }
+    ],
+    "text": "Compressa"
+  },
+  "amount": {
+    "numerator": {
+      "value": 28,
+      "unit": "compresse"
+    },
+    "denominator": {
+      "value": 1,
+      "unit": "confezione"
+    }
+  },
+  "ingredient": [
+    {
+      "itemCodeableConcept": {
+        "text": "Ramipril"
+      },
+      "isActive": true,
+      "strength": {
+        "numerator": {
+          "value": 5,
+          "unit": "mg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg"
+        },
+        "denominator": {
+          "value": 1,
+          "unit": "compressa"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLImmunizationEsonero",
+  "name": "RLImmunizationEsonero",
+  "title": "RL Immunization Esonero",
+  "status": "draft",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Immunization",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Immunization",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Immunization",
+        "path": "Immunization",
+        "short": "Dati Esonero/omissione o differimento",
+        "definition": "Rappresenta la mancata somministrazione del vaccino per esonero, omissione o differimento."
+      },
+      {
+        "id": "Immunization.status",
+        "path": "Immunization.status",
+        "min": 1,
+        "max": "1",
+        "fixedCode": "not-done",
+        "definition": "Vaccinazione non somministrata (Esonero)."
+      },
+      {
+        "id": "Immunization.occurrence[x]",
+        "path": "Immunization.occurrence[x]",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ],
+        "definition": "Data di dovuta somministrazione del vaccino.",
+        "comment": "Assunta corrispondere alla data di Esonero/Rifiuto."
+      },
+      {
+        "id": "Immunization.vaccineCode",
+        "path": "Immunization.vaccineCode",
+        "min": 1,
+        "max": "1",
+        "definition": "Vaccino che doveva essere somministrato."
+      },
+      {
+        "id": "Immunization.vaccineCode.coding.code",
+        "path": "Immunization.vaccineCode.coding.code",
+        "min": 0,
+        "max": "1",
+        "short": "Codice identificativo del vaccino (es. COD AIC VACC)"
+      },
+      {
+        "id": "Immunization.vaccineCode.coding.system",
+        "path": "Immunization.vaccineCode.coding.system",
+        "min": 0,
+        "max": "1",
+        "fixedUri": "urn:oid:2.16.840.1.113883.2.9.6.1.5",
+        "definition": "Sistema di codifica del vaccino (tabella AIC)."
+      },
+      {
+        "id": "Immunization.vaccineCode.coding.version",
+        "path": "Immunization.vaccineCode.coding.version",
+        "min": 0,
+        "max": "1",
+        "fixedString": "AIC"
+      },
+      {
+        "id": "Immunization.vaccineCode.coding.display",
+        "path": "Immunization.vaccineCode.coding.display",
+        "min": 0,
+        "max": "1",
+        "short": "Descrizione del vaccino (es. COD ATC VACC)"
+      },
+      {
+        "id": "Immunization.location",
+        "path": "Immunization.location",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": ["https://fhir.siss.regione.lombardia.it/StructureDefinition/RLLocationCore"]
+          }
+        ],
+        "definition": "Struttura dove doveva essere eseguita la somministrazione."
+      },
+      {
+        "id": "Immunization.protocolApplied.doseNumber[x]",
+        "path": "Immunization.protocolApplied.doseNumber[x]",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "positiveInt"
+          }
+        ],
+        "definition": "Numero della dose che non è stata somministrata."
+      },
+      {
+        "id": "Immunization.statusReason",
+        "path": "Immunization.statusReason",
+        "min": 0,
+        "max": "1",
+        "definition": "Ragione esonero/omissione o differimento."
+      },
+      {
+        "id": "Immunization.protocolApplied.targetDisease",
+        "path": "Immunization.protocolApplied.targetDisease",
+        "min": 0,
+        "max": "*",
+        "definition": "Malattia della vaccinazione."
+      },
+      {
+        "id": "Immunization.patient",
+        "path": "Immunization.patient",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": ["https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPatientCore"]
+          }
+        ],
+        "definition": "Soggetto che avrebbe dovuto essere vaccinato."
+      }
+    ]
+  }
+}

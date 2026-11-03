@@ -1,0 +1,42 @@
+{
+  "resourceType": "Observation",
+  "id": "Example-ObservationPrestazioni-1-RSA",
+  "meta": {
+    "lastUpdated": "2026-10-08T13:00:00+02:00",
+    "profile": [
+      "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationPrestazioniRSA"
+    ],
+    "versionId": "1"
+  },
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.2.9.2.30.6.11",
+        "version": "Nomenclatore Tariffario Regionale",
+        "code": "89.52",
+        "display": "ELETTROCARDIOGRAMMA"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/a1b2c3d4-1234-5678-9abc-def012345678",
+    "display": "Mario Rossi"
+  },
+  "encounter": {
+    "reference": "Encounter/7a8b9c0d-1e2f-4a3b-8c4d-5e6f7a8b9c0d",
+    "display": "Visita ambulatoriale n. 2026-AMB-004512"
+  },
+  "note": [
+    {
+      "text": "Registrazione eseguita a riposo, in posizione supina, senza artefatti."
+    }
+  ],
+  "method": {
+    "text": "Elettrocardiogramma a 12 derivazioni"
+  },
+  "device": {
+    "reference": "Device/8c9d0e1f-2a3b-4c4d-9e5f-6a7b8c9d0e1f",
+    "display": "Elettrocardiografo a 12 canali"
+  }
+}

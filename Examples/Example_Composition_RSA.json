@@ -1,0 +1,364 @@
+{
+  "resourceType": "Composition",
+  "id": "Example-Composition-1-RSA",
+  "meta": {
+    "lastUpdated": "2026-10-07T11:00:00+02:00",
+    "profile": [
+      "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCompositionRSA"
+    ],
+    "versionId": "1"
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/composition-clinicaldocument-versionNumber",
+      "valueString": "1"
+    },
+    {
+      "url": "http://hl7.eu/fhir/laboratory/StructureDefinition/composition-basedOn-order-or-requisition",
+      "valueReference": {
+        "reference": "ServiceRequest/5e6f7a8b-9c0d-4e1f-8a2b-3c4d5e6f7a8b",
+        "display": "Ricetta 030A01234567890 - Visita cardiologica"
+      }
+    }
+  ],
+  "status": "final",
+  "type": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "11488-4",
+        "display": "Nota di consulto"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/a1b2c3d4-1234-5678-9abc-def012345678",
+    "display": "Mario Rossi"
+  },
+  "encounter": {
+    "reference": "Encounter/7a8b9c0d-1e2f-4a3b-8c4d-5e6f7a8b9c0d",
+    "display": "Visita ambulatoriale n. 2026-AMB-004512"
+  },
+  "date": "2026-10-06T10:15:00+02:00",
+  "author": [
+    {
+      "reference": "PractitionerRole/3c4d5e6f-7a8b-4c9d-8e0f-1a2b3c4d5e6f",
+      "display": "Paolo Conti - Cardiologo"
+    }
+  ],
+  "title": "Referto di Specialistica Ambulatoriale",
+  "attester": [
+    {
+      "mode": "legal",
+      "time": "2026-10-06T10:20:00+02:00",
+      "party": {
+        "reference": "PractitionerRole/3c4d5e6f-7a8b-4c9d-8e0f-1a2b3c4d5e6f",
+        "display": "Paolo Conti - Cardiologo"
+      }
+    }
+  ],
+  "custodian": {
+    "reference": "Organization/6f7a8b9c-0d1e-4f2a-8b3c-4d5e6f7a8b9c",
+    "display": "ASST Esempio"
+  },
+  "event": [
+    {
+      "detail": [
+        {
+          "reference": "PractitionerRole/3c4d5e6f-7a8b-4c9d-8e0f-1a2b3c4d5e6f",
+          "display": "Paolo Conti - Cardiologo"
+        }
+      ]
+    }
+  ],
+  "section": [
+    {
+      "title": "Storia Clinica",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "11329-0",
+            "display": "Storia Generale"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Ipertensione arteriosa in trattamento da 5 anni. Padre con cardiopatia ischemica.</p></div>"
+      },
+      "entry": [
+        {
+          "reference": "Observation/Example-ObservationStoriaClinica-1-RSA",
+          "display": "Ipertensione arteriosa"
+        },
+        {
+          "reference": "FamilyMemberHistory/Example-FamilyMemberHistory-1-RSA",
+          "display": "Padre: cardiopatia ischemica"
+        }
+      ],
+      "section": [
+        {
+          "title": "Allergie e/o reazioni avverse",
+          "code": {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "48765-2",
+                "display": "Allergie e/o reazioni avverse"
+              }
+            ]
+          },
+          "text": {
+            "status": "generated",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Nessuna allergia nota.</p></div>"
+          },
+          "entry": [
+            {
+              "reference": "AllergyIntolerance/Example-AllergyIntolerance-1-RSA",
+              "display": "Nessuna allergia nota"
+            }
+          ]
+        },
+        {
+          "title": "Terapia Farmacologica in Atto",
+          "code": {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "10160-0",
+                "display": "History of Medication use Narrative"
+              }
+            ]
+          },
+          "text": {
+            "status": "generated",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Ramipril 5 mg 1 compressa al giorno.</p></div>"
+          },
+          "entry": [
+            {
+              "reference": "MedicationStatement/Example-MedicationStatement-1-RSA",
+              "display": "Ramipril 5 mg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Quesito Diagnostico",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "29299-5",
+            "display": "Motivo della visita"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Controllo cardiologico in paziente iperteso con episodi di cardiopalmo.</p></div>"
+      },
+      "entry": [
+        {
+          "reference": "Observation/Example-ObservationQuesitoDiagnostico-1-RSA",
+          "display": "Cardiopalmo in paziente iperteso"
+        }
+      ]
+    },
+    {
+      "title": "Precedenti Esami Eseguiti",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "30954-2",
+            "display": "Test diagnostici e/o dati di laboratorio rilevanti"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>ECG del 12/03/2026: ritmo sinusale, nei limiti.</p></div>"
+      },
+      "entry": [
+        {
+          "reference": "Observation/Example-ObservationPrecedentiEsamiEseguiti-1-RSA",
+          "display": "ECG del 12/03/2026"
+        }
+      ]
+    },
+    {
+      "title": "Esame Obiettivo",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "29545-1",
+            "display": "Osservazioni fisiche"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>PA 140/85 mmHg, FC 78 bpm ritmica. Toni cardiaci validi, pause libere. Murmure vescicolare conservato.</p></div>"
+      }
+    },
+    {
+      "title": "Prestazioni",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "62387-6",
+            "display": "Interventi"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Visita cardiologica di controllo ed elettrocardiogramma a 12 derivazioni.</p></div>"
+      },
+      "entry": [
+        {
+          "reference": "Procedure/Example-ProcedurePrestazioni-1-RSA",
+          "display": "Visita cardiologica di controllo"
+        },
+        {
+          "reference": "Procedure/Example-ProcedurePrestazioni-2-RSA",
+          "display": "Elettrocardiogramma"
+        }
+      ]
+    },
+    {
+      "title": "Confronto con Precedenti Esami Eseguiti",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "93126-1",
+            "display": "Confronto con Precedenti Esami Eseguiti"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Quadro elettrocardiografico sovrapponibile al precedente del 12/03/2026.</p></div>"
+      }
+    },
+    {
+      "title": "Referto",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "47045-0",
+            "display": "Referto"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>ECG: ritmo sinusale a 78 bpm, PR e QTc nei limiti, non alterazioni della ripolarizzazione. Non aritmie nel corso della registrazione.</p></div>"
+      }
+    },
+    {
+      "title": "Diagnosi",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "29548-5",
+            "display": "Diagnosi"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Ipertensione arteriosa essenziale in discreto compenso. Cardiopalmo di probabile natura extrasistolica.</p></div>"
+      },
+      "entry": [
+        {
+          "reference": "Observation/Example-ObservationDiagnosi-1-RSA",
+          "display": "Ipertensione arteriosa essenziale"
+        }
+      ]
+    },
+    {
+      "title": "Conclusioni",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "55110-1",
+            "display": "Conclusioni"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Quadro cardiologico stabile. Si consiglia monitoraggio Holter ECG delle 24 ore.</p></div>"
+      }
+    },
+    {
+      "title": "Suggerimenti per il Medico Prescrittore",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "62385-0",
+            "display": "Raccomandazioni"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Proseguire la terapia antipertensiva in atto, controllo pressorio domiciliare.</p></div>"
+      }
+    },
+    {
+      "title": "Accertamenti e Controlli Consigliati",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "80615-8",
+            "display": "Follow-up Consigliato"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Holter ECG delle 24 ore entro 30 giorni. Visita cardiologica di controllo tra 6 mesi.</p></div>"
+      },
+      "entry": [
+        {
+          "reference": "Observation/Example-ObservationAccertamentiControlliConsigliati-1-RSA",
+          "display": "Holter ECG 24 ore"
+        }
+      ]
+    },
+    {
+      "title": "Terapia farmacologica Consigliata",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "93341-6",
+            "display": "Farmaci Consigliati"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Ramipril 5 mg 1 compressa al giorno, invariato.</p></div>"
+      },
+      "entry": [
+        {
+          "reference": "MedicationRequest/Example-MedicationRequestTerapiaFarmacologicaConsigliata-1-RSA",
+          "display": "Ramipril 5 mg"
+        }
+      ]
+    }
+  ]
+}

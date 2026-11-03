@@ -721,6 +721,32 @@
           </td>
         </tr>
         <tr>
+          <td>PIC</td>
+          <td>
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLBundleMMGPortal.page.md}}
+          </td>
+          <td>
+            <a href="http://hl7.org/fhir/R4/bundle.html">Bundle</a>
+          </td>
+          <td>Profilo volto a descrivere il contenuto del Bundle inviato dal Portale MMG a SGDT.</td>
+          <td>
+            {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLBundleMMGPortal}}
+          </td>
+        </tr>
+        <tr>
+          <td>PIC</td>
+          <td>
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLBundleRispostaMMGPortal.page.md}}
+          </td>
+          <td>
+            <a href="http://hl7.org/fhir/R4/bundle.html">Bundle</a>
+          </td>
+          <td>Profilo volto a descrivere il contenuto del Bundle di risposta inviato da SGDT al Portale MMG.</td>
+          <td>
+            {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLBundleRispostaMMGPortal}}
+          </td>
+        </tr>
+        <tr>
           <td>NEA</td>
           <td>
             {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLOperationOutcomeNEA.page.md}}

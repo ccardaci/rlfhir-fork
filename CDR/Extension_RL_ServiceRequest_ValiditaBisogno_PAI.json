@@ -1,0 +1,51 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLServiceRequestValiditaBisogno",
+  "name": "RLServiceRequestValiditaBisogno",
+  "title": "Validità Bisogno",
+  "status": "draft",
+  "date": "2026-10-28",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "ServiceRequest"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Validità del bisogno",
+        "definition": "Validità del bisogno (Piano Assistenziale Individuale)."
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLServiceRequestValiditaBisogno"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "short": "Validità del bisogno",
+        "min": 1,
+        "type": [
+          {
+            "code": "Duration"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "resourceType": "Medication",
+  "id": "Example-Medication-1-PAI",
+  "meta": {
+    "lastUpdated": "2026-10-27T09:30:00+01:00",
+    "profile": [
+      "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLMedicationPAI"
+    ],
+    "versionId": "1"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://www.whocc.no/atc",
+        "code": "C09AA05",
+        "display": "Ramipril"
+      }
+    ],
+    "text": "Ramipril 5 mg compresse"
+  }
+}

@@ -57,7 +57,7 @@
         "path": "Questionnaire.title",
         "short": "Nome della valutazione",
         "definition": "Stringa alfanumerica al più di 50 caratteri",
-        "comment": "Le valutazioni previste attualmente sono: \r\n- Scheda Triage \r\n- Scheda semplificata SIAD\r\n- InterRAI HomeCare",
+        "comment": "Le valutazioni previste attualmente sono:\n- Scheda Triage\n- Scheda semplificata SIAD\n- InterRAI HomeCare\n- Scheda di dimissioni protette",
         "min": 1
       },
       {

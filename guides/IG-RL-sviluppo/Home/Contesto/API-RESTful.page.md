@@ -30,7 +30,10 @@ dove:
 - <nome_host_Ente>: alias corrispondente all’indirizzo IP dell’Ente definito sul canale protetto; la risoluzione dell’alias è inserita nel DNS di ARIAspa
 - <contesto_FHIR>: fhir per la Produzione reale; fhirtest per la Produzione virtuale, da utilizzare per i test delle integrazioni propedeutici all’avvio in produzione
 - <codice_Cudes_L1>: codice L1 dell’Ente Erogatore, al quale è collegato il canale protetto
-- <tipologia_servizio_sociosanitario>: nome della tipologia del servizio sociosanitario offerto dall'erogatore, ad esempio _erogazione-adi_.
+- <tipologia_servizio_sociosanitario>: nome della tipologia del servizio sociosanitario offerto dall'erogatore. L’elenco delle tipologie al momento disponibili comprende:
+        - `erogazione-adi`
+
+Esempio: `https://fhir.hcmanager.it/fhir/732553/v1.0.0/erogazione-adi`
 
 L'elenco delle API esposte è:
 

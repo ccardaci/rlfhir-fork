@@ -1,0 +1,23 @@
+{
+  "resourceType": "MedicationAdministration",
+  "id": "Example-MedicationAdministrationTerapiaConsigliata-1-RSA",
+  "meta": {
+    "lastUpdated": "2026-10-12T11:00:00+02:00",
+    "profile": [
+      "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLMedicationAdministrationTerapiaConsigliataRSA"
+    ],
+    "versionId": "1"
+  },
+  "status": "completed",
+  "medicationReference": {
+    "reference": "Medication/9d0e1f2a-3b4c-4d5e-8f6a-7b8c9d0e1f2a",
+    "display": "Ramipril 5 mg compresse"
+  },
+  "subject": {
+    "reference": "Patient/a1b2c3d4-1234-5678-9abc-def012345678",
+    "display": "Mario Rossi"
+  },
+  "effectivePeriod": {
+    "start": "2026-10-06"
+  }
+}

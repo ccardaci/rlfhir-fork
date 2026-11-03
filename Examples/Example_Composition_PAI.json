@@ -1,0 +1,297 @@
+{
+  "resourceType": "Composition",
+  "id": "Example-Composition-1-PAI",
+  "meta": {
+    "lastUpdated": "2026-10-27T10:00:00+01:00",
+    "profile": [
+      "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCompositionPAI"
+    ],
+    "versionId": "1"
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/composition-clinicaldocument-versionNumber",
+      "valueString": "1"
+    }
+  ],
+  "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:uuid:4b5c6d7e-8f9a-4b0c-9d1e-2f3a4b5c6d7e"
+  },
+  "status": "final",
+  "type": {
+    "coding": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.2.9.2.30.3.1.6.10",
+        "version": "CRS-SISS",
+        "code": "31",
+        "display": "PIANO ASSISTENZIALE INDIVIDUALE"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/a1b2c3d4-1234-5678-9abc-def012345678",
+    "display": "Mario Rossi"
+  },
+  "encounter": {
+    "reference": "Encounter/9f0a1b2c-3d4e-4f5a-8b6c-7d8e9f0a1b2c",
+    "display": "Presa in carico paziente cronico n. 2026-PIC-000873"
+  },
+  "date": "2026-10-27T09:30:00+01:00",
+  "author": [
+    {
+      "reference": "PractitionerRole/8e9f0a1b-2c3d-4e4f-9a5b-6c7d8e9f0a1b",
+      "display": "Giulia Ferri - Medico di Medicina Generale"
+    }
+  ],
+  "title": "PIANO ASSISTENZIALE INDIVIDUALE",
+  "confidentiality": "N",
+  "attester": [
+    {
+      "mode": "legal",
+      "time": "2026-10-27T09:45:00+01:00",
+      "party": {
+        "reference": "PractitionerRole/8e9f0a1b-2c3d-4e4f-9a5b-6c7d8e9f0a1b",
+        "display": "Giulia Ferri - Medico di Medicina Generale"
+      }
+    }
+  ],
+  "custodian": {
+    "reference": "Organization/6f7a8b9c-0d1e-4f2a-8b3c-4d5e6f7a8b9c",
+    "display": "ASST Esempio"
+  },
+  "section": [
+    {
+      "title": "Attributi di sistema",
+      "code": {
+        "coding": [
+          {
+            "system": "urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.13.6.1",
+            "code": "1",
+            "display": "Attributi di sistema"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Prima compilazione: 27/10/2026. Validità del piano: dal 27/10/2026 al 26/10/2027.</p></div>"
+      },
+      "entry": [
+        {
+          "reference": "CarePlan/Example-CarePlan-1-PAI",
+          "display": "Piano Assistenziale Individuale"
+        }
+      ]
+    },
+    {
+      "title": "Obiettivo presa in carico",
+      "code": {
+        "coding": [
+          {
+            "system": "urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.13.6.1",
+            "code": "9",
+            "display": "Obiettivo presa in carico"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Controllo dei valori pressori e prevenzione delle complicanze cardiovascolari.</p></div>"
+      },
+      "entry": [
+        {
+          "reference": "CarePlan/Example-CarePlan-1-PAI",
+          "display": "Piano Assistenziale Individuale"
+        }
+      ]
+    },
+    {
+      "title": "Presa in carico",
+      "code": {
+        "coding": [
+          {
+            "system": "urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.13.6.1",
+            "code": "2",
+            "display": "Presa in carico"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Presa in carico per patologia cronica: ipertensione arteriosa essenziale, livello di complessità medio.</p></div>"
+      },
+      "entry": [
+        {
+          "reference": "Encounter/9f0a1b2c-3d4e-4f5a-8b6c-7d8e9f0a1b2c",
+          "display": "Presa in carico paziente cronico n. 2026-PIC-000873"
+        },
+        {
+          "reference": "ChargeItem/Example-ChargeItem-1-PAI",
+          "display": "Ambito di cura: cronicità"
+        }
+      ]
+    },
+    {
+      "title": "Anamnesi Fisiologica e Stili di Vita",
+      "code": {
+        "coding": [
+          {
+            "system": "urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.13.6.1",
+            "code": "3",
+            "display": "Anamnesi Fisiologica e Stili di Vita"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Ex fumatore dal 2018. Attività fisica moderata.</p></div>"
+      },
+      "entry": [
+        {
+          "reference": "Observation/Example-ObservationStileDiVita-1-PAI",
+          "display": "Fumo: ex fumatore"
+        }
+      ]
+    },
+    {
+      "title": "Allergie",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "48765-2",
+            "display": "Allergie"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Allergia alla penicillina.</p></div>"
+      },
+      "entry": [
+        {
+          "reference": "AllergyIntolerance/Example-AllergyIntolerance-1-PAI",
+          "display": "Allergia alla penicillina"
+        }
+      ]
+    },
+    {
+      "title": "Programmazione Clinico Assistenziale",
+      "code": {
+        "coding": [
+          {
+            "system": "urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.13.6.1",
+            "code": "4",
+            "display": "Programmazione Clinico Assistenziale"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Visita cardiologica di controllo con ECG una volta l'anno. Terapia: Ramipril 5 mg, 1 compressa al mattino.</p></div>"
+      },
+      "entry": [
+        {
+          "reference": "ServiceRequest/Example-ServiceRequest-1-PAI",
+          "display": "Visita cardiologica di controllo"
+        },
+        {
+          "reference": "MedicationRequest/Example-MedicationRequest-1-PAI",
+          "display": "Ramipril 5 mg compresse"
+        }
+      ]
+    },
+    {
+      "title": "Raccomandazioni Cliniche",
+      "code": {
+        "coding": [
+          {
+            "system": "urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.13.6.1",
+            "code": "5",
+            "display": "Raccomandazioni Cliniche"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Ridurre il consumo di sale e misurare la pressione a domicilio due volte a settimana.</p></div>"
+      },
+      "entry": [
+        {
+          "reference": "CarePlan/Example-CarePlan-1-PAI",
+          "display": "Piano Assistenziale Individuale"
+        },
+        {
+          "reference": "Observation/Example-ObservationRaccomandazione-1-PAI",
+          "display": "Riduzione del consumo di sale"
+        }
+      ]
+    },
+    {
+      "title": "Motivo Esenzione dal co-pagamento",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "57827-8",
+            "display": "Motivo Esenzione dal co-pagamento"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Esenzione per patologia cronica: ipertensione arteriosa.</p></div>"
+      },
+      "entry": [
+        {
+          "reference": "Coverage/Example-Coverage-1-PAI",
+          "display": "Esenzione per ipertensione arteriosa"
+        }
+      ]
+    },
+    {
+      "title": "Reti di Patologia",
+      "code": {
+        "coding": [
+          {
+            "system": "urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.13.6.1",
+            "code": "6",
+            "display": "Reti di Patologia"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Paziente inserito nella rete per le patologie cardiovascolari.</p></div>"
+      },
+      "entry": [
+        {
+          "reference": "OrganizationAffiliation/Example-OrganizationAffiliation-1-PAI",
+          "display": "Rete cardiovascolare"
+        }
+      ]
+    },
+    {
+      "title": "Intestazione Programmazione Clinico Assistenziale",
+      "code": {
+        "coding": [
+          {
+            "system": "urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.13.6.1",
+            "code": "7",
+            "display": "Intestazione Programmazione Clinico Assistenziale"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Programmazione annuale dei controlli per il paziente iperteso.</p></div>"
+      },
+      "entry": [
+        {
+          "reference": "CarePlan/Example-CarePlan-1-PAI",
+          "display": "Piano Assistenziale Individuale"
+        }
+      ]
+    }
+  ]
+}

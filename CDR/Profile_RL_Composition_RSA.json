@@ -1,0 +1,1458 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCompositionRSA",
+  "name": "RLCompositionRSA",
+  "title": "Composition RSA",
+  "status": "draft",
+  "date": "2026-10-07",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Composition",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Composition",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Composition",
+        "path": "Composition",
+        "short": "Referto di Specialistica Ambulatoriale"
+      },
+      {
+        "id": "Composition.extension",
+        "path": "Composition.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Composition.extension:dataEnterer",
+        "path": "Composition.extension",
+        "sliceName": "dataEnterer",
+        "short": "Persona o dispositivo che trasforma un testo dettato nel documento FHIR",
+        "comment": "Fare riferimento a: http://hl7.it/fhir/StructureDefinition/composition-dataenterer-it (riferimento a PractitionerRoleCore)",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.it/fhir/StructureDefinition/composition-dataenterer-it"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.extension:versionNumber",
+        "path": "Composition.extension",
+        "sliceName": "versionNumber",
+        "short": "Identificatore specifico della versione per la composizione, assegnato quando ciascuna versione viene creata o aggiornata",
+        "comment": "Fare riferimento a: http://hl7.org/fhir/StructureDefinition/composition-clinicaldocument-versionNumber",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/composition-clinicaldocument-versionNumber"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.extension:basedOn",
+        "path": "Composition.extension",
+        "sliceName": "basedOn",
+        "short": "Richiesta che ha determinato la produzione del documento",
+        "comment": "Numero ricetta medica, Codice CUP, Codici identificazione oggetti correlati. L'extension referenzia la ServiceRequestCore, seguendo l'esempio del Referto di Laboratorio; il Medico Prescrittore è rappresentato in ServiceRequest.requester (Reference(PractitionerRoleCore)).",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.eu/fhir/laboratory/StructureDefinition/composition-basedOn-order-or-requisition"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.status",
+        "path": "Composition.status",
+        "short": "Stato del documento",
+        "min": 1,
+        "max": "1",
+        "fixedCode": "final"
+      },
+      {
+        "id": "Composition.type",
+        "path": "Composition.type",
+        "short": "Identifica la tipologia di documento a cui il documento si riferisce",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Composition.type.coding",
+        "path": "Composition.type.coding",
+        "min": 1,
+        "max": "*"
+      },
+      {
+        "id": "Composition.type.coding.system",
+        "path": "Composition.type.coding.system",
+        "short": "Sistema di codifica",
+        "comment": "LOINC (OID 2.16.840.1.113883.6.1)",
+        "min": 0,
+        "max": "1",
+        "fixedUri": "http://loinc.org"
+      },
+      {
+        "id": "Composition.type.coding.version",
+        "path": "Composition.type.coding.version",
+        "short": "Versione del sistema di codifica",
+        "comment": "Es. LOINC 2.19",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Composition.type.coding.code",
+        "path": "Composition.type.coding.code",
+        "short": "Codice locale per il tipo di documento",
+        "min": 0,
+        "max": "1",
+        "fixedCode": "11488-4"
+      },
+      {
+        "id": "Composition.type.coding.display",
+        "path": "Composition.type.coding.display",
+        "short": "Descrizione leggibile del sistema locale",
+        "min": 0,
+        "max": "1",
+        "fixedString": "Nota di consulto"
+      },
+      {
+        "id": "Composition.subject",
+        "path": "Composition.subject",
+        "short": "Codifica i dati identificativi ed anagrafici del paziente",
+        "comment": "Assistito",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPatientCore"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.encounter",
+        "path": "Composition.encounter",
+        "short": "Rappresenta coloro coinvolti nell'atto descritto",
+        "comment": "Codice nosologico, Tecnico. Il codice e la descrizione dell'unità operativa (Provenienza) vanno rappresentati in Encounter.location.location (LocationCore); il codice e la descrizione del presidio in Location.managingOrganization (OrganizationCore).",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLEncounterCore"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.date",
+        "path": "Composition.date",
+        "short": "Giorno e ora della creazione dell'istanza del documento",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Composition.author",
+        "path": "Composition.author",
+        "short": "Autore del documento (Medico Refertante e/o dispositivo/applicazione software che ha generato il documento)",
+        "comment": "Medico Refertante: PractitionerRoleCore o PractitionerCore. Device: dispositivo e/o applicazione software che ha generato il documento.",
+        "min": 1,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPractitionerRoleCore",
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPractitionerCore",
+              "http://hl7.org/fhir/StructureDefinition/Device"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.title",
+        "path": "Composition.title",
+        "short": "L'elemento title specifica il titolo del documento",
+        "min": 1,
+        "max": "1",
+        "fixedString": "Referto di Specialistica Ambulatoriale"
+      },
+      {
+        "id": "Composition.attester",
+        "path": "Composition.attester",
+        "short": "Professionisti che attestano la validità del documento",
+        "comment": "Se la risorsa è creata a fine documentale uno degli attester dovrebbe essere il firmatario, ovvero chi allega la firma digitale al documento.",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "mode"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "max": "*"
+      },
+      {
+        "id": "Composition.attester:legalAuthenticator",
+        "path": "Composition.attester",
+        "sliceName": "legalAuthenticator",
+        "short": "Firmatario del documento FHIR",
+        "comment": "Medico Firmatario",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Composition.attester:legalAuthenticator.mode",
+        "path": "Composition.attester.mode",
+        "short": "Identificazione del firmatario tra gli attester FHIR",
+        "min": 1,
+        "max": "1",
+        "fixedCode": "legal"
+      },
+      {
+        "id": "Composition.attester:legalAuthenticator.time",
+        "path": "Composition.attester.time",
+        "short": "Quando è stato firmato il documento",
+        "comment": "Data e ora di firma",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Composition.attester:legalAuthenticator.party",
+        "path": "Composition.attester.party",
+        "short": "Riferimento al firmatario",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPractitionerRoleCore",
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPractitionerCore"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.custodian",
+        "path": "Composition.custodian",
+        "short": "Organizzazione responsabile della conservazione dell'originale del documento, al momento della generazione",
+        "comment": "Azienda Sanitaria: codice e descrizione azienda sanitaria",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLOrganizationCore"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.event",
+        "path": "Composition.event",
+        "short": "La prestazione specialistica documentata",
+        "comment": "Tipologia di accesso",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Composition.event.detail",
+        "path": "Composition.event.detail",
+        "short": "Soggetto che effettua il serviceEvent",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPractitionerRoleCore"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.section",
+        "path": "Composition.section",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "code"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Composition.section:storiaClinica",
+        "path": "Composition.section",
+        "sliceName": "storiaClinica",
+        "short": "Storia Clinica",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Composition.section:storiaClinica.title",
+        "path": "Composition.section.title",
+        "short": "Titolo della sezione",
+        "min": 0,
+        "max": "1",
+        "fixedString": "Storia Clinica"
+      },
+      {
+        "id": "Composition.section:storiaClinica.code",
+        "path": "Composition.section.code",
+        "short": "Codice che identifica il tipo di sezione",
+        "min": 0,
+        "max": "1",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "11329-0"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Composition.section:storiaClinica.code.coding.system",
+        "path": "Composition.section.code.coding.system",
+        "short": "Sistema di codifica",
+        "comment": "LOINC (OID 2.16.840.1.113883.6.1)",
+        "min": 0,
+        "max": "1",
+        "fixedUri": "http://loinc.org"
+      },
+      {
+        "id": "Composition.section:storiaClinica.code.coding.version",
+        "path": "Composition.section.code.coding.version",
+        "short": "Versione del sistema di codifica",
+        "comment": "Es. LOINC 2.19",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Composition.section:storiaClinica.code.coding.code",
+        "path": "Composition.section.code.coding.code",
+        "short": "Valore del codice",
+        "min": 0,
+        "max": "1",
+        "fixedCode": "11329-0"
+      },
+      {
+        "id": "Composition.section:storiaClinica.code.coding.display",
+        "path": "Composition.section.code.coding.display",
+        "short": "Descrizione leggibile del codice",
+        "min": 0,
+        "max": "1",
+        "fixedString": "Storia Generale"
+      },
+      {
+        "id": "Composition.section:storiaClinica.text",
+        "path": "Composition.section.text",
+        "short": "Sintesi testuale della sezione",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Composition.section:storiaClinica.entry",
+        "path": "Composition.section.entry",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "profile",
+              "path": "resolve()"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 0
+      },
+      {
+        "id": "Composition.section:storiaClinica.entry:observation",
+        "path": "Composition.section.entry",
+        "sliceName": "observation",
+        "short": "Storia clinica",
+        "min": 0,
+        "max": "2",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationStoriaClinica"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.section:storiaClinica.entry:familyMemberHistory",
+        "path": "Composition.section.entry",
+        "sliceName": "familyMemberHistory",
+        "short": "Anamnesi familiare",
+        "min": 0,
+        "max": "2",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLFamilyMemberHistoryCore"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.section:storiaClinica.section",
+        "path": "Composition.section.section",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "code"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Composition.section:storiaClinica.section:allergie",
+        "path": "Composition.section.section",
+        "sliceName": "allergie",
+        "short": "Allergie",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Composition.section:storiaClinica.section:allergie.title",
+        "path": "Composition.section.section.title",
+        "short": "Titolo della sezione",
+        "min": 0,
+        "max": "1",
+        "fixedString": "Allergie e/o reazioni avverse"
+      },
+      {
+        "id": "Composition.section:storiaClinica.section:allergie.code",
+        "path": "Composition.section.section.code",
+        "short": "Codice che identifica il tipo di sezione",
+        "min": 0,
+        "max": "1",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "48765-2"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Composition.section:storiaClinica.section:allergie.code.coding.system",
+        "path": "Composition.section.section.code.coding.system",
+        "short": "Sistema di codifica",
+        "comment": "LOINC (OID 2.16.840.1.113883.6.1)",
+        "min": 0,
+        "max": "1",
+        "fixedUri": "http://loinc.org"
+      },
+      {
+        "id": "Composition.section:storiaClinica.section:allergie.code.coding.version",
+        "path": "Composition.section.section.code.coding.version",
+        "short": "Versione del sistema di codifica",
+        "comment": "Es. LOINC 2.19",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Composition.section:storiaClinica.section:allergie.code.coding.code",
+        "path": "Composition.section.section.code.coding.code",
+        "short": "Valore del codice",
+        "min": 0,
+        "max": "1",
+        "fixedCode": "48765-2"
+      },
+      {
+        "id": "Composition.section:storiaClinica.section:allergie.code.coding.display",
+        "path": "Composition.section.section.code.coding.display",
+        "short": "Descrizione leggibile del codice",
+        "min": 0,
+        "max": "1",
+        "fixedString": "Allergie e/o reazioni avverse"
+      },
+      {
+        "id": "Composition.section:storiaClinica.section:allergie.entry",
+        "path": "Composition.section.section.entry",
+        "short": "Allergie e/o reazioni avverse",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLAllergyIntoleranceCore"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.section:storiaClinica.section:terapiaInAtto",
+        "path": "Composition.section.section",
+        "sliceName": "terapiaInAtto",
+        "short": "Terapia farmacologica in atto",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Composition.section:storiaClinica.section:terapiaInAtto.title",
+        "path": "Composition.section.section.title",
+        "short": "Titolo della sezione",
+        "min": 0,
+        "max": "1",
+        "fixedString": "Terapia Farmacologica in Atto"
+      },
+      {
+        "id": "Composition.section:storiaClinica.section:terapiaInAtto.code",
+        "path": "Composition.section.section.code",
+        "short": "Codice che identifica il tipo di sezione",
+        "min": 0,
+        "max": "1",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "10160-0"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Composition.section:storiaClinica.section:terapiaInAtto.code.coding.system",
+        "path": "Composition.section.section.code.coding.system",
+        "short": "Sistema di codifica",
+        "comment": "LOINC (OID 2.16.840.1.113883.6.1)",
+        "min": 0,
+        "max": "1",
+        "fixedUri": "http://loinc.org"
+      },
+      {
+        "id": "Composition.section:storiaClinica.section:terapiaInAtto.code.coding.version",
+        "path": "Composition.section.section.code.coding.version",
+        "short": "Versione del sistema di codifica",
+        "comment": "Es. LOINC 2.19",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Composition.section:storiaClinica.section:terapiaInAtto.code.coding.code",
+        "path": "Composition.section.section.code.coding.code",
+        "short": "Valore del codice",
+        "min": 0,
+        "max": "1",
+        "fixedCode": "10160-0"
+      },
+      {
+        "id": "Composition.section:storiaClinica.section:terapiaInAtto.code.coding.display",
+        "path": "Composition.section.section.code.coding.display",
+        "short": "Descrizione leggibile del codice",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Composition.section:storiaClinica.section:terapiaInAtto.text",
+        "path": "Composition.section.section.text",
+        "short": "Descrizione terapia farmacologica",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Composition.section:storiaClinica.section:terapiaInAtto.entry",
+        "path": "Composition.section.section.entry",
+        "short": "Codice AIC/ATC farmaco",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLMedicationStatementTerapiaFarmacologica"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.section:quesitoDiagnostico",
+        "path": "Composition.section",
+        "sliceName": "quesitoDiagnostico",
+        "short": "Quesito Diagnostico",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Composition.section:quesitoDiagnostico.title",
+        "path": "Composition.section.title",
+        "short": "Titolo della sezione",
+        "min": 0,
+        "max": "1",
+        "fixedString": "Quesito Diagnostico"
+      },
+      {
+        "id": "Composition.section:quesitoDiagnostico.code",
+        "path": "Composition.section.code",
+        "short": "Codice che identifica il tipo di sezione",
+        "min": 0,
+        "max": "1",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29299-5"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Composition.section:quesitoDiagnostico.code.coding.system",
+        "path": "Composition.section.code.coding.system",
+        "short": "Sistema di codifica",
+        "comment": "LOINC (OID 2.16.840.1.113883.6.1)",
+        "min": 0,
+        "max": "1",
+        "fixedUri": "http://loinc.org"
+      },
+      {
+        "id": "Composition.section:quesitoDiagnostico.code.coding.version",
+        "path": "Composition.section.code.coding.version",
+        "short": "Versione del sistema di codifica",
+        "comment": "Es. LOINC 2.19",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Composition.section:quesitoDiagnostico.code.coding.code",
+        "path": "Composition.section.code.coding.code",
+        "short": "Valore del codice",
+        "min": 0,
+        "max": "1",
+        "fixedCode": "29299-5"
+      },
+      {
+        "id": "Composition.section:quesitoDiagnostico.code.coding.display",
+        "path": "Composition.section.code.coding.display",
+        "short": "Descrizione leggibile del codice",
+        "min": 0,
+        "max": "1",
+        "fixedString": "Motivo della visita"
+      },
+      {
+        "id": "Composition.section:quesitoDiagnostico.text",
+        "path": "Composition.section.text",
+        "short": "Descrizione quesito diagnostico",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Composition.section:quesitoDiagnostico.entry",
+        "path": "Composition.section.entry",
+        "short": "Codice quesito diagnostico",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationQuesitoDiagnostico"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.section:precedentiEsami",
+        "path": "Composition.section",
+        "sliceName": "precedentiEsami",
+        "short": "Precedenti Esami Eseguiti",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Composition.section:precedentiEsami.title",
+        "path": "Composition.section.title",
+        "short": "Titolo della sezione",
+        "min": 0,
+        "max": "1",
+        "fixedString": "Precedenti Esami Eseguiti"
+      },
+      {
+        "id": "Composition.section:precedentiEsami.code",
+        "path": "Composition.section.code",
+        "short": "Codice che identifica il tipo di sezione",
+        "min": 0,
+        "max": "1",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "30954-2"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Composition.section:precedentiEsami.code.coding.system",
+        "path": "Composition.section.code.coding.system",
+        "short": "Sistema di codifica",
+        "comment": "LOINC (OID 2.16.840.1.113883.6.1)",
+        "min": 0,
+        "max": "1",
+        "fixedUri": "http://loinc.org"
+      },
+      {
+        "id": "Composition.section:precedentiEsami.code.coding.version",
+        "path": "Composition.section.code.coding.version",
+        "short": "Versione del sistema di codifica",
+        "comment": "Es. LOINC 2.19",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Composition.section:precedentiEsami.code.coding.code",
+        "path": "Composition.section.code.coding.code",
+        "short": "Valore del codice",
+        "min": 0,
+        "max": "1",
+        "fixedCode": "30954-2"
+      },
+      {
+        "id": "Composition.section:precedentiEsami.code.coding.display",
+        "path": "Composition.section.code.coding.display",
+        "short": "Descrizione leggibile del codice",
+        "min": 0,
+        "max": "1",
+        "fixedString": "Test diagnostici e/o dati di laboratorio rilevanti"
+      },
+      {
+        "id": "Composition.section:precedentiEsami.text",
+        "path": "Composition.section.text",
+        "short": "Sintesi testuale della sezione",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Composition.section:precedentiEsami.entry",
+        "path": "Composition.section.entry",
+        "short": "Precedenti esami eseguiti",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationPrecedentiEsamiEseguitiRad"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.section:esameObiettivo",
+        "path": "Composition.section",
+        "sliceName": "esameObiettivo",
+        "short": "Esame Obiettivo",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Composition.section:esameObiettivo.title",
+        "path": "Composition.section.title",
+        "short": "Titolo della sezione",
+        "min": 0,
+        "max": "1",
+        "fixedString": "Esame Obiettivo"
+      },
+      {
+        "id": "Composition.section:esameObiettivo.code",
+        "path": "Composition.section.code",
+        "short": "Codice che identifica il tipo di sezione",
+        "min": 0,
+        "max": "1",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29545-1"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Composition.section:esameObiettivo.code.coding.system",
+        "path": "Composition.section.code.coding.system",
+        "short": "Sistema di codifica",
+        "comment": "LOINC (OID 2.16.840.1.113883.6.1)",
+        "min": 0,
+        "max": "1",
+        "fixedUri": "http://loinc.org"
+      },
+      {
+        "id": "Composition.section:esameObiettivo.code.coding.version",
+        "path": "Composition.section.code.coding.version",
+        "short": "Versione del sistema di codifica",
+        "comment": "Es. LOINC 2.19",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Composition.section:esameObiettivo.code.coding.code",
+        "path": "Composition.section.code.coding.code",
+        "short": "Valore del codice",
+        "min": 0,
+        "max": "1",
+        "fixedCode": "29545-1"
+      },
+      {
+        "id": "Composition.section:esameObiettivo.code.coding.display",
+        "path": "Composition.section.code.coding.display",
+        "short": "Descrizione leggibile del codice",
+        "min": 0,
+        "max": "1",
+        "fixedString": "Osservazioni fisiche"
+      },
+      {
+        "id": "Composition.section:prestazioni",
+        "path": "Composition.section",
+        "sliceName": "prestazioni",
+        "short": "Prestazioni",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Composition.section:prestazioni.title",
+        "path": "Composition.section.title",
+        "short": "Titolo della sezione",
+        "min": 0,
+        "max": "1",
+        "fixedString": "Prestazioni"
+      },
+      {
+        "id": "Composition.section:prestazioni.code",
+        "path": "Composition.section.code",
+        "short": "Codice che identifica il tipo di sezione",
+        "min": 0,
+        "max": "1",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "62387-6"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Composition.section:prestazioni.code.coding.system",
+        "path": "Composition.section.code.coding.system",
+        "short": "Sistema di codifica",
+        "comment": "LOINC (OID 2.16.840.1.113883.6.1)",
+        "min": 0,
+        "max": "1",
+        "fixedUri": "http://loinc.org"
+      },
+      {
+        "id": "Composition.section:prestazioni.code.coding.version",
+        "path": "Composition.section.code.coding.version",
+        "short": "Versione del sistema di codifica",
+        "comment": "Es. LOINC 2.19",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Composition.section:prestazioni.code.coding.code",
+        "path": "Composition.section.code.coding.code",
+        "short": "Valore del codice",
+        "min": 0,
+        "max": "1",
+        "fixedCode": "62387-6"
+      },
+      {
+        "id": "Composition.section:prestazioni.code.coding.display",
+        "path": "Composition.section.code.coding.display",
+        "short": "Descrizione leggibile del codice",
+        "min": 0,
+        "max": "1",
+        "fixedString": "Interventi"
+      },
+      {
+        "id": "Composition.section:prestazioni.text",
+        "path": "Composition.section.text",
+        "short": "Descrizione prestazione eseguita",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Composition.section:prestazioni.entry",
+        "path": "Composition.section.entry",
+        "short": "Codice prestazione eseguita",
+        "min": 1,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLProcedurePrestazioniRSA"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.section:confrontoPrecedentiEsami",
+        "path": "Composition.section",
+        "sliceName": "confrontoPrecedentiEsami",
+        "short": "Confronto con Precedenti Esami Eseguiti",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Composition.section:confrontoPrecedentiEsami.title",
+        "path": "Composition.section.title",
+        "short": "Titolo della sezione",
+        "min": 0,
+        "max": "1",
+        "fixedString": "Confronto con Precedenti Esami Eseguiti"
+      },
+      {
+        "id": "Composition.section:confrontoPrecedentiEsami.code",
+        "path": "Composition.section.code",
+        "short": "Codice che identifica il tipo di sezione",
+        "min": 0,
+        "max": "1",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "93126-1"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Composition.section:confrontoPrecedentiEsami.code.coding.system",
+        "path": "Composition.section.code.coding.system",
+        "short": "Sistema di codifica",
+        "comment": "LOINC (OID 2.16.840.1.113883.6.1)",
+        "min": 0,
+        "max": "1",
+        "fixedUri": "http://loinc.org"
+      },
+      {
+        "id": "Composition.section:confrontoPrecedentiEsami.code.coding.version",
+        "path": "Composition.section.code.coding.version",
+        "short": "Versione del sistema di codifica",
+        "comment": "Es. LOINC 2.19",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Composition.section:confrontoPrecedentiEsami.code.coding.code",
+        "path": "Composition.section.code.coding.code",
+        "short": "Valore del codice",
+        "min": 0,
+        "max": "1",
+        "fixedCode": "93126-1"
+      },
+      {
+        "id": "Composition.section:confrontoPrecedentiEsami.code.coding.display",
+        "path": "Composition.section.code.coding.display",
+        "short": "Descrizione leggibile del codice",
+        "min": 0,
+        "max": "1",
+        "fixedString": "Confronto con Precedenti Esami Eseguiti"
+      },
+      {
+        "id": "Composition.section:confrontoPrecedentiEsami.text",
+        "path": "Composition.section.text",
+        "short": "Sintesi testuale della sezione",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Composition.section:referto",
+        "path": "Composition.section",
+        "sliceName": "referto",
+        "short": "Refertazione",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Composition.section:referto.title",
+        "path": "Composition.section.title",
+        "short": "Titolo della sezione",
+        "min": 0,
+        "max": "1",
+        "fixedString": "Referto"
+      },
+      {
+        "id": "Composition.section:referto.code",
+        "path": "Composition.section.code",
+        "short": "Codice che identifica il tipo di sezione",
+        "min": 0,
+        "max": "1",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "47045-0"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Composition.section:referto.code.coding.system",
+        "path": "Composition.section.code.coding.system",
+        "short": "Sistema di codifica",
+        "comment": "LOINC (OID 2.16.840.1.113883.6.1)",
+        "min": 0,
+        "max": "1",
+        "fixedUri": "http://loinc.org"
+      },
+      {
+        "id": "Composition.section:referto.code.coding.version",
+        "path": "Composition.section.code.coding.version",
+        "short": "Versione del sistema di codifica",
+        "comment": "Es. LOINC 2.19",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Composition.section:referto.code.coding.code",
+        "path": "Composition.section.code.coding.code",
+        "short": "Valore del codice",
+        "min": 0,
+        "max": "1",
+        "fixedCode": "47045-0"
+      },
+      {
+        "id": "Composition.section:referto.code.coding.display",
+        "path": "Composition.section.code.coding.display",
+        "short": "Descrizione leggibile del codice",
+        "min": 0,
+        "max": "1",
+        "fixedString": "Referto"
+      },
+      {
+        "id": "Composition.section:diagnosi",
+        "path": "Composition.section",
+        "sliceName": "diagnosi",
+        "short": "Diagnosi",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Composition.section:diagnosi.title",
+        "path": "Composition.section.title",
+        "short": "Titolo della sezione",
+        "min": 0,
+        "max": "1",
+        "fixedString": "Diagnosi"
+      },
+      {
+        "id": "Composition.section:diagnosi.code",
+        "path": "Composition.section.code",
+        "short": "Codice che identifica il tipo di sezione",
+        "min": 0,
+        "max": "1",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29548-5"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Composition.section:diagnosi.code.coding.system",
+        "path": "Composition.section.code.coding.system",
+        "short": "Sistema di codifica",
+        "comment": "LOINC (OID 2.16.840.1.113883.6.1)",
+        "min": 0,
+        "max": "1",
+        "fixedUri": "http://loinc.org"
+      },
+      {
+        "id": "Composition.section:diagnosi.code.coding.version",
+        "path": "Composition.section.code.coding.version",
+        "short": "Versione del sistema di codifica",
+        "comment": "Es. LOINC 2.19",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Composition.section:diagnosi.code.coding.code",
+        "path": "Composition.section.code.coding.code",
+        "short": "Valore del codice",
+        "min": 0,
+        "max": "1",
+        "fixedCode": "29548-5"
+      },
+      {
+        "id": "Composition.section:diagnosi.code.coding.display",
+        "path": "Composition.section.code.coding.display",
+        "short": "Descrizione leggibile del codice",
+        "min": 0,
+        "max": "1",
+        "fixedString": "Diagnosi"
+      },
+      {
+        "id": "Composition.section:diagnosi.text",
+        "path": "Composition.section.text",
+        "short": "Descrizione diagnosi",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Composition.section:diagnosi.entry",
+        "path": "Composition.section.entry",
+        "short": "Codice diagnosi",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationDiagnosiRSA"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.section:conclusioni",
+        "path": "Composition.section",
+        "sliceName": "conclusioni",
+        "short": "Conclusioni",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Composition.section:conclusioni.title",
+        "path": "Composition.section.title",
+        "short": "Titolo della sezione",
+        "min": 0,
+        "max": "1",
+        "fixedString": "Conclusioni"
+      },
+      {
+        "id": "Composition.section:conclusioni.code",
+        "path": "Composition.section.code",
+        "short": "Codice che identifica il tipo di sezione",
+        "min": 0,
+        "max": "1",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "55110-1"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Composition.section:conclusioni.code.coding.system",
+        "path": "Composition.section.code.coding.system",
+        "short": "Sistema di codifica",
+        "comment": "LOINC (OID 2.16.840.1.113883.6.1)",
+        "min": 0,
+        "max": "1",
+        "fixedUri": "http://loinc.org"
+      },
+      {
+        "id": "Composition.section:conclusioni.code.coding.version",
+        "path": "Composition.section.code.coding.version",
+        "short": "Versione del sistema di codifica",
+        "comment": "Es. LOINC 2.19",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Composition.section:conclusioni.code.coding.code",
+        "path": "Composition.section.code.coding.code",
+        "short": "Valore del codice",
+        "min": 0,
+        "max": "1",
+        "fixedCode": "55110-1"
+      },
+      {
+        "id": "Composition.section:conclusioni.code.coding.display",
+        "path": "Composition.section.code.coding.display",
+        "short": "Descrizione leggibile del codice",
+        "min": 0,
+        "max": "1",
+        "fixedString": "Conclusioni"
+      },
+      {
+        "id": "Composition.section:suggerimentiMedicoPrescrittore",
+        "path": "Composition.section",
+        "sliceName": "suggerimentiMedicoPrescrittore",
+        "short": "Suggerimenti per il medico prescrittore",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Composition.section:suggerimentiMedicoPrescrittore.title",
+        "path": "Composition.section.title",
+        "short": "Titolo della sezione",
+        "min": 0,
+        "max": "1",
+        "fixedString": "Suggerimenti per il Medico Prescrittore"
+      },
+      {
+        "id": "Composition.section:suggerimentiMedicoPrescrittore.code",
+        "path": "Composition.section.code",
+        "short": "Codice che identifica il tipo di sezione",
+        "min": 0,
+        "max": "1",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "62385-0"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Composition.section:suggerimentiMedicoPrescrittore.code.coding.system",
+        "path": "Composition.section.code.coding.system",
+        "short": "Sistema di codifica",
+        "comment": "LOINC (OID 2.16.840.1.113883.6.1)",
+        "min": 0,
+        "max": "1",
+        "fixedUri": "http://loinc.org"
+      },
+      {
+        "id": "Composition.section:suggerimentiMedicoPrescrittore.code.coding.version",
+        "path": "Composition.section.code.coding.version",
+        "short": "Versione del sistema di codifica",
+        "comment": "Es. LOINC 2.19",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Composition.section:suggerimentiMedicoPrescrittore.code.coding.code",
+        "path": "Composition.section.code.coding.code",
+        "short": "Valore del codice",
+        "min": 0,
+        "max": "1",
+        "fixedCode": "62385-0"
+      },
+      {
+        "id": "Composition.section:suggerimentiMedicoPrescrittore.code.coding.display",
+        "path": "Composition.section.code.coding.display",
+        "short": "Descrizione leggibile del codice",
+        "min": 0,
+        "max": "1",
+        "fixedString": "Raccomandazioni"
+      },
+      {
+        "id": "Composition.section:accertamentiControlliConsigliati",
+        "path": "Composition.section",
+        "sliceName": "accertamentiControlliConsigliati",
+        "short": "Accertamenti e Controlli Consigliati",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Composition.section:accertamentiControlliConsigliati.title",
+        "path": "Composition.section.title",
+        "short": "Titolo della sezione",
+        "min": 0,
+        "max": "1",
+        "fixedString": "Accertamenti e Controlli Consigliati"
+      },
+      {
+        "id": "Composition.section:accertamentiControlliConsigliati.code",
+        "path": "Composition.section.code",
+        "short": "Codice che identifica il tipo di sezione",
+        "min": 0,
+        "max": "1",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "80615-8"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Composition.section:accertamentiControlliConsigliati.code.coding.system",
+        "path": "Composition.section.code.coding.system",
+        "short": "Sistema di codifica",
+        "comment": "LOINC (OID 2.16.840.1.113883.6.1)",
+        "min": 0,
+        "max": "1",
+        "fixedUri": "http://loinc.org"
+      },
+      {
+        "id": "Composition.section:accertamentiControlliConsigliati.code.coding.version",
+        "path": "Composition.section.code.coding.version",
+        "short": "Versione del sistema di codifica",
+        "comment": "Es. LOINC 2.19",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Composition.section:accertamentiControlliConsigliati.code.coding.code",
+        "path": "Composition.section.code.coding.code",
+        "short": "Valore del codice",
+        "min": 0,
+        "max": "1",
+        "fixedCode": "80615-8"
+      },
+      {
+        "id": "Composition.section:accertamentiControlliConsigliati.code.coding.display",
+        "path": "Composition.section.code.coding.display",
+        "short": "Descrizione leggibile del codice",
+        "min": 0,
+        "max": "1",
+        "fixedString": "Follow-up Consigliato"
+      },
+      {
+        "id": "Composition.section:accertamentiControlliConsigliati.text",
+        "path": "Composition.section.text",
+        "short": "Descrizione accertamento consigliato",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Composition.section:accertamentiControlliConsigliati.entry",
+        "path": "Composition.section.entry",
+        "short": "Codice accertamento consigliato",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationAccertamentiControlliConsigliatiRSA"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.section:terapiaFarmacologicaConsigliata",
+        "path": "Composition.section",
+        "sliceName": "terapiaFarmacologicaConsigliata",
+        "short": "Terapia farmacologica Consigliata",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Composition.section:terapiaFarmacologicaConsigliata.title",
+        "path": "Composition.section.title",
+        "short": "Titolo della sezione",
+        "min": 0,
+        "max": "1",
+        "fixedString": "Terapia farmacologica Consigliata"
+      },
+      {
+        "id": "Composition.section:terapiaFarmacologicaConsigliata.code",
+        "path": "Composition.section.code",
+        "short": "Codice che identifica il tipo di sezione",
+        "min": 0,
+        "max": "1",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "93341-6"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Composition.section:terapiaFarmacologicaConsigliata.code.coding.system",
+        "path": "Composition.section.code.coding.system",
+        "short": "Sistema di codifica",
+        "comment": "LOINC (OID 2.16.840.1.113883.6.1)",
+        "min": 0,
+        "max": "1",
+        "fixedUri": "http://loinc.org"
+      },
+      {
+        "id": "Composition.section:terapiaFarmacologicaConsigliata.code.coding.version",
+        "path": "Composition.section.code.coding.version",
+        "short": "Versione del sistema di codifica",
+        "comment": "Es. LOINC 2.19",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Composition.section:terapiaFarmacologicaConsigliata.code.coding.code",
+        "path": "Composition.section.code.coding.code",
+        "short": "Valore del codice",
+        "min": 0,
+        "max": "1",
+        "fixedCode": "93341-6"
+      },
+      {
+        "id": "Composition.section:terapiaFarmacologicaConsigliata.code.coding.display",
+        "path": "Composition.section.code.coding.display",
+        "short": "Descrizione leggibile del codice",
+        "min": 0,
+        "max": "1",
+        "fixedString": "Farmaci Consigliati"
+      },
+      {
+        "id": "Composition.section:terapiaFarmacologicaConsigliata.text",
+        "path": "Composition.section.text",
+        "short": "Descrizione terapia farmacologica consigliata",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Composition.section:terapiaFarmacologicaConsigliata.entry",
+        "path": "Composition.section.entry",
+        "short": "Codice AIC/ATC farmaco",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLMedicationRequestTerapiaFarmacologicaConsigliataRSA"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

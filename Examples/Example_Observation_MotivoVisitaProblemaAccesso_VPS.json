@@ -1,0 +1,39 @@
+{
+  "resourceType": "Observation",
+  "id": "Example-ObservationProblemaAccesso-1-VPS",
+  "meta": {
+    "lastUpdated": "2026-10-05T10:40:00+02:00",
+    "profile": [
+      "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationProblemaAccessoVPS"
+    ],
+    "versionId": "1"
+  },
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "56817-0",
+        "display": "Problema all'accesso"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/a1b2c3d4-1234-5678-9abc-def012345678",
+    "display": "Mario Rossi"
+  },
+  "encounter": {
+    "reference": "Encounter/5d6e7f8a-9b0c-4d1e-8f2a-3b4c5d6e7f8a",
+    "display": "Accesso PS n. 2026012345"
+  },
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.2.9.6.1.54.2",
+        "version": "ProblemaPrincipale VPS",
+        "code": "02",
+        "display": "Dolore addominale"
+      }
+    ]
+  }
+}

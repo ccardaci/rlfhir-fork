@@ -1,0 +1,36 @@
+{
+  "resourceType": "DeviceUseStatement",
+  "id": "example-deviceusestatement-tpi",
+  "meta": {
+    "profile": [
+      "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLDeviceUseStatementTPI"
+    ]
+  },
+  "extension": [
+    {
+      "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLDeviceUseStatementStrutturaImpianto",
+      "valueReference": {
+        "reference": "Organization/example-organization"
+      }
+    }
+  ],
+  "status": "active",
+  "subject": {
+    "reference": "Patient/example-patient"
+  },
+  "timingPeriod": {
+    "start": "2026-10-05T08:30:00+02:00"
+  },
+  "bodySite": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "302509004",
+        "display": "Entire heart"
+      }
+    ]
+  },
+  "device": {
+    "reference": "Device/example-device-impianto"
+  }
+}

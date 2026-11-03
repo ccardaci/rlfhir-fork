@@ -2,4 +2,4 @@ title: Guida Implementativa FHIR CDR - Sviluppo
 description: Questa IG fa riferimento a integrazioni che non sono ancora in produzione.
 version: 0.0.1
 style-root: project
-style-name: RL-css
+style-name: RL-sviluppo-css

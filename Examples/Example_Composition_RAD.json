@@ -1,0 +1,205 @@
+{
+    "resourceType": "Composition",
+    "id": "referto-radiologia-0451-20260922",
+    "meta": {
+        "profile": [
+            "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCompositionRefertoRadiologia"
+        ]
+    },
+    "extension": [
+        {
+            "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLBasedOnOrderOrRequisition",
+            "extension": [
+                {
+                    "url": "accessionNumber",
+                    "valueIdentifier": {
+                        "system": "urn:oid:2.16.840.1.113883.2.9.4.3.7",
+                        "value": "ACC2026090012345"
+                    }
+                },
+                {
+                    "url": "cupCode",
+                    "valueIdentifier": {
+                        "system": "urn:oid:2.16.840.1.113883.2.9.4.3.2",
+                        "value": "CUP0009988771"
+                    }
+                }
+            ]
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/composition-clinicaldocument-versionNumber",
+            "valueString": "1"
+        }
+    ],
+    "status": "final",
+    "type": {
+        "coding": [
+            {
+                "system": "http://loinc.org",
+                "code": "68604-8",
+                "display": "Referto Radiologico"
+            }
+        ]
+    },
+    "title": "Referto Radiologico",
+    "date": "2026-09-22T10:15:00+02:00",
+    "subject": {
+        "reference": "urn:uuid:11111111-1111-1111-1111-111111111111"
+    },
+    "encounter": {
+        "reference": "urn:uuid:22222222-2222-2222-2222-222222222222"
+    },
+    "author": [
+        {
+            "reference": "urn:uuid:33333333-3333-3333-3333-333333333333"
+        }
+    ],
+    "attester": [
+        {
+            "mode": "legal",
+            "time": "2026-09-22T10:20:00+02:00",
+            "party": {
+                "reference": "urn:uuid:33333333-3333-3333-3333-333333333333"
+            }
+        },
+        {
+            "mode": "professional",
+            "party": {
+                "reference": "urn:uuid:44444444-4444-4444-4444-444444444444"
+            }
+        }
+    ],
+    "custodian": {
+        "reference": "urn:uuid:55555555-5555-5555-5555-555555555555"
+    },
+    "event": [
+        {
+            "detail": [
+                {
+                    "reference": "urn:uuid:66666666-6666-6666-6666-666666666666"
+                }
+            ]
+        }
+    ],
+    "section": [
+        {
+            "title": "DICOM Object Catalog",
+            "code": {
+                "coding": [
+                    {
+                        "system": "urn:oid:1.2.840.10008.2.16.4",
+                        "code": "121181",
+                        "display": "DICOM Object Catalog"
+                    }
+                ]
+            },
+            "entry": [
+                {
+                    "reference": "urn:uuid:77777777-7777-7777-7777-777777777777"
+                }
+            ]
+        },
+        {
+            "title": "Quesito Diagnostico",
+            "code": {
+                "coding": [
+                    {
+                        "system": "http://loinc.org",
+                        "code": "18785-6",
+                        "display": "Motivo per lo studio - Radiologia"
+                    }
+                ]
+            },
+            "entry": [
+                {
+                    "reference": "urn:uuid:88888888-8888-8888-8888-888888888888"
+                }
+            ]
+        },
+        {
+            "title": "Storia Clinica",
+            "code": {
+                "coding": [
+                    {
+                        "system": "http://loinc.org",
+                        "code": "11329-0",
+                        "display": "Storia Generale"
+                    }
+                ]
+            },
+            "entry": [
+                {
+                    "reference": "urn:uuid:99999999-9999-9999-9999-999999999999"
+                }
+            ],
+            "section": [
+                {
+                    "title": "Allergie e/o reazione avversa",
+                    "code": {
+                        "coding": [
+                            {
+                                "system": "http://loinc.org",
+                                "code": "48765-2",
+                                "display": "Allergie e/o reazioni avverse"
+                            }
+                        ]
+                    },
+                    "entry": [
+                        {
+                            "reference": "urn:uuid:aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Esame Eseguito",
+            "code": {
+                "coding": [
+                    {
+                        "system": "http://loinc.org",
+                        "code": "55111-9",
+                        "display": "Descrizioni attuale procedure di imaging"
+                    }
+                ]
+            },
+            "entry": [
+                {
+                    "reference": "urn:uuid:bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb"
+                }
+            ]
+        },
+        {
+            "title": "Rilievo - Radiologia",
+            "code": {
+                "coding": [
+                    {
+                        "system": "http://loinc.org",
+                        "code": "18782-3",
+                        "display": "Rilievo - Radiologia"
+                    }
+                ]
+            },
+            "text": {
+                "status": "generated",
+                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Esame TC torace eseguito senza mezzo di contrasto. Parenchima polmonare privo di lesioni focali di rilievo. Non versamento pleurico. Strutture mediastiniche nella norma per morfologia e dimensioni. Non linfoadenopatie patologiche.</p></div>"
+            }
+        },
+        {
+            "title": "Conclusioni",
+            "code": {
+                "coding": [
+                    {
+                        "system": "http://loinc.org",
+                        "code": "55110-1",
+                        "display": "Conclusioni"
+                    }
+                ]
+            },
+            "text": {
+                "status": "generated",
+                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Quadro TC toracico nella norma. Non evidenza di lesioni ripetitive polmonari.</p></div>"
+            }
+        }
+    ]
+}

@@ -1,0 +1,108 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationCategorieRischio",
+  "name": "RLObservationCategorieRischio",
+  "title": "RL Observation Categorie di Rischio",
+  "status": "draft",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "short": "Categorie di Rischio",
+        "definition": "Identificazione di categorie di soggetti a rischio ai fini vaccinali."
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "min": 1,
+        "max": "1",
+        "definition": "Codice identificativo."
+      },
+      {
+        "id": "Observation.code.coding.system",
+        "path": "Observation.code.coding.system",
+        "min": 0,
+        "max": "1",
+        "fixedUri": "http://loinc.org",
+        "comment": "Fixed: LOINC (OID 2.16.840.1.113883.6.1)"
+      },
+      {
+        "id": "Observation.code.coding.version",
+        "path": "Observation.code.coding.version",
+        "min": 0,
+        "max": "1",
+        "example": [{"label": "Esempio", "valueString": "LOINC 2.19"}]
+      },
+      {
+        "id": "Observation.code.coding.code",
+        "path": "Observation.code.coding.code",
+        "min": 0,
+        "max": "1",
+        "fixedCode": "95715-9"
+      },
+      {
+        "id": "Observation.code.coding.display",
+        "path": "Observation.code.coding.display",
+        "min": 0,
+        "max": "1",
+        "fixedString": "Categorie a rischio"
+      },
+      {
+        "id": "Observation.status",
+        "path": "Observation.status",
+        "min": 1,
+        "max": "1",
+        "fixedCode": "final",
+        "definition": "Indica lo stato dell'osservazione.",
+        "comment": "La fonte riportava 'Fixed: completed' (codice non valido per Observation.status); corretto a 'final', coerente col valore letterale status=[\"final\"] in tabella."
+      },
+      {
+        "id": "Observation.referenceRange",
+        "path": "Observation.referenceRange",
+        "min": 0,
+        "max": "*",
+        "definition": "Fornisce una guida per l'interpretazione."
+      },
+      {
+        "id": "Observation.referenceRange.appliesTo",
+        "path": "Observation.referenceRange.appliesTo",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Observation.referenceRange.appliesTo.coding.system",
+        "path": "Observation.referenceRange.appliesTo.coding.system",
+        "min": 0,
+        "max": "1",
+        "fixedUri": "urn:oid:2.16.840.1.113883.2.9.6.1.56.2"
+      },
+      {
+        "id": "Observation.referenceRange.appliesTo.coding.version",
+        "path": "Observation.referenceRange.appliesTo.coding.version",
+        "min": 0,
+        "max": "1",
+        "fixedString": "AVN: Categorie a rischio"
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": ["https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPatientCore"]
+          }
+        ],
+        "definition": "Riferimento al paziente o soggetto dell'osservazione."
+      }
+    ]
+  }
+}

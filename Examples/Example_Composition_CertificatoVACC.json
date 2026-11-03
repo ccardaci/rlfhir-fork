@@ -1,0 +1,84 @@
+{
+    "resourceType": "Composition",
+    "id": "composition-certificato-vaccinale",
+    "meta": {
+        "profile": [
+            "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCompositionCertificatoVaccinale"
+        ]
+    },
+    "extension": [
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/composition-clinicaldocument-versionNumber",
+            "valueString": "1"
+        }
+    ],
+    "status": "final",
+    "type": {
+        "coding": [
+            {
+                "system": "http://loinc.org",
+                "version": "2.19",
+                "code": "82593-5",
+                "display": "Immunization summary report"
+            }
+        ]
+    },
+    "subject": {
+        "reference": "urn:uuid:d27e91de-1863-5d21-b912-476ad4708ff7"
+    },
+    "encounter": {
+        "reference": "urn:uuid:0fec14a5-8162-5182-9004-f4cd1ae1903d"
+    },
+    "date": "2026-10-06T11:30:00+02:00",
+    "author": [
+        {
+            "reference": "urn:uuid:a685ef3b-8ad8-5bef-ae7a-ed0b6f58f678"
+        },
+        {
+            "reference": "urn:uuid:5be3be53-b52c-51ff-8c24-86f8d32057ab"
+        }
+    ],
+    "title": "Certificato Vaccinale",
+    "attester": [
+        {
+            "mode": "legal",
+            "time": "2026-10-06T11:30:00+02:00",
+            "party": {
+                "reference": "urn:uuid:a685ef3b-8ad8-5bef-ae7a-ed0b6f58f678"
+            }
+        }
+    ],
+    "custodian": {
+        "reference": "urn:uuid:f1aa40dd-f695-502e-8427-8171ecf916df"
+    },
+    "section": [
+        {
+            "title": "Certificato Vaccinale",
+            "code": {
+                "coding": [
+                    {
+                        "system": "http://loinc.org",
+                        "version": "2.19",
+                        "code": "11369-6",
+                        "display": "Storia delle immunizzazioni"
+                    }
+                ]
+            },
+            "text": {
+                "status": "generated",
+                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Vaccinazione MPR: dose 1 (10/03/2026) e dose 2 (14/04/2026) somministrate. Ulteriore dose non somministrata per esonero (02/06/2026).</p></div>"
+            },
+            "entry": [
+                {
+                    "reference": "urn:uuid:0e0c034b-59c5-5251-aea2-ec30d4d8a526"
+                },
+                {
+                    "reference": "urn:uuid:a829990c-ef9a-51f0-b974-007e773cefc9"
+                },
+                {
+                    "reference": "urn:uuid:65349165-d9ab-5197-b883-86dd04d6fed5"
+                }
+            ]
+        }
+    ]
+}

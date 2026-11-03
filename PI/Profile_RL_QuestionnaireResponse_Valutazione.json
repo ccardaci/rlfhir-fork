@@ -164,15 +164,16 @@
       {
         "id": "QuestionnaireResponse.basedOn",
         "path": "QuestionnaireResponse.basedOn",
-        "short": "Riferimento al progetto individule nel quale è previsto l'esito della valutazione",
-        "definition": "Reference alla risorsa RLCarePlanProgettoIndividuale contenente il progetto individuale del paziente. Deve essere inserito l'UUID generato dal server FHIR (applicativo) detentore della risorsa. Per tutte le informazioni sui server FHIR (applicativi) e le relative risorse detenute consultare la pagina API RESTful della sezione Contesto di questa Implementation Guide",
-        "min": 1,
+        "short": "Nel caso delle cure domiciliari (C-DOM) il campo è obbligatorio e contiene il riferimento al progetto individuale nel quale è previsto l'esito della valutazione. Per altri servizi il campo contiene il riferimento al servizio attivato.",
+        "definition": "Nel caso delle cure domiciliari (C-DOM), Reference al profilo RLCarePlanProgettoIndividuale contenente il progetto individuale del paziente. Deve essere inserito l'UUID generato dal server FHIR (applicativo) detentore della risorsa. Per tutte le informazioni sui server FHIR (applicativi) e le relative risorse detenute consultare la pagina API RESTful della sezione Contesto di questa Implementation Guide.\nPer altri servizi, Reference al profilo RLServiceRequestServiziSocioAssistenziali",
+        "min": 0,
         "max": "1",
         "type": [
           {
             "code": "Reference",
             "targetProfile": [
-              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCarePlanProgettoIndividuale"
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCarePlanProgettoIndividuale",
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLServiceRequestServiziSocioAssistenziali"
             ]
           }
         ]
@@ -262,8 +263,8 @@
         "id": "QuestionnaireResponse.item.answer",
         "path": "QuestionnaireResponse.item.answer",
         "short": "Risposta al quesito. L'anagrafica delle risposte con il relativo identificativo è consultabile alla pagina \"Anagrafica delle schede di valutazione\" nella sezione Terminologia",
-        "min": 1,
-        "max": "1"
+        "min": 0,
+        "max": "*"
       },
       {
         "id": "QuestionnaireResponse.item.answer.value[x]",

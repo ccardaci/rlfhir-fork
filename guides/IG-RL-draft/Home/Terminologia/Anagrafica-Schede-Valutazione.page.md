@@ -37,6 +37,7 @@ td, th {
   - [Scheda Triage](#scheda-triage)
   - [Scheda semplificata SIAD](#scheda-semplificata-siad)
   - [Campi extra del flusso SIAD](#campi-extra-del-flusso-siad)
+  - [Scheda di Dimissioni Protette](#scheda-di-dimissioni-protette)
 
 
 <div>
@@ -710,6 +711,76 @@ td, th {
   </tr>
 </tbody>
 </table>
+
+## Scheda di Dimissioni Protette
+
+<table>
+<thead>
+  <tr>
+    <th>Link ID domanda</th>
+    <th>Domanda</th>
+    <th>Link ID risposta</th>
+    <th>Risposta</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td rowspan="15">1</td>
+    <td rowspan="15">Dispositvi e Terapie in corso - 1</td>
+    <td>A</td>
+    <td>Non presenti</td>
+  </tr>
+  <tr><td>B</td><td>Ossigenoterapia</td></tr>
+  <tr><td>C</td><td>NIV</td></tr>
+  <tr><td>D</td><td>CPAP</td></tr>
+  <tr><td>E</td><td>NPT</td></tr>
+  <tr><td>F</td><td>PEG</td></tr>
+  <tr><td>G</td><td>SNG</td></tr>
+  <tr><td>H</td><td>Cannula Tracheostomica</td></tr>
+  <tr><td>I</td><td>Stomia Intestinale</td></tr>
+  <tr><td>J</td><td>Stomia Urinaria</td></tr>
+  <tr><td>K</td><td>Emodialisi</td></tr>
+  <tr><td>L</td><td>Dialisi peritoneale</td></tr>
+  <tr><td>M</td><td>Accesso Vascolare</td></tr>
+  <tr><td>N</td><td>Catetere Vescicale</td></tr>
+  <tr><td>O</td><td>DrenaggioToracico</td></tr>
+  <tr>
+    <td rowspan="2">2</td>
+    <td rowspan="2">Dispositvi e Terapie in corso - 2</td>
+    <td>A</td>
+    <td>Nessun farmaco</td>
+  </tr>
+  <tr><td>B</td><td>[Testo libero per Terapie farmacologiche in corso]</td></tr>
+  <tr>
+    <td rowspan="4">3</td>
+    <td rowspan="4">Lesioni - Tipologia</td>
+    <td>A</td>
+    <td>Sacro-coccigeo</td>
+  </tr>
+  <tr><td>B</td><td>Glutei</td></tr>
+  <tr><td>C</td><td>Talloni</td></tr>
+  <tr><td>D</td><td>Altre sedi</td></tr>
+  <tr>
+    <td>4</td>
+    <td>Lesioni - Sede</td>
+    <td>A</td>
+    <td>[Testo libero per Sede]</td>
+  </tr>
+  <tr>
+    <td rowspan="7">5</td>
+    <td rowspan="7">Scale di valutazione</td>
+    <td>A</td>
+    <td>[Valore numerico per Punteggio RANKIN]</td>
+  </tr>
+  <tr><td>B</td><td>[Valore numerico per Punteggio FSS-ICU]</td></tr>
+  <tr><td>C</td><td>[Valore numerico per Punteggio CR10 BORG]</td></tr>
+  <tr><td>D</td><td>[Valore numerico per Punteggio BRASS]</td></tr>
+  <tr><td>E</td><td>[Valore numerico per Punteggio Rischio Sociale]</td></tr>
+  <tr><td>F</td><td>[Valore numerico per ADL]</td></tr>
+  <tr><td>G</td><td>[Valore numerico per IADL]</td></tr>
+</tbody>
+</table>
+
 </body>
 
 </html>

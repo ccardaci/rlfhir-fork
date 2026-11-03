@@ -1,0 +1,110 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "RLBundleRispostaMMGPortal",
+  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLBundleRispostaMMGPortal",
+  "name": "RLBundleRispostaMMGPortal",
+  "status": "active",
+  "description": "Profilo volto a descrivere il contenuto del Bundle di risposta inviato da SGDT al Portale MMG.",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Bundle",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Bundle",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Bundle.id",
+        "path": "Bundle.id",
+        "short": "UUID prodotto dal server FHIR (applicativo) che detiene la risorsa",
+        "min": 1
+      },
+      {
+        "id": "Bundle.meta",
+        "path": "Bundle.meta",
+        "short": "Metadati della risorsa",
+        "min": 1
+      },
+      {
+        "id": "Bundle.meta.profile",
+        "path": "Bundle.meta.profile",
+        "short": "Profilo al quale la risorsa si riferisce",
+        "min": 1,
+        "max": "1",
+        "fixedCanonical": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLBundleRispostaMMGPortal"
+      },
+      {
+        "id": "Bundle.type",
+        "path": "Bundle.type",
+        "short": "Tipo di Bundle",
+        "definition": "Valore fisso su \"message\"",
+        "fixedCode": "message"
+      },
+      {
+        "id": "Bundle.timestamp",
+        "path": "Bundle.timestamp",
+        "short": "Data di creazione del Bundle",
+        "definition": "Formato standard FHIR: YYY-MM-DDThh:mm:ss.sss+zz:zz",
+        "min": 1
+      },
+      {
+        "id": "Bundle.entry",
+        "path": "Bundle.entry",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "resource.meta.profile"
+            }
+          ],
+          "rules": "open"
+        },
+        "short": "Profili contenuti nel Bundle",
+        "min": 2,
+        "max": "2"
+      },
+      {
+        "id": "Bundle.entry:RLMessageHeaderMMGPortal",
+        "path": "Bundle.entry",
+        "sliceName": "RLMessageHeaderMMGPortal",
+        "short": "Profilo volto a contenere le informazioni relative al messaggio scambiato tra il Portale MMG e SGDT.",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Bundle.entry:RLMessageHeaderMMGPortal.resource",
+        "path": "Bundle.entry.resource",
+        "min": 1,
+        "type": [
+          {
+            "code": "Resource",
+            "profile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLMessageHeaderMMGPortal"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:RLOperationOutcomeMMGPortal",
+        "path": "Bundle.entry",
+        "sliceName": "RLOperationOutcomeMMGPortal",
+        "short": "Profilo volto a contenere il dettaglio delle informazione relative all'elaborazione del messaggio.",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Bundle.entry:RLOperationOutcomeMMGPortal.resource",
+        "path": "Bundle.entry.resource",
+        "min": 1,
+        "type": [
+          {
+            "code": "Resource",
+            "profile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLOperationOutcomeMMGPortal"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

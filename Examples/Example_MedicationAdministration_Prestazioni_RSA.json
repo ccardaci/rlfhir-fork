@@ -1,0 +1,24 @@
+{
+  "resourceType": "MedicationAdministration",
+  "id": "Example-MedicationAdministrationPrestazioni-1-RSA",
+  "meta": {
+    "lastUpdated": "2026-10-12T10:00:00+02:00",
+    "profile": [
+      "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLMedicationAdministrationPrestazioniRSA"
+    ],
+    "versionId": "1"
+  },
+  "status": "completed",
+  "medicationReference": {
+    "reference": "Medication/0e1f2a3b-4c5d-4e6f-9a7b-8c9d0e1f2a3b",
+    "display": "Paracetamolo 1000 mg compresse"
+  },
+  "subject": {
+    "reference": "Patient/a1b2c3d4-1234-5678-9abc-def012345678",
+    "display": "Mario Rossi"
+  },
+  "effectivePeriod": {
+    "start": "2026-10-06T09:40:00+02:00",
+    "end": "2026-10-06T09:42:00+02:00"
+  }
+}

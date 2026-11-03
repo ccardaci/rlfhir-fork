@@ -1,0 +1,35 @@
+{
+  "resourceType": "Observation",
+  "id": "Example-ObservationDiagnosi-1-RSA",
+  "meta": {
+    "lastUpdated": "2026-10-08T12:00:00+02:00",
+    "profile": [
+      "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationDiagnosiRSA"
+    ],
+    "versionId": "1"
+  },
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "29308-4",
+        "display": "Diagnosi"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/a1b2c3d4-1234-5678-9abc-def012345678",
+    "display": "Mario Rossi"
+  },
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.6.103",
+        "version": "ICD9CM",
+        "code": "401.9",
+        "display": "Ipertensione essenziale non specificata"
+      }
+    ]
+  }
+}

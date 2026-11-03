@@ -1,0 +1,42 @@
+{
+  "resourceType": "Device",
+  "id": "example-device-impianto",
+  "meta": {
+    "profile": [
+      "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLDeviceImpianto"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "urn:oid:2.16.840.1.113883.2.9.2.30.4.5",
+      "value": "SN-2026-0098765",
+      "assigner": {
+        "display": "Produttore Dispositivi Medici S.p.A."
+      }
+    }
+  ],
+  "type": {
+    "coding": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.2.9.6.1.99",
+        "version": "CND 2026",
+        "code": "P0701",
+        "display": "Pacemaker impiantabili"
+      }
+    ]
+  },
+  "deviceName": [
+    {
+      "name": "Pacemaker bicamerale",
+      "type": "user-friendly-name"
+    }
+  ],
+  "lotNumber": "LOT-2026-04-7781",
+  "modelNumber": "PM-2000-DR",
+  "owner": {
+    "reference": "Organization/example-organization"
+  },
+  "patient": {
+    "reference": "Patient/example-patient"
+  }
+}

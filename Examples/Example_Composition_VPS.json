@@ -1,0 +1,345 @@
+{
+  "resourceType": "Composition",
+  "id": "Example-Composition-1-VPS",
+  "meta": {
+    "lastUpdated": "2026-10-07T10:00:00+02:00",
+    "profile": [
+      "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCompositionVPS"
+    ],
+    "versionId": "1"
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/composition-clinicaldocument-versionNumber",
+      "valueString": "1"
+    }
+  ],
+  "status": "final",
+  "type": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "59258-4",
+        "display": "Verbale di Pronto Soccorso"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/a1b2c3d4-1234-5678-9abc-def012345678",
+    "display": "Mario Rossi"
+  },
+  "encounter": {
+    "reference": "Encounter/5d6e7f8a-9b0c-4d1e-8f2a-3b4c5d6e7f8a",
+    "display": "Accesso PS n. 2026012345"
+  },
+  "date": "2026-10-04T17:45:00+02:00",
+  "author": [
+    {
+      "reference": "Practitioner/2e3f4a5b-6c7d-4e8f-9a0b-1c2d3e4f5a6b",
+      "display": "Laura Galli"
+    }
+  ],
+  "title": "VERBALE DI PRONTO SOCCORSO",
+  "attester": [
+    {
+      "mode": "legal",
+      "time": "2026-10-04T17:50:00+02:00",
+      "party": {
+        "reference": "Practitioner/2e3f4a5b-6c7d-4e8f-9a0b-1c2d3e4f5a6b",
+        "display": "Laura Galli"
+      }
+    }
+  ],
+  "custodian": {
+    "reference": "Organization/6f7a8b9c-0d1e-4f2a-8b3c-4d5e6f7a8b9c",
+    "display": "ASST Esempio"
+  },
+  "event": [
+    {
+      "detail": [
+        {
+          "reference": "PractitionerRole/1a2b3c4d-5e6f-4a7b-8c9d-0e1f2a3b4c5d",
+          "display": "Laura Galli - Medico di Pronto Soccorso"
+        }
+      ]
+    }
+  ],
+  "section": [
+    {
+      "title": "Modalità di trasporto",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "11459-5",
+            "display": "Modalità di Trasporto"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Arrivo in Pronto Soccorso con mezzo proprio.</p></div>"
+      },
+      "entry": [
+        {
+          "reference": "Encounter/5d6e7f8a-9b0c-4d1e-8f2a-3b4c5d6e7f8a",
+          "display": "Accesso PS n. 2026012345"
+        }
+      ]
+    },
+    {
+      "title": "Motivo della visita",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "46239-0",
+            "display": "Motivo della visita"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Dolore addominale insorto da circa 6 ore, non responsivo a terapia domiciliare.</p></div>"
+      },
+      "entry": [
+        {
+          "reference": "Observation/Example-ObservationProblemaAccesso-1-VPS",
+          "display": "Problema all'accesso: dolore addominale"
+        },
+        {
+          "reference": "Observation/Example-ObservationRagioneVisita-1-VPS",
+          "display": "Ragione della visita"
+        }
+      ]
+    },
+    {
+      "title": "Triage",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "11283-9",
+            "display": "Valutazione acutezza"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Codice di triage azzurro assegnato alle 13:20. Paziente vigile e orientato, dolore NRS 7/10.</p></div>"
+      },
+      "entry": [
+        {
+          "reference": "Observation/Example-ObservationTriage-1-VPS",
+          "display": "Triage - Valutazione acutezza"
+        }
+      ]
+    },
+    {
+      "title": "Inquadramento clinico iniziale",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "78337-3",
+            "display": "Inquadramento clinico iniziale"
+          }
+        ]
+      },
+      "section": [
+        {
+          "title": "Anamnesi",
+          "code": {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "11329-0",
+                "display": "Anamnesi Generale"
+              }
+            ]
+          },
+          "text": {
+            "status": "generated",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Ipertensione arteriosa in trattamento. Non interventi chirurgici pregressi.</p></div>"
+          }
+        },
+        {
+          "title": "Esame Obiettivo",
+          "code": {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "29545-1",
+                "display": "Esame Obiettivo"
+              }
+            ]
+          },
+          "text": {
+            "status": "generated",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Addome trattabile, dolente alla palpazione profonda in fossa iliaca destra. Murphy negativo.</p></div>"
+          }
+        },
+        {
+          "title": "Allergie e/o Reazioni Avverse",
+          "code": {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "48765-2",
+                "display": "Allergie e/o Reazioni Avverse"
+              }
+            ]
+          },
+          "text": {
+            "status": "generated",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Nessuna allergia nota.</p></div>"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Decorso Ospedaliero",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "8648-8",
+            "display": "Decorso Ospedaliero"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Somministrato ketorolac e.v. con beneficio. Episodio sincopale transitorio con rapida ripresa. Esami ematochimici nella norma.</p></div>"
+      }
+    },
+    {
+      "title": "Complicanze",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "55109-3",
+            "display": "Complicazioni"
+          }
+        ]
+      },
+      "entry": [
+        {
+          "reference": "Observation/Example-ObservationComplicanze-1-VPS",
+          "display": "Sincope e collasso"
+        }
+      ]
+    },
+    {
+      "title": "Accertamenti",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "30954-2",
+            "display": "Relevant diagnostic tests/laboratory data"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Emoglobina 14,2 g/dL.</p></div>"
+      },
+      "entry": [
+        {
+          "reference": "Observation/Example-ObservationAccertamenti-1-VPS",
+          "display": "Emoglobina"
+        }
+      ]
+    },
+    {
+      "title": "Terapia Farmacologica in Pronto Soccorso",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "29549-3",
+            "display": "Medication administered Narrative"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Ketorolac 30 mg e.v. alle 14:35.</p></div>"
+      },
+      "entry": [
+        {
+          "reference": "MedicationAdministration/Example-MedicationAdministration-1-VPS",
+          "display": "Ketorolac 30 mg e.v."
+        }
+      ]
+    },
+    {
+      "title": "Dimissione",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "28574-2",
+            "display": "Note di Dimissione"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Dimesso a domicilio alle 17:30 in buone condizioni generali. Prognosi di 5 giorni.</p></div>"
+      },
+      "entry": [
+        {
+          "reference": "Encounter/5d6e7f8a-9b0c-4d1e-8f2a-3b4c5d6e7f8a",
+          "display": "Accesso PS n. 2026012345"
+        },
+        {
+          "reference": "Observation/Example-ObservationPrognosi-1-VPS",
+          "display": "Prognosi"
+        },
+        {
+          "reference": "Observation/Example-ObservationLivelloAppropriatezza-1-VPS",
+          "display": "Livello appropriatezza"
+        }
+      ]
+    },
+    {
+      "title": "Piano di Cura",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "18776-5",
+            "display": "Piano di Cura"
+          }
+        ]
+      },
+      "entry": [
+        {
+          "reference": "CarePlan/Example-CarePlan-1-VPS",
+          "display": "Piano di cura alla dimissione"
+        }
+      ]
+    },
+    {
+      "title": "Terapia farmacologica alla dimissione",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "5311-1",
+            "display": "Terapia farmacologica alla dimissione"
+          }
+        ]
+      },
+      "entry": [
+        {
+          "reference": "MedicationRequest/Example-MedicationRequest-1-VPS",
+          "display": "Paracetamolo 1000 mg compresse"
+        }
+      ]
+    }
+  ]
+}

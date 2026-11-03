@@ -1,0 +1,54 @@
+{
+  "resourceType": "MedicationRequest",
+  "id": "Example-MedicationRequestTerapiaPS-1-VPS",
+  "meta": {
+    "lastUpdated": "2026-10-05T10:05:00+02:00",
+    "profile": [
+      "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLMedicationRequestTerapiaPSVPS"
+    ],
+    "versionId": "1"
+  },
+  "status": "completed",
+  "intent": "order",
+  "medicationReference": {
+    "reference": "Medication/3f2a9c1e-7b4d-4e8a-9c21-5d6e7f8a9b01",
+    "display": "Ketorolac 30 mg/ml soluzione iniettabile"
+  },
+  "subject": {
+    "reference": "Patient/a1b2c3d4-1234-5678-9abc-def012345678",
+    "display": "Mario Rossi"
+  },
+  "dosageInstruction": [
+    {
+      "text": "Ketorolac 30 mg e.v. in unica somministrazione",
+      "timing": {
+        "event": [
+          "2026-10-04T14:35:00+02:00"
+        ],
+        "repeat": {
+          "count": 1
+        }
+      },
+      "route": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-RouteOfAdministration",
+            "code": "IVINJ",
+            "display": "Injection, intravenous"
+          }
+        ],
+        "text": "Endovenosa"
+      },
+      "doseAndRate": [
+        {
+          "doseQuantity": {
+            "value": 30,
+            "unit": "mg",
+            "system": "http://unitsofmeasure.org",
+            "code": "mg"
+          }
+        }
+      ]
+    }
+  ]
+}

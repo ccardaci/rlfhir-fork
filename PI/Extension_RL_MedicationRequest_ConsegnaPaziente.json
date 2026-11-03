@@ -25,11 +25,14 @@
       {
         "id": "Extension.url",
         "path": "Extension.url",
+        "min": 1,
         "fixedUri": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLMedicationRequestConsegnaPaziente"
       },
       {
         "id": "Extension.value[x]",
         "path": "Extension.value[x]",
+        "min": 1,
+        "definition": "Il valore ammesso è \"true\": è prevista la consegna a domicilio del farmaco al paziente; \"false\": non è prevista la consegna a domicilio del farmaco al paziente.",
         "type": [
           {
             "code": "boolean"

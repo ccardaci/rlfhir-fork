@@ -1,0 +1,38 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "RLBasedOnOrderOrRequisition",
+  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLBasedOnOrderOrRequisition",
+  "name": "RLBasedOnOrderOrRequisition",
+  "status": "draft",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Composition"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.eu/fhir/StructureDefinition/composition-basedOn-order-or-requisition",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "type": [
+          {
+            "code": "Identifier"
+          },
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLServiceRequestCore"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

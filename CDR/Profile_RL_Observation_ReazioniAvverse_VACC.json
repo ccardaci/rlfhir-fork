@@ -1,0 +1,148 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationReazioniAvverse",
+  "name": "RLObservationReazioniAvverse",
+  "title": "RL Observation Reazioni Avverse",
+  "status": "draft",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "short": "Reazioni Avverse",
+        "definition": "Descrizione delle reazioni, manifestazione avversa al vaccino."
+      },
+      {
+        "id": "Observation.identifier",
+        "path": "Observation.identifier",
+        "min": 0,
+        "max": "*",
+        "definition": "Codice identificativo."
+      },
+      {
+        "id": "Observation.identifier.system",
+        "path": "Observation.identifier.system",
+        "min": 0,
+        "max": "1",
+        "fixedUri": "urn:oid:2.16.840.1.113883.2.9.10.1.11.4.8",
+        "definition": "Identifica il sistema di assegnazione dell'ID."
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "min": 1,
+        "max": "1",
+        "definition": "Codice identificativo."
+      },
+      {
+        "id": "Observation.code.coding.system",
+        "path": "Observation.code.coding.system",
+        "min": 0,
+        "max": "1",
+        "fixedUri": "http://loinc.org",
+        "comment": "Fixed: LOINC (OID 2.16.840.1.113883.6.1)"
+      },
+      {
+        "id": "Observation.code.coding.version",
+        "path": "Observation.code.coding.version",
+        "min": 0,
+        "max": "1",
+        "example": [{"label": "Esempio", "valueString": "LOINC 2.19"}]
+      },
+      {
+        "id": "Observation.code.coding.code",
+        "path": "Observation.code.coding.code",
+        "min": 0,
+        "max": "1",
+        "fixedCode": "31044-1"
+      },
+      {
+        "id": "Observation.code.coding.display",
+        "path": "Observation.code.coding.display",
+        "min": 0,
+        "max": "1",
+        "fixedString": "Reazione alla vaccinazione"
+      },
+      {
+        "id": "Observation.status",
+        "path": "Observation.status",
+        "min": 1,
+        "max": "1",
+        "fixedCode": "final",
+        "definition": "Indica lo stato dell'osservazione.",
+        "comment": "La fonte riportava 'Fixed: completed' (codice non valido per Observation.status); corretto a 'final'."
+      },
+      {
+        "id": "Observation.effective[x]",
+        "path": "Observation.effective[x]",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Period"
+          }
+        ],
+        "definition": "Intervallo temporale clinicamente rilevante per l'osservazione."
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "definition": "Codice identificativo della reazione avversa."
+      },
+      {
+        "id": "Observation.value[x].coding.code",
+        "path": "Observation.value[x].coding.code",
+        "min": 0,
+        "max": "1",
+        "short": "Valore del codice (es. CODICE REAZIONE)"
+      },
+      {
+        "id": "Observation.value[x].coding.system",
+        "path": "Observation.value[x].coding.system",
+        "min": 0,
+        "max": "1",
+        "comment": "Opzioni dalla fonte: urn:oid:2.16.840.1.113883.6.103 (ICD-9CM) | urn:oid:2.16.840.1.113883.2.9.6.1.56.1 (classificazione regionale). Non fissato: binding da formalizzare."
+      },
+      {
+        "id": "Observation.value[x].coding.version",
+        "path": "Observation.value[x].coding.version",
+        "min": 0,
+        "max": "1",
+        "comment": "Opzioni dalla fonte: 'ICD-9CM' | 'Classificazione reazioni avverse'."
+      },
+      {
+        "id": "Observation.value[x].coding.display",
+        "path": "Observation.value[x].coding.display",
+        "min": 0,
+        "max": "1",
+        "short": "Descrizione leggibile del codice (es. DESCRIZIONE REAZIONE)"
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": ["https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPatientCore"]
+          }
+        ],
+        "definition": "Riferimento al paziente o soggetto dell'osservazione."
+      }
+    ]
+  }
+}

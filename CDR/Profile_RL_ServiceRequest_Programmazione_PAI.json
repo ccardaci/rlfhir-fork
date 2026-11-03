@@ -1,0 +1,332 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLServiceRequestPAI",
+  "name": "RLServiceRequestPAI",
+  "title": "ServiceRequest PAI",
+  "status": "draft",
+  "date": "2026-10-28",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "ServiceRequest",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/ServiceRequest",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "ServiceRequest",
+        "path": "ServiceRequest",
+        "short": "Prestazione programmata"
+      },
+      {
+        "id": "ServiceRequest.extension",
+        "path": "ServiceRequest.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "ServiceRequest.extension:validitaBisogno",
+        "path": "ServiceRequest.extension",
+        "sliceName": "validitaBisogno",
+        "short": "Validità",
+        "comment": "Codice di validità (OID 2.16.840.1.113883.2.9.2.30.3.1.3.13.6.41) da convertire in Duration.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLServiceRequestValiditaBisogno"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ServiceRequest.extension:intervalloTemporale",
+        "path": "ServiceRequest.extension",
+        "sliceName": "intervalloTemporale",
+        "short": "Intervallo temporale",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLServiceRequestIntervalloTemporale"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ServiceRequest.status",
+        "path": "ServiceRequest.status",
+        "short": "Stato della richiesta",
+        "min": 1,
+        "max": "1",
+        "fixedCode": "active"
+      },
+      {
+        "id": "ServiceRequest.intent",
+        "path": "ServiceRequest.intent",
+        "short": "Scopo della richiesta",
+        "min": 1,
+        "max": "1",
+        "fixedCode": "order"
+      },
+      {
+        "id": "ServiceRequest.category",
+        "path": "ServiceRequest.category",
+        "short": "Tipologia prestazione",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "ServiceRequest.category.coding",
+        "path": "ServiceRequest.category.coding",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "ServiceRequest.category.coding.system",
+        "path": "ServiceRequest.category.coding.system",
+        "short": "Sistema di codifica",
+        "min": 1,
+        "max": "1",
+        "fixedUri": "urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.13.6.18"
+      },
+      {
+        "id": "ServiceRequest.category.coding.code",
+        "path": "ServiceRequest.category.coding.code",
+        "short": "Valore del codice",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "ServiceRequest.category.coding.display",
+        "path": "ServiceRequest.category.coding.display",
+        "short": "Descrizione leggibile del codice",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "ServiceRequest.code",
+        "path": "ServiceRequest.code",
+        "short": "Prestazione",
+        "comment": "Un coding per tipologia di prestazione. Per la prestazione vaccinale: coding con la prestazione vaccinale e, se presente, una seconda coding con il codice regionale del vaccino.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "ServiceRequest.code.coding",
+        "path": "ServiceRequest.code.coding",
+        "min": 1,
+        "max": "*"
+      },
+      {
+        "id": "ServiceRequest.code.coding.system",
+        "path": "ServiceRequest.code.coding.system",
+        "short": "Sistema di codifica",
+        "comment": "Sistemi ammessi: Ambulatoriale urn:oid:2.16.840.1.113883.2.9.2.30.6.11; Vaccinale urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.13.6.26; Codice regionale vaccino urn:oid:2.16.840.1.113883.2.9.2.30.6.2 (in aggiunta alla vaccinale); Ricovero ...6.28; ADI ...6.29; Cure intermedie ...6.30; CDI ...6.32; CDD ...6.50; RIA ...6.39; Cure palliative ...6.51; Intervento educazionale ...6.35.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "ServiceRequest.code.coding.code",
+        "path": "ServiceRequest.code.coding.code",
+        "short": "Valore del codice",
+        "comment": "Obbligatorio per ricovero, ADI, cure intermedie, RIA, cure palliative, interventi educazionali e prestazione vaccinale.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "ServiceRequest.code.coding.display",
+        "path": "ServiceRequest.code.coding.display",
+        "short": "Descrizione leggibile del codice",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "ServiceRequest.quantity[x]",
+        "path": "ServiceRequest.quantity[x]",
+        "short": "Quantità annua / Quantità",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "ServiceRequest.quantity[x].value",
+        "path": "ServiceRequest.quantity[x].value",
+        "short": "Valore della quantità",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "ServiceRequest.quantity[x].unit",
+        "path": "ServiceRequest.quantity[x].unit",
+        "short": "Unità",
+        "comment": "Per la Quantità annua: {times}/a.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "ServiceRequest.subject",
+        "path": "ServiceRequest.subject",
+        "short": "Paziente a cui si riferisce la richiesta",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPatientCore"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ServiceRequest.occurrence[x]",
+        "path": "ServiceRequest.occurrence[x]",
+        "short": "Frequenza e durata",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Timing"
+          }
+        ]
+      },
+      {
+        "id": "ServiceRequest.occurrence[x].repeat",
+        "path": "ServiceRequest.occurrence[x].repeat",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "ServiceRequest.occurrence[x].repeat.bounds[x]",
+        "path": "ServiceRequest.occurrence[x].repeat.bounds[x]",
+        "short": "Durata",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Duration"
+          }
+        ]
+      },
+      {
+        "id": "ServiceRequest.occurrence[x].repeat.bounds[x].value",
+        "path": "ServiceRequest.occurrence[x].repeat.bounds[x].value",
+        "short": "Durata",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "ServiceRequest.occurrence[x].repeat.bounds[x].code",
+        "path": "ServiceRequest.occurrence[x].repeat.bounds[x].code",
+        "short": "Unità di misura",
+        "comment": "Unità di misura (OID 2.16.840.1.113883.2.9.2.30.3.1.3.13.6.43).",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "ServiceRequest.occurrence[x].repeat.count",
+        "path": "ServiceRequest.occurrence[x].repeat.count",
+        "short": "Numero sedute per ciclo",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "ServiceRequest.occurrence[x].code",
+        "path": "ServiceRequest.occurrence[x].code",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "ServiceRequest.occurrence[x].code.text",
+        "path": "ServiceRequest.occurrence[x].code.text",
+        "short": "Tipologia frequenza / Frequenza",
+        "comment": "Tipologia frequenza (CRS-SISS OID 2.16.840.1.113883.2.9.2.30.3.1.3.13.6.42) oppure frequenza in testo libero.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "ServiceRequest.performer",
+        "path": "ServiceRequest.performer",
+        "short": "Erogatore",
+        "comment": "Erogatori ADI, Cure intermedie, CDI, CDD, RIA, Cure palliative.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ServiceRequest.locationCode",
+        "path": "ServiceRequest.locationCode",
+        "short": "Flag telemedicina",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "ServiceRequest.locationCode.coding",
+        "path": "ServiceRequest.locationCode.coding",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "ServiceRequest.locationCode.coding.system",
+        "path": "ServiceRequest.locationCode.coding.system",
+        "short": "Sistema di codifica",
+        "min": 0,
+        "max": "1",
+        "fixedUri": "urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.13.6.55"
+      },
+      {
+        "id": "ServiceRequest.locationCode.coding.code",
+        "path": "ServiceRequest.locationCode.coding.code",
+        "short": "Valore del codice",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "ServiceRequest.locationCode.coding.display",
+        "path": "ServiceRequest.locationCode.coding.display",
+        "short": "Descrizione leggibile del codice",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "ServiceRequest.reasonReference",
+        "path": "ServiceRequest.reasonReference",
+        "short": "Data ultima valutazione / Indicatore di gravità",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationValutazionePAI"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

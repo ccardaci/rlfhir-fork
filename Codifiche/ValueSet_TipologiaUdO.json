@@ -288,6 +288,10 @@
           {
             "code": "CMI",
             "display": "CENTRALE MEDICA INTEGRATA"
+          },
+          {
+            "code": "ADP-IFEC",
+            "display": "SORVEGLIANZA DOMICILIARE IFEC"
           }
         ]
       }

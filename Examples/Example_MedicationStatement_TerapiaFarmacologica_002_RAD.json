@@ -1,0 +1,18 @@
+{
+  "resourceType": "MedicationStatement",
+  "id": "rl-medicationstatement-002",
+  "meta": {
+    "profile": [
+      "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLMedicationStatementTerapiaFarmacologica"
+    ]
+  },
+  "status": "active",
+  "medicationReference": {
+    "reference": "Medication/med-ramipril-02",
+    "display": "Ramipril 5 mg compresse"
+  },
+  "subject": {
+    "reference": "Patient/pat-bianchi-lucia-02",
+    "display": "Lucia Bianchi"
+  }
+}

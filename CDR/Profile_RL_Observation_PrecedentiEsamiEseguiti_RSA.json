@@ -1,0 +1,148 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationPrecedentiEsamiEseguitiRSA",
+  "name": "RLObservationPrecedentiEsamiEseguitiRSA",
+  "title": "Observation Precedenti Esami Eseguiti RSA",
+  "status": "draft",
+  "date": "2026-10-08",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "short": "Precedenti Esami Eseguiti"
+      },
+      {
+        "id": "Observation.status",
+        "path": "Observation.status",
+        "short": "Indica lo stato dell'osservazione",
+        "min": 1,
+        "max": "1",
+        "fixedCode": "final"
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "short": "Codice identificativo",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Observation.code.coding.system",
+        "path": "Observation.code.coding.system",
+        "short": "Sistema di codifica",
+        "comment": "Valori ammessi: http://loinc.org (LOINC, OID 2.16.840.1.113883.6.1) | urn:oid:2.16.840.1.113883.6.103 (ICD-9-CM)",
+        "min": 0,
+        "max": "1",
+        "fixedCode": "urn:oid:2.16.840.1.113883.6.1|urn:oid:2.16.840.1.113883.6.103"
+      },
+      {
+        "id": "Observation.code.coding.version",
+        "path": "Observation.code.coding.version",
+        "short": "Versione del sistema di codifica",
+        "comment": "Es. LOINC 2.19 | ICD9-CM",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.code.coding.code",
+        "path": "Observation.code.coding.code",
+        "short": "Valore del codice",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.code.coding.display",
+        "path": "Observation.code.coding.display",
+        "short": "Descrizione leggibile del codice",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "short": "Soggetto a cui si riferisce l'osservazione",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPatientCore"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.effective[x]",
+        "path": "Observation.effective[x]",
+        "short": "Tempo o periodo di tempo clinicamente rilevante per l'osservazione",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "dateTime"
+          },
+          {
+            "code": "Period"
+          }
+        ]
+      },
+      {
+        "id": "Observation.effective[x]:effectivePeriod",
+        "path": "Observation.effective[x]",
+        "sliceName": "effectivePeriod",
+        "short": "Periodo di tempo clinicamente rilevante per l'osservazione",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Period"
+          }
+        ]
+      },
+      {
+        "id": "Observation.effective[x]:effectivePeriod.start",
+        "path": "Observation.effective[x].start",
+        "short": "Inizio dell'osservazione",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.effective[x]:effectivePeriod.end",
+        "path": "Observation.effective[x].end",
+        "short": "Fine dell'osservazione",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "short": "Esito dell'esame in forma testuale",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      }
+    ]
+  }
+}

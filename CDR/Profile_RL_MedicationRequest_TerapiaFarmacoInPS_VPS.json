@@ -1,0 +1,68 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLMedicationRequestTerapiaPSVPS",
+  "name": "RLMedicationRequestTerapiaPSVPS",
+  "title": "MedicationRequest Terapia PS VPS",
+  "status": "draft",
+  "date": "2026-10-02",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "MedicationRequest",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/MedicationRequest",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "MedicationRequest",
+        "path": "MedicationRequest",
+        "short": "Terapia Farmacologica in Pronto Soccorso"
+      },
+      {
+        "id": "MedicationRequest.status",
+        "path": "MedicationRequest.status",
+        "short": "Stato della richiesta",
+        "comment": "Suggerimento: completed",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "MedicationRequest.intent",
+        "path": "MedicationRequest.intent",
+        "short": "Scopo della richiesta",
+        "comment": "Suggerimento: order",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "MedicationRequest.medication[x]",
+        "path": "MedicationRequest.medication[x]",
+        "short": "Farmaco prescritto",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "MedicationRequest.subject",
+        "path": "MedicationRequest.subject",
+        "short": "Paziente a cui si riferisce la prescrizione",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPatientCore"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction",
+        "path": "MedicationRequest.dosageInstruction",
+        "short": "Dati relativi alla posologia (dosageInstruction.timing e dosageInstruction.doseAndRate)",
+        "min": 0,
+        "max": "*"
+      }
+    ]
+  }
+}

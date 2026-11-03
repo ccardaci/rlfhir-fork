@@ -1,0 +1,161 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationCoreDecorsoClinico",
+  "name": "RLObservationCoreDecorsoClinico",
+  "title": "Observation Core - Decorso Clinico",
+  "status": "draft",
+  "date": "2026-08-04",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation"
+      },
+      {
+        "id": "Observation.status",
+        "path": "Observation.status",
+        "short": "Indica lo stato dell'osservazione",
+        "min": 1,
+        "max": "1",
+        "fixedCode": "final"
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "short": "Codice identificativo",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Observation.code.coding",
+        "path": "Observation.code.coding",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Observation.code.coding.system",
+        "path": "Observation.code.coding.system",
+        "short": "Sistema di codifica",
+        "min": 0,
+        "max": "1",
+        "fixedUri": "http://loinc.org"
+      },
+      {
+        "id": "Observation.code.coding.version",
+        "path": "Observation.code.coding.version",
+        "short": "Versione del sistema di codifica",
+        "definition": "Versione LOINC utilizzata (es. \"2.19\"). Non fissata a un valore univoco perche' variabile nel tempo.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.code.coding.code",
+        "path": "Observation.code.coding.code",
+        "short": "Valore del codice",
+        "min": 0,
+        "max": "1",
+        "fixedCode": "89261-2"
+      },
+      {
+        "id": "Observation.code.coding.display",
+        "path": "Observation.code.coding.display",
+        "short": "Descrizione leggibile del codice",
+        "min": 0,
+        "max": "1",
+        "fixedString": "Decorso Clinico"
+      },
+      
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "short": "Soggetto a cui si riferisce l'osservazione",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPatientCore"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.encounter",
+        "path": "Observation.encounter",
+        "short": "Episodio clinico in cui è stata fatta la richiesta",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLEncounterCore"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "short": "Codice identificativo",
+        "min": 0,
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://fhir.siss.regione.lombardia.it/ValueSet/CriticitaClinica"
+        },
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "Observation.valueCodeableConcept.coding",
+        "path": "Observation.valueCodeableConcept.coding",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.valueCodeableConcept.coding.system",
+        "path": "Observation.valueCodeableConcept.coding.system",
+        "short": "Sistema di codifica",
+        "fixedUri": "urn:oid:2.16.840.1.113883.2.9.77.22.11.10",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.valueCodeableConcept.coding.version",
+        "path": "Observation.valueCodeableConcept.coding.version",
+        "short": "Versione del sistema di codifica",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.valueCodeableConcept.coding.code",
+        "path": "Observation.valueCodeableConcept.coding.code",
+        "short": "Valore del codice",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://fhir.siss.regione.lombardia.it/ValueSet/CriticitaClinica"
+        },
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.valueCodeableConcept.coding.display",
+        "path": "Observation.valueCodeableConcept.coding.display",
+        "short": "Descrizione leggibile del concetto codificato",
+        "min": 0,
+        "max": "1"
+      }
+    ]
+  }
+}

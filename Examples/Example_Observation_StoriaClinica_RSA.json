@@ -1,0 +1,35 @@
+{
+  "resourceType": "Observation",
+  "id": "Example-ObservationStoriaClinica-1-RSA",
+  "meta": {
+    "lastUpdated": "2026-10-08T10:00:00+02:00",
+    "profile": [
+      "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationStoriaClinicaRSA"
+    ],
+    "versionId": "1"
+  },
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "89261-2",
+        "display": "Decorso Clinico"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/a1b2c3d4-1234-5678-9abc-def012345678",
+    "display": "Mario Rossi"
+  },
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.2.9.77.22.11.10",
+        "version": "1.0",
+        "code": "0031",
+        "display": "Ipertensione arteriosa"
+      }
+    ]
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLDeviceUseStatementTPI",
+  "name": "RLDeviceUseStatementTPI",
+  "title": "RL Device Use Statement TPI",
+  "status": "draft",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "DeviceUseStatement",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/DeviceUseStatement",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "DeviceUseStatement",
+        "path": "DeviceUseStatement",
+        "short": "Impianto Dispositivo",
+        "definition": "Rappresenta l'uso (impianto) di un dispositivo medico da parte di un paziente, nell'ambito della Tessera Portatore Impianto."
+      },
+      {
+        "id": "DeviceUseStatement.device",
+        "path": "DeviceUseStatement.device",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLDeviceImpianto"
+            ]
+          }
+        ],
+        "definition": "Riferimento alla risorsa Device che identifica il dispositivo utilizzato."
+      },
+      {
+        "id": "DeviceUseStatement.timing[x]",
+        "path": "DeviceUseStatement.timing[x]",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Period"
+          }
+        ],
+        "definition": "Rappresenta la data e ora in cui il dispositivo è stato impiantato, sostituito/espiantato."
+      },
+      {
+        "id": "DeviceUseStatement.timing[x].start",
+        "path": "DeviceUseStatement.timing[x].start",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "DeviceUseStatement.timing[x].end",
+        "path": "DeviceUseStatement.timing[x].end",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "DeviceUseStatement.extension:struttura",
+        "path": "DeviceUseStatement.extension",
+        "sliceName": "struttura",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLDeviceUseStatementStrutturaImpianto"
+            ]
+          }
+        ],
+        "definition": "Rappresenta la struttura sanitaria che ha effettuato l'impianto."
+      },
+      {
+        "id": "DeviceUseStatement.bodySite",
+        "path": "DeviceUseStatement.bodySite",
+        "min": 0,
+        "max": "1",
+        "definition": "Sede anatomica in cui il dispositivo è applicato/utilizzato."
+      },
+      {
+        "id": "DeviceUseStatement.status",
+        "path": "DeviceUseStatement.status",
+        "min": 1,
+        "max": "1",
+        "definition": "Stato dell'uso del dispositivo.",
+        "comment": "Suggerimento (non fixed): 'active' per i dispositivi impiantati in uso, 'completed' per quelli non in uso."
+      },
+      {
+        "id": "DeviceUseStatement.subject",
+        "path": "DeviceUseStatement.subject",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPatientCore"
+            ]
+          }
+        ],
+        "definition": "Riferimento al soggetto che usa il dispositivo."
+      }
+    ]
+  }
+}

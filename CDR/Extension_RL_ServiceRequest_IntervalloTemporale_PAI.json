@@ -1,0 +1,65 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLServiceRequestIntervalloTemporale",
+  "name": "RLServiceRequestIntervalloTemporale",
+  "title": "Intervallo Temporale",
+  "status": "draft",
+  "date": "2026-10-28",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "ServiceRequest"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Intervallo temporale",
+        "definition": "Intervallo temporale (Piano Assistenziale Individuale)."
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLServiceRequestIntervalloTemporale"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "short": "Intervallo temporale",
+        "min": 1,
+        "type": [
+          {
+            "code": "Period"
+          }
+        ]
+      },
+      {
+        "id": "Extension.value[x].start",
+        "path": "Extension.value[x].start",
+        "short": "Data inizio",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Extension.value[x].end",
+        "path": "Extension.value[x].end",
+        "short": "Data fine",
+        "min": 1,
+        "max": "1"
+      }
+    ]
+  }
+}

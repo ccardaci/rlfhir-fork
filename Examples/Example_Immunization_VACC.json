@@ -1,0 +1,97 @@
+{
+        "resourceType": "Immunization",
+        "meta": {
+          "profile": [
+            "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLImmunizationVaccinazione"
+          ]
+        },
+        "status": "completed",
+        "vaccineCode": {
+          "coding": [
+            {
+              "system": "urn:oid:2.16.840.1.113883.2.9.6.1.5",
+              "version": "AIC",
+              "code": "045678018",
+              "display": "VACCINO MPR ESEMPIO"
+            }
+          ]
+        },
+        "patient": {
+          "reference": "urn:uuid:6f890e62-462b-56d1-a233-407158ca9cb2"
+        },
+        "occurrenceDateTime": "2026-10-05T11:00:00+02:00",
+        "location": {
+          "reference": "urn:uuid:d4dcda18-7769-577e-a38a-4bdadd8c1989"
+        },
+        "manufacturer": {
+          "reference": "urn:uuid:9f8d07b2-a686-534d-a12e-3dbe76bbbbd0"
+        },
+        "lotNumber": "AB1234",
+        "expirationDate": "2027-06-30",
+        "site": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActSite",
+              "code": "LA",
+              "display": "left arm"
+            }
+          ]
+        },
+        "route": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-RouteOfAdministration",
+              "code": "IM",
+              "display": "Injection, intramuscular"
+            }
+          ]
+        },
+        "doseQuantity": {
+          "value": 0.5,
+          "unit": "mL",
+          "system": "http://unitsofmeasure.org",
+          "code": "mL"
+        },
+        "protocolApplied": [
+          {
+            "targetDisease": [
+              {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "14189004",
+                    "display": "Measles"
+                  }
+                ]
+              },
+              {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "36989005",
+                    "display": "Mumps"
+                  }
+                ]
+              },
+              {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "36653000",
+                    "display": "Rubella"
+                  }
+                ]
+              }
+            ],
+            "doseNumberPositiveInt": 1
+          }
+        ],
+        "reaction": [
+          {
+            "detail": {
+              "reference": "urn:uuid:ae00b79b-b0b0-5ddb-a621-fd65aff9fd5e"
+            }
+          }
+        ],
+        "id": "immunization-vaccinazione"
+      }

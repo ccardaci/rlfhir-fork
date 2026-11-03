@@ -1,990 +1,1095 @@
 {
-  "resourceType": "StructureDefinition",
-  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCompositionRefertoRadiologia",
-  "name": "RLCompositionRefertoRadiologia",
-  "title": "RL Composition Referto Radiologia",
-  "status": "draft",
-  "fhirVersion": "4.0.1",
-  "kind": "resource",
-  "abstract": false,
-  "type": "Composition",
-  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Composition",
-  "derivation": "constraint",
-  "differential": {
-    "element": [
-      {
-        "id": "Composition",
-        "path": "Composition",
-        "short": "Referto Radiologico",
-        "definition": "Documento FHIR che rappresenta il Referto Radiologico prodotto nell'ambito SISS Regione Lombardia."
-      },
-      {
-        "id": "Composition.type",
-        "path": "Composition.type",
-        "short": "Identifica la tipologia di documento",
-        "min": 1,
-        "max": "1"
-      },
-      {
-        "id": "Composition.type.coding",
-        "path": "Composition.type.coding",
-        "min": 1,
-        "max": "1"
-      },
-      {
-        "id": "Composition.type.coding.system",
-        "path": "Composition.type.coding.system",
-        "min": 1,
-        "max": "1",
-        "fixedUri": "http://loinc.org",
-        "definition": "Sistema di codifica.",
-        "note": [{"text": "Fixed: LOINC (OID 2.16.840.1.113883.6.1)"}]
-      },
-      {
-        "id": "Composition.type.coding.version",
-        "path": "Composition.type.coding.version",
-        "min": 0,
-        "max": "1",
-        "definition": "Versione del sistema di codifica.",
-        "example": [{"label": "Esempio", "valueString": "LOINC 2.19"}]
-      },
-      {
-        "id": "Composition.type.coding.code",
-        "path": "Composition.type.coding.code",
-        "min": 1,
-        "max": "1",
-        "fixedCode": "68604-8",
-        "short": "Codice locale per il tipo di documento."
-      },
-      {
-        "id": "Composition.type.coding.display",
-        "path": "Composition.type.coding.display",
-        "min": 0,
-        "max": "1",
-        "fixedString": "Referto Radiologico",
-        "definition": "Descrizione leggibile del sistema locale."
-      },
-      {
-        "id": "Composition.title",
-        "path": "Composition.title",
-        "min": 1,
-        "max": "1",
-        "fixedString": "Referto Radiologico",
-        "definition": "L'elemento title specifica il titolo del documento."
-      },
-      {
-        "id": "Composition.status",
-        "path": "Composition.status",
-        "min": 1,
-        "max": "1",
-        "definition": "Stato del documento.",
-        "note": [{"text": "Valori ammessi: active | final. Suggerimento (non fixed): final."}]
-      },
-      {
-        "id": "Composition.date",
-        "path": "Composition.date",
-        "min": 1,
-        "max": "1",
-        "definition": "Giorno e ora della creazione dell'istanza del documento."
-      },
-      {
-        "id": "Composition.subject",
-        "path": "Composition.subject",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": ["https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPatientCore"]
-          }
-        ],
-        "definition": "Paziente (Assistito) a cui si riferisce il documento.",
-        "note": [{"text": "Cardinalità corretta a 1..1 rispetto alla fonte (0..1): il subject è sempre presente in un referto."}]
-      },
-      {
-        "id": "Composition.author",
-        "path": "Composition.author",
-        "min": 1,
-        "max": "*",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPractitionerRoleCore",
-              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPractitionerCore",
-              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLOrganizationCore"
-            ]
-          }
-        ],
-        "definition": "Medico Refertante: autore del documento. La reference identifica principalmente il professionista autore tramite PractitionerCore; se necessario rappresentare anche la struttura di appartenenza, usare PractitionerRoleCore."
-      },
-      {
-        "id": "Composition.extension:dataEnterer",
-        "path": "Composition.extension",
-        "sliceName": "dataEnterer",
-        "min": 0,
-        "max": "*",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": ["http://hl7.it/fhir/StructureDefinition/composition-dataenterer-it"]
-          }
-        ],
-        "definition": "Persona o dispositivo che trasforma un testo dettato nel documento FHIR."
-      },
-      {
-        "id": "Composition.attester",
-        "path": "Composition.attester",
-        "min": 1,
-        "max": "*",
-        "definition": "Professionisti che attestano la validità del documento. Se la risorsa è creata a fine documentale, uno degli attester dovrebbe essere il firmatario (chi allega la firma digitale al documento).",
-        "slicing": {
-          "discriminator": [{"type": "value", "path": "mode"}],
-          "rules": "open"
-        }
-      },
-      {
-        "id": "Composition.attester:legalAuthenticator",
-        "path": "Composition.attester",
-        "sliceName": "legalAuthenticator",
-        "min": 0,
-        "max": "1",
-        "short": "Medico Firmatario",
-        "definition": "Firmatario del documento FHIR."
-      },
-      {
-        "id": "Composition.attester:legalAuthenticator.mode",
-        "path": "Composition.attester.mode",
-        "min": 1,
-        "max": "1",
-        "fixedCode": "legal"
-      },
-      {
-        "id": "Composition.attester:legalAuthenticator.time",
-        "path": "Composition.attester.time",
-        "min": 1,
-        "max": "1",
-        "short": "Data e ora di firma",
-        "definition": "Riferimento temporale della firma."
-      },
-      {
-        "id": "Composition.attester:legalAuthenticator.party",
-        "path": "Composition.attester.party",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPractitionerCore",
-              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPractitionerRoleCore"
-            ]
-          }
-        ],
-        "definition": "Riferimento al firmatario."
-      },
-      {
-        "id": "Composition.attester:authenticator",
-        "path": "Composition.attester",
-        "sliceName": "authenticator",
-        "min": 0,
-        "max": "1",
-        "definition": "Validatore del documento FHIR."
-      },
-      {
-        "id": "Composition.attester:authenticator.mode",
-        "path": "Composition.attester.mode",
-        "min": 1,
-        "max": "1",
-        "fixedCode": "professional"
-      },
-      {
-        "id": "Composition.attester:authenticator.party",
-        "path": "Composition.attester.party",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPractitionerCore",
-              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPractitionerRoleCore"
-            ]
-          }
-        ],
-        "definition": "Riferimento al validatore."
-      },
-      {
-        "id": "Composition.custodian",
-        "path": "Composition.custodian",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": ["https://fhir.siss.regione.lombardia.it/StructureDefinition/RLOrganizationCore"]
-          }
-        ],
-        "short": "Azienda Sanitaria",
-        "definition": "Organizzazione responsabile della conservazione dell'originale del documento, al momento della generazione. Codice e descrizione dell'azienda sanitaria."
-      },
-      {
-        "id": "Composition.extension:information-recipient",
-        "path": "Composition.extension",
-        "sliceName": "information-recipient",
-        "min": 0,
-        "max": "*",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": ["http://hl7.eu/fhir/StructureDefinition/information-recipient"]
-          }
-        ],
-        "definition": "Professionisti sanitari che ricevono una copia del documento (es. MMG/PLS)."
-      },
-      {
-        "id": "Composition.encounter",
-        "path": "Composition.encounter",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": ["https://fhir.siss.regione.lombardia.it/StructureDefinition/RLEncounterCore"]
-          }
-        ],
-        "short": "Codice nosologico / Tecnico di radiologia",
-        "definition": "Rappresenta l'atto/contesto assistenziale a cui il documento si riferisce (da cui, tramite EncounterCore, sono referenziabili Location e Organization: unità operativa, presidio, azienda sanitaria)."
-      },
-      {
-        "id": "Composition.event",
-        "path": "Composition.event",
-        "min": 0,
-        "max": "*",
-        "short": "Tipologia di accesso",
-        "definition": "Tipologia di accesso che ha determinato la prestazione."
-      },
-      {
-        "id": "Composition.event.detail",
-        "path": "Composition.event.detail",
-        "min": 0,
-        "max": "*",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": ["https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPractitionerRoleCore"]
-          }
-        ],
-        "definition": "Soggetto che effettua il serviceEvent.",
-        "note": [{"text": "Target uniformato a PractitionerRoleCore (la fonte riportava un'incoerenza tra path e colonna Tipo)."}]
-      },
-      {
-        "id": "Composition.basedOn",
-        "path": "Composition.basedOn",
-        "min": 0,
-        "max": "*",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": ["https://fhir.siss.regione.lombardia.it/StructureDefinition/RLServiceRequestCore"]
-          }
-        ],
-        "short": "Numero ricetta medica / Codice CUP / Codice ordine interno / Accession Number / Studio DICOM",
-        "definition": "Richiesta che ha determinato la produzione del documento di Referto di Radiologia o ogni altro ordine ad esso relativo.",
-        "note": [{"text": "Il Medico Prescrittore è rintracciabile tramite ServiceRequestCore.requester (RLPractitionerRoleCore), non è un elemento proprio di questo profilo Composition."}]
-      },
-      {
-        "id": "Composition.extension:versionNumber",
-        "path": "Composition.extension",
-        "sliceName": "versionNumber",
-        "min": 0,
-        "max": "*",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": ["http://hl7.org/fhir/StructureDefinition/composition-clinicaldocument-versionNumber"]
-          }
-        ],
-        "definition": "Identificatore specifico della versione per la composizione, assegnato quando ciascuna versione viene creata o aggiornata."
-      },
-      {
-        "id": "Composition.section",
-        "path": "Composition.section",
-        "slicing": {
-          "discriminator": [{"type": "value", "path": "code"}],
-          "rules": "open"
-        },
-        "min": 0,
-        "max": "*"
-      },
-
-      {
-        "id": "Composition.section:dicomObjectCatalog",
-        "path": "Composition.section",
-        "sliceName": "dicomObjectCatalog",
-        "min": 0,
-        "max": "1"
-      },
-      {
-        "id": "Composition.section:dicomObjectCatalog.title",
-        "path": "Composition.section.title",
-        "min": 0,
-        "max": "1",
-        "fixedString": "DICOM Object Catalog"
-      },
-      {
-        "id": "Composition.section:dicomObjectCatalog.code",
-        "path": "Composition.section.code",
-        "min": 0,
-        "max": "1",
-        "short": "Codice identificativo referto RIS"
-      },
-      {
-        "id": "Composition.section:dicomObjectCatalog.code.coding.system",
-        "path": "Composition.section.code.coding.system",
-        "min": 0,
-        "max": "1",
-        "fixedUri": "urn:oid:1.2.840.10008.2.16.4",
-        "note": [{"text": "Fixed: DCM"}]
-      },
-      {
-        "id": "Composition.section:dicomObjectCatalog.code.coding.version",
-        "path": "Composition.section.code.coding.version",
-        "min": 0,
-        "max": "1"
-      },
-      {
-        "id": "Composition.section:dicomObjectCatalog.code.coding.code",
-        "path": "Composition.section.code.coding.code",
-        "min": 0,
-        "max": "1",
-        "fixedCode": "121181"
-      },
-      {
-        "id": "Composition.section:dicomObjectCatalog.code.coding.display",
-        "path": "Composition.section.code.coding.display",
-        "min": 0,
-        "max": "1",
-        "fixedString": "DICOM Object Catalog"
-      },
-      {
-        "id": "Composition.section:dicomObjectCatalog.entry",
-        "path": "Composition.section.entry",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": ["https://fhir.siss.regione.lombardia.it/StructureDefinition/RLImagingStudyDicom"]
-          }
+    "resourceType": "StructureDefinition",
+    "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCompositionRefertoRadiologia",
+    "name": "RLCompositionRefertoRadiologia",
+    "title": "RL Composition Referto Radiologia",
+    "status": "draft",
+    "fhirVersion": "4.0.1",
+    "kind": "resource",
+    "abstract": false,
+    "type": "Composition",
+    "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Composition",
+    "derivation": "constraint",
+    "differential": {
+        "element": [
+            {
+                "id": "Composition",
+                "path": "Composition",
+                "short": "Referto Radiologico",
+                "definition": "Documento FHIR che rappresenta il Referto Radiologico prodotto nell'ambito SISS Regione Lombardia."
+            },
+            {
+                "id": "Composition.extension:dataEnterer",
+                "path": "Composition.extension",
+                "sliceName": "dataEnterer",
+                "min": 0,
+                "max": "*",
+                "type": [
+                    {
+                        "code": "Extension",
+                        "profile": [
+                            "http://hl7.it/fhir/StructureDefinition/composition-dataenterer-it"
+                        ]
+                    }
+                ],
+                "definition": "Persona o dispositivo che trasforma un testo dettato nel documento FHIR."
+            },
+            {
+                "id": "Composition.extension:information-recipient",
+                "path": "Composition.extension",
+                "sliceName": "information-recipient",
+                "min": 0,
+                "max": "*",
+                "type": [
+                    {
+                        "code": "Extension",
+                        "profile": [
+                            "http://hl7.eu/fhir/StructureDefinition/information-recipient"
+                        ]
+                    }
+                ],
+                "definition": "Professionisti sanitari che ricevono una copia del documento (es. MMG/PLS)."
+            },
+            {
+                "id": "Composition.extension:basedOnOrderOrRequisition",
+                "path": "Composition.extension",
+                "sliceName": "basedOnOrderOrRequisition",
+                "short": "Numero ricetta medica / Codice CUP / Codice ordine interno / Accession Number / Studio DICOM",
+                "definition": "Richiesta che ha determinato la produzione del documento di Referto di Radiologia o ogni altro ordine ad esso relativo.",
+                "min": 0,
+                "max": "*",
+                "type": [
+                    {
+                        "code": "Extension",
+                        "profile": [
+                            "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLBasedOnOrderOrRequisition"
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "Composition.extension:versionNumber",
+                "path": "Composition.extension",
+                "sliceName": "versionNumber",
+                "min": 0,
+                "max": "*",
+                "type": [
+                    {
+                        "code": "Extension",
+                        "profile": [
+                            "http://hl7.org/fhir/StructureDefinition/composition-clinicaldocument-versionNumber"
+                        ]
+                    }
+                ],
+                "definition": "Identificatore specifico della versione per la composizione, assegnato quando ciascuna versione viene creata o aggiornata."
+            },
+            {
+                "id": "Composition.status",
+                "path": "Composition.status",
+                "min": 1,
+                "max": "1",
+                "definition": "Stato del documento.",
+                "comment": "Valori ammessi dal ValueSet composition-status: preliminary | final | amended | entered-in-error. Valore atteso (non fixed): final."
+            },
+            {
+                "id": "Composition.type",
+                "path": "Composition.type",
+                "short": "Identifica la tipologia di documento",
+                "min": 1,
+                "max": "1"
+            },
+            {
+                "id": "Composition.type.coding",
+                "path": "Composition.type.coding",
+                "min": 1,
+                "max": "1"
+            },
+            {
+                "id": "Composition.type.coding.system",
+                "path": "Composition.type.coding.system",
+                "min": 1,
+                "max": "1",
+                "fixedUri": "http://loinc.org",
+                "definition": "Sistema di codifica.",
+                "comment": "Fixed: LOINC (OID 2.16.840.1.113883.6.1)"
+            },
+            {
+                "id": "Composition.type.coding.version",
+                "path": "Composition.type.coding.version",
+                "min": 0,
+                "max": "1",
+                "definition": "Versione del sistema di codifica.",
+                "example": [
+                    {
+                        "label": "Esempio",
+                        "valueString": "LOINC 2.19"
+                    }
+                ]
+            },
+            {
+                "id": "Composition.type.coding.code",
+                "path": "Composition.type.coding.code",
+                "min": 1,
+                "max": "1",
+                "fixedCode": "68604-8",
+                "short": "Codice locale per il tipo di documento."
+            },
+            {
+                "id": "Composition.type.coding.display",
+                "path": "Composition.type.coding.display",
+                "min": 0,
+                "max": "1",
+                "fixedString": "Referto Radiologico",
+                "definition": "Descrizione leggibile del sistema locale."
+            },
+            {
+                "id": "Composition.subject",
+                "path": "Composition.subject",
+                "min": 1,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "Reference",
+                        "targetProfile": [
+                            "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPatientCore"
+                        ]
+                    }
+                ],
+                "definition": "Paziente (Assistito) a cui si riferisce il documento.",
+                "comment": "Cardinalità corretta a 1..1 rispetto alla fonte (0..1): il subject è sempre presente in un referto."
+            },
+            {
+                "id": "Composition.encounter",
+                "path": "Composition.encounter",
+                "min": 0,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "Reference",
+                        "targetProfile": [
+                            "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLEncounterCore"
+                        ]
+                    }
+                ],
+                "short": "Codice nosologico / Tecnico di radiologia",
+                "definition": "Rappresenta l'atto/contesto assistenziale a cui il documento si riferisce (da cui, tramite EncounterCore, sono referenziabili Location e Organization: unità operativa, presidio, azienda sanitaria)."
+            },
+            {
+                "id": "Composition.date",
+                "path": "Composition.date",
+                "min": 1,
+                "max": "1",
+                "definition": "Giorno e ora della creazione dell'istanza del documento."
+            },
+            {
+                "id": "Composition.author",
+                "path": "Composition.author",
+                "min": 1,
+                "max": "*",
+                "type": [
+                    {
+                        "code": "Reference",
+                        "targetProfile": [
+                            "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPractitionerRoleCore",
+                            "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPractitionerCore",
+                            "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLOrganizationCore"
+                        ]
+                    }
+                ],
+                "definition": "Medico Refertante: autore del documento. La reference identifica principalmente il professionista autore tramite PractitionerCore; se necessario rappresentare anche la struttura di appartenenza, usare PractitionerRoleCore."
+            },
+            {
+                "id": "Composition.title",
+                "path": "Composition.title",
+                "min": 1,
+                "max": "1",
+                "fixedString": "Referto Radiologico",
+                "definition": "L'elemento title specifica il titolo del documento."
+            },
+            {
+                "id": "Composition.attester",
+                "path": "Composition.attester",
+                "slicing": {
+                    "discriminator": [
+                        {
+                            "type": "value",
+                            "path": "mode"
+                        }
+                    ],
+                    "rules": "open"
+                },
+                "min": 1,
+                "max": "*",
+                "definition": "Professionisti che attestano la validità del documento. Se la risorsa è creata a fine documentale, uno degli attester dovrebbe essere il firmatario (chi allega la firma digitale al documento)."
+            },
+            {
+                "id": "Composition.attester:legalAuthenticator",
+                "path": "Composition.attester",
+                "sliceName": "legalAuthenticator",
+                "min": 0,
+                "max": "1",
+                "short": "Medico Firmatario",
+                "definition": "Firmatario del documento FHIR."
+            },
+            {
+                "id": "Composition.attester:legalAuthenticator.mode",
+                "path": "Composition.attester.mode",
+                "min": 1,
+                "max": "1",
+                "fixedCode": "legal"
+            },
+            {
+                "id": "Composition.attester:legalAuthenticator.time",
+                "path": "Composition.attester.time",
+                "min": 1,
+                "max": "1",
+                "short": "Data e ora di firma",
+                "definition": "Riferimento temporale della firma."
+            },
+            {
+                "id": "Composition.attester:legalAuthenticator.party",
+                "path": "Composition.attester.party",
+                "min": 0,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "Reference",
+                        "targetProfile": [
+                            "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPractitionerCore",
+                            "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPractitionerRoleCore"
+                        ]
+                    }
+                ],
+                "definition": "Riferimento al firmatario."
+            },
+            {
+                "id": "Composition.attester:authenticator",
+                "path": "Composition.attester",
+                "sliceName": "authenticator",
+                "min": 0,
+                "max": "1",
+                "definition": "Validatore del documento FHIR."
+            },
+            {
+                "id": "Composition.attester:authenticator.mode",
+                "path": "Composition.attester.mode",
+                "min": 1,
+                "max": "1",
+                "fixedCode": "professional"
+            },
+            {
+                "id": "Composition.attester:authenticator.party",
+                "path": "Composition.attester.party",
+                "min": 0,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "Reference",
+                        "targetProfile": [
+                            "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPractitionerCore",
+                            "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPractitionerRoleCore"
+                        ]
+                    }
+                ],
+                "definition": "Riferimento al validatore."
+            },
+            {
+                "id": "Composition.custodian",
+                "path": "Composition.custodian",
+                "min": 0,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "Reference",
+                        "targetProfile": [
+                            "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLOrganizationCore"
+                        ]
+                    }
+                ],
+                "short": "Azienda Sanitaria",
+                "definition": "Organizzazione responsabile della conservazione dell'originale del documento, al momento della generazione. Codice e descrizione dell'azienda sanitaria."
+            },
+            {
+                "id": "Composition.event",
+                "path": "Composition.event",
+                "min": 0,
+                "max": "*",
+                "short": "Tipologia di accesso",
+                "definition": "Tipologia di accesso che ha determinato la prestazione."
+            },
+            {
+                "id": "Composition.event.detail",
+                "path": "Composition.event.detail",
+                "min": 0,
+                "max": "*",
+                "type": [
+                    {
+                        "code": "Reference",
+                        "targetProfile": [
+                            "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPractitionerRoleCore"
+                        ]
+                    }
+                ],
+                "definition": "Soggetto che effettua il serviceEvent.",
+                "comment": "Target uniformato a PractitionerRoleCore (la fonte riportava un'incoerenza tra path e colonna Tipo)."
+            },
+            {
+                "id": "Composition.section",
+                "path": "Composition.section",
+                "slicing": {
+                    "discriminator": [
+                        {
+                            "type": "value",
+                            "path": "code"
+                        }
+                    ],
+                    "rules": "open"
+                },
+                "min": 0,
+                "max": "*"
+            },
+            {
+                "id": "Composition.section:dicomObjectCatalog",
+                "path": "Composition.section",
+                "sliceName": "dicomObjectCatalog",
+                "min": 0,
+                "max": "1"
+            },
+            {
+                "id": "Composition.section:dicomObjectCatalog.title",
+                "path": "Composition.section.title",
+                "min": 0,
+                "max": "1",
+                "fixedString": "DICOM Object Catalog"
+            },
+            {
+                "id": "Composition.section:dicomObjectCatalog.code",
+                "path": "Composition.section.code",
+                "min": 0,
+                "max": "1",
+                "short": "Codice identificativo referto RIS"
+            },
+            {
+                "id": "Composition.section:dicomObjectCatalog.code.coding.system",
+                "path": "Composition.section.code.coding.system",
+                "min": 0,
+                "max": "1",
+                "fixedUri": "urn:oid:1.2.840.10008.2.16.4",
+                "comment": "Fixed: DCM"
+            },
+            {
+                "id": "Composition.section:dicomObjectCatalog.code.coding.version",
+                "path": "Composition.section.code.coding.version",
+                "min": 0,
+                "max": "1"
+            },
+            {
+                "id": "Composition.section:dicomObjectCatalog.code.coding.code",
+                "path": "Composition.section.code.coding.code",
+                "min": 0,
+                "max": "1",
+                "fixedCode": "121181"
+            },
+            {
+                "id": "Composition.section:dicomObjectCatalog.code.coding.display",
+                "path": "Composition.section.code.coding.display",
+                "min": 0,
+                "max": "1",
+                "fixedString": "DICOM Object Catalog"
+            },
+            {
+                "id": "Composition.section:dicomObjectCatalog.entry",
+                "path": "Composition.section.entry",
+                "min": 1,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "Reference",
+                        "targetProfile": [
+                            "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLImagingStudyDicom"
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "Composition.section:quesitoDiagnostico",
+                "path": "Composition.section",
+                "sliceName": "quesitoDiagnostico",
+                "min": 0,
+                "max": "1"
+            },
+            {
+                "id": "Composition.section:quesitoDiagnostico.title",
+                "path": "Composition.section.title",
+                "min": 0,
+                "max": "1",
+                "fixedString": "Quesito Diagnostico"
+            },
+            {
+                "id": "Composition.section:quesitoDiagnostico.code",
+                "path": "Composition.section.code",
+                "min": 0,
+                "max": "1",
+                "short": "Codice quesito diagnostico"
+            },
+            {
+                "id": "Composition.section:quesitoDiagnostico.code.coding.system",
+                "path": "Composition.section.code.coding.system",
+                "min": 0,
+                "max": "1",
+                "fixedUri": "http://loinc.org",
+                "comment": "Fixed: LOINC"
+            },
+            {
+                "id": "Composition.section:quesitoDiagnostico.code.coding.version",
+                "path": "Composition.section.code.coding.version",
+                "min": 0,
+                "max": "1",
+                "example": [
+                    {
+                        "label": "Esempio",
+                        "valueString": "LOINC 2.19"
+                    }
+                ]
+            },
+            {
+                "id": "Composition.section:quesitoDiagnostico.code.coding.code",
+                "path": "Composition.section.code.coding.code",
+                "min": 0,
+                "max": "1",
+                "fixedCode": "18785-6"
+            },
+            {
+                "id": "Composition.section:quesitoDiagnostico.code.coding.display",
+                "path": "Composition.section.code.coding.display",
+                "min": 0,
+                "max": "1",
+                "short": "Descrizione quesito diagnostico",
+                "definition": "Descrizione leggibile del codice (es. 'Motivo per lo studio - Radiologia')."
+            },
+            {
+                "id": "Composition.section:quesitoDiagnostico.entry",
+                "path": "Composition.section.entry",
+                "min": 1,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "Reference",
+                        "targetProfile": [
+                            "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationQuesitoDiagnostico"
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "Composition.section:storiaClinica",
+                "path": "Composition.section",
+                "sliceName": "storiaClinica",
+                "min": 0,
+                "max": "1",
+                "short": "Anamnesi"
+            },
+            {
+                "id": "Composition.section:storiaClinica.title",
+                "path": "Composition.section.title",
+                "min": 0,
+                "max": "1",
+                "fixedString": "Storia Clinica"
+            },
+            {
+                "id": "Composition.section:storiaClinica.code",
+                "path": "Composition.section.code",
+                "min": 0,
+                "max": "1"
+            },
+            {
+                "id": "Composition.section:storiaClinica.code.coding.system",
+                "path": "Composition.section.code.coding.system",
+                "min": 0,
+                "max": "1",
+                "fixedUri": "http://loinc.org",
+                "comment": "Fixed: LOINC"
+            },
+            {
+                "id": "Composition.section:storiaClinica.code.coding.version",
+                "path": "Composition.section.code.coding.version",
+                "min": 0,
+                "max": "1",
+                "example": [
+                    {
+                        "label": "Esempio",
+                        "valueString": "LOINC 2.19"
+                    }
+                ]
+            },
+            {
+                "id": "Composition.section:storiaClinica.code.coding.code",
+                "path": "Composition.section.code.coding.code",
+                "min": 0,
+                "max": "1",
+                "fixedCode": "11329-0"
+            },
+            {
+                "id": "Composition.section:storiaClinica.code.coding.display",
+                "path": "Composition.section.code.coding.display",
+                "min": 0,
+                "max": "1",
+                "fixedString": "Storia Generale"
+            },
+            {
+                "id": "Composition.section:storiaClinica.entry",
+                "path": "Composition.section.entry",
+                "slicing": {
+                    "discriminator": [
+                        {
+                            "type": "profile",
+                            "path": "resolve()"
+                        }
+                    ],
+                    "rules": "open"
+                }
+            },
+            {
+                "id": "Composition.section:storiaClinica.entry:condition",
+                "path": "Composition.section.entry",
+                "sliceName": "condition",
+                "min": 0,
+                "max": "2",
+                "type": [
+                    {
+                        "code": "Reference",
+                        "targetProfile": [
+                            "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLConditionCore"
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "Composition.section:storiaClinica.entry:familyMemberHistory",
+                "path": "Composition.section.entry",
+                "sliceName": "familyMemberHistory",
+                "min": 0,
+                "max": "2",
+                "type": [
+                    {
+                        "code": "Reference",
+                        "targetProfile": [
+                            "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLFamilyMemberHistoryCore"
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "Composition.section:storiaClinica.section",
+                "path": "Composition.section.section",
+                "slicing": {
+                    "discriminator": [
+                        {
+                            "type": "value",
+                            "path": "code"
+                        }
+                    ],
+                    "rules": "open"
+                },
+                "min": 0,
+                "max": "*"
+            },
+            {
+                "id": "Composition.section:storiaClinica.section:allergie",
+                "path": "Composition.section.section",
+                "sliceName": "allergie",
+                "min": 0,
+                "max": "*",
+                "short": "Allergie"
+            },
+            {
+                "id": "Composition.section:storiaClinica.section:allergie.title",
+                "path": "Composition.section.section.title",
+                "min": 0,
+                "max": "1",
+                "fixedString": "Allergie e/o reazione avversa"
+            },
+            {
+                "id": "Composition.section:storiaClinica.section:allergie.code",
+                "path": "Composition.section.section.code",
+                "min": 0,
+                "max": "1"
+            },
+            {
+                "id": "Composition.section:storiaClinica.section:allergie.code.coding.system",
+                "path": "Composition.section.section.code.coding.system",
+                "min": 0,
+                "max": "1",
+                "fixedUri": "http://loinc.org",
+                "comment": "Fixed: LOINC"
+            },
+            {
+                "id": "Composition.section:storiaClinica.section:allergie.code.coding.version",
+                "path": "Composition.section.section.code.coding.version",
+                "min": 0,
+                "max": "1",
+                "example": [
+                    {
+                        "label": "Esempio",
+                        "valueString": "LOINC 2.19"
+                    }
+                ]
+            },
+            {
+                "id": "Composition.section:storiaClinica.section:allergie.code.coding.code",
+                "path": "Composition.section.section.code.coding.code",
+                "min": 0,
+                "max": "1",
+                "fixedCode": "48765-2"
+            },
+            {
+                "id": "Composition.section:storiaClinica.section:allergie.code.coding.display",
+                "path": "Composition.section.section.code.coding.display",
+                "min": 0,
+                "max": "1",
+                "fixedString": "Allergie e/o reazioni avverse"
+            },
+            {
+                "id": "Composition.section:storiaClinica.section:allergie.entry",
+                "path": "Composition.section.section.entry",
+                "min": 0,
+                "max": "*",
+                "type": [
+                    {
+                        "code": "Reference",
+                        "targetProfile": [
+                            "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLAllergyIntoleranceCore"
+                        ]
+                    }
+                ],
+                "comment": "Corretto refuso 'AllergyIntolleranceCore' -> RLAllergyIntoleranceCore, coerente con il resto dell'IG."
+            },
+            {
+                "id": "Composition.section:precedentiEsamiEseguiti",
+                "path": "Composition.section",
+                "sliceName": "precedentiEsamiEseguiti",
+                "min": 0,
+                "max": "1"
+            },
+            {
+                "id": "Composition.section:precedentiEsamiEseguiti.title",
+                "path": "Composition.section.title",
+                "min": 0,
+                "max": "1",
+                "fixedString": "Precedenti Esami Eseguiti"
+            },
+            {
+                "id": "Composition.section:precedentiEsamiEseguiti.code",
+                "path": "Composition.section.code",
+                "min": 0,
+                "max": "1",
+                "short": "Precedenti esami eseguiti"
+            },
+            {
+                "id": "Composition.section:precedentiEsamiEseguiti.code.coding.system",
+                "path": "Composition.section.code.coding.system",
+                "min": 0,
+                "max": "1",
+                "fixedUri": "http://loinc.org",
+                "comment": "Fixed: LOINC"
+            },
+            {
+                "id": "Composition.section:precedentiEsamiEseguiti.code.coding.version",
+                "path": "Composition.section.code.coding.version",
+                "min": 0,
+                "max": "1",
+                "example": [
+                    {
+                        "label": "Esempio",
+                        "valueString": "LOINC 2.19"
+                    }
+                ]
+            },
+            {
+                "id": "Composition.section:precedentiEsamiEseguiti.code.coding.code",
+                "path": "Composition.section.code.coding.code",
+                "min": 0,
+                "max": "1",
+                "fixedCode": "55114-3"
+            },
+            {
+                "id": "Composition.section:precedentiEsamiEseguiti.code.coding.display",
+                "path": "Composition.section.code.coding.display",
+                "min": 0,
+                "max": "1",
+                "fixedString": "Precedente procedura di imaging, descrizioni"
+            },
+            {
+                "id": "Composition.section:precedentiEsamiEseguiti.entry",
+                "path": "Composition.section.entry",
+                "min": 0,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "Reference",
+                        "targetProfile": [
+                            "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationPrecedentiEsamiEseguiti"
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "Composition.section:esameEseguito",
+                "path": "Composition.section",
+                "sliceName": "esameEseguito",
+                "min": 1,
+                "max": "1"
+            },
+            {
+                "id": "Composition.section:esameEseguito.title",
+                "path": "Composition.section.title",
+                "min": 0,
+                "max": "1",
+                "fixedString": "Esame Eseguito"
+            },
+            {
+                "id": "Composition.section:esameEseguito.code",
+                "path": "Composition.section.code",
+                "min": 0,
+                "max": "1",
+                "short": "Codice esame eseguito"
+            },
+            {
+                "id": "Composition.section:esameEseguito.code.coding.system",
+                "path": "Composition.section.code.coding.system",
+                "min": 0,
+                "max": "1",
+                "fixedUri": "http://loinc.org",
+                "comment": "Fixed: LOINC"
+            },
+            {
+                "id": "Composition.section:esameEseguito.code.coding.version",
+                "path": "Composition.section.code.coding.version",
+                "min": 0,
+                "max": "1",
+                "example": [
+                    {
+                        "label": "Esempio",
+                        "valueString": "LOINC 2.19"
+                    }
+                ]
+            },
+            {
+                "id": "Composition.section:esameEseguito.code.coding.code",
+                "path": "Composition.section.code.coding.code",
+                "min": 0,
+                "max": "1",
+                "fixedCode": "55111-9"
+            },
+            {
+                "id": "Composition.section:esameEseguito.code.coding.display",
+                "path": "Composition.section.code.coding.display",
+                "min": 0,
+                "max": "1",
+                "fixedString": "Descrizioni attuale procedure di imaging",
+                "short": "Descrizione esame eseguito"
+            },
+            {
+                "id": "Composition.section:esameEseguito.entry",
+                "path": "Composition.section.entry",
+                "min": 0,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "Reference",
+                        "targetProfile": [
+                            "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationEsameEseguito"
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "Composition.section:referto",
+                "path": "Composition.section",
+                "sliceName": "referto",
+                "min": 1,
+                "max": "1",
+                "short": "Refertazione"
+            },
+            {
+                "id": "Composition.section:referto.title",
+                "path": "Composition.section.title",
+                "min": 0,
+                "max": "1",
+                "fixedString": "Rilievo - Radiologia"
+            },
+            {
+                "id": "Composition.section:referto.code",
+                "path": "Composition.section.code",
+                "min": 0,
+                "max": "1"
+            },
+            {
+                "id": "Composition.section:referto.code.coding.system",
+                "path": "Composition.section.code.coding.system",
+                "min": 0,
+                "max": "1",
+                "fixedUri": "http://loinc.org",
+                "comment": "Fixed: LOINC"
+            },
+            {
+                "id": "Composition.section:referto.code.coding.version",
+                "path": "Composition.section.code.coding.version",
+                "min": 0,
+                "max": "1",
+                "example": [
+                    {
+                        "label": "Esempio",
+                        "valueString": "LOINC 2.19"
+                    }
+                ]
+            },
+            {
+                "id": "Composition.section:referto.code.coding.code",
+                "path": "Composition.section.code.coding.code",
+                "min": 0,
+                "max": "1",
+                "fixedCode": "18782-3"
+            },
+            {
+                "id": "Composition.section:referto.code.coding.display",
+                "path": "Composition.section.code.coding.display",
+                "min": 0,
+                "max": "1",
+                "fixedString": "Rilievo - Radiologia"
+            },
+            {
+                "id": "Composition.section:conclusioni",
+                "path": "Composition.section",
+                "sliceName": "conclusioni",
+                "min": 0,
+                "max": "1"
+            },
+            {
+                "id": "Composition.section:conclusioni.title",
+                "path": "Composition.section.title",
+                "min": 0,
+                "max": "1",
+                "fixedString": "Conclusioni"
+            },
+            {
+                "id": "Composition.section:conclusioni.code",
+                "path": "Composition.section.code",
+                "min": 0,
+                "max": "1"
+            },
+            {
+                "id": "Composition.section:conclusioni.code.coding.system",
+                "path": "Composition.section.code.coding.system",
+                "min": 0,
+                "max": "1",
+                "fixedUri": "http://loinc.org",
+                "comment": "Fixed: LOINC"
+            },
+            {
+                "id": "Composition.section:conclusioni.code.coding.version",
+                "path": "Composition.section.code.coding.version",
+                "min": 0,
+                "max": "1",
+                "example": [
+                    {
+                        "label": "Esempio",
+                        "valueString": "LOINC 2.19"
+                    }
+                ]
+            },
+            {
+                "id": "Composition.section:conclusioni.code.coding.code",
+                "path": "Composition.section.code.coding.code",
+                "min": 0,
+                "max": "1",
+                "fixedCode": "55110-1"
+            },
+            {
+                "id": "Composition.section:conclusioni.code.coding.display",
+                "path": "Composition.section.code.coding.display",
+                "min": 0,
+                "max": "1",
+                "fixedString": "Conclusioni"
+            },
+            {
+                "id": "Composition.section:informazioniAggiuntive",
+                "path": "Composition.section",
+                "sliceName": "informazioniAggiuntive",
+                "min": 0,
+                "max": "1"
+            },
+            {
+                "id": "Composition.section:informazioniAggiuntive.title",
+                "path": "Composition.section.title",
+                "min": 0,
+                "max": "1",
+                "fixedString": "Informazioni Aggiuntive"
+            },
+            {
+                "id": "Composition.section:informazioniAggiuntive.code",
+                "path": "Composition.section.code",
+                "min": 0,
+                "max": "1",
+                "short": "Informazioni aggiuntive"
+            },
+            {
+                "id": "Composition.section:informazioniAggiuntive.code.coding.system",
+                "path": "Composition.section.code.coding.system",
+                "min": 0,
+                "max": "1",
+                "fixedUri": "http://loinc.org",
+                "comment": "Fixed: LOINC"
+            },
+            {
+                "id": "Composition.section:informazioniAggiuntive.code.coding.version",
+                "path": "Composition.section.code.coding.version",
+                "min": 0,
+                "max": "1",
+                "example": [
+                    {
+                        "label": "Esempio",
+                        "valueString": "LOINC 2.19"
+                    }
+                ]
+            },
+            {
+                "id": "Composition.section:informazioniAggiuntive.code.coding.code",
+                "path": "Composition.section.code.coding.code",
+                "min": 0,
+                "max": "1",
+                "fixedCode": "55107-7"
+            },
+            {
+                "id": "Composition.section:informazioniAggiuntive.code.coding.display",
+                "path": "Composition.section.code.coding.display",
+                "min": 0,
+                "max": "1",
+                "fixedString": "Appendice"
+            },
+            {
+                "id": "Composition.section:complicanze",
+                "path": "Composition.section",
+                "sliceName": "complicanze",
+                "min": 0,
+                "max": "1"
+            },
+            {
+                "id": "Composition.section:complicanze.title",
+                "path": "Composition.section.title",
+                "min": 0,
+                "max": "1",
+                "fixedString": "Complicanze"
+            },
+            {
+                "id": "Composition.section:complicanze.code",
+                "path": "Composition.section.code",
+                "min": 0,
+                "max": "1"
+            },
+            {
+                "id": "Composition.section:complicanze.code.coding.system",
+                "path": "Composition.section.code.coding.system",
+                "min": 0,
+                "max": "1",
+                "fixedUri": "http://loinc.org",
+                "comment": "Fixed: LOINC"
+            },
+            {
+                "id": "Composition.section:complicanze.code.coding.version",
+                "path": "Composition.section.code.coding.version",
+                "min": 0,
+                "max": "1",
+                "example": [
+                    {
+                        "label": "Esempio",
+                        "valueString": "LOINC 2.19"
+                    }
+                ]
+            },
+            {
+                "id": "Composition.section:complicanze.code.coding.code",
+                "path": "Composition.section.code.coding.code",
+                "min": 0,
+                "max": "1",
+                "fixedCode": "55109-3"
+            },
+            {
+                "id": "Composition.section:complicanze.code.coding.display",
+                "path": "Composition.section.code.coding.display",
+                "min": 0,
+                "max": "1",
+                "fixedString": "Complicazioni"
+            },
+            {
+                "id": "Composition.section:complicanze.entry",
+                "path": "Composition.section.entry",
+                "min": 0,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "Reference",
+                        "targetProfile": [
+                            "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationComplicanze"
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "Composition.section:suggerimentiMedicoPrescrittore",
+                "path": "Composition.section",
+                "sliceName": "suggerimentiMedicoPrescrittore",
+                "min": 0,
+                "max": "1",
+                "short": "Suggerimenti per il medico prescrittore"
+            },
+            {
+                "id": "Composition.section:suggerimentiMedicoPrescrittore.title",
+                "path": "Composition.section.title",
+                "min": 0,
+                "max": "1",
+                "fixedString": "Suggerimenti per il medico prescrittore"
+            },
+            {
+                "id": "Composition.section:suggerimentiMedicoPrescrittore.code",
+                "path": "Composition.section.code",
+                "min": 0,
+                "max": "1"
+            },
+            {
+                "id": "Composition.section:suggerimentiMedicoPrescrittore.code.coding.system",
+                "path": "Composition.section.code.coding.system",
+                "min": 0,
+                "max": "1",
+                "fixedUri": "http://loinc.org",
+                "comment": "Fixed: LOINC"
+            },
+            {
+                "id": "Composition.section:suggerimentiMedicoPrescrittore.code.coding.version",
+                "path": "Composition.section.code.coding.version",
+                "min": 0,
+                "max": "1",
+                "example": [
+                    {
+                        "label": "Esempio",
+                        "valueString": "LOINC 2.19"
+                    }
+                ]
+            },
+            {
+                "id": "Composition.section:suggerimentiMedicoPrescrittore.code.coding.code",
+                "path": "Composition.section.code.coding.code",
+                "min": 0,
+                "max": "1",
+                "fixedCode": "18783-1"
+            },
+            {
+                "id": "Composition.section:suggerimentiMedicoPrescrittore.code.coding.display",
+                "path": "Composition.section.code.coding.display",
+                "min": 0,
+                "max": "1",
+                "fixedString": "Raccomandazione studio-Radiologia"
+            }
         ]
-      },
-
-      {
-        "id": "Composition.section:quesitoDiagnostico",
-        "path": "Composition.section",
-        "sliceName": "quesitoDiagnostico",
-        "min": 0,
-        "max": "1"
-      },
-      {
-        "id": "Composition.section:quesitoDiagnostico.title",
-        "path": "Composition.section.title",
-        "min": 0,
-        "max": "1",
-        "fixedString": "Quesito Diagnostico"
-      },
-      {
-        "id": "Composition.section:quesitoDiagnostico.code",
-        "path": "Composition.section.code",
-        "min": 0,
-        "max": "1",
-        "short": "Codice quesito diagnostico"
-      },
-      {
-        "id": "Composition.section:quesitoDiagnostico.code.coding.system",
-        "path": "Composition.section.code.coding.system",
-        "min": 0,
-        "max": "1",
-        "fixedUri": "http://loinc.org",
-        "note": [{"text": "Fixed: LOINC"}]
-      },
-      {
-        "id": "Composition.section:quesitoDiagnostico.code.coding.version",
-        "path": "Composition.section.code.coding.version",
-        "min": 0,
-        "max": "1",
-        "example": [{"label": "Esempio", "valueString": "LOINC 2.19"}]
-      },
-      {
-        "id": "Composition.section:quesitoDiagnostico.code.coding.code",
-        "path": "Composition.section.code.coding.code",
-        "min": 0,
-        "max": "1",
-        "fixedCode": "18785-6"
-      },
-      {
-        "id": "Composition.section:quesitoDiagnostico.code.coding.display",
-        "path": "Composition.section.code.coding.display",
-        "min": 0,
-        "max": "1",
-        "short": "Descrizione quesito diagnostico",
-        "definition": "Descrizione leggibile del codice (es. 'Motivo per lo studio - Radiologia')."
-      },
-      {
-        "id": "Composition.section:quesitoDiagnostico.entry",
-        "path": "Composition.section.entry",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": ["https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationQuesitoDiagnostico"]
-          }
-        ]
-      },
-
-      {
-        "id": "Composition.section:storiaClinica",
-        "path": "Composition.section",
-        "sliceName": "storiaClinica",
-        "min": 0,
-        "max": "1",
-        "short": "Anamnesi"
-      },
-      {
-        "id": "Composition.section:storiaClinica.title",
-        "path": "Composition.section.title",
-        "min": 0,
-        "max": "1",
-        "fixedString": "Storia Clinica"
-      },
-      {
-        "id": "Composition.section:storiaClinica.code",
-        "path": "Composition.section.code",
-        "min": 0,
-        "max": "1"
-      },
-      {
-        "id": "Composition.section:storiaClinica.code.coding.system",
-        "path": "Composition.section.code.coding.system",
-        "min": 0,
-        "max": "1",
-        "fixedUri": "http://loinc.org",
-        "note": [{"text": "Fixed: LOINC"}]
-      },
-      {
-        "id": "Composition.section:storiaClinica.code.coding.version",
-        "path": "Composition.section.code.coding.version",
-        "min": 0,
-        "max": "1",
-        "example": [{"label": "Esempio", "valueString": "LOINC 2.19"}]
-      },
-      {
-        "id": "Composition.section:storiaClinica.code.coding.code",
-        "path": "Composition.section.code.coding.code",
-        "min": 0,
-        "max": "1",
-        "fixedCode": "11329-0"
-      },
-      {
-        "id": "Composition.section:storiaClinica.code.coding.display",
-        "path": "Composition.section.code.coding.display",
-        "min": 0,
-        "max": "1",
-        "fixedString": "Storia Generale"
-      },
-      {
-        "id": "Composition.section:storiaClinica.entry:condition",
-        "path": "Composition.section.entry",
-        "sliceName": "condition",
-        "min": 0,
-        "max": "2",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": ["https://fhir.siss.regione.lombardia.it/StructureDefinition/RLConditionCore"]
-          }
-        ]
-      },
-      {
-        "id": "Composition.section:storiaClinica.entry:familyMemberHistory",
-        "path": "Composition.section.entry",
-        "sliceName": "familyMemberHistory",
-        "min": 0,
-        "max": "2",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": ["https://fhir.siss.regione.lombardia.it/StructureDefinition/RLFamilyMemberHistoryCore"]
-          }
-        ]
-      },
-      {
-        "id": "Composition.section:storiaClinica.section",
-        "path": "Composition.section.section",
-        "slicing": {
-          "discriminator": [{"type": "value", "path": "code"}],
-          "rules": "open"
-        },
-        "min": 0,
-        "max": "*"
-      },
-      {
-        "id": "Composition.section:storiaClinica.section:allergie",
-        "path": "Composition.section.section",
-        "sliceName": "allergie",
-        "min": 0,
-        "max": "*",
-        "short": "Allergie"
-      },
-      {
-        "id": "Composition.section:storiaClinica.section:allergie.title",
-        "path": "Composition.section.section.title",
-        "min": 0,
-        "max": "1",
-        "fixedString": "Allergie e/o reazione avversa"
-      },
-      {
-        "id": "Composition.section:storiaClinica.section:allergie.code",
-        "path": "Composition.section.section.code",
-        "min": 0,
-        "max": "1"
-      },
-      {
-        "id": "Composition.section:storiaClinica.section:allergie.code.coding.system",
-        "path": "Composition.section.section.code.coding.system",
-        "min": 0,
-        "max": "1",
-        "fixedUri": "http://loinc.org",
-        "note": [{"text": "Fixed: LOINC"}]
-      },
-      {
-        "id": "Composition.section:storiaClinica.section:allergie.code.coding.version",
-        "path": "Composition.section.section.code.coding.version",
-        "min": 0,
-        "max": "1",
-        "example": [{"label": "Esempio", "valueString": "LOINC 2.19"}]
-      },
-      {
-        "id": "Composition.section:storiaClinica.section:allergie.code.coding.code",
-        "path": "Composition.section.section.code.coding.code",
-        "min": 0,
-        "max": "1",
-        "fixedCode": "48765-2"
-      },
-      {
-        "id": "Composition.section:storiaClinica.section:allergie.code.coding.display",
-        "path": "Composition.section.section.code.coding.display",
-        "min": 0,
-        "max": "1",
-        "fixedString": "Allergie e/o reazioni avverse"
-      },
-      {
-        "id": "Composition.section:storiaClinica.section:allergie.entry",
-        "path": "Composition.section.section.entry",
-        "min": 0,
-        "max": "*",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": ["https://fhir.siss.regione.lombardia.it/StructureDefinition/RLAllergyIntoleranceCore"]
-          }
-        ],
-        "note": [{"text": "Corretto refuso 'AllergyIntolleranceCore' -> RLAllergyIntoleranceCore, coerente con il resto dell'IG."}]
-      },
-
-      {
-        "id": "Composition.section:precedentiEsamiEseguiti",
-        "path": "Composition.section",
-        "sliceName": "precedentiEsamiEseguiti",
-        "min": 0,
-        "max": "1"
-      },
-      {
-        "id": "Composition.section:precedentiEsamiEseguiti.title",
-        "path": "Composition.section.title",
-        "min": 0,
-        "max": "1",
-        "fixedString": "Precedenti Esami Eseguiti"
-      },
-      {
-        "id": "Composition.section:precedentiEsamiEseguiti.code",
-        "path": "Composition.section.code",
-        "min": 0,
-        "max": "1",
-        "short": "Precedenti esami eseguiti"
-      },
-      {
-        "id": "Composition.section:precedentiEsamiEseguiti.code.coding.system",
-        "path": "Composition.section.code.coding.system",
-        "min": 0,
-        "max": "1",
-        "fixedUri": "http://loinc.org",
-        "note": [{"text": "Fixed: LOINC"}]
-      },
-      {
-        "id": "Composition.section:precedentiEsamiEseguiti.code.coding.version",
-        "path": "Composition.section.code.coding.version",
-        "min": 0,
-        "max": "1",
-        "example": [{"label": "Esempio", "valueString": "LOINC 2.19"}]
-      },
-      {
-        "id": "Composition.section:precedentiEsamiEseguiti.code.coding.code",
-        "path": "Composition.section.code.coding.code",
-        "min": 0,
-        "max": "1",
-        "fixedCode": "55114-3"
-      },
-      {
-        "id": "Composition.section:precedentiEsamiEseguiti.code.coding.display",
-        "path": "Composition.section.code.coding.display",
-        "min": 0,
-        "max": "1",
-        "fixedString": "Precedente procedura di imaging, descrizioni"
-      },
-      {
-        "id": "Composition.section:precedentiEsamiEseguiti.entry",
-        "path": "Composition.section.entry",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": ["https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationPrecedentiEsamiEseguiti"]
-          }
-        ]
-      },
-
-      {
-        "id": "Composition.section:esameEseguito",
-        "path": "Composition.section",
-        "sliceName": "esameEseguito",
-        "min": 1,
-        "max": "1"
-      },
-      {
-        "id": "Composition.section:esameEseguito.title",
-        "path": "Composition.section.title",
-        "min": 0,
-        "max": "1",
-        "fixedString": "Esame Eseguito"
-      },
-      {
-        "id": "Composition.section:esameEseguito.code",
-        "path": "Composition.section.code",
-        "min": 0,
-        "max": "1",
-        "short": "Codice esame eseguito"
-      },
-      {
-        "id": "Composition.section:esameEseguito.code.coding.system",
-        "path": "Composition.section.code.coding.system",
-        "min": 0,
-        "max": "1",
-        "fixedUri": "http://loinc.org",
-        "note": [{"text": "Fixed: LOINC"}]
-      },
-      {
-        "id": "Composition.section:esameEseguito.code.coding.version",
-        "path": "Composition.section.code.coding.version",
-        "min": 0,
-        "max": "1",
-        "example": [{"label": "Esempio", "valueString": "LOINC 2.19"}]
-      },
-      {
-        "id": "Composition.section:esameEseguito.code.coding.code",
-        "path": "Composition.section.code.coding.code",
-        "min": 0,
-        "max": "1",
-        "fixedCode": "55111-9"
-      },
-      {
-        "id": "Composition.section:esameEseguito.code.coding.display",
-        "path": "Composition.section.code.coding.display",
-        "min": 0,
-        "max": "1",
-        "fixedString": "Descrizioni attuale procedure di imaging",
-        "short": "Descrizione esame eseguito"
-      },
-      {
-        "id": "Composition.section:esameEseguito.entry",
-        "path": "Composition.section.entry",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": ["https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationEsameEseguito"]
-          }
-        ]
-      },
-
-      {
-        "id": "Composition.section:referto",
-        "path": "Composition.section",
-        "sliceName": "referto",
-        "min": 1,
-        "max": "1",
-        "short": "Refertazione"
-      },
-      {
-        "id": "Composition.section:referto.title",
-        "path": "Composition.section.title",
-        "min": 0,
-        "max": "1",
-        "fixedString": "Rilievo - Radiologia"
-      },
-      {
-        "id": "Composition.section:referto.code",
-        "path": "Composition.section.code",
-        "min": 0,
-        "max": "1"
-      },
-      {
-        "id": "Composition.section:referto.code.coding.system",
-        "path": "Composition.section.code.coding.system",
-        "min": 0,
-        "max": "1",
-        "fixedUri": "http://loinc.org",
-        "note": [{"text": "Fixed: LOINC"}]
-      },
-      {
-        "id": "Composition.section:referto.code.coding.version",
-        "path": "Composition.section.code.coding.version",
-        "min": 0,
-        "max": "1",
-        "example": [{"label": "Esempio", "valueString": "LOINC 2.19"}]
-      },
-      {
-        "id": "Composition.section:referto.code.coding.code",
-        "path": "Composition.section.code.coding.code",
-        "min": 0,
-        "max": "1",
-        "fixedCode": "18782-3"
-      },
-      {
-        "id": "Composition.section:referto.code.coding.display",
-        "path": "Composition.section.code.coding.display",
-        "min": 0,
-        "max": "1",
-        "fixedString": "Rilievo - Radiologia"
-      },
-
-      {
-        "id": "Composition.section:conclusioni",
-        "path": "Composition.section",
-        "sliceName": "conclusioni",
-        "min": 0,
-        "max": "1"
-      },
-      {
-        "id": "Composition.section:conclusioni.title",
-        "path": "Composition.section.title",
-        "min": 0,
-        "max": "1",
-        "fixedString": "Conclusioni"
-      },
-      {
-        "id": "Composition.section:conclusioni.code",
-        "path": "Composition.section.code",
-        "min": 0,
-        "max": "1"
-      },
-      {
-        "id": "Composition.section:conclusioni.code.coding.system",
-        "path": "Composition.section.code.coding.system",
-        "min": 0,
-        "max": "1",
-        "fixedUri": "http://loinc.org",
-        "note": [{"text": "Fixed: LOINC"}]
-      },
-      {
-        "id": "Composition.section:conclusioni.code.coding.version",
-        "path": "Composition.section.code.coding.version",
-        "min": 0,
-        "max": "1",
-        "example": [{"label": "Esempio", "valueString": "LOINC 2.19"}]
-      },
-      {
-        "id": "Composition.section:conclusioni.code.coding.code",
-        "path": "Composition.section.code.coding.code",
-        "min": 0,
-        "max": "1",
-        "fixedCode": "55110-1"
-      },
-      {
-        "id": "Composition.section:conclusioni.code.coding.display",
-        "path": "Composition.section.code.coding.display",
-        "min": 0,
-        "max": "1",
-        "fixedString": "Conclusioni"
-      },
-
-      {
-        "id": "Composition.section:informazioniAggiuntive",
-        "path": "Composition.section",
-        "sliceName": "informazioniAggiuntive",
-        "min": 0,
-        "max": "1"
-      },
-      {
-        "id": "Composition.section:informazioniAggiuntive.title",
-        "path": "Composition.section.title",
-        "min": 0,
-        "max": "1",
-        "fixedString": "Informazioni Aggiuntive"
-      },
-      {
-        "id": "Composition.section:informazioniAggiuntive.code",
-        "path": "Composition.section.code",
-        "min": 0,
-        "max": "1",
-        "short": "Informazioni aggiuntive"
-      },
-      {
-        "id": "Composition.section:informazioniAggiuntive.code.coding.system",
-        "path": "Composition.section.code.coding.system",
-        "min": 0,
-        "max": "1",
-        "fixedUri": "http://loinc.org",
-        "note": [{"text": "Fixed: LOINC"}]
-      },
-      {
-        "id": "Composition.section:informazioniAggiuntive.code.coding.version",
-        "path": "Composition.section.code.coding.version",
-        "min": 0,
-        "max": "1",
-        "example": [{"label": "Esempio", "valueString": "LOINC 2.19"}]
-      },
-      {
-        "id": "Composition.section:informazioniAggiuntive.code.coding.code",
-        "path": "Composition.section.code.coding.code",
-        "min": 0,
-        "max": "1",
-        "fixedCode": "55107-7"
-      },
-      {
-        "id": "Composition.section:informazioniAggiuntive.code.coding.display",
-        "path": "Composition.section.code.coding.display",
-        "min": 0,
-        "max": "1",
-        "fixedString": "Appendice"
-      },
-
-      {
-        "id": "Composition.section:complicanze",
-        "path": "Composition.section",
-        "sliceName": "complicanze",
-        "min": 0,
-        "max": "1"
-      },
-      {
-        "id": "Composition.section:complicanze.title",
-        "path": "Composition.section.title",
-        "min": 0,
-        "max": "1",
-        "fixedString": "Complicanze"
-      },
-      {
-        "id": "Composition.section:complicanze.code",
-        "path": "Composition.section.code",
-        "min": 0,
-        "max": "1"
-      },
-      {
-        "id": "Composition.section:complicanze.code.coding.system",
-        "path": "Composition.section.code.coding.system",
-        "min": 0,
-        "max": "1",
-        "fixedUri": "http://loinc.org",
-        "note": [{"text": "Fixed: LOINC"}]
-      },
-      {
-        "id": "Composition.section:complicanze.code.coding.version",
-        "path": "Composition.section.code.coding.version",
-        "min": 0,
-        "max": "1",
-        "example": [{"label": "Esempio", "valueString": "LOINC 2.19"}]
-      },
-      {
-        "id": "Composition.section:complicanze.code.coding.code",
-        "path": "Composition.section.code.coding.code",
-        "min": 0,
-        "max": "1",
-        "fixedCode": "55109-3"
-      },
-      {
-        "id": "Composition.section:complicanze.code.coding.display",
-        "path": "Composition.section.code.coding.display",
-        "min": 0,
-        "max": "1",
-        "fixedString": "Complicazioni"
-      },
-      {
-        "id": "Composition.section:complicanze.entry",
-        "path": "Composition.section.entry",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": ["https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationComplicanze"]
-          }
-        ]
-      },
-
-      {
-        "id": "Composition.section:suggerimentiMedicoPrescrittore",
-        "path": "Composition.section",
-        "sliceName": "suggerimentiMedicoPrescrittore",
-        "min": 0,
-        "max": "1",
-        "short": "Suggerimenti per il medico prescrittore"
-      },
-      {
-        "id": "Composition.section:suggerimentiMedicoPrescrittore.title",
-        "path": "Composition.section.title",
-        "min": 0,
-        "max": "1",
-        "fixedString": "Suggerimenti per il medico prescrittore"
-      },
-      {
-        "id": "Composition.section:suggerimentiMedicoPrescrittore.code",
-        "path": "Composition.section.code",
-        "min": 0,
-        "max": "1"
-      },
-      {
-        "id": "Composition.section:suggerimentiMedicoPrescrittore.code.coding.system",
-        "path": "Composition.section.code.coding.system",
-        "min": 0,
-        "max": "1",
-        "fixedUri": "http://loinc.org",
-        "note": [{"text": "Fixed: LOINC"}]
-      },
-      {
-        "id": "Composition.section:suggerimentiMedicoPrescrittore.code.coding.version",
-        "path": "Composition.section.code.coding.version",
-        "min": 0,
-        "max": "1",
-        "example": [{"label": "Esempio", "valueString": "LOINC 2.19"}]
-      },
-      {
-        "id": "Composition.section:suggerimentiMedicoPrescrittore.code.coding.code",
-        "path": "Composition.section.code.coding.code",
-        "min": 0,
-        "max": "1",
-        "fixedCode": "18783-1"
-      },
-      {
-        "id": "Composition.section:suggerimentiMedicoPrescrittore.code.coding.display",
-        "path": "Composition.section.code.coding.display",
-        "min": 0,
-        "max": "1",
-        "fixedString": "Raccomandazione studio-Radiologia"
-      }
-    ]
-  }
+    }
 }

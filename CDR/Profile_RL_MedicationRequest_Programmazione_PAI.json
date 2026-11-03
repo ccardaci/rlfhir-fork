@@ -1,0 +1,168 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLMedicationRequestPAI",
+  "name": "RLMedicationRequestPAI",
+  "title": "MedicationRequest PAI",
+  "status": "draft",
+  "date": "2026-10-28",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "MedicationRequest",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/MedicationRequest",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "MedicationRequest",
+        "path": "MedicationRequest",
+        "short": "Terapia farmacologica programmata"
+      },
+      {
+        "id": "MedicationRequest.status",
+        "path": "MedicationRequest.status",
+        "short": "Stato della richiesta",
+        "min": 1,
+        "max": "1",
+        "fixedCode": "active"
+      },
+      {
+        "id": "MedicationRequest.intent",
+        "path": "MedicationRequest.intent",
+        "short": "Scopo della richiesta",
+        "min": 1,
+        "max": "1",
+        "fixedCode": "order"
+      },
+      {
+        "id": "MedicationRequest.medication[x]",
+        "path": "MedicationRequest.medication[x]",
+        "short": "Farmaco programmato",
+        "comment": "Medication con i codici ATC, AIC e GE. Si usa un'unica Medication per tutti i codici del farmaco.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Medication"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationRequest.subject",
+        "path": "MedicationRequest.subject",
+        "short": "Paziente a cui si riferisce la prescrizione",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPatientCore"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationRequest.note",
+        "path": "MedicationRequest.note",
+        "short": "Note",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "MedicationRequest.note.text",
+        "path": "MedicationRequest.note.text",
+        "short": "Note",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction",
+        "path": "MedicationRequest.dosageInstruction",
+        "short": "Posologia",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.text",
+        "path": "MedicationRequest.dosageInstruction.text",
+        "short": "Posologia e note",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.timing",
+        "path": "MedicationRequest.dosageInstruction.timing",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.timing.code",
+        "path": "MedicationRequest.dosageInstruction.timing.code",
+        "short": "Frequenza",
+        "comment": "Il binding FHIR timing-abbreviation è preferred: il codice CRS-SISS è ammesso.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.timing.code.coding",
+        "path": "MedicationRequest.dosageInstruction.timing.code.coding",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.timing.code.coding.system",
+        "path": "MedicationRequest.dosageInstruction.timing.code.coding.system",
+        "short": "Sistema di codifica",
+        "min": 0,
+        "max": "1",
+        "fixedUri": "urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.13.6.57"
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.timing.code.coding.code",
+        "path": "MedicationRequest.dosageInstruction.timing.code.coding.code",
+        "short": "Codice frequenza",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.timing.code.coding.display",
+        "path": "MedicationRequest.dosageInstruction.timing.code.coding.display",
+        "short": "Descrizione leggibile del codice",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.doseAndRate",
+        "path": "MedicationRequest.dosageInstruction.doseAndRate",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.doseAndRate.dose[x]",
+        "path": "MedicationRequest.dosageInstruction.doseAndRate.dose[x]",
+        "short": "Unità farmaco",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/SimpleQuantity"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.doseAndRate.dose[x].value",
+        "path": "MedicationRequest.dosageInstruction.doseAndRate.dose[x].value",
+        "short": "Unità farmaco",
+        "min": 0,
+        "max": "1"
+      }
+    ]
+  }
+}

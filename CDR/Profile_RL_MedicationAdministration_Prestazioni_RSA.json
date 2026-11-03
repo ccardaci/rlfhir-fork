@@ -1,0 +1,73 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLMedicationAdministrationPrestazioniRSA",
+  "name": "RLMedicationAdministrationPrestazioniRSA",
+  "title": "MedicationAdministration Prestazioni RSA",
+  "status": "draft",
+  "date": "2026-10-12",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "MedicationAdministration",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/MedicationAdministration",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "MedicationAdministration",
+        "path": "MedicationAdministration",
+        "short": "Prestazioni - Somministrazione di farmaci"
+      },
+      {
+        "id": "MedicationAdministration.status",
+        "path": "MedicationAdministration.status",
+        "short": "Stato della somministrazione",
+        "comment": "Suggerimento: completed",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "MedicationAdministration.medication[x]",
+        "path": "MedicationAdministration.medication[x]",
+        "short": "Riferimento a una risorsa Medication che descrive in dettaglio il farmaco",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Medication"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationAdministration.subject",
+        "path": "MedicationAdministration.subject",
+        "short": "Chi riceve la somministrazione",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPatientCore"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationAdministration.effective[x]",
+        "path": "MedicationAdministration.effective[x]",
+        "short": "Inizio e fine della somministrazione",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Period"
+          }
+        ]
+      }
+    ]
+  }
+}

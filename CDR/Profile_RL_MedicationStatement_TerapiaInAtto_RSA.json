@@ -1,0 +1,60 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLMedicationStatementTerapiaInAttoRSA",
+  "name": "RLMedicationStatementTerapiaInAttoRSA",
+  "title": "MedicationStatement Terapia Farmacologica in Atto RSA",
+  "status": "draft",
+  "date": "2026-10-08",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "MedicationStatement",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/MedicationStatement",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "MedicationStatement",
+        "path": "MedicationStatement",
+        "short": "Terapia Farmacologica in Atto"
+      },
+      {
+        "id": "MedicationStatement.status",
+        "path": "MedicationStatement.status",
+        "short": "Stato della dichiarazione di terapia",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "MedicationStatement.medication[x]",
+        "path": "MedicationStatement.medication[x]",
+        "short": "Farmaco della terapia in atto",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Medication"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationStatement.subject",
+        "path": "MedicationStatement.subject",
+        "short": "Paziente a cui si riferisce la somministrazione",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPatientCore"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

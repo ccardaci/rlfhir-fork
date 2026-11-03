@@ -1,0 +1,62 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLMedicationStatementTerapiaFarmacologica",
+  "name": "RLMedicationStatementTerapiaFarmacologica",
+  "status": "draft",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "MedicationStatement",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/MedicationStatement",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "MedicationStatement",
+        "path": "MedicationStatement",
+        "short": "Terapia Farmacologica in Atto",
+        "definition": "Dichiarazione di terapia farmacologica in atto per un paziente."
+      },
+      {
+        "id": "MedicationStatement.status",
+        "path": "MedicationStatement.status",
+        "min": 1,
+        "max": "1",
+        "short": "Stato della dichiarazione di terapia",
+        "definition": "Stato corrente della dichiarazione di terapia farmacologica."
+      },
+      {
+        "id": "MedicationStatement.medication[x]",
+        "path": "MedicationStatement.medication[x]",
+        "min": 1,
+        "max": "1",
+        "short": "Farmaco riferito alla terapia",
+        "definition": "Riferimento alla risorsa Medication che descrive il farmaco oggetto della terapia.",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Medication"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationStatement.subject",
+        "path": "MedicationStatement.subject",
+        "min": 1,
+        "max": "1",
+        "short": "Paziente a cui si riferisce la somministrazione",
+        "definition": "Riferimento al paziente per il quale è dichiarata la terapia farmacologica in atto.",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPatientCore"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

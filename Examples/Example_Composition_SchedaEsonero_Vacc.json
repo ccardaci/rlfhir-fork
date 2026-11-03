@@ -1,0 +1,75 @@
+{
+    "resourceType": "Composition",
+    "id": "composition-esonero-2",
+    "meta": {
+        "profile": [
+            "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCompositionSchedaSingolaVaccinazione"
+        ]
+    },
+    "extension": [
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/composition-clinicaldocument-versionNumber",
+            "valueString": "1"
+        }
+    ],
+    "status": "final",
+    "type": {
+        "coding": [
+            {
+                "system": "http://loinc.org",
+                "version": "2.19",
+                "code": "87273-9",
+                "display": "Immunization note"
+            }
+        ]
+    },
+    "subject": {
+        "reference": "urn:uuid:9fe938d4-a85e-57bf-9b89-2ca7afdc189e"
+    },
+    "encounter": {
+        "reference": "urn:uuid:1e3c223f-8d70-5b8c-9d6d-40b8e2513929"
+    },
+    "date": "2026-10-06T09:40:00+02:00",
+    "author": [
+        {
+            "reference": "urn:uuid:8c818e43-1c50-53af-9a2c-ed6b8fb81822"
+        }
+    ],
+    "title": "Scheda della singola Vaccinazione",
+    "attester": [
+        {
+            "mode": "legal",
+            "time": "2026-10-06T09:40:00+02:00",
+            "party": {
+                "reference": "urn:uuid:8c818e43-1c50-53af-9a2c-ed6b8fb81822"
+            }
+        }
+    ],
+    "custodian": {
+        "reference": "urn:uuid:ba058570-062b-5474-81cf-69cec0034751"
+    },
+    "section": [
+        {
+            "title": "Scheda della singola Vaccinazione",
+            "code": {
+                "coding": [
+                    {
+                        "system": "http://loinc.org",
+                        "version": "2.19",
+                        "code": "11369-6",
+                        "display": "Storia delle immunizzazioni"
+                    }
+                ]
+            },
+            "text": {
+                "status": "generated",
+                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Vaccinazione MPR (dose 1) non somministrata per esonero in data 06/10/2026.</p></div>"
+            },
+            "entry": [
+                {
+                    "reference": "urn:uuid:6e946878-659b-50f6-aecd-507b4cff1f1e"
+                }
+            ]
+        }
+    ]
+}

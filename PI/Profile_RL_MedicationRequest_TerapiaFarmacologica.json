@@ -265,20 +265,20 @@
         "path": "MedicationRequest.dosageInstruction.timing.repeat.frequency",
         "short": "Frequenza di assunzione del farmaco",
         "comment": "Il dato è detenuto dal SGDT",
-        "min": 1
+        "max": "0"
       },
       {
         "id": "MedicationRequest.dosageInstruction.timing.repeat.period",
         "path": "MedicationRequest.dosageInstruction.timing.repeat.period",
         "short": "Coefficiente per il quale la frequeza di assunzione ('frequency') si estente rispetto l'unità temporale di assunzione ('periodUnit').",
         "comment": "Il dato è detenuto dal SGDT",
-        "min": 1
+        "max": "0"
       },
       {
         "id": "MedicationRequest.dosageInstruction.timing.repeat.periodUnit",
         "path": "MedicationRequest.dosageInstruction.timing.repeat.periodUnit",
         "short": "Unità temporale di assunzione",
-        "definition": "Valori definiti dallo standard FHIR:\r\n- s: secondo \r\n- min: minuto \r\n- h: ora\r\n- d: giorno\r\n- wk: settimana\r\n- mo: mese\r\n- a: anno",
+        "definition": "Valori definiti dallo standard FHIR:\r\n- d: giorno\r\n- wk: settimana\r\n- mo: mese",
         "comment": "Il dato è detenuto dal SGDT",
         "min": 1
       },
@@ -302,15 +302,14 @@
       {
         "id": "MedicationRequest.dosageInstruction.doseAndRate.dose[x].value",
         "path": "MedicationRequest.dosageInstruction.doseAndRate.dose[x].value",
-        "short": "Quantità del dosaggio del farmaco",
-        "comment": "Il dato è detenuto dal SGDT",
+        "short": "Quantità della forma farmaceutica specificata nel campo Unit",
         "min": 1
       },
       {
         "id": "MedicationRequest.dosageInstruction.doseAndRate.dose[x].unit",
         "path": "MedicationRequest.dosageInstruction.doseAndRate.dose[x].unit",
-        "short": "Unità di misura del dosaggio del farmaco",
-        "comment": "Il dato è detenuto dal SGDT",
+        "short": "Forma farmaceutica del farmaco",
+        "definition": "I valori ammessi sono i seguenti:\r\n- fiale\r\n- compresse\r\n- gocce\r\n- mg\r\n- ml",
         "min": 1
       }
     ]

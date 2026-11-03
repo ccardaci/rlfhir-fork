@@ -1,0 +1,337 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCompositionTesseraPortatoreImpianto",
+  "name": "RLCompositionTesseraPortatoreImpianto",
+  "title": "RL Composition Tessera Portatore Impianto",
+  "status": "draft",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Composition",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Composition",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Composition",
+        "path": "Composition",
+        "short": "Tessera Portatore Impianto",
+        "definition": "Documento FHIR che rappresenta la Tessera per il Portatore di Impianto (TPI) prodotta nell'ambito SISS Regione Lombardia."
+      },
+      {
+        "id": "Composition.type",
+        "path": "Composition.type",
+        "short": "Identifica la tipologia di documento",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Composition.type.coding",
+        "path": "Composition.type.coding",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Composition.type.coding.system",
+        "path": "Composition.type.coding.system",
+        "min": 1,
+        "max": "1",
+        "fixedUri": "http://loinc.org",
+        "definition": "Sistema di codifica.",
+        "comment": "Fixed: LOINC (OID 2.16.840.1.113883.6.1)"
+      },
+      {
+        "id": "Composition.type.coding.version",
+        "path": "Composition.type.coding.version",
+        "min": 0,
+        "max": "1",
+        "definition": "Versione del sistema di codifica.",
+        "example": [
+          {
+            "label": "Esempio",
+            "valueString": "LOINC 2.19"
+          }
+        ],
+        "comment": "La fonte riporta 'LOINC' come se fosse un valore fixed per questo campo; corretto a solo esempio, coerente con RLCompositionRefertoRadiologia."
+      },
+      {
+        "id": "Composition.type.coding.code",
+        "path": "Composition.type.coding.code",
+        "min": 1,
+        "max": "1",
+        "fixedCode": "101881-1",
+        "short": "Codice locale per il tipo di documento."
+      },
+      {
+        "id": "Composition.type.coding.display",
+        "path": "Composition.type.coding.display",
+        "min": 0,
+        "max": "1",
+        "fixedString": "Tessera per il portatore di impianto",
+        "definition": "Descrizione leggibile del sistema locale."
+      },
+      {
+        "id": "Composition.title",
+        "path": "Composition.title",
+        "min": 1,
+        "max": "1",
+        "fixedString": "Tessera per il portatore di impianto",
+        "definition": "L'elemento title specifica il titolo del documento."
+      },
+      {
+        "id": "Composition.date",
+        "path": "Composition.date",
+        "min": 1,
+        "max": "1",
+        "definition": "Giorno e ora della creazione dell'istanza del documento."
+      },
+      {
+        "id": "Composition.extension:dataEnterer",
+        "path": "Composition.extension",
+        "sliceName": "dataEnterer",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.it/fhir/StructureDefinition/composition-dataenterer-it"
+            ]
+          }
+        ],
+        "definition": "Persona o dispositivo che trasforma un testo dettato nel documento FHIR."
+      },
+      {
+        "id": "Composition.subject",
+        "path": "Composition.subject",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPatientCore"
+            ]
+          }
+        ],
+        "definition": "Paziente a cui si riferisce il documento.",
+        "comment": "Cardinalità corretta a 1..1 rispetto alla fonte (0..1): il subject è sempre presente in una TPI."
+      },
+      {
+        "id": "Composition.author",
+        "path": "Composition.author",
+        "min": 1,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPractitionerRoleCore"
+            ]
+          }
+        ],
+        "definition": "Professionista responsabile della redazione del documento.",
+        "comment": "La fonte riportava per questo elemento la stessa definizione di dataEnterer (refuso di copia); sostituita con la definizione standard di author."
+      },
+      {
+        "id": "Composition.custodian",
+        "path": "Composition.custodian",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLOrganizationCore"
+            ]
+          }
+        ],
+        "definition": "Organizzazione responsabile della conservazione dell'originale del documento, al momento della generazione."
+      },
+      {
+        "id": "Composition.attester",
+        "path": "Composition.attester",
+        "min": 1,
+        "max": "*",
+        "definition": "Professionisti che attestano la validità del documento. Se la risorsa è creata a fine documentale, uno degli attester dovrebbe essere il firmatario (chi allega la firma digitale al documento).",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "mode"
+            }
+          ],
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Composition.attester:legalAuthenticator",
+        "path": "Composition.attester",
+        "sliceName": "legalAuthenticator",
+        "min": 0,
+        "max": "1",
+        "short": "Medico Firmatario",
+        "definition": "Firmatario del documento FHIR."
+      },
+      {
+        "id": "Composition.attester:legalAuthenticator.mode",
+        "path": "Composition.attester.mode",
+        "min": 1,
+        "max": "1",
+        "fixedCode": "legal"
+      },
+      {
+        "id": "Composition.attester:legalAuthenticator.party",
+        "path": "Composition.attester.party",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPractitionerCore",
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPractitionerRoleCore"
+            ]
+          }
+        ],
+        "definition": "Riferimento al firmatario."
+      },
+      {
+        "id": "Composition.encounter",
+        "path": "Composition.encounter",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLEncounterCore"
+            ]
+          }
+        ],
+        "definition": "Rappresenta coloro coinvolti nell'atto descritto."
+      },
+      {
+        "id": "Composition.extension:versionNumber",
+        "path": "Composition.extension",
+        "sliceName": "versionNumber",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/composition-clinicaldocument-versionNumber"
+            ]
+          }
+        ],
+        "definition": "Identificatore specifico della versione per la composizione, assegnato quando ciascuna versione viene creata o aggiornata."
+      },
+      {
+        "id": "Composition.relatesTo",
+        "path": "Composition.relatesTo",
+        "min": 0,
+        "max": "*",
+        "definition": "Collega la Composition a una precedente Tessera Portatore Impianto associata allo stesso dispositivo.",
+        "comment": "R4"
+      },
+      {
+        "id": "Composition.relatesTo.code",
+        "path": "Composition.relatesTo.code",
+        "min": 1,
+        "max": "1",
+        "short": "Tipo di relazione con il documento precedente.",
+        "comment": "R4. Valore tipico atteso: 'replaces'."
+      },
+      {
+        "id": "Composition.relatesTo.target[x]",
+        "path": "Composition.relatesTo.target[x]",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Identifier"
+          }
+        ],
+        "definition": "Riferimento alla tessera portatore di impianto precedentemente associata al dispositivo.",
+        "comment": "Vincolato a solo Identifier (anziché Identifier | Reference(Composition)): si riporta l'identifier del documento esterno precedente, non una reference diretta. Vedi: https://hl7itig.art-decor.pub/hl7itig-html-20260115T093950/tmp-2.16.840.1.113883.3.1937.777.63.10.759-2025-07-31T161543.html"
+      },
+      {
+        "id": "Composition.section",
+        "path": "Composition.section",
+        "min": 1,
+        "max": "1",
+        "comment": "Cardinalità corretta a 1..1 rispetto alla fonte (0..*): il documento TPI veicola sempre e solo questa sezione con il dispositivo impiantato."
+      },
+      {
+        "id": "Composition.section.code",
+        "path": "Composition.section.code",
+        "min": 0,
+        "max": "1",
+        "definition": "Codice che identifica il tipo di sezione."
+      },
+      {
+        "id": "Composition.section.code.coding.system",
+        "path": "Composition.section.code.coding.system",
+        "min": 0,
+        "max": "1",
+        "fixedUri": "http://loinc.org",
+        "comment": "Fixed: LOINC (OID 2.16.840.1.113883.6.1)"
+      },
+      {
+        "id": "Composition.section.code.coding.version",
+        "path": "Composition.section.code.coding.version",
+        "min": 0,
+        "max": "1",
+        "example": [
+          {
+            "label": "Esempio",
+            "valueString": "LOINC 2.19"
+          }
+        ]
+      },
+      {
+        "id": "Composition.section.code.coding.code",
+        "path": "Composition.section.code.coding.code",
+        "min": 0,
+        "max": "1",
+        "fixedCode": "74720-4"
+      },
+      {
+        "id": "Composition.section.code.coding.display",
+        "path": "Composition.section.code.coding.display",
+        "min": 0,
+        "max": "1",
+        "fixedString": "Dispositivo"
+      },
+      {
+        "id": "Composition.section.title",
+        "path": "Composition.section.title",
+        "min": 0,
+        "max": "1",
+        "definition": "Titolo della sezione."
+      },
+      {
+        "id": "Composition.section.text",
+        "path": "Composition.section.text",
+        "min": 0,
+        "max": "1",
+        "definition": "Contenuto narrativo della sezione, rappresentato in formato leggibile."
+      },
+      {
+        "id": "Composition.section.entry",
+        "path": "Composition.section.entry",
+        "min": 1,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLDeviceUseStatementTPI"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

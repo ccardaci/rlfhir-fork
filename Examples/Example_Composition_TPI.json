@@ -1,0 +1,84 @@
+{
+  "resourceType": "Composition",
+  "id": "tpi-example",
+  "meta": {
+    "profile": [
+      "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCompositionTesseraPortatoreImpianto"
+    ]
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/composition-clinicaldocument-versionNumber",
+      "valueString": "1"
+    }
+  ],
+  "status": "final",
+  "type": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "version": "2.19",
+        "code": "101881-1",
+        "display": "Tessera per il portatore di impianto"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/example-patient"
+  },
+  "encounter": {
+    "reference": "Encounter/example-encounter"
+  },
+  "date": "2026-10-05T10:30:00+02:00",
+  "author": [
+    {
+      "reference": "PractitionerRole/example-practitionerrole"
+    }
+  ],
+  "title": "Tessera per il portatore di impianto",
+  "attester": [
+    {
+      "mode": "legal",
+      "time": "2026-10-05T10:45:00+02:00",
+      "party": {
+        "reference": "PractitionerRole/example-practitionerrole"
+      }
+    }
+  ],
+  "custodian": {
+    "reference": "Organization/example-organization"
+  },
+  "relatesTo": [
+    {
+      "code": "replaces",
+      "targetIdentifier": {
+        "system": "urn:oid:2.16.840.1.113883.2.9.2.30.4.4",
+        "value": "TPI-2024-000123"
+      }
+    }
+  ],
+  "section": [
+    {
+      "title": "Dispositivo impiantato",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "version": "2.19",
+            "code": "74720-4",
+            "display": "Dispositivo"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Impianto del dispositivo eseguito in data 05/10/2026.</p></div>"
+      },
+      "entry": [
+        {
+          "reference": "DeviceUseStatement/example-deviceusestatement-tpi"
+        }
+      ]
+    }
+  ]
+}

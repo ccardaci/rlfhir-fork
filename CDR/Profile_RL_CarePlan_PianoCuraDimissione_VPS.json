@@ -1,0 +1,85 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCarePlanVPS",
+  "name": "RLCarePlanVPS",
+  "title": "CarePlan VPS",
+  "status": "draft",
+  "date": "2026-10-02",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "CarePlan",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/CarePlan",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "CarePlan",
+        "path": "CarePlan",
+        "short": "Piano di Cura alla Dimissione"
+      },
+      {
+        "id": "CarePlan.status",
+        "path": "CarePlan.status",
+        "short": "Stato della richiesta",
+        "comment": "Suggerimento: active",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "CarePlan.intent",
+        "path": "CarePlan.intent",
+        "short": "Scopo della richiesta",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "CarePlan.subject",
+        "path": "CarePlan.subject",
+        "short": "Paziente a cui si riferisce il piano di cura",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPatientCore"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "CarePlan.author",
+        "path": "CarePlan.author",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPractitionerRoleCore",
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPractitionerCore",
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLOrganizationCore"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "CarePlan.activity.reference",
+        "path": "CarePlan.activity.reference",
+        "comment": "In caso di prescrizione specialistica si referenzia la ServiceRequestCore, in caso di prescrizione farmaceutica si referenzia la MedicationRequest (R4)",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/MedicationRequest",
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLServiceRequestCore"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

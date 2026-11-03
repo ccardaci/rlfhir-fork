@@ -1,0 +1,147 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationPrestazioniRSA",
+  "name": "RLObservationPrestazioniRSA",
+  "title": "Observation Prestazioni RSA",
+  "status": "draft",
+  "date": "2026-10-08",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "short": "Prestazioni"
+      },
+      {
+        "id": "Observation.status",
+        "path": "Observation.status",
+        "short": "Indica lo stato dell'osservazione",
+        "min": 1,
+        "max": "1",
+        "fixedCode": "final"
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "short": "Codice identificativo",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Observation.code.coding.system",
+        "path": "Observation.code.coding.system",
+        "short": "Sistema di codifica",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.code.coding.version",
+        "path": "Observation.code.coding.version",
+        "short": "Versione del sistema di codifica",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.code.coding.code",
+        "path": "Observation.code.coding.code",
+        "short": "Valore del codice",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.code.coding.display",
+        "path": "Observation.code.coding.display",
+        "short": "Descrizione leggibile del codice",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "short": "Soggetto a cui si riferisce l'osservazione",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPatientCore"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.encounter",
+        "path": "Observation.encounter",
+        "short": "Episodio di cura a cui si riferisce l'osservazione",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLEncounterCore"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.note",
+        "path": "Observation.note",
+        "short": "Note",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Observation.note.text",
+        "path": "Observation.note.text",
+        "short": "Testo della nota",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Observation.method",
+        "path": "Observation.method",
+        "short": "Specifica il metodo utilizzato per ottenere l'osservazione",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.device",
+        "path": "Observation.device",
+        "short": "Riferimento al dispositivo che ha effettuato la misurazione o osservazione",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Device"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember",
+        "path": "Observation.hasMember",
+        "short": "Collega questa osservazione ad altre osservazioni correlate",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Observation"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

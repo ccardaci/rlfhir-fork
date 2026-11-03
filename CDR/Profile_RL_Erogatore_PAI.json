@@ -1,0 +1,262 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLOrganizationErogatorePAI",
+  "name": "RLOrganizationErogatorePAI",
+  "title": "Organization Erogatore PAI",
+  "status": "draft",
+  "date": "2026-10-28",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Organization",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Organization",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Organization",
+        "path": "Organization",
+        "short": "Erogatore della prestazione programmata"
+      },
+      {
+        "id": "Organization.identifier",
+        "path": "Organization.identifier",
+        "short": "Codice dell'erogatore",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Organization.identifier:erogatoreADI",
+        "path": "Organization.identifier",
+        "sliceName": "erogatoreADI",
+        "short": "Erogatore ADI",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Organization.identifier:erogatoreADI.type",
+        "path": "Organization.identifier.type",
+        "short": "Tipo di identificativo",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Organization.identifier:erogatoreADI.type.text",
+        "path": "Organization.identifier.type.text",
+        "short": "Descrizione erogatore",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Organization.identifier:erogatoreADI.system",
+        "path": "Organization.identifier.system",
+        "short": "Sistema di identificazione",
+        "min": 1,
+        "max": "1",
+        "fixedUri": "urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.13.6.44"
+      },
+      {
+        "id": "Organization.identifier:erogatoreADI.value",
+        "path": "Organization.identifier.value",
+        "short": "Codice erogatore",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Organization.identifier:erogatoreCureIntermedie",
+        "path": "Organization.identifier",
+        "sliceName": "erogatoreCureIntermedie",
+        "short": "Erogatore Cure Intermedie",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Organization.identifier:erogatoreCureIntermedie.type",
+        "path": "Organization.identifier.type",
+        "short": "Tipo di identificativo",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Organization.identifier:erogatoreCureIntermedie.type.text",
+        "path": "Organization.identifier.type.text",
+        "short": "Descrizione erogatore",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Organization.identifier:erogatoreCureIntermedie.system",
+        "path": "Organization.identifier.system",
+        "short": "Sistema di identificazione",
+        "min": 1,
+        "max": "1",
+        "fixedUri": "urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.13.6.47"
+      },
+      {
+        "id": "Organization.identifier:erogatoreCureIntermedie.value",
+        "path": "Organization.identifier.value",
+        "short": "Codice erogatore",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Organization.identifier:erogatoreCDI",
+        "path": "Organization.identifier",
+        "sliceName": "erogatoreCDI",
+        "short": "Erogatore CDI",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Organization.identifier:erogatoreCDI.type",
+        "path": "Organization.identifier.type",
+        "short": "Tipo di identificativo",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Organization.identifier:erogatoreCDI.type.text",
+        "path": "Organization.identifier.type.text",
+        "short": "Descrizione erogatore",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Organization.identifier:erogatoreCDI.system",
+        "path": "Organization.identifier.system",
+        "short": "Sistema di identificazione",
+        "min": 1,
+        "max": "1",
+        "fixedUri": "urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.13.6.45"
+      },
+      {
+        "id": "Organization.identifier:erogatoreCDI.value",
+        "path": "Organization.identifier.value",
+        "short": "Codice erogatore",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Organization.identifier:erogatoreCDD",
+        "path": "Organization.identifier",
+        "sliceName": "erogatoreCDD",
+        "short": "Erogatore CDD",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Organization.identifier:erogatoreCDD.type",
+        "path": "Organization.identifier.type",
+        "short": "Tipo di identificativo",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Organization.identifier:erogatoreCDD.type.text",
+        "path": "Organization.identifier.type.text",
+        "short": "Descrizione erogatore",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Organization.identifier:erogatoreCDD.system",
+        "path": "Organization.identifier.system",
+        "short": "Sistema di identificazione",
+        "min": 1,
+        "max": "1",
+        "fixedUri": "urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.13.6.46"
+      },
+      {
+        "id": "Organization.identifier:erogatoreCDD.value",
+        "path": "Organization.identifier.value",
+        "short": "Codice erogatore",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Organization.identifier:erogatoreRIA",
+        "path": "Organization.identifier",
+        "sliceName": "erogatoreRIA",
+        "short": "Erogatore RIA",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Organization.identifier:erogatoreRIA.type",
+        "path": "Organization.identifier.type",
+        "short": "Tipo di identificativo",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Organization.identifier:erogatoreRIA.type.text",
+        "path": "Organization.identifier.type.text",
+        "short": "Descrizione erogatore",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Organization.identifier:erogatoreRIA.system",
+        "path": "Organization.identifier.system",
+        "short": "Sistema di identificazione",
+        "min": 1,
+        "max": "1",
+        "fixedUri": "urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.13.6.48"
+      },
+      {
+        "id": "Organization.identifier:erogatoreRIA.value",
+        "path": "Organization.identifier.value",
+        "short": "Codice erogatore",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Organization.identifier:erogatoreCurePalliative",
+        "path": "Organization.identifier",
+        "sliceName": "erogatoreCurePalliative",
+        "short": "Erogatore Cure Palliative",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Organization.identifier:erogatoreCurePalliative.type",
+        "path": "Organization.identifier.type",
+        "short": "Tipo di identificativo",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Organization.identifier:erogatoreCurePalliative.type.text",
+        "path": "Organization.identifier.type.text",
+        "short": "Descrizione erogatore",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Organization.identifier:erogatoreCurePalliative.system",
+        "path": "Organization.identifier.system",
+        "short": "Sistema di identificazione",
+        "min": 1,
+        "max": "1",
+        "fixedUri": "urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.13.6.52"
+      },
+      {
+        "id": "Organization.identifier:erogatoreCurePalliative.value",
+        "path": "Organization.identifier.value",
+        "short": "Codice erogatore",
+        "min": 0,
+        "max": "1"
+      }
+    ]
+  }
+}

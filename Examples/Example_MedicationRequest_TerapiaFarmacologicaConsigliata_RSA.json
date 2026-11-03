@@ -1,0 +1,31 @@
+{
+  "resourceType": "MedicationRequest",
+  "id": "Example-MedicationRequestTerapiaConsigliata-1-RSA",
+  "meta": {
+    "lastUpdated": "2026-10-12T12:00:00+02:00",
+    "profile": [
+      "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLMedicationRequestTerapiaConsigliataRSA"
+    ],
+    "versionId": "1"
+  },
+  "status": "completed",
+  "intent": "proposal",
+  "medicationReference": {
+    "reference": "Medication/9d0e1f2a-3b4c-4d5e-8f6a-7b8c9d0e1f2a",
+    "display": "Ramipril 5 mg compresse"
+  },
+  "subject": {
+    "reference": "Patient/a1b2c3d4-1234-5678-9abc-def012345678",
+    "display": "Mario Rossi"
+  },
+  "requester": {
+    "reference": "PractitionerRole/3c4d5e6f-7a8b-4c9d-8e0f-1a2b3c4d5e6f",
+    "display": "Paolo Conti - Cardiologo"
+  },
+  "dispenseRequest": {
+    "quantity": {
+      "value": 28,
+      "unit": "compresse"
+    }
+  }
+}

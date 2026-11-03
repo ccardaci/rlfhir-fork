@@ -1,0 +1,38 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "RLServiceRequestMotivoRicovero",
+  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLServiceRequestMotivoRicovero",
+  "name": "RLServiceRequestMotivoRicovero",
+  "status": "active",
+  "description": "Motivazione del ricovero del paziente",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "ServiceRequest"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLServiceRequestMotivoRicovero"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      }
+    ]
+  }
+}

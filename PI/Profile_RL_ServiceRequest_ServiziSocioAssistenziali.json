@@ -197,6 +197,32 @@
         "min": 1
       },
       {
+        "id": "ServiceRequest.extension:motivoRicovero",
+        "path": "ServiceRequest.extension",
+        "sliceName": "motivoRicovero",
+        "short": "Motivazione del ricovero del paziente",
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLServiceRequestMotivoRicovero"
+            ]
+          }
+        ],
+        "isModifier": false
+      },
+      {
+        "id": "ServiceRequest.extension:motivoRicovero.value[x]",
+        "path": "ServiceRequest.extension.value[x]",
+        "definition": "Stringa alfanumerica al più di 1000 caratteri",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
         "id": "ServiceRequest.identifier",
         "path": "ServiceRequest.identifier",
         "slicing": {
@@ -386,16 +412,17 @@
       {
         "id": "ServiceRequest.requester",
         "path": "ServiceRequest.requester",
-        "short": "Nel caso della chiamata NEA corrisponde all'operatore che invia la richiesta alla COT",
-        "definition": "Reference al profilo RLPractitionerRoleProfessionistaSanitario",
+        "short": "Nel caso della chiamata NEA il campo è obbligatorio e corrisponde all'operatore che invia la richiesta alla COT. Per altri servizi rappresenta la struttura sanitaria o reparto che invia la richiesta a SGDT",
+        "definition": "Nel caso della chiamata NEA, Reference al profilo RLPractitionerRoleProfessionistaSanitario.\nPer altri servizi, Reference al profilo RLOrganizationL3",
         "comment": "Il dato è detenuto dal SGDT",
-        "min": 1,
+        "min": 0,
         "max": "1",
         "type": [
           {
             "code": "Reference",
             "targetProfile": [
-              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPractitionerRoleProfessionistaSanitario"
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPractitionerRoleProfessionistaSanitario",
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLOrganizationL3"
             ]
           }
         ]

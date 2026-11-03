@@ -1,0 +1,49 @@
+{
+  "resourceType": "CarePlan",
+  "id": "Example-CarePlan-1-PAI",
+  "meta": {
+    "lastUpdated": "2026-10-27T09:30:00+01:00",
+    "profile": [
+      "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCarePlanPAI"
+    ],
+    "versionId": "1"
+  },
+  "status": "active",
+  "intent": "plan",
+  "description": "Programmazione annuale dei controlli per il paziente iperteso.",
+  "subject": {
+    "reference": "Patient/a1b2c3d4-1234-5678-9abc-def012345678",
+    "display": "Mario Rossi"
+  },
+  "period": {
+    "start": "2026-10-27",
+    "end": "2027-10-26"
+  },
+  "created": "2026-10-27",
+  "supportingInfo": [
+    {
+      "reference": "Observation/Example-ObservationRaccomandazione-1-PAI",
+      "display": "Riduzione del consumo di sale"
+    }
+  ],
+  "goal": [
+    {
+      "reference": "Goal/Example-Goal-1-PAI",
+      "display": "Controllo dei valori pressori"
+    }
+  ],
+  "activity": [
+    {
+      "reference": {
+        "reference": "ServiceRequest/Example-ServiceRequest-1-PAI",
+        "display": "Visita cardiologica di controllo"
+      }
+    },
+    {
+      "reference": {
+        "reference": "MedicationRequest/Example-MedicationRequest-1-PAI",
+        "display": "Ramipril 5 mg compresse"
+      }
+    }
+  ]
+}

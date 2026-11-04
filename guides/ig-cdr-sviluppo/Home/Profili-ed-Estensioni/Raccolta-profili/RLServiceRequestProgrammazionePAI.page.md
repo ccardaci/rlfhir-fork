@@ -9,6 +9,8 @@ Il profilo RLServiceRequestPAI è stato strutturato a partire dalla risorsa gene
 
 Per ciascuna prestazione programmata è prevista una risorsa ServiceRequest, referenziata dalla sezione Programmazione Clinico Assistenziale della Composition e dalla CarePlan del documento tramite `CarePlan.activity.reference`. Oltre alla tipologia e al codice della prestazione, la risorsa riporta il flag di telemedicina (`locationCode`), la quantità, la frequenza e la durata (`occurrenceTiming`), l'erogatore (`performer`), la valutazione (`reasonReference`) e, tramite estensioni, la validità del bisogno e gli intervalli temporali.
 
+La durata (occurrenceTiming.repeat.boundsDuration) e la validità del bisogno (extension validitaBisogno) sono di tipo Duration: quando è valorizzato value, il vincolo FHIR drt-1 richiede anche code con system UCUM (http://unitsofmeasure.org, es. d, wk, mo, a); la descrizione dell'unità di misura CRS-SISS è riportata in unit.
+
 Di seguito è presentato il contenuto del profilo in diversi formati. La corrispondente definizione è consultabile al seguente link: {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLServiceRequestPAI}}.
 
 <br>

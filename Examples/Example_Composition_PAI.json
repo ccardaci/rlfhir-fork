@@ -128,6 +128,18 @@
         {
           "reference": "ChargeItem/Example-ChargeItem-1-PAI",
           "display": "Ambito di cura: cronicità"
+        },
+        {
+          "reference": "Condition/Example-Condition-1-PAI",
+          "display": "Patologia: ipertensione arteriosa essenziale"
+        },
+        {
+          "reference": "Procedure/Example-Procedure-1-PAI",
+          "display": "Prestazione correlata alla patologia: visita cardiologica di controllo"
+        },
+        {
+          "reference": "Observation/Example-ObservationCaratterizzazioniCliniche-1-PAI",
+          "display": "Caratterizzazioni cliniche"
         }
       ]
     },
@@ -144,12 +156,24 @@
       },
       "text": {
         "status": "generated",
-        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Ex fumatore dal 2018. Attività fisica moderata.</p></div>"
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Ex fumatore dal 2018. Consumo occasionale di alcolici. Attività fisica moderata. Sovrappeso.</p></div>"
       },
       "entry": [
         {
-          "reference": "Observation/Example-ObservationStileDiVita-1-PAI",
+          "reference": "Observation/Example-ObservationFumo-1-PAI",
           "display": "Fumo: ex fumatore"
+        },
+        {
+          "reference": "Observation/Example-ObservationAlcol-1-PAI",
+          "display": "Alcol: consumo occasionale"
+        },
+        {
+          "reference": "Observation/Example-ObservationSedentarieta-1-PAI",
+          "display": "Sedentarietà: attività fisica moderata"
+        },
+        {
+          "reference": "Observation/Example-ObservationEccessoPonderale-1-PAI",
+          "display": "Eccesso ponderale: sovrappeso"
         }
       ]
     },
@@ -159,6 +183,7 @@
         "coding": [
           {
             "system": "http://loinc.org",
+            "version": "2.19",
             "code": "48765-2",
             "display": "Allergie"
           }
@@ -188,7 +213,7 @@
       },
       "text": {
         "status": "generated",
-        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Visita cardiologica di controllo con ECG una volta l'anno. Terapia: Ramipril 5 mg, 1 compressa al mattino.</p></div>"
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Visita cardiologica di controllo con ECG una volta l'anno. Terapia: Ramipril 5 mg, 1 compressa al mattino. Ausilio: misuratore di pressione arteriosa automatico. Contatto telefonico programmato mensile.</p></div>"
       },
       "entry": [
         {
@@ -198,6 +223,14 @@
         {
           "reference": "MedicationRequest/Example-MedicationRequest-1-PAI",
           "display": "Ramipril 5 mg compresse"
+        },
+        {
+          "reference": "DeviceRequest/Example-DeviceRequest-1-PAI",
+          "display": "Misuratore di pressione arteriosa automatico"
+        },
+        {
+          "reference": "CommunicationRequest/Example-CommunicationRequest-1-PAI",
+          "display": "Contatto telefonico mensile"
         }
       ]
     },
@@ -233,6 +266,7 @@
         "coding": [
           {
             "system": "http://loinc.org",
+            "version": "2.19",
             "code": "57827-8",
             "display": "Motivo Esenzione dal co-pagamento"
           }

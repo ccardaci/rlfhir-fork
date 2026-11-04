@@ -612,23 +612,11 @@
  {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLProcedureLdo}}
  </td>
 </tr>
-            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLObservationEsameEseguitoRad.page.md}}
-          </td>
-          <td>
-            <a href="http://hl7.org/fhir/R4/observation.html">Observation</a>
-          </td>
-          <td>
-            Profilo che descrive l'esami eseguito durante l'incontro di radiologia
-          </td>
-          <td>
-            {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationEsameEseguitoRad}}
-          </td>
-        </tr>
         <tr>
           <td>CORE</td>
           <td><a href="https://simplifier.net/guide/progetto-fhir-rl-core-sviluppo/home/profili-ed-estensioni/raccolta-profili/rlservicerequestcore.page.md?version=current">
             RLServiceRequestCore
-      </a>
+          </a>
           </td>
           <td>
             <a href="http://hl7.org/fhir/R4/servicerequest.html">ServiceRequest</a>
@@ -748,7 +736,7 @@
         <tr>
           <td>VPS</td>
           <td>
-            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLObservationDimissioniDataDecessoVPS.page.md}}
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLObservationDimissioneDataDecessoVPS.page.md}}
           </td>
           <td>
             <a href="http://hl7.org/fhir/R4/observation.html">Observation</a>
@@ -763,7 +751,7 @@
         <tr>
           <td>VPS</td>
           <td>
-            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLObservationDimissioniLivelloAppropriatezzaVPS.page.md}}
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLObservationDimissioneLivelloAppropriatezzaVPS.page.md}}
           </td>
           <td>
             <a href="http://hl7.org/fhir/R4/observation.html">Observation</a>
@@ -1153,7 +1141,7 @@
         <tr>
           <td>RSA</td>
           <td>
-            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLMedicationRequestTerapiaConsigliataRSA.page.md}}
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLMedicationRequestTerapiaFarmacologicaConsigliataRSA.page.md}}
           </td>
           <td>
             <a href="http://hl7.org/fhir/R4/medicationrequest.html">MedicationRequest</a>
@@ -1198,7 +1186,7 @@
         <tr>
           <td>PAI</td>
           <td>
-            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLCarePlan.page.md}}
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLCarePlanPAI.page.md}}
           </td>
           <td>
             <a href="http://hl7.org/fhir/R4/careplan.html">CarePlan</a>
@@ -1288,7 +1276,7 @@
         <tr>
           <td>PAI</td>
           <td>
-            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLObservationFumoPAI.page.md}}
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLObservationAnamnesiFumoPAI.page.md}}
           </td>
           <td>
             <a href="http://hl7.org/fhir/R4/observation.html">Observation</a>
@@ -1303,7 +1291,7 @@
         <tr>
           <td>PAI</td>
           <td>
-            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLObservationAlcolPAI.page.md}}
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLObservationAnamnesiAlcolPAI.page.md}}
           </td>
           <td>
             <a href="http://hl7.org/fhir/R4/observation.html">Observation</a>
@@ -1318,7 +1306,7 @@
         <tr>
           <td>PAI</td>
           <td>
-            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLObservationSedentarietaPAI.page.md}}
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLObservationAnamnesiSedentarietaPAI.page.md}}
           </td>
           <td>
             <a href="http://hl7.org/fhir/R4/observation.html">Observation</a>
@@ -1333,7 +1321,7 @@
         <tr>
           <td>PAI</td>
           <td>
-            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLObservationCaratterizzazioniClinichePAI.page.md}}
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLObservationPresaInCaricoCaratterizzazioniClinichePAI.page.md}}
           </td>
           <td>
             <a href="http://hl7.org/fhir/R4/observation.html">Observation</a>
@@ -1348,7 +1336,7 @@
         <tr>
           <td>PAI</td>
           <td>
-            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLObservationValutazionePAI.page.md}}
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLObservationProgrammazioneValutazionePAI.page.md}}
           </td>
           <td>
             <a href="http://hl7.org/fhir/R4/observation.html">Observation</a>
@@ -1363,7 +1351,7 @@
         <tr>
           <td>PAI</td>
           <td>
-            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLObservationRaccomandazionePAI.page.md}}
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLObservationRaccomandazioniClinichePAI.page.md}}
           </td>
           <td>
             <a href="http://hl7.org/fhir/R4/observation.html">Observation</a>
@@ -1393,7 +1381,7 @@
         <tr>
           <td>PAI</td>
           <td>
-            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLServiceRequestPAI.page.md}}
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLServiceRequestProgrammazionePAI.page.md}}
           </td>
           <td>
             <a href="http://hl7.org/fhir/R4/servicerequest.html">ServiceRequest</a>
@@ -1408,7 +1396,7 @@
         <tr>
           <td>PAI</td>
           <td>
-            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLMedicationRequestPAI.page.md}}
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLMedicationRequestProgrammazionePAI.page.md}}
           </td>
           <td>
             <a href="http://hl7.org/fhir/R4/medicationrequest.html">MedicationRequest</a>
@@ -1423,7 +1411,7 @@
         <tr>
           <td>PAI</td>
           <td>
-            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLMedicationPAI.page.md}}
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLMedicationProgrammazionePAI.page.md}}
           </td>
           <td>
             <a href="http://hl7.org/fhir/R4/medication.html">Medication</a>
@@ -1438,7 +1426,7 @@
         <tr>
           <td>PAI</td>
           <td>
-            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLDeviceRequestPAI.page.md}}
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLDeviceRequestProgrammazionePAI.page.md}}
           </td>
           <td>
             <a href="http://hl7.org/fhir/R4/devicerequest.html">DeviceRequest</a>
@@ -1453,7 +1441,7 @@
         <tr>
           <td>PAI</td>
           <td>
-            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLCommunicationRequestPAI.page.md}}
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLCommunicationRequestProgrammazionePAI.page.md}}
           </td>
           <td>
             <a href="http://hl7.org/fhir/R4/communicationrequest.html">CommunicationRequest</a>
@@ -1468,7 +1456,7 @@
         <tr>
           <td>PAI</td>
           <td>
-            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLOrganizationAffiliationPAI.page.md}}
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLOrganizationAffiliationRetiPatologiaPAI.page.md}}
           </td>
           <td>
             <a href="http://hl7.org/fhir/R4/organizationaffiliation.html">OrganizationAffiliation</a>

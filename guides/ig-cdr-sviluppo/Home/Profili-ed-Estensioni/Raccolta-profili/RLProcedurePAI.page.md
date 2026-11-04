@@ -5,9 +5,11 @@
   - [ValueSet](#valueset)
 
 ## Descrizione
-Il profilo RLProcedurePAI è stato strutturato a partire dalla risorsa generica FHIR [Procedure](http://hl7.org/fhir/R4/procedure.html) per rappresentare le prestazioni correlate alla patologia nel contesto della presa in carico del paziente del Piano Assistenziale Individuale (PAI) – Regione Lombardia.
+Il profilo RLProcedurePAI è stato strutturato a partire dalla risorsa generica FHIR [Procedure](http://hl7.org/fhir/R4/procedure.html) per rappresentare le prestazioni correlate alla patologia nell'ambito della presa in carico nel contesto del Piano Assistenziale Individuale (PAI) – Regione Lombardia.
 
-Per ciascuna prestazione correlata è prevista una risorsa Procedure. Il tipo di prestazione è indicato in `category` (1 = Prestazioni Ambulatoriali; 2 = Prestazioni Farmaceutiche; 3 = Regimi Privati; 4 = Ausili o Presidi Medici; 99 = Altro); la prestazione è codificata in `code.coding` oppure, per il tipo 99 (Altro), descritta in testo libero in `code.text`.
+Per ciascuna prestazione correlata è prevista una risorsa Procedure: il tipo di prestazione (CRS-SISS 6.60) è riportato in category, la prestazione (CRS-SISS 6.61) in code.coding. Per il tipo 99 (Altro) la prestazione è indicata solo come testo libero in code.text.
+
+La risorsa è referenziata direttamente come entry dalla sezione Presa in carico della Composition ({{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCompositionPAI}}).
 
 Di seguito è presentato il contenuto del profilo in diversi formati. La corrispondente definizione è consultabile al seguente link: {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLProcedurePAI}}.
 

@@ -45,6 +45,36 @@
             "code": "Duration"
           }
         ]
+      },
+      {
+        "id": "Extension.value[x].value",
+        "path": "Extension.value[x].value",
+        "short": "Validità (valore)",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Extension.value[x].unit",
+        "path": "Extension.value[x].unit",
+        "short": "Validità (unità di misura)",
+        "comment": "Descrizione del codice di validità CRS-SISS (OID 2.16.840.1.113883.2.9.2.30.3.1.3.13.6.41).",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Extension.value[x].system",
+        "path": "Extension.value[x].system",
+        "min": 0,
+        "max": "1",
+        "fixedUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Extension.value[x].code",
+        "path": "Extension.value[x].code",
+        "short": "Codice UCUM dell'unità",
+        "comment": "Vincolo drt-1: obbligatorio con system UCUM quando value è valorizzato. Il codice CRS-SISS va convertito in UCUM (es. mo, a).",
+        "min": 0,
+        "max": "1"
       }
     ]
   }

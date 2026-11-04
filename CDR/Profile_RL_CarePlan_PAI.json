@@ -137,12 +137,12 @@
         "short": "Raccomandazioni cliniche",
         "comment": "Sezione Raccomandazioni Cliniche (opzionale).",
         "min": 0,
-        "max": "1",
+        "max": "*",
         "type": [
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/StructureDefinition/Observation"
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationRaccomandazionePAI"
             ]
           }
         ]
@@ -181,10 +181,10 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/StructureDefinition/ServiceRequest",
-              "http://hl7.org/fhir/StructureDefinition/MedicationRequest",
-              "http://hl7.org/fhir/StructureDefinition/DeviceRequest",
-              "http://hl7.org/fhir/StructureDefinition/CommunicationRequest"
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLServiceRequestPAI",
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLMedicationRequestPAI",
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLDeviceRequestPAI",
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCommunicationRequestPAI"
             ]
           }
         ]

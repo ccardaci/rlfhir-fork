@@ -1483,6 +1483,34 @@
             {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLOrganizationErogatorePAI}}
           </td>
         </tr>
+        <tr>
+          <td>PAI</td>
+          <td><a href="https://simplifier.net/guide/progetto-fhir-rl-core-sviluppo/home/profili-ed-estensioni/raccolta-profili/rlprocedurepai.page.md?version=current">RLProcedurePAI</a>
+          </td>
+          <td>
+            <a href="http://hl7.org/fhir/R4/procedure.html">Procedure</a>
+          </td>
+          <td>
+            Profilo che descrive le prestazioni correlate alla patologia nella presa in carico del Piano Assistenziale Individuale
+          </td>
+          <td>
+            {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLProcedurePAI}}
+          </td>
+        </tr>
+        <tr>
+        <td>PAI</td>
+          <td><a href="https://simplifier.net/guide/progetto-fhir-rl-core-sviluppo/home/profili-ed-estensioni/raccolta-profili/rlorganizationerogatorepai.page.md?version=current">RLOrganizationErogatorePAI</a>
+          </td>
+          <td>
+            <a href="http://hl7.org/fhir/R4/organization.html">Organization</a>
+          </td>
+          <td>
+            Profilo che descrive gli erogatori delle prestazioni programmate nel Piano Assistenziale Individuale (ADI, Cure intermedie, CDI, CDD, RIA, Cure palliative)
+          </td>
+          <td>
+            {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLOrganizationErogatorePAI}}
+          </td>
+        </tr>
       </tbody>
     </table>
   </body>

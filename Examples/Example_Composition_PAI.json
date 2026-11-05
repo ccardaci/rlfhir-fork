@@ -134,8 +134,12 @@
           "display": "Patologia: ipertensione arteriosa essenziale"
         },
         {
+          "reference": "Condition/Example-Condition-2-PAI",
+          "display": "Patologia addizionale: diabete mellito di tipo 2"
+        },
+        {
           "reference": "Procedure/Example-Procedure-1-PAI",
-          "display": "Prestazione correlata alla patologia: visita cardiologica di controllo"
+          "display": "Prestazione correlata alla patologia: visita diabetologica di controllo"
         },
         {
           "reference": "Observation/Example-ObservationCaratterizzazioniCliniche-1-PAI",

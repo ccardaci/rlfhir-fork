@@ -9,7 +9,7 @@ Il profilo RLServiceRequestPAI è stato strutturato a partire dalla risorsa gene
 
 Per ciascuna prestazione programmata è prevista una risorsa ServiceRequest, referenziata dalla sezione Programmazione Clinico Assistenziale della Composition e dalla CarePlan del documento tramite `CarePlan.activity.reference`. Oltre alla tipologia e al codice della prestazione, la risorsa riporta il flag di telemedicina (`locationCode`), la quantità, la frequenza e la durata (`occurrenceTiming`), l'erogatore (`performer`), la valutazione (`reasonReference`) e, tramite estensioni, la validità del bisogno e gli intervalli temporali.
 
-La durata (occurrenceTiming.repeat.boundsDuration) e la validità del bisogno (extension validitaBisogno) sono di tipo Duration: quando è valorizzato value, il vincolo FHIR drt-1 richiede anche code con system UCUM (http://unitsofmeasure.org, es. d, wk, mo, a); la descrizione dell'unità di misura CRS-SISS è riportata in unit.
+La durata (occurrenceTiming.repeat.boundsDuration) è di tipo Duration: unit riporta la descrizione dell'unità di misura CRS-SISS, code riporta il codice UCUM corrispondente (es. d, wk, mo, a), con system fisso a UCUM (http://unitsofmeasure.org); code e system sono valorizzati solo se l'unità ha un corrispondente UCUM e la durata è presente, altrimenti è riportato solo unit. La validità del bisogno è riportata come testo nell'estensione validitaBisogno (valueString).
 
 Di seguito è presentato il contenuto del profilo in diversi formati. La corrispondente definizione è consultabile al seguente link: {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLServiceRequestPAI}}.
 
@@ -80,6 +80,6 @@ Nella seguente tabella sono elencati i value set e i sistemi di codifica relativ
 | code (cure palliative) | Cure palliative | La codifica è definita dal sistema CRS-SISS (OID 2.16.840.1.113883.2.9.2.30.3.1.3.13.6.51) |
 | code (intervento educazionale) | Intervento educazionale | La codifica è definita dal sistema CRS-SISS (OID 2.16.840.1.113883.2.9.2.30.3.1.3.13.6.35) |
 | locationCode | Flag telemedicina | La codifica è definita dal sistema CRS-SISS (OID 2.16.840.1.113883.2.9.2.30.3.1.3.13.6.55) |
-| occurrenceTiming.repeat.boundsDuration | Unità di misura della durata | La codifica è definita dal sistema CRS-SISS (OID 2.16.840.1.113883.2.9.2.30.3.1.3.13.6.43) |
+| occurrenceTiming.repeat.boundsDuration | Unità di misura della durata | Descrizione dal sistema CRS-SISS (OID 2.16.840.1.113883.2.9.2.30.3.1.3.13.6.43) in unit; codice UCUM (http://unitsofmeasure.org) in code, tramite la ConceptMap UnitaMisuraUCUM, solo per le unità mappate |
 | occurrenceTiming.code | Tipologia frequenza | La codifica è definita dal sistema CRS-SISS (OID 2.16.840.1.113883.2.9.2.30.3.1.3.13.6.42) |
-| extension:validitaBisogno | Validità del bisogno | La codifica è definita dal sistema CRS-SISS (OID 2.16.840.1.113883.2.9.2.30.3.1.3.13.6.41) |
+| extension:validitaBisogno | Validità del bisogno | Descrizione del codice del sistema CRS-SISS (OID 2.16.840.1.113883.2.9.2.30.3.1.3.13.6.41), riportata come testo (valueString) |

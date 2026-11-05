@@ -65,6 +65,6 @@ Nella seguente tabella sono elencati i value set e i sistemi di codifica relativ
 
 | Nome | Descrizione | Riferimento al dettaglio della codifica |
 |---|---|---|
-| code.coding:atc | Codice ATC | La codifica è definita dal sistema ATC (http://www.whocc.no/atc, OID 2.16.840.1.113883.6.73) |
+| code.coding:atc | Codice ATC | La codifica è definita dal sistema ATC (OID 2.16.840.1.113883.6.73) |
 | code.coding:aic | Codice AIC | La codifica è definita dal sistema AIC (OID 2.16.840.1.113883.2.9.6.1.5) |
 | code.coding:ge | Codice GE | La codifica è definita dal sistema dei Gruppi di Equivalenza AIFA (OID 2.16.840.1.113883.2.9.6.1.51) |

@@ -9,6 +9,8 @@ Il profilo RLProcedurePAI è stato strutturato a partire dalla risorsa generica 
 
 Per ciascuna prestazione correlata è prevista una risorsa Procedure: il tipo di prestazione (CRS-SISS 6.60) è riportato in category, la prestazione (CRS-SISS 6.61) in code.coding. Per il tipo 99 (Altro) la prestazione è indicata solo come testo libero in code.text.
 
+Nel CDA2 la prestazione è annidata nella Patologia Addizionale: la Procedure referenzia in reasonReference la Condition della Patologia Addizionale che la contiene ({{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLConditionPAI}}).
+
 La risorsa è referenziata direttamente come entry dalla sezione Presa in carico della Composition ({{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCompositionPAI}}).
 
 Di seguito è presentato il contenuto del profilo in diversi formati. La corrispondente definizione è consultabile al seguente link: {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLProcedurePAI}}.
@@ -57,6 +59,8 @@ Di seguito è presentato il contenuto del profilo in diversi formati. La corrisp
 <div id="Esempi" class="tabcontent">
  <h3>Esempi</h3>
 Prestazione correlata alla patologia: {{link:Procedure/Example-Procedure-1-PAI}}
+<br>
+Patologia addizionale referenziata: {{link:Condition/Example-Condition-2-PAI}}
 <br>
 </div>
 

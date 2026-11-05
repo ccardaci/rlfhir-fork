@@ -122,6 +122,22 @@
             ]
           }
         ]
+      },
+      {
+        "id": "Procedure.reasonReference",
+        "path": "Procedure.reasonReference",
+        "short": "Patologia addizionale a cui è correlata la prestazione",
+        "definition": "Riferimento alla Condition della Patologia Addizionale in cui è annidata la prestazione nel CDA2.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLConditionPAI"
+            ]
+          }
+        ]
       }
     ]
   }

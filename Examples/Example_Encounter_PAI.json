@@ -33,6 +33,13 @@
         "display": "Ipertensione arteriosa essenziale"
       },
       "rank": 1
+    },
+    {
+      "condition": {
+        "reference": "Condition/Example-Condition-2-PAI",
+        "display": "Diabete mellito di tipo 2"
+      },
+      "rank": 3
     }
   ],
   "hospitalization": {

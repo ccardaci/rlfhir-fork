@@ -661,6 +661,12 @@
       <td>Erogatore della prestazione programmata - ente erogatore ADI</td>
       <td>{{link:Organization/Example-OrganizationErogatore-1-PAI}}</td>
     </tr>
+    <tr>
+      <td>PAI</td>
+      <td>Condition</td>
+      <td>Patologia addizionale referenziata dalla prestazione correlata (Procedure)</td>
+      <td>{{link:Condition/Example-Condition-2-PAI}}</td>
+    </tr>
   </tbody>
 </table>
   </body>

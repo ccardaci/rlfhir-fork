@@ -11,12 +11,7 @@
   "extension": [
     {
       "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLServiceRequestValiditaBisogno",
-      "valueDuration": {
-        "value": 12,
-        "unit": "mesi",
-        "system": "http://unitsofmeasure.org",
-        "code": "mo"
-      }
+      "valueString": "12 mesi"
     },
     {
       "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLServiceRequestIntervalloTemporale",

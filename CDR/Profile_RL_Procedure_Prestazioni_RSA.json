@@ -1,0 +1,168 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLProcedurePrestazioniRSA",
+  "name": "RLProcedurePrestazioniRSA",
+  "title": "Procedure Prestazioni RSA",
+  "status": "draft",
+  "date": "2026-11-09",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Procedure",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Procedure",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Procedure",
+        "path": "Procedure",
+        "short": "Prestazioni eseguite"
+      },
+      {
+        "id": "Procedure.extension",
+        "path": "Procedure.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Procedure.extension:method",
+        "path": "Procedure.extension",
+        "sliceName": "method",
+        "short": "Metodo con cui è stata eseguita la procedura",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/procedure-method"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Procedure.status",
+        "path": "Procedure.status",
+        "short": "Stato della procedura",
+        "min": 1,
+        "max": "1",
+        "fixedCode": "completed"
+      },
+      {
+        "id": "Procedure.subject",
+        "path": "Procedure.subject",
+        "short": "Soggetto su cui si esegue la procedura",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPatientCore"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Procedure.code",
+        "path": "Procedure.code",
+        "short": "Identifica quale procedura è stata eseguita",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Procedure.code.coding",
+        "path": "Procedure.code.coding",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Procedure.code.coding.system",
+        "path": "Procedure.code.coding.system",
+        "short": "L'URL del sistema di codifica utilizzato",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Procedure.code.coding.version",
+        "path": "Procedure.code.coding.version",
+        "short": "La versione del sistema di codifica",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Procedure.code.coding.code",
+        "path": "Procedure.code.coding.code",
+        "short": "Il codice della procedura nel sistema di codifica scelto",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Procedure.code.coding.display",
+        "path": "Procedure.code.coding.display",
+        "short": "La descrizione leggibile per il codice",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Procedure.note",
+        "path": "Procedure.note",
+        "short": "Testo libero",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Procedure.performed[x]",
+        "path": "Procedure.performed[x]",
+        "short": "Data e ora in cui la procedura è stata eseguita",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ]
+      },
+      {
+        "id": "Procedure.performer.actor",
+        "path": "Procedure.performer.actor",
+        "short": "Soggetto che ha eseguito o partecipato alla procedura",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Device"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Procedure.partOf",
+        "path": "Procedure.partOf",
+        "short": "Indica che questa procedura fa parte di un'altra procedura, di una somministrazione di farmaco o di un'osservazione clinica",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Procedure",
+              "http://hl7.org/fhir/StructureDefinition/Observation",
+              "http://hl7.org/fhir/StructureDefinition/MedicationAdministration"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

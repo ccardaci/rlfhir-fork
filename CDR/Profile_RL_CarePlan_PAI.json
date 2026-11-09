@@ -65,7 +65,7 @@
         "id": "CarePlan.status",
         "path": "CarePlan.status",
         "short": "Stato del piano di cura",
-        "comment": "Sezione Attributi di Sistema. Suggerimento: active. Se è presente il motivo di chiusura della programmazione: completed.",
+        "comment": "Sezione Attributi di Sistema. Valore fisso: completed.",
         "min": 1,
         "max": "1"
       },

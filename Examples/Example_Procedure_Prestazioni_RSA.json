@@ -1,0 +1,46 @@
+{
+  "resourceType": "Procedure",
+  "id": "Example-ProcedurePrestazioni-1-RSA",
+  "meta": {
+    "lastUpdated": "2026-11-09T10:00:00+01:00",
+    "profile": [
+      "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLProcedurePrestazioniRSA"
+    ],
+    "versionId": "1"
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/procedure-method",
+      "valueCodeableConcept": {
+        "text": "Elettrocardiogramma a 12 derivazioni"
+      }
+    }
+  ],
+  "status": "completed",
+  "code": {
+    "coding": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.2.9.2.30.6.11",
+        "version": "Nomenclatore Tariffario Regionale",
+        "code": "89.52",
+        "display": "ELETTROCARDIOGRAMMA"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/a1b2c3d4-1234-5678-9abc-def012345678",
+    "display": "Mario Rossi"
+  },
+  "performedDateTime": "2026-10-08T09:30:00+02:00",
+  "note": [
+    {
+      "text": "Prestazione eseguita a riposo, in posizione supina."
+    }
+  ],
+  "partOf": [
+    {
+      "reference": "Observation/Example-ObservationPrestazioni-1-RSA",
+      "display": "Elettrocardiogramma"
+    }
+  ]
+}

@@ -108,7 +108,7 @@
         "short": "Versione del sistema di codifica",
         "min": 0,
         "max": "1",
-        "fixedString": "ICD9CM"
+        "fixedString": "ICD9-CM"
       },
       {
         "id": "Observation.value[x].coding.code",

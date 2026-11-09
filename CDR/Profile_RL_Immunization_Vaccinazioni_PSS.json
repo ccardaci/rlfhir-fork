@@ -1,0 +1,145 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLImmunizationVaccinazioniPSS",
+  "name": "RLImmunizationVaccinazioniPSS",
+  "title": "Immunization PSS - Vaccinazioni",
+  "status": "draft",
+  "date": "2026-11-09",
+  "description": "Profilo della risorsa Immunization per le vaccinazioni del paziente (sezione Vaccinazioni del PSS).",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Immunization",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Immunization",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Immunization",
+        "path": "Immunization"
+      },
+      {
+        "id": "Immunization.status",
+        "path": "Immunization.status",
+        "short": "Stato dell’evento di immunizzazione - vaccinazione avvenuta",
+        "min": 1,
+        "max": "1",
+        "fixedCode": "completed"
+      },
+      {
+        "id": "Immunization.occurrence[x]",
+        "path": "Immunization.occurrence[x]",
+        "short": "Data e ora di somministrazione del vaccino",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ]
+      },
+      {
+        "id": "Immunization.route",
+        "path": "Immunization.route",
+        "short": "Via di somministrazione del vaccino",
+        "comment": "L’informazione inerente alla via di somministrazione viene inserita attraverso l’elemento l’attributo @code PUÒ essere valorizzato secondo il Value Set “HL7 RouteOfAdministration”.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Immunization.vaccineCode",
+        "path": "Immunization.vaccineCode",
+        "short": "Vaccino somministrato",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Immunization.vaccineCode.coding.code",
+        "path": "Immunization.vaccineCode.coding.code",
+        "short": "Codice identificativo del vaccino",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Immunization.vaccineCode.coding.system",
+        "path": "Immunization.vaccineCode.coding.system",
+        "short": "Sistema di codifica del vaccino",
+        "min": 0,
+        "max": "1",
+        "fixedUri": "urn:oid:2.16.840.1.113883.2.9.6.1.5"
+      },
+      {
+        "id": "Immunization.vaccineCode.coding.version",
+        "path": "Immunization.vaccineCode.coding.version",
+        "short": "Versione del sistema di codifica",
+        "comment": "Valore previsto: Tabella vaccino AIC.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Immunization.vaccineCode.coding.display",
+        "path": "Immunization.vaccineCode.coding.display",
+        "short": "Descrizione del vaccino",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Immunization.lotNumber",
+        "path": "Immunization.lotNumber",
+        "short": "Numero di lotto del vaccino",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Immunization.expirationDate",
+        "path": "Immunization.expirationDate",
+        "short": "Periodo di copertura/prossimo appuntamento.",
+        "comment": "PUÒ essere valorizzato secondo il Value Set “Immunization Reccomendation”.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Immunization.protocolApplied.doseNumber[x]",
+        "path": "Immunization.protocolApplied.doseNumber[x]",
+        "short": "Numero della dose somministrata",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "positiveInt"
+          }
+        ]
+      },
+      {
+        "id": "Immunization.reaction.detail",
+        "path": "Immunization.reaction.detail",
+        "short": "Descrizione delle reazioni, che sono la manifestazione al vaccino",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationReazioniAvversePSS"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Immunization.patient",
+        "path": "Immunization.patient",
+        "short": "Soggetto che è stato immunizzato",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPatientCore"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

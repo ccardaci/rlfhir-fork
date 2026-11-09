@@ -1,0 +1,39 @@
+{
+  "resourceType": "Coverage",
+  "id": "Example-CoverageEsenzioni-1-PSS",
+  "meta": {
+    "profile": [
+      "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCoverageEsenzioniPSS"
+    ]
+  },
+  "type": {
+    "coding": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.2.9.6.1.22",
+        "version": "catalogo nazionale delle esenzioni",
+        "code": "@cd_Esenzione@",
+        "display": "@ds_Esenzione@"
+      }
+    ]
+  },
+  "status": "active",
+  "period": {
+    "start": "2020-01-01"
+  },
+  "class": [
+    {
+      "type": {
+        "text": "@ds_TipoEsenzione@"
+      },
+      "value": "@cd_Esenzione@"
+    }
+  ],
+  "beneficiary": {
+    "reference": "Patient/e06086d8-a958-11ed-afa1-0242ac120002"
+  },
+  "payor": [
+    {
+      "reference": "Organization/esempio-organization-core"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "resourceType": "Observation",
+  "id": "Example-ObservationEsamiLaboratorio-1-PSS",
+  "meta": {
+    "profile": [
+      "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationEsamiLaboratorioPSS"
+    ]
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "34530-6",
+        "display": "ABO & Rh"
+      }
+    ]
+  },
+  "status": "final",
+  "effectiveDateTime": "2026-10-02T08:30:00+02:00",
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "system": "@system_GruppoSanguigno@",
+        "code": "@cd_GruppoSanguigno@",
+        "display": "@ds_GruppoSanguigno@"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/e06086d8-a958-11ed-afa1-0242ac120002"
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory",
+          "display": "Laboratory"
+        }
+      ]
+    }
+  ],
+  "performer": [
+    {
+      "reference": "Organization/esempio-organization-core"
+    }
+  ],
+  "encounter": {
+    "reference": "Encounter/rl-encounter-ambulatoriale-001"
+  }
+}

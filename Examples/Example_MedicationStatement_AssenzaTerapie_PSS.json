@@ -1,0 +1,23 @@
+{
+  "resourceType": "MedicationStatement",
+  "id": "Example-MedicationStatementAssenzaTerapie-1-PSS",
+  "meta": {
+    "profile": [
+      "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLMedicationStatementAssenzaTerapiePSS"
+    ]
+  },
+  "medicationCodeableConcept": {
+    "coding": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.11.22.15",
+        "code": "@cd_IPSNoMedsInfo@",
+        "display": "@ds_IPSNoMedsInfo@"
+      }
+    ],
+    "text": "Nessuna terapia farmacologica in corso"
+  },
+  "subject": {
+    "reference": "Patient/e06086d8-a958-11ed-afa1-0242ac120002"
+  },
+  "status": "unknown"
+}

@@ -1,0 +1,427 @@
+{
+  "resourceType": "Composition",
+  "id": "Example-Composition-1-PSS",
+  "meta": {
+    "profile": [
+      "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCompositionPSS"
+    ]
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/composition-clinicaldocument-versionNumber",
+      "valueString": "1"
+    }
+  ],
+  "status": "final",
+  "type": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "60591-5",
+        "display": "Profilo Sanitario Sintetico"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/e06086d8-a958-11ed-afa1-0242ac120002"
+  },
+  "encounter": {
+    "reference": "Encounter/rl-encounter-ambulatoriale-001"
+  },
+  "date": "2026-11-09T10:00:00+01:00",
+  "author": [
+    {
+      "reference": "PractitionerRole/esempio-practitionerrole-core"
+    }
+  ],
+  "title": "Profilo Sanitario Sintetico",
+  "attester": [
+    {
+      "mode": "legal",
+      "time": "2026-11-09T10:05:00+01:00",
+      "party": {
+        "reference": "Practitioner/3a14db34-a959-11ed-afa1-0242ac120002"
+      }
+    },
+    {
+      "mode": "personal",
+      "party": {
+        "reference": "RelatedPerson/rl-relatedperson-001"
+      }
+    }
+  ],
+  "custodian": {
+    "reference": "Organization/esempio-organization-core"
+  },
+  "section": [
+    {
+      "title": "Allergie e Intolleranze",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "version": "LOINC",
+            "code": "48765-2",
+            "display": "Allergie, Reazioni avverse"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Allergie e Intolleranze</div>"
+      },
+      "entry": [
+        {
+          "reference": "AllergyIntolerance/rl-allergyintolerance-001"
+        }
+      ]
+    },
+    {
+      "title": "Terapie farmacologiche",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "version": "LOINC",
+            "code": "10160-0",
+            "display": "History of Medication use"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Terapie farmacologiche</div>"
+      },
+      "entry": [
+        {
+          "reference": "MedicationStatement/Example-MedicationStatementTerapieFarmacologiche-1-PSS"
+        }
+      ]
+    },
+    {
+      "title": "Vaccinazioni",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "version": "LOINC",
+            "code": "11369-6",
+            "display": "Storia di immunizzazioni"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Vaccinazioni</div>"
+      },
+      "entry": [
+        {
+          "reference": "Immunization/Example-ImmunizationVaccinazioni-1-PSS"
+        }
+      ]
+    },
+    {
+      "title": "Lista dei Problemi",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "version": "LOINC",
+            "code": "11450-4",
+            "display": "Lista dei Problemi"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Lista dei Problemi</div>"
+      },
+      "entry": [
+        {
+          "reference": "Condition/rl-condition-001"
+        }
+      ]
+    },
+    {
+      "title": "Anamnesi Familiare",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "version": "LOINC",
+            "code": "10157-6",
+            "display": "Storia di malattie di membri familiari"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Anamnesi Familiare</div>"
+      },
+      "entry": [
+        {
+          "reference": "FamilyMemberHistory/rl-familymemberHistory-001"
+        }
+      ]
+    },
+    {
+      "title": "Stile di Vita",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "version": "LOINC",
+            "code": "29762-2",
+            "display": "Stile di Vita"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Stile di Vita</div>"
+      },
+      "entry": [
+        {
+          "reference": "Observation/Example-ObservationStileDiVita-1-PSS"
+        }
+      ]
+    },
+    {
+      "title": "Gravidanze, parti e stato mestruale",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "version": "LOINC",
+            "code": "10162-6",
+            "display": "Storia di gravidanze"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Gravidanze, parti e stato mestruale</div>"
+      },
+      "entry": [
+        {
+          "reference": "Observation/Example-ObservationGravidanzeParto-1-PSS"
+        }
+      ]
+    },
+    {
+      "title": "Parametri Vitali",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "version": "LOINC",
+            "code": "8716-3",
+            "display": "Parametri vitali"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Parametri Vitali</div>"
+      }
+    },
+    {
+      "title": "Protesi, impianti e ausili",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "version": "LOINC",
+            "code": "46264-8",
+            "display": "Storia di uso di dispositivi medici"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Protesi, impianti e ausili</div>"
+      },
+      "entry": [
+        {
+          "reference": "Procedure/Example-ProcedureProtesiImpiantiAusili-1-PSS"
+        }
+      ]
+    },
+    {
+      "title": "Piani di Cura",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "version": "LOINC",
+            "code": "18776-5",
+            "display": "Piano di cura"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Piani di Cura</div>"
+      },
+      "entry": [
+        {
+          "reference": "CarePlan/Example-CarePlanPianoDiCura-1-PSS"
+        }
+      ]
+    },
+    {
+      "title": "Trattamenti e procedure terapeutiche, chirurgiche e diagnostiche",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "version": "LOINC",
+            "code": "47519-4",
+            "display": "Storie di Procedure"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Trattamenti e procedure terapeutiche, chirurgiche e diagnostiche</div>"
+      },
+      "entry": [
+        {
+          "reference": "Procedure/Example-ProcedureTrattamenti-1-PSS"
+        }
+      ]
+    },
+    {
+      "title": "Visite e Ricoveri",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "version": "LOINC",
+            "code": "46240-8",
+            "display": "Storia di ospedalizzazioni e Storia di visite ambulatoriali"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Visite e Ricoveri</div>"
+      },
+      "entry": [
+        {
+          "reference": "Encounter/rl-encounter-ambulatoriale-001"
+        }
+      ]
+    },
+    {
+      "title": "Stato funzionale del Paziente",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "version": "LOINC",
+            "code": "47420-5",
+            "display": "Nota di valutazione dello stato funzionale"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Stato funzionale del Paziente</div>"
+      },
+      "entry": [
+        {
+          "reference": "Observation/Example-ObservationStatoFunzionale-1-PSS"
+        }
+      ]
+    },
+    {
+      "title": "Indagini diagnostiche e esami di laboratorio",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "version": "LOINC",
+            "code": "30954-2",
+            "display": "Test diagnostici rilevanti o dati di laboratorio"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Indagini diagnostiche e esami di laboratorio</div>"
+      },
+      "entry": [
+        {
+          "reference": "DiagnosticReport/Example-DiagnosticReportEsamiLaboratorio-1-PSS"
+        }
+      ]
+    },
+    {
+      "title": "Assenso/Dissenso donazione organi",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "version": "LOINC",
+            "code": "42348-3",
+            "display": "Dichiarazioni anticipate di trattamento"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Assenso/Dissenso donazione organi</div>"
+      },
+      "entry": [
+        {
+          "reference": "Observation/Example-ObservationAssensoDissensoDonazioneOrgani-1-PSS"
+        }
+      ]
+    },
+    {
+      "title": "Esenzioni",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "version": "LOINC",
+            "code": "57827-8",
+            "display": "Motivo di esenzione dal co-pagamento"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Esenzioni</div>"
+      },
+      "entry": [
+        {
+          "reference": "Coverage/Example-CoverageEsenzioni-1-PSS"
+        }
+      ]
+    },
+    {
+      "title": "Reti di Patologia",
+      "code": {
+        "coding": [
+          {
+            "system": "urn:oid:2.16.840.1.113883.2.9.5.2.8",
+            "version": "ProfiloSanitarioSinteticoIT",
+            "code": "PSSIT99",
+            "display": "Reti di Patologia"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Reti di Patologia</div>"
+      },
+      "entry": [
+        {
+          "reference": "OrganizationAffiliation/Example-OrganizationAffiliation-1-PAI"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLProcedureProtesiImpiantiAusiliPSS",
+  "name": "RLProcedureProtesiImpiantiAusiliPSS",
+  "title": "Procedure PSS - Protesi, Impianti e Ausili",
+  "status": "draft",
+  "date": "2026-11-09",
+  "description": "Profilo della risorsa Procedure per protesi, impianti e ausili del paziente (sezione Protesi, impianti e ausili del PSS).",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Procedure",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Procedure",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Procedure",
+        "path": "Procedure"
+      },
+      {
+        "id": "Procedure.usedReference",
+        "path": "Procedure.usedReference",
+        "short": "Dispositivo usato durante la procedura",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Device"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Procedure.performed[x]",
+        "path": "Procedure.performed[x]",
+        "short": "Quando la procedure è stata eseguita",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ]
+      },
+      {
+        "id": "Procedure.status",
+        "path": "Procedure.status",
+        "short": "Stato della procedura",
+        "comment": "Se i dispositivi sono stati implementati, lo status assume valore \"completed\", in alternativa utilizzare per la valorizzazione il valueset indicato di seguito https://hl7.org/fhir/R4B/valueset-event-status.html.",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Procedure.subject",
+        "path": "Procedure.subject",
+        "short": "Soggetto sul quale si effettua la procedura",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPatientCore"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "resourceType": "Observation",
+  "id": "Example-ObservationAssenzaAnamnesiFamiliare-1-PSS",
+  "meta": {
+    "profile": [
+      "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationAssenzaAnamnesiFamiliarePSS"
+    ]
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.2.9.77.22.11.9",
+        "version": "ProblemObservation_PSSIT",
+        "code": "@cd_ProblemObservation@"
+      }
+    ]
+  },
+  "status": "final",
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.11.22.17",
+        "version": "IPSNoProbsInfos",
+        "code": "@cd_IPSNoProbsInfos@",
+        "display": "Informazioni non note sull'anamnesi familiare"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/e06086d8-a958-11ed-afa1-0242ac120002"
+  }
+}

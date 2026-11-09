@@ -1,0 +1,33 @@
+{
+  "resourceType": "Observation",
+  "id": "Example-ObservationStatoFunzionale-1-PSS",
+  "meta": {
+    "profile": [
+      "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationStatoFunzionalePSS"
+    ]
+  },
+  "hasMember": [
+    {
+      "reference": "Observation/Example-ObservationCapacitaMotoria-1-PSS"
+    },
+    {
+      "reference": "Observation/Example-ObservationRegimeAssistenza-1-PSS"
+    },
+    {
+      "reference": "Observation/Example-ObservationAltreInformazioni-1-PSS"
+    }
+  ],
+  "status": "final",
+  "subject": {
+    "reference": "Patient/e06086d8-a958-11ed-afa1-0242ac120002"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "47420-5",
+        "display": "Nota di valutazione dello stato funzionale"
+      }
+    ]
+  }
+}

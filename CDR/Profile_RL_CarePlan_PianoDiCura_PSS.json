@@ -1,0 +1,168 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCarePlanPianoDiCuraPSS",
+  "name": "RLCarePlanPianoDiCuraPSS",
+  "title": "CarePlan PSS - Piano di Cura",
+  "status": "draft",
+  "date": "2026-11-09",
+  "description": "Profilo della risorsa CarePlan per i piani di cura del paziente (sezione Piano di Cura del PSS).",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "CarePlan",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/CarePlan",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "CarePlan",
+        "path": "CarePlan"
+      },
+      {
+        "id": "CarePlan.activity.detail.reasonReference",
+        "path": "CarePlan.activity.detail.reasonReference",
+        "short": "Osservazione che motiva l’attività prevista dal piano di cura",
+        "comment": "Dettagli relativi a richieste di esami da effettuare.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Observation"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "CarePlan.activity.reference",
+        "path": "CarePlan.activity.reference",
+        "short": "Richiesta di terapia farmacologica prevista dal piano di cura",
+        "comment": "Dettagli relativi a richieste di nuove terapie farmacologiche da inserire nel piano di cura.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLMedicationRequestPianoDiCuraPSS"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "CarePlan.activity.outcomeReference",
+        "path": "CarePlan.activity.outcomeReference",
+        "short": "Procedura eseguita come esito dell’attività prevista dal piano di cura",
+        "comment": "Dettagli relativi a richieste di trattamenti e procedure terapeutiche, chiururgiche e diagnostiche. Adeguare lo status della risosrsa procedure di conseguenza.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLProcedureTrattamentiPSS"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "CarePlan.encounter",
+        "path": "CarePlan.encounter",
+        "short": "Evento associato al piano di cura",
+        "comment": "Dettagli relativi a eventuali suggerimenti di ricovero.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLEncounterCore"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "CarePlan.subject",
+        "path": "CarePlan.subject",
+        "short": "Paziente a cui si riferisce il piano di cura",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPatientCore"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "CarePlan.status",
+        "path": "CarePlan.status",
+        "short": "Stato della richiesta",
+        "comment": "Suggerimento: active/completed quando il piano è attivo o completato.",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "CarePlan.intent",
+        "path": "CarePlan.intent",
+        "short": "Scopo della richiesta",
+        "comment": "Suggerimento: plan.",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "CarePlan.activity.outcomeCodeableConcept",
+        "path": "CarePlan.activity.outcomeCodeableConcept",
+        "short": "Esito dell’attività del piano di cura",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "CarePlan.activity.outcomeCodeableConcept.coding.code",
+        "path": "CarePlan.activity.outcomeCodeableConcept.coding.code",
+        "short": "Codice identificativo dell’esito dell’attività",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "CarePlan.activity.outcomeCodeableConcept.coding.system",
+        "path": "CarePlan.activity.outcomeCodeableConcept.coding.system",
+        "short": "Sistema di codifica dell’esito dell’attività",
+        "comment": "Valore previsto: urn:oid:2.16.840.1.113883.3.1937.777.63.11.47.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "CarePlan.activity.outcomeCodeableConcept.coding.version",
+        "path": "CarePlan.activity.outcomeCodeableConcept.coding.version",
+        "short": "Versione del sistema di codifica utilizzato",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "CarePlan.activity.outcomeCodeableConcept.coding.display",
+        "path": "CarePlan.activity.outcomeCodeableConcept.coding.display",
+        "short": "Descrizione testuale dell’esito codificato",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "CarePlan.activity.progress",
+        "path": "CarePlan.activity.progress",
+        "short": "Informazioni sullo stato di avanzamento dell’attività",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "CarePlan.activity.detail.scheduled[x]",
+        "path": "CarePlan.activity.detail.scheduled[x]",
+        "short": "Periodo temporale pianificato per lo svolgimento dell’attività",
+        "min": 0,
+        "max": "1"
+      }
+    ]
+  }
+}

@@ -1,0 +1,226 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLMedicationStatementTerapieFarmacologichePSS",
+  "name": "RLMedicationStatementTerapieFarmacologichePSS",
+  "title": "MedicationStatement PSS - Terapie Farmacologiche",
+  "status": "draft",
+  "date": "2026-11-09",
+  "description": "Profilo della risorsa MedicationStatement per le terapie farmacologiche del paziente (sezione Terapie Farmacologiche del PSS).",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "MedicationStatement",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/MedicationStatement",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "MedicationStatement",
+        "path": "MedicationStatement"
+      },
+      {
+        "id": "MedicationStatement.status",
+        "path": "MedicationStatement.status",
+        "short": "Stato della terapia",
+        "comment": "Suggerimento: active. Per terapie in corso.",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "MedicationStatement.effective[x]",
+        "path": "MedicationStatement.effective[x]",
+        "short": "Dettagli temporali relativi alla terapia",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "dateTime"
+          },
+          {
+            "code": "Period"
+          }
+        ]
+      },
+      {
+        "id": "MedicationStatement.dosage.timing.code",
+        "path": "MedicationStatement.dosage.timing.code",
+        "short": "Codice che specifica la tempistica di somministrazione del farmaco",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "MedicationStatement.dosage.route",
+        "path": "MedicationStatement.dosage.route",
+        "short": "Via di somministrazione",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "MedicationStatement.dosage.route.coding.code",
+        "path": "MedicationStatement.dosage.route.coding.code",
+        "short": "Codice della via di somministrazione",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "MedicationStatement.dosage.route.coding.system",
+        "path": "MedicationStatement.dosage.route.coding.system",
+        "short": "URI del sistema di codifica",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "MedicationStatement.dosage.route.coding.version",
+        "path": "MedicationStatement.dosage.route.coding.version",
+        "short": "Versione del sistema di codifica",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "MedicationStatement.dosage.route.coding.display",
+        "path": "MedicationStatement.dosage.route.coding.display",
+        "short": "Descrizione della via di somministrazione",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "MedicationStatement.dosage.route.text",
+        "path": "MedicationStatement.dosage.route.text",
+        "short": "Testo libero",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "MedicationStatement.dosage.site",
+        "path": "MedicationStatement.dosage.site",
+        "short": "Sito di somministrazione",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "MedicationStatement.dosage.site.coding.code",
+        "path": "MedicationStatement.dosage.site.coding.code",
+        "short": "Codice del sito di somministrazione",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "MedicationStatement.dosage.site.coding.system",
+        "path": "MedicationStatement.dosage.site.coding.system",
+        "short": "URI del sistema di codifica",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "MedicationStatement.dosage.site.coding.version",
+        "path": "MedicationStatement.dosage.site.coding.version",
+        "short": "Versione del sistema di codifica",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "MedicationStatement.dosage.site.coding.display",
+        "path": "MedicationStatement.dosage.site.coding.display",
+        "short": "Descrizione del sito di somministrazione",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "MedicationStatement.dosage.site.text",
+        "path": "MedicationStatement.dosage.site.text",
+        "short": "Testo libero",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "MedicationStatement.dosage.doseAndRate.dose[x]",
+        "path": "MedicationStatement.dosage.doseAndRate.dose[x]",
+        "short": "Intervallo della posologia del farmaco",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Range"
+          }
+        ]
+      },
+      {
+        "id": "MedicationStatement.dosage.doseAndRate.doseRange.low",
+        "path": "MedicationStatement.dosage.doseAndRate.doseRange.low",
+        "short": "Limite inferiore dell’intervallo della posologia",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "MedicationStatement.dosage.doseAndRate.doseRange.high",
+        "path": "MedicationStatement.dosage.doseAndRate.doseRange.high",
+        "short": "Limite superiore dell’intervallo della posologia",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "MedicationStatement.dosage.doseAndRate.rate[x]",
+        "path": "MedicationStatement.dosage.doseAndRate.rate[x]",
+        "short": "Intervallo della velocità di somministrazione",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Range"
+          }
+        ]
+      },
+      {
+        "id": "MedicationStatement.dosage.doseAndRate.rateRange.low",
+        "path": "MedicationStatement.dosage.doseAndRate.rateRange.low",
+        "short": "Limite inferiore dell’intervallo di velocità",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "MedicationStatement.dosage.doseAndRate.rateRange.high",
+        "path": "MedicationStatement.dosage.doseAndRate.rateRange.high",
+        "short": "Limite superiore dell’intervallo di velocità",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "MedicationStatement.dosage.doseAndRate.type.text",
+        "path": "MedicationStatement.dosage.doseAndRate.type.text",
+        "short": "Descrizione testuale del tipo di dose o velocità",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "MedicationStatement.medication[x]",
+        "path": "MedicationStatement.medication[x]",
+        "short": "Medicinale somministrato",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Medication"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationStatement.subject",
+        "path": "MedicationStatement.subject",
+        "short": "Paziente a cui si riferisce la Terapia Farmacologica",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPatientCore"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

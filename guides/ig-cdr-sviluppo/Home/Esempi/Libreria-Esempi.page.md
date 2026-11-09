@@ -661,6 +661,126 @@
       <td>Erogatore della prestazione programmata - ente erogatore ADI</td>
       <td>{{link:Organization/Example-OrganizationErogatore-1-PAI}}</td>
     </tr>
+        <tr>
+      <td>PSS</td>
+      <td>Composition</td>
+      <td>Documento PSS</td>
+      <td>{{link:Composition/Example-Composition-1-PSS}}</td>
+    </tr>
+    <tr>
+      <td>PSS</td>
+      <td>MedicationStatement</td>
+      <td>Terapie farmacologiche</td>
+      <td>{{link:MedicationStatement/Example-MedicationStatementTerapieFarmacologiche-1-PSS}}</td>
+    </tr>
+    <tr>
+      <td>PSS</td>
+      <td>MedicationStatement</td>
+      <td>Assenza di terapie farmacologiche</td>
+      <td>{{link:MedicationStatement/Example-MedicationStatementAssenzaTerapie-1-PSS}}</td>
+    </tr>
+    <tr>
+      <td>PSS</td>
+      <td>Immunization</td>
+      <td>Vaccinazioni</td>
+      <td>{{link:Immunization/Example-ImmunizationVaccinazioni-1-PSS}}</td>
+    </tr>
+    <tr>
+      <td>PSS</td>
+      <td>Observation</td>
+      <td>Reazioni avverse</td>
+      <td>{{link:Observation/Example-ObservationReazioniAvverse-1-PSS}}</td>
+    </tr>
+    <tr>
+      <td>PSS</td>
+      <td>Observation</td>
+      <td>Assenza di anamnesi familiare</td>
+      <td>{{link:Observation/Example-ObservationAssenzaAnamnesiFamiliare-1-PSS}}</td>
+    </tr>
+    <tr>
+      <td>PSS</td>
+      <td>Observation</td>
+      <td>Stile di vita</td>
+      <td>{{link:Observation/Example-ObservationStileDiVita-1-PSS}}</td>
+    </tr>
+    <tr>
+      <td>PSS</td>
+      <td>Observation</td>
+      <td>Gravidanze e parto</td>
+      <td>{{link:Observation/Example-ObservationGravidanzeParto-1-PSS}}</td>
+    </tr>
+    <tr>
+      <td>PSS</td>
+      <td>Observation</td>
+      <td>Stato funzionale</td>
+      <td>{{link:Observation/Example-ObservationStatoFunzionale-1-PSS}}</td>
+    </tr>
+    <tr>
+      <td>PSS</td>
+      <td>Observation</td>
+      <td>Capacità motoria</td>
+      <td>{{link:Observation/Example-ObservationCapacitaMotoria-1-PSS}}</td>
+    </tr>
+    <tr>
+      <td>PSS</td>
+      <td>Observation</td>
+      <td>Regime di assistenza</td>
+      <td>{{link:Observation/Example-ObservationRegimeAssistenza-1-PSS}}</td>
+    </tr>
+    <tr>
+      <td>PSS</td>
+      <td>Observation</td>
+      <td>Altre informazioni</td>
+      <td>{{link:Observation/Example-ObservationAltreInformazioni-1-PSS}}</td>
+    </tr>
+    <tr>
+      <td>PSS</td>
+      <td>Observation</td>
+      <td>Esami di laboratorio</td>
+      <td>{{link:Observation/Example-ObservationEsamiLaboratorio-1-PSS}}</td>
+    </tr>
+    <tr>
+      <td>PSS</td>
+      <td>Observation</td>
+      <td>Assenso/Dissenso donazione organi</td>
+      <td>{{link:Observation/Example-ObservationAssensoDissensoDonazioneOrgani-1-PSS}}</td>
+    </tr>
+    <tr>
+      <td>PSS</td>
+      <td>Procedure</td>
+      <td>Protesi, impianti e ausili</td>
+      <td>{{link:Procedure/Example-ProcedureProtesiImpiantiAusili-1-PSS}}</td>
+    </tr>
+    <tr>
+      <td>PSS</td>
+      <td>Procedure</td>
+      <td>Trattamenti e procedure</td>
+      <td>{{link:Procedure/Example-ProcedureTrattamenti-1-PSS}}</td>
+    </tr>
+    <tr>
+      <td>PSS</td>
+      <td>CarePlan</td>
+      <td>Piano di cura</td>
+      <td>{{link:CarePlan/Example-CarePlanPianoDiCura-1-PSS}}</td>
+    </tr>
+    <tr>
+      <td>PSS</td>
+      <td>MedicationRequest</td>
+      <td>Terapia del piano di cura</td>
+      <td>{{link:MedicationRequest/Example-MedicationRequestPianoDiCura-1-PSS}}</td>
+    </tr>
+    <tr>
+      <td>PSS</td>
+      <td>DiagnosticReport</td>
+      <td>Referto esami di laboratorio</td>
+      <td>{{link:DiagnosticReport/Example-DiagnosticReportEsamiLaboratorio-1-PSS}}</td>
+    </tr>
+    <tr>
+      <td>PSS</td>
+      <td>Coverage</td>
+      <td>Esenzioni</td>
+      <td>{{link:Coverage/Example-CoverageEsenzioni-1-PSS}}</td>
+    </tr>
   </tbody>
 </table>
   </body>

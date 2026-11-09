@@ -1,0 +1,102 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationGravidanzePartoPSS",
+  "name": "RLObservationGravidanzePartoPSS",
+  "title": "Observation PSS - Gravidanze e Parto",
+  "status": "draft",
+  "date": "2026-11-09",
+  "description": "Profilo della risorsa Observation per gravidanze, parti e stato mestruale (sezione Gravidanze e Parto del PSS).",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation"
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "short": "Codice identificativo",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Observation.code.coding.code",
+        "path": "Observation.code.coding.code",
+        "short": "Valore del codice",
+        "comment": "Suggerimento: si consiglia di consultare il seguente valueset per la valorizzazione del code della risorsa observation(https://develop.art-decor.org/ad/#/hl7itig-/terminology/valueset/2.16.840.1.113883.3.1937.777.63.11.44/2024-02-13T13:34:53) Possono essere utilizzate inoltre codifiche opzionali.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.code.coding.system",
+        "path": "Observation.code.coding.system",
+        "short": "Sistema di codifica",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.code.coding.version",
+        "path": "Observation.code.coding.version",
+        "short": "Versione del sistema di codifica",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.code.coding.display",
+        "path": "Observation.code.coding.display",
+        "short": "Descrizione leggibile del codice",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.status",
+        "path": "Observation.status",
+        "short": "Indica lo stato dell’osservazione",
+        "min": 1,
+        "max": "1",
+        "fixedCode": "final"
+      },
+      {
+        "id": "Observation.effective[x]",
+        "path": "Observation.effective[x]",
+        "short": "Data di rilevazione dell’informazione.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ]
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "short": "Valore dell'osservazione",
+        "comment": "Il data type di observation.value deve essere selezionato in base all’observation.code Esempio: se code=11640-0 relativo a \"Totale nascite\" si può ipotizzare l'utilizzo di un value di tipo integer o string.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "short": "Soggetto a cui si riferisce l’osservazione",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPatientCore"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

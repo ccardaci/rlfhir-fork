@@ -1,0 +1,47 @@
+{
+  "resourceType": "DiagnosticReport",
+  "id": "Example-DiagnosticReportEsamiLaboratorio-1-PSS",
+  "meta": {
+    "profile": [
+      "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLDiagnosticReportEsamiLaboratorioPSS"
+    ]
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "@system_BatteriaEsami@",
+        "code": "@cd_BatteriaEsami@",
+        "display": "@ds_BatteriaEsami@"
+      }
+    ]
+  },
+  "status": "final",
+  "effectiveDateTime": "2026-10-02T08:30:00+02:00",
+  "result": [
+    {
+      "reference": "Observation/Example-ObservationEsamiLaboratorio-1-PSS"
+    }
+  ],
+  "identifier": [
+    {
+      "system": "@system_IdReferto@",
+      "value": "@id_Referto@"
+    }
+  ],
+  "subject": {
+    "reference": "Patient/e06086d8-a958-11ed-afa1-0242ac120002"
+  },
+  "encounter": {
+    "reference": "Encounter/rl-encounter-ambulatoriale-001"
+  },
+  "performer": [
+    {
+      "reference": "Organization/esempio-organization-core"
+    }
+  ],
+  "basedOn": [
+    {
+      "reference": "ServiceRequest/rl-servicerequest-001"
+    }
+  ]
+}

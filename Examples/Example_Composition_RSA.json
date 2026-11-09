@@ -14,7 +14,7 @@
       "valueString": "1"
     },
     {
-      "url": "http://hl7.eu/fhir/laboratory/StructureDefinition/composition-basedOn-order-or-requisition",
+      "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLBasedOnOrderOrRequisition",
       "valueReference": {
         "reference": "ServiceRequest/5e6f7a8b-9c0d-4e1f-8a2b-3c4d5e6f7a8b",
         "display": "Ricetta 030A01234567890 - Visita cardiologica"
@@ -44,6 +44,10 @@
     {
       "reference": "PractitionerRole/3c4d5e6f-7a8b-4c9d-8e0f-1a2b3c4d5e6f",
       "display": "Paolo Conti - Cardiologo"
+    },
+    {
+      "reference": "Device/Example-DeviceHeader-1-RSA",
+      "display": "Gestionale Referti Ambulatoriali"
     }
   ],
   "title": "Referto di Specialistica Ambulatoriale",
@@ -89,7 +93,7 @@
       },
       "entry": [
         {
-          "reference": "Observation/Example-ObservationStoriaClinica-1-RSA",
+          "reference": "Condition/Example-Condition-1-RSA",
           "display": "Ipertensione arteriosa"
         },
         {
@@ -137,7 +141,7 @@
           },
           "entry": [
             {
-              "reference": "MedicationStatement/Example-MedicationStatement-1-RSA",
+              "reference": "MedicationStatement/Example-MedicationStatementTerapiaInAtto-1-RSA",
               "display": "Ramipril 5 mg"
             }
           ]
@@ -222,11 +226,7 @@
       "entry": [
         {
           "reference": "Procedure/Example-ProcedurePrestazioni-1-RSA",
-          "display": "Visita cardiologica di controllo"
-        },
-        {
-          "reference": "Procedure/Example-ProcedurePrestazioni-2-RSA",
-          "display": "Elettrocardiogramma"
+          "display": "Elettrocardiogramma a 12 derivazioni"
         }
       ]
     },
@@ -355,7 +355,7 @@
       },
       "entry": [
         {
-          "reference": "MedicationRequest/Example-MedicationRequestTerapiaFarmacologicaConsigliata-1-RSA",
+          "reference": "MedicationRequest/Example-MedicationRequestTerapiaConsigliata-1-RSA",
           "display": "Ramipril 5 mg"
         }
       ]

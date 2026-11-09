@@ -56,7 +56,7 @@
         "short": "Identificatore specifico della versione per la composizione, assegnato quando ciascuna versione viene creata o aggiornata",
         "comment": "Fare riferimento a: http://hl7.org/fhir/StructureDefinition/composition-clinicaldocument-versionNumber",
         "min": 0,
-        "max": "1",
+        "max": "*",
         "type": [
           {
             "code": "Extension",
@@ -71,14 +71,14 @@
         "path": "Composition.extension",
         "sliceName": "basedOn",
         "short": "Richiesta che ha determinato la produzione del documento",
-        "comment": "Numero ricetta medica, Codice CUP, Codici identificazione oggetti correlati. L'extension referenzia la ServiceRequestCore, seguendo l'esempio del Referto di Laboratorio; il Medico Prescrittore è rappresentato in ServiceRequest.requester (Reference(PractitionerRoleCore)).",
+        "comment": "Numero ricetta medica, Codice CUP, Codici identificazione oggetti correlati. L'extension referenzia la ServiceRequestCore, utilizzando l'extension di progetto RLBasedOnOrderOrRequisition; il Medico Prescrittore è rappresentato in ServiceRequest.requester (Reference(PractitionerRoleCore)).",
         "min": 0,
         "max": "*",
         "type": [
           {
             "code": "Extension",
             "profile": [
-              "http://hl7.eu/fhir/laboratory/StructureDefinition/composition-basedOn-order-or-requisition"
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLBasedOnOrderOrRequisition"
             ]
           }
         ]
@@ -180,7 +180,7 @@
         "id": "Composition.author",
         "path": "Composition.author",
         "short": "Autore del documento (Medico Refertante e/o dispositivo/applicazione software che ha generato il documento)",
-        "comment": "Medico Refertante: PractitionerRoleCore o PractitionerCore. Device: dispositivo e/o applicazione software che ha generato il documento.",
+        "comment": "Due autori: Device (dispositivo/applicazione software che ha generato il documento) e Medico Refertante (PractitionerRoleCore, PractitionerCore o OrganizationCore).",
         "min": 1,
         "max": "*",
         "type": [
@@ -189,7 +189,53 @@
             "targetProfile": [
               "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPractitionerRoleCore",
               "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPractitionerCore",
-              "http://hl7.org/fhir/StructureDefinition/Device"
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLOrganizationCore",
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLDeviceHeaderRSA"
+            ]
+          }
+        ],
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "profile",
+              "path": "resolve()"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Composition.author:medicoRefertante",
+        "path": "Composition.author",
+        "sliceName": "medicoRefertante",
+        "short": "Medico Refertante",
+        "comment": "La reference identifica principalmente il professionista autore del documento tramite PractitionerCore. Per rappresentare anche la struttura di appartenenza si può usare PractitionerRoleCore.",
+        "min": 1,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPractitionerRoleCore",
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPractitionerCore",
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLOrganizationCore"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.author:device",
+        "path": "Composition.author",
+        "sliceName": "device",
+        "short": "Dispositivo/applicazione software che ha generato il documento",
+        "min": 1,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLDeviceHeaderRSA"
             ]
           }
         ]
@@ -401,20 +447,21 @@
         "min": 0
       },
       {
-        "id": "Composition.section:storiaClinica.entry:observation",
+        "id": "Composition.section:storiaClinica.entry:condition",
         "path": "Composition.section.entry",
-        "sliceName": "observation",
-        "short": "Storia clinica",
+        "sliceName": "condition",
+        "short": "Storia clinica (Condition)",
         "min": 0,
         "max": "2",
         "type": [
           {
             "code": "Reference",
             "targetProfile": [
-              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationStoriaClinica"
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLConditionCore"
             ]
           }
-        ]
+        ],
+        "comment": "La Condition referenzia l'Observation Decorso Clinico (RLObservationStoriaClinicaRSA) tramite Condition.evidence.detail."
       },
       {
         "id": "Composition.section:storiaClinica.entry:familyMemberHistory",
@@ -605,7 +652,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLMedicationStatementTerapiaFarmacologica"
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLMedicationStatementTerapiaInAttoRSA"
             ]
           }
         ]
@@ -691,7 +738,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationQuesitoDiagnostico"
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationQuesitoDiagnosticoRSA"
             ]
           }
         ]
@@ -777,7 +824,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationPrecedentiEsamiEseguitiRad"
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationPrecedentiEsamiEseguitiRSA"
             ]
           }
         ]
@@ -851,7 +898,7 @@
         "path": "Composition.section",
         "sliceName": "prestazioni",
         "short": "Prestazioni",
-        "min": 0,
+        "min": 1,
         "max": "1"
       },
       {
@@ -920,7 +967,7 @@
       {
         "id": "Composition.section:prestazioni.entry",
         "path": "Composition.section.entry",
-        "short": "Codice prestazione eseguita",
+        "short": "Prestazione eseguita (Procedure)",
         "min": 1,
         "max": "*",
         "type": [
@@ -930,7 +977,8 @@
               "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLProcedurePrestazioniRSA"
             ]
           }
-        ]
+        ],
+        "comment": "Procedure.partOf può riferire Observation e MedicationAdministration."
       },
       {
         "id": "Composition.section:confrontoPrecedentiEsami",
@@ -1008,7 +1056,7 @@
         "path": "Composition.section",
         "sliceName": "referto",
         "short": "Refertazione",
-        "min": 0,
+        "min": 1,
         "max": "1"
       },
       {
@@ -1448,7 +1496,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLMedicationRequestTerapiaFarmacologicaConsigliataRSA"
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLMedicationRequestTerapiaConsigliataRSA"
             ]
           }
         ]

@@ -8,7 +8,7 @@
     ],
     "versionId": "1"
   },
-  "status": "active",
+  "status": "completed",
   "intent": "plan",
   "description": "Programmazione annuale dei controlli per il paziente iperteso.",
   "subject": {
@@ -43,6 +43,18 @@
       "reference": {
         "reference": "MedicationRequest/Example-MedicationRequest-1-PAI",
         "display": "Ramipril 5 mg compresse"
+      }
+    },
+    {
+      "reference": {
+        "reference": "DeviceRequest/Example-DeviceRequest-1-PAI",
+        "display": "Misuratore di pressione arteriosa automatico"
+      }
+    },
+    {
+      "reference": {
+        "reference": "CommunicationRequest/Example-CommunicationRequest-1-PAI",
+        "display": "Contatto telefonico mensile"
       }
     }
   ]

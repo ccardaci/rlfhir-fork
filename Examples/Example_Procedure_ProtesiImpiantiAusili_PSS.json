@@ -1,0 +1,19 @@
+{
+  "resourceType": "Procedure",
+  "id": "Example-ProcedureProtesiImpiantiAusili-1-PSS",
+  "meta": {
+    "profile": [
+      "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLProcedureProtesiImpiantiAusiliPSS"
+    ]
+  },
+  "usedReference": [
+    {
+      "reference": "Device/example-device-impianto"
+    }
+  ],
+  "performedDateTime": "2024-06-12",
+  "status": "completed",
+  "subject": {
+    "reference": "Patient/e06086d8-a958-11ed-afa1-0242ac120002"
+  }
+}

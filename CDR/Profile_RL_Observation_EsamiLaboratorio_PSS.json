@@ -1,0 +1,220 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationEsamiLaboratorioPSS",
+  "name": "RLObservationEsamiLaboratorioPSS",
+  "title": "Observation PSS - Indagini Diagnostiche ed Esami di Laboratorio",
+  "status": "draft",
+  "date": "2026-11-09",
+  "description": "Profilo della risorsa Observation per i risultati di indagini diagnostiche ed esami di laboratorio (sezione Indagini Diagnostiche del PSS).",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation"
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "short": "Codice identificativo",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Observation.code.coding.code",
+        "path": "Observation.code.coding.code",
+        "short": "Valore del codice",
+        "comment": "Per riportare l’indicazione del gruppo sanguigno, l’observation.code deve essere valorizzato con “34530-6” “ABO & Rh”, secondo la codifica LOINC.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.code.coding.system",
+        "path": "Observation.code.coding.system",
+        "short": "Sistema di codifica",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.code.coding.version",
+        "path": "Observation.code.coding.version",
+        "short": "Versione del sistema di codifica",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.code.coding.display",
+        "path": "Observation.code.coding.display",
+        "short": "Descrizione leggibile del codice",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.status",
+        "path": "Observation.status",
+        "short": "Indica lo stato dell’osservazione",
+        "comment": "Riferimento: https://develop.art-decor.org/ad/",
+        "min": 1,
+        "max": "1",
+        "fixedCode": "final"
+      },
+      {
+        "id": "Observation.effective[x]",
+        "path": "Observation.effective[x]",
+        "short": "Periodo di rilevazione dell'informazione",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "short": "Valore dell'osservazione",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.interpretation",
+        "path": "Observation.interpretation",
+        "short": "Codice di interpretazione",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Observation.interpretation.coding.code",
+        "path": "Observation.interpretation.coding.code",
+        "short": "Valore del codice",
+        "comment": "Riferimento: https://terminology.hl7.org/3.1.0/CodeSystem-v3-ObservationInterpretation.html",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.interpretation.coding.system",
+        "path": "Observation.interpretation.coding.system",
+        "short": "Sistema di codifica",
+        "min": 0,
+        "max": "1",
+        "fixedUri": "urn:oid:2.16.840.1.113883.5.83"
+      },
+      {
+        "id": "Observation.interpretation.coding.version",
+        "path": "Observation.interpretation.coding.version",
+        "short": "Versione del sistema di codifica",
+        "min": 0,
+        "max": "1",
+        "fixedString": "ObservationInterpretation"
+      },
+      {
+        "id": "Observation.interpretation.coding.display",
+        "path": "Observation.interpretation.coding.display",
+        "short": "Descrizione leggibile del codice",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.referenceRange",
+        "path": "Observation.referenceRange",
+        "short": "Intervallo di riferimento per l’interpretazione del risultato",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Observation.referenceRange.text",
+        "path": "Observation.referenceRange.text",
+        "short": "Rappresentazione testuale dell’intervallo di riferimento",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.referenceRange.low",
+        "path": "Observation.referenceRange.low",
+        "short": "Limite inferiore dell’intervallo di riferimento",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.referenceRange.high",
+        "path": "Observation.referenceRange.high",
+        "short": "Limite superiore dell’intervallo di riferimento",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "short": "Soggetto a cui si riferisce l’osservazione",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPatientCore"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember",
+        "path": "Observation.hasMember",
+        "short": "Osservazioni correlate alla risorsa",
+        "comment": "Dettagli relativi a batterie di esami o esami più complessi.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationEsamiLaboratorioPSS"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.category",
+        "path": "Observation.category",
+        "short": "Codice che classifica il tipo di osservazione",
+        "comment": "La struttura deve essere analoga al profilo regionale ObservationRefertoLabIt: https://simplifier.net/guide/cdr-lab/Home/Profili-ed-Estensioni/Raccolta-profili/RLObservationLabReport?version=1.0.0.",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Observation.performer",
+        "path": "Observation.performer",
+        "short": "Soggetto responsabile dell'osservazione",
+        "min": 1,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPractitionerCore",
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPractitionerRoleCore",
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLOrganizationCore",
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLRelatedPersonCore"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.encounter",
+        "path": "Observation.encounter",
+        "short": "Contesto in cui è stata prodotta l'osservazione",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLEncounterCore"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "resourceType": "CarePlan",
+  "id": "Example-CarePlanPianoDiCura-1-PSS",
+  "meta": {
+    "profile": [
+      "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCarePlanPianoDiCuraPSS"
+    ]
+  },
+  "encounter": {
+    "reference": "Encounter/rl-encounter-ambulatoriale-001"
+  },
+  "subject": {
+    "reference": "Patient/e06086d8-a958-11ed-afa1-0242ac120002"
+  },
+  "status": "active",
+  "intent": "plan",
+  "activity": [
+    {
+      "reference": {
+        "reference": "MedicationRequest/Example-MedicationRequestPianoDiCura-1-PSS"
+      }
+    },
+    {
+      "outcomeCodeableConcept": [
+        {
+          "coding": [
+            {
+              "system": "urn:oid:2.16.840.1.113883.3.1937.777.63.11.47",
+              "code": "@cd_EsitoAttivita@",
+              "display": "@ds_EsitoAttivita@"
+            }
+          ]
+        }
+      ],
+      "outcomeReference": [
+        {
+          "reference": "Procedure/Example-ProcedureTrattamenti-1-PSS"
+        }
+      ],
+      "progress": [
+        {
+          "text": "Attività in corso secondo programma."
+        }
+      ],
+      "detail": {
+        "status": "scheduled",
+        "reasonReference": [
+          {
+            "reference": "Observation/Example-ObservationEsamiLaboratorio-1-PSS"
+          }
+        ],
+        "scheduledPeriod": {
+          "start": "2026-11-01",
+          "end": "2027-04-30"
+        }
+      }
+    }
+  ]
+}

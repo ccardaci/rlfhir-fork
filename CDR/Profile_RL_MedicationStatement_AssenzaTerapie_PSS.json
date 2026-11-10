@@ -1,0 +1,95 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLMedicationStatementAssenzaTerapiePSS",
+  "name": "RLMedicationStatementAssenzaTerapiePSS",
+  "title": "MedicationStatement PSS - Assenza di Terapie Farmacologiche",
+  "status": "draft",
+  "date": "2026-11-09",
+  "description": "Profilo della risorsa MedicationStatement per indicare l'assenza o la non conoscenza di terapie farmacologiche (sezione Terapie Farmacologiche del PSS).",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "MedicationStatement",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/MedicationStatement",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "MedicationStatement",
+        "path": "MedicationStatement"
+      },
+      {
+        "id": "MedicationStatement.medication[x]",
+        "path": "MedicationStatement.medication[x]",
+        "short": "Codice del farmaco",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "MedicationStatement.medicationCodeableConcept.coding.code",
+        "path": "MedicationStatement.medicationCodeableConcept.coding.code",
+        "short": "Valore del codice",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "MedicationStatement.medicationCodeableConcept.coding.system",
+        "path": "MedicationStatement.medicationCodeableConcept.coding.system",
+        "short": "Sistema di codifica",
+        "comment": "Value set: https://develop.art-decor.org/ad/#/hl7itig-/terminology/valueset/2.16.840.1.113883.3.1937.777.63.11.35.",
+        "min": 0,
+        "max": "1",
+        "fixedUri": "urn:oid:2.16.840.1.113883.11.22.15"
+      },
+      {
+        "id": "MedicationStatement.medicationCodeableConcept.coding.display",
+        "path": "MedicationStatement.medicationCodeableConcept.coding.display",
+        "short": "Descrizione leggibile del codice",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "MedicationStatement.medicationCodeableConcept.coding.version",
+        "path": "MedicationStatement.medicationCodeableConcept.coding.version",
+        "short": "Versione del sistema di codifica",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "MedicationStatement.medicationCodeableConcept.text",
+        "path": "MedicationStatement.medicationCodeableConcept.text",
+        "short": "Testo libero",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "MedicationStatement.subject",
+        "path": "MedicationStatement.subject",
+        "short": "Paziente a cui si riferisce l'assenza della Terapia Farmacologica",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPatientCore"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationStatement.status",
+        "path": "MedicationStatement.status",
+        "short": "Stato della somministrazione",
+        "comment": "Suggerimento: unknown.",
+        "min": 1,
+        "max": "1"
+      }
+    ]
+  }
+}

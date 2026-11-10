@@ -1,0 +1,22 @@
+{
+  "resourceType": "MedicationRequest",
+  "id": "Example-MedicationRequestPianoDiCura-1-PSS",
+  "meta": {
+    "profile": [
+      "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLMedicationRequestPianoDiCuraPSS"
+    ]
+  },
+  "dosageInstruction": [
+    {
+      "text": "1 compressa al giorno"
+    }
+  ],
+  "medicationReference": {
+    "reference": "Medication/esempio-medication-formulazione-ldo"
+  },
+  "subject": {
+    "reference": "Patient/e06086d8-a958-11ed-afa1-0242ac120002"
+  },
+  "status": "active",
+  "intent": "plan"
+}

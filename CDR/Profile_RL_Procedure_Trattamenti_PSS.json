@@ -1,0 +1,124 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLProcedureTrattamentiPSS",
+  "name": "RLProcedureTrattamentiPSS",
+  "title": "Procedure PSS - Trattamenti e Procedure",
+  "status": "draft",
+  "date": "2026-11-09",
+  "description": "Profilo della risorsa Procedure per trattamenti e procedure terapeutiche, chirurgiche e diagnostiche (sezione Trattamenti del PSS).",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Procedure",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Procedure",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Procedure",
+        "path": "Procedure"
+      },
+      {
+        "id": "Procedure.code",
+        "path": "Procedure.code",
+        "short": "Codice identificativo della procedura",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Procedure.code.coding.code",
+        "path": "Procedure.code.coding.code",
+        "short": "Valore del codice",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Procedure.code.coding.system",
+        "path": "Procedure.code.coding.system",
+        "short": "Sistema di codifica",
+        "comment": "Valore previsto: http://loinc.org | urn:oid:2.16.840.1.113883.6.103.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Procedure.code.coding.version",
+        "path": "Procedure.code.coding.version",
+        "short": "Versione del sistema di codifica",
+        "comment": "Valore previsto: LOINC | ICD9CM.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Procedure.code.coding.display",
+        "path": "Procedure.code.coding.display",
+        "short": "Descrizione leggibile del codice",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Procedure.status",
+        "path": "Procedure.status",
+        "short": "Stato della procedura",
+        "comment": "Valore previsto: preparation | in-progress | not-done | on-hold | stopped | completed | entered-in-error | unknown.",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Procedure.performed[x]",
+        "path": "Procedure.performed[x]",
+        "short": "Quando la procedure è stata eseguita",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Period"
+          }
+        ]
+      },
+      {
+        "id": "Procedure.performedPeriod.start",
+        "path": "Procedure.performedPeriod.start",
+        "short": "Data e ora di inizio della procedura",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Procedure.performedPeriod.end",
+        "path": "Procedure.performedPeriod.end",
+        "short": "Data e ora di fine della procedura",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Procedure.encounter",
+        "path": "Procedure.encounter",
+        "short": "Procedura alla quale si fa riferimento",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLEncounterCore"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Procedure.subject",
+        "path": "Procedure.subject",
+        "short": "Soggetto sul quale si effettua la procedura",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPatientCore"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "resourceType": "Observation",
+  "id": "Example-ObservationRegimeAssistenza-1-PSS",
+  "meta": {
+    "profile": [
+      "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationRegimeAssistenzaPSS"
+    ]
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.5.4",
+        "code": "ASSERTION"
+      }
+    ]
+  },
+  "status": "final",
+  "effectivePeriod": {
+    "start": "2026-09-01"
+  },
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.2.9.5.2.8",
+        "code": "PSSADI",
+        "display": "Assistenza Domiciliare Integrata"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/e06086d8-a958-11ed-afa1-0242ac120002"
+  }
+}

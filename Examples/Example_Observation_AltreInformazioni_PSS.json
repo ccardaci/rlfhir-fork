@@ -1,0 +1,35 @@
+{
+  "resourceType": "Observation",
+  "id": "Example-ObservationAltreInformazioni-1-PSS",
+  "meta": {
+    "profile": [
+      "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationAltreInformazioniPSS"
+    ]
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "version": "LOINC",
+        "code": "8693-4",
+        "display": "Stato mentale"
+      }
+    ]
+  },
+  "status": "final",
+  "effectivePeriod": {
+    "start": "2026-10-20"
+  },
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.6.103",
+        "code": "@cd_StatoMentale@",
+        "display": "@ds_StatoMentale@"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/e06086d8-a958-11ed-afa1-0242ac120002"
+  }
+}

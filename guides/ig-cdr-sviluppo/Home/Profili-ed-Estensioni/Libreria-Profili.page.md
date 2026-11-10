@@ -1483,6 +1483,220 @@
             {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLOrganizationErogatorePAI}}
           </td>
         </tr>
+                <tr>
+          <td>PSS</td>
+          <td>
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLCompositionPSS.page.md}}
+          </td>
+          <td>
+            <a href="http://hl7.org/fhir/R4/composition.html">Composition</a>
+          </td>
+          <td>
+            Profilo che descrive il documento Profilo Sanitario Sintetico
+          </td>
+          <td>
+            {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCompositionPSS}}
+          </td>
+        </tr>
+        <tr>
+          <td>PSS</td>
+          <td>
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLMedicationStatementTerapieFarmacologichePSS.page.md}}
+          </td>
+          <td>
+            <a href="http://hl7.org/fhir/R4/medicationstatement.html">MedicationStatement</a>
+          </td>
+          <td>
+            Profilo che descrive le terapie farmacologiche del paziente nel contesto del Profilo Sanitario Sintetico
+          </td>
+          <td>
+            {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLMedicationStatementTerapieFarmacologichePSS}}
+          </td>
+        </tr>
+        <tr>
+          <td>PSS</td>
+          <td>
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLMedicationStatementAssenzaTerapiePSS.page.md}}
+          </td>
+          <td>
+            <a href="http://hl7.org/fhir/R4/medicationstatement.html">MedicationStatement</a>
+          </td>
+          <td>
+            Profilo che descrive l'assenza o la non conoscenza di terapie farmacologiche del paziente nel contesto del Profilo Sanitario Sintetico
+          </td>
+          <td>
+            {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLMedicationStatementAssenzaTerapiePSS}}
+          </td>
+        </tr>
+        <tr>
+          <td>PSS</td>
+          <td>
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLImmunizationVaccinazioniPSS.page.md}}
+          </td>
+          <td>
+            <a href="http://hl7.org/fhir/R4/immunization.html">Immunization</a>
+          </td>
+          <td>
+            Profilo che descrive le vaccinazioni del paziente nel contesto del Profilo Sanitario Sintetico
+          </td>
+          <td>
+            {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLImmunizationVaccinazioniPSS}}
+          </td>
+        </tr>
+        <tr>
+          <td>PSS</td>
+          <td>
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLObservationReazioniAvversePSS.page.md}}
+          </td>
+          <td>
+            <a href="http://hl7.org/fhir/R4/observation.html">Observation</a>
+          </td>
+          <td>
+            Profilo che descrive le reazioni avverse alle vaccinazioni nel contesto del Profilo Sanitario Sintetico
+          </td>
+          <td>
+            {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationReazioniAvversePSS}}
+          </td>
+        </tr>
+        <tr>
+          <td>PSS</td>
+          <td>
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLObservationAssenzaAnamnesiFamiliarePSS.page.md}}
+          </td>
+          <td>
+            <a href="http://hl7.org/fhir/R4/observation.html">Observation</a>
+          </td>
+          <td>
+            Profilo che descrive l'assenza o la non conoscenza di informazioni di anamnesi familiare nel contesto del Profilo Sanitario Sintetico
+          </td>
+          <td>
+            {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationAssenzaAnamnesiFamiliarePSS}}
+          </td>
+        </tr>
+        <tr>
+          <td>PSS</td>
+          <td>
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLObservationStileDiVitaPSS.page.md}}
+          </td>
+          <td>
+            <a href="http://hl7.org/fhir/R4/observation.html">Observation</a>
+          </td>
+          <td>
+            Profilo che descrive lo stile di vita e i fattori di rischio del paziente nel contesto del Profilo Sanitario Sintetico
+          </td>
+          <td>
+            {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationStileDiVitaPSS}}
+          </td>
+        </tr>
+        <tr>
+          <td>PSS</td>
+          <td>
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLObservationGravidanzePartoPSS.page.md}}
+          </td>
+          <td>
+            <a href="http://hl7.org/fhir/R4/observation.html">Observation</a>
+          </td>
+          <td>
+            Profilo che descrive gravidanze, parti e stato mestruale della paziente nel contesto del Profilo Sanitario Sintetico
+          </td>
+          <td>
+            {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationGravidanzePartoPSS}}
+          </td>
+        </tr>
+        <tr>
+          <td>PSS</td>
+          <td>
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLObservationStatoFunzionalePSS.page.md}}
+          </td>
+          <td>
+            <a href="http://hl7.org/fhir/R4/observation.html">Observation</a>
+          </td>
+          <td>
+            Profilo che descrive lo stato funzionale del paziente, raggruppando capacità motoria, regime di assistenza e altre informazioni nel contesto del Profilo Sanitario Sintetico
+          </td>
+          <td>
+            {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationStatoFunzionalePSS}}
+          </td>
+        </tr>
+        <tr>
+          <td>PSS</td>
+          <td>
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLObservationCapacitaMotoriaPSS.page.md}}
+          </td>
+          <td>
+            <a href="http://hl7.org/fhir/R4/observation.html">Observation</a>
+          </td>
+          <td>
+            Profilo che descrive la capacità motoria del paziente nel contesto del Profilo Sanitario Sintetico
+          </td>
+          <td>
+            {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationCapacitaMotoriaPSS}}
+          </td>
+        </tr>
+        <tr>
+          <td>PSS</td>
+          <td>
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLObservationRegimeAssistenzaPSS.page.md}}
+          </td>
+          <td>
+            <a href="http://hl7.org/fhir/R4/observation.html">Observation</a>
+          </td>
+          <td>
+            Profilo che descrive il regime di assistenza domiciliare (ADI/ADP) del paziente nel contesto del Profilo Sanitario Sintetico
+          </td>
+          <td>
+            {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationRegimeAssistenzaPSS}}
+          </td>
+        </tr>
+        <tr>
+          <td>PSS</td>
+          <td>
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLObservationAltreInformazioniPSS.page.md}}
+          </td>
+          <td>
+            <a href="http://hl7.org/fhir/R4/observation.html">Observation</a>
+          </td>
+          <td>
+            Profilo che descrive altre informazioni sullo stato funzionale (stato mentale) del paziente nel contesto del Profilo Sanitario Sintetico
+          </td>
+          <td>
+            {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationAltreInformazioniPSS}}
+          </td>
+        </tr>
+        <tr>
+          <td>PSS</td>
+          <td>
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLObservationEsamiLaboratorioPSS.page.md}}
+          </td>
+          <td>
+            <a href="http://hl7.org/fhir/R4/observation.html">Observation</a>
+          </td>
+          <td>
+            Profilo che descrive i risultati di indagini diagnostiche ed esami di laboratorio nel contesto del Profilo Sanitario Sintetico
+          </td>
+          <td>
+            {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationEsamiLaboratorioPSS}}
+          </td>
+        </tr>
+        <tr>
+          <td>PSS</td>
+          <td>
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLObservationAssensoDissensoDonazioneOrganiPSS.page.md}}
+          </td>
+          <td>
+            <a href="http://hl7.org/fhir/R4/observation.html">Observation</a>
+          </td>
+          <td>
+            Profilo che descrive l'assenso o il dissenso alla donazione degli organi nel contesto del Profilo Sanitario Sintetico
+          </td>
+          <td>
+            {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationAssensoDissensoDonazioneOrganiPSS}}
+          </td>
+        </tr>
+        <tr>
+          <td>PSS</td>
+          <td>
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLProcedureProtesiImpiantiAusiliPSS.page.md}}
         <tr>
           <td>PAI</td>
           <td><a href="https://simplifier.net/guide/progetto-fhir-rl-core-sviluppo/home/profili-ed-estensioni/raccolta-profili/rlprocedurepai.page.md?version=current">RLProcedurePAI</a>
@@ -1491,6 +1705,85 @@
             <a href="http://hl7.org/fhir/R4/procedure.html">Procedure</a>
           </td>
           <td>
+            Profilo che descrive protesi, impianti e ausili del paziente nel contesto del Profilo Sanitario Sintetico
+          </td>
+          <td>
+            {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLProcedureProtesiImpiantiAusiliPSS}}
+          </td>
+        </tr>
+        <tr>
+          <td>PSS</td>
+          <td>
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLProcedureTrattamentiPSS.page.md}}
+          </td>
+          <td>
+            <a href="http://hl7.org/fhir/R4/procedure.html">Procedure</a>
+          </td>
+          <td>
+            Profilo che descrive i trattamenti e le procedure terapeutiche, chirurgiche e diagnostiche del paziente nel contesto del Profilo Sanitario Sintetico
+          </td>
+          <td>
+            {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLProcedureTrattamentiPSS}}
+          </td>
+        </tr>
+        <tr>
+          <td>PSS</td>
+          <td>
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLCarePlanPianoDiCuraPSS.page.md}}
+          </td>
+          <td>
+            <a href="http://hl7.org/fhir/R4/careplan.html">CarePlan</a>
+          </td>
+          <td>
+            Profilo che descrive il piano di cura del paziente nel contesto del Profilo Sanitario Sintetico
+          </td>
+          <td>
+            {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCarePlanPianoDiCuraPSS}}
+          </td>
+        </tr>
+        <tr>
+          <td>PSS</td>
+          <td>
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLMedicationRequestPianoDiCuraPSS.page.md}}
+          </td>
+          <td>
+            <a href="http://hl7.org/fhir/R4/medicationrequest.html">MedicationRequest</a>
+          </td>
+          <td>
+            Profilo che descrive le terapie farmacologiche previste dal piano di cura nel contesto del Profilo Sanitario Sintetico
+          </td>
+          <td>
+            {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLMedicationRequestPianoDiCuraPSS}}
+          </td>
+        </tr>
+        <tr>
+          <td>PSS</td>
+          <td>
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLDiagnosticReportEsamiLaboratorioPSS.page.md}}
+          </td>
+          <td>
+            <a href="http://hl7.org/fhir/R4/diagnosticreport.html">DiagnosticReport</a>
+          </td>
+          <td>
+            Profilo che descrive il referto di indagini diagnostiche ed esami di laboratorio nel contesto del Profilo Sanitario Sintetico
+          </td>
+          <td>
+            {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLDiagnosticReportEsamiLaboratorioPSS}}
+          </td>
+        </tr>
+        <tr>
+          <td>PSS</td>
+          <td>
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLCoverageEsenzioniPSS.page.md}}
+          </td>
+          <td>
+            <a href="http://hl7.org/fhir/R4/coverage.html">Coverage</a>
+          </td>
+          <td>
+            Profilo che descrive le esenzioni del paziente nel contesto del Profilo Sanitario Sintetico
+          </td>
+          <td>
+            {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCoverageEsenzioniPSS}}
             Profilo che descrive le prestazioni correlate alla patologia nella presa in carico del Piano Assistenziale Individuale
           </td>
           <td>

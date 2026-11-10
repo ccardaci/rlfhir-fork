@@ -1,0 +1,35 @@
+{
+  "resourceType": "Observation",
+  "id": "Example-ObservationReazioniAvverse-1-PSS",
+  "meta": {
+    "profile": [
+      "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationReazioniAvversePSS"
+    ]
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "75321-0",
+        "display": "Obiettività Clinica"
+      }
+    ]
+  },
+  "status": "final",
+  "effectivePeriod": {
+    "start": "2026-05-10",
+    "end": "2026-05-11"
+  },
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "system": "@system_ReazioneAvversa@",
+        "code": "@cd_ReazioneAvversa@",
+        "display": "@ds_ReazioneAvversa@"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/e06086d8-a958-11ed-afa1-0242ac120002"
+  }
+}

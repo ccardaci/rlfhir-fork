@@ -1,0 +1,149 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCoverageEsenzioniPSS",
+  "name": "RLCoverageEsenzioniPSS",
+  "title": "Coverage PSS - Esenzioni",
+  "status": "draft",
+  "date": "2026-11-09",
+  "description": "Profilo della risorsa Coverage per le esenzioni del paziente (sezione Esenzioni del PSS).",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Coverage",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Coverage",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Coverage",
+        "path": "Coverage"
+      },
+      {
+        "id": "Coverage.type",
+        "path": "Coverage.type",
+        "short": "Codice dell'esenzione",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Coverage.type.coding.code",
+        "path": "Coverage.type.coding.code",
+        "short": "Valore del codice",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Coverage.type.coding.system",
+        "path": "Coverage.type.coding.system",
+        "short": "Sistema di codifica",
+        "comment": "Valore previsto: urn:oid:2.16.840.1.113883.2.9.6.1.22 | urn:oid:2.16.840.1.113883.2.9.2.30.6.22 | urn:oid:2.16.840.1.113883.2.9.5.2.2. EsenzioniMINSAN | DIZ_REG_ESENZIONI_Regione Lombardia | NessunaEsenzione (catalogo OID Regione Lombardia v1.5).",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Coverage.type.coding.version",
+        "path": "Coverage.type.coding.version",
+        "short": "Versione del sistema di codifica",
+        "comment": "Valore previsto: catalogo nazionale delle esenzioni | catalogo regionale delle esenzioni | catalogo nazionale Nessuna Esenzione.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Coverage.type.coding.display",
+        "path": "Coverage.type.coding.display",
+        "short": "Descrizione leggibile del codice",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Coverage.status",
+        "path": "Coverage.status",
+        "short": "Stato dell'esenzione",
+        "comment": "Valore previsto: active | cancelled. active: esenzione valida; cancelled: esenzione sospesa, annullata o conclusa.",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Coverage.period",
+        "path": "Coverage.period",
+        "short": "L'intervallo di tempo in cui l’esenzione è attiva",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Coverage.period.start",
+        "path": "Coverage.period.start",
+        "short": "Data di inizio validità dell'esenzione",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Coverage.period.end",
+        "path": "Coverage.period.end",
+        "short": "Data di fine validità dell'esenzione",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Coverage.class",
+        "path": "Coverage.class",
+        "short": "Classificazione dell'esenzione",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Coverage.class.type",
+        "path": "Coverage.class.type",
+        "short": "Tipo di esenzione",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Coverage.class.type.text",
+        "path": "Coverage.class.type.text",
+        "short": "Note o commenti associate alle esenzioni",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Coverage.class.value",
+        "path": "Coverage.class.value",
+        "short": "Valore dell'esenzione",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Coverage.beneficiary",
+        "path": "Coverage.beneficiary",
+        "short": "Beneficiario del piano",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPatientCore"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Coverage.payor",
+        "path": "Coverage.payor",
+        "short": "Soggetto responsabile del pagamento",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPatientCore",
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLOrganizationCore",
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLRelatedPersonCore"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

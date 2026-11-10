@@ -11,10 +11,7 @@
   "extension": [
     {
       "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLServiceRequestValiditaBisogno",
-      "valueDuration": {
-        "value": 12,
-        "unit": "mesi"
-      }
+      "valueString": "12 mesi"
     },
     {
       "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLServiceRequestIntervalloTemporale",
@@ -55,6 +52,15 @@
     "display": "Mario Rossi"
   },
   "occurrenceTiming": {
+    "repeat": {
+      "boundsDuration": {
+        "value": 12,
+        "unit": "mesi",
+        "system": "http://unitsofmeasure.org",
+        "code": "mo"
+      },
+      "count": 1
+    },
     "code": {
       "text": "Annuale"
     }

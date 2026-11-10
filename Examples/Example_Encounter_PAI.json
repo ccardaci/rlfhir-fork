@@ -13,7 +13,7 @@
       "value": "2026-PIC-000873"
     }
   ],
-  "status": "in-progress",
+  "status": "finished",
   "class": {
     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
     "code": "AMB",
@@ -33,6 +33,13 @@
         "display": "Ipertensione arteriosa essenziale"
       },
       "rank": 1
+    },
+    {
+      "condition": {
+        "reference": "Condition/Example-Condition-2-PAI",
+        "display": "Diabete mellito di tipo 2"
+      },
+      "rank": 3
     }
   ],
   "hospitalization": {

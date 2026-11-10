@@ -37,7 +37,7 @@
         "path": "ServiceRequest.extension",
         "sliceName": "validitaBisogno",
         "short": "Validità",
-        "comment": "Codice di validità (OID 2.16.840.1.113883.2.9.2.30.3.1.3.13.6.41) da convertire in Duration.",
+        "comment": "Descrizione del codice di validità CRS-SISS (OID 2.16.840.1.113883.2.9.2.30.3.1.3.13.6.41), riportata come valueString.",
         "min": 0,
         "max": "1",
         "type": [
@@ -98,6 +98,7 @@
         "id": "ServiceRequest.category.coding.system",
         "path": "ServiceRequest.category.coding.system",
         "short": "Sistema di codifica",
+        "comment": "CRS-SISS (OID 2.16.840.1.113883.2.9.2.30.3.1.3.13.6.18)",
         "min": 1,
         "max": "1",
         "fixedUri": "urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.13.6.18"
@@ -120,7 +121,7 @@
         "id": "ServiceRequest.code",
         "path": "ServiceRequest.code",
         "short": "Prestazione",
-        "comment": "Un coding per tipologia di prestazione. Per la prestazione vaccinale: coding con la prestazione vaccinale e, se presente, una seconda coding con il codice regionale del vaccino.",
+        "comment": "Una coding per tipologia di prestazione. Per la prestazione vaccinale: coding con la prestazione vaccinale e, se presente, una seconda coding con il codice regionale del vaccino.",
         "min": 0,
         "max": "1"
       },
@@ -134,7 +135,7 @@
         "id": "ServiceRequest.code.coding.system",
         "path": "ServiceRequest.code.coding.system",
         "short": "Sistema di codifica",
-        "comment": "Sistemi ammessi: Ambulatoriale urn:oid:2.16.840.1.113883.2.9.2.30.6.11; Vaccinale urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.13.6.26; Codice regionale vaccino urn:oid:2.16.840.1.113883.2.9.2.30.6.2 (in aggiunta alla vaccinale); Ricovero ...6.28; ADI ...6.29; Cure intermedie ...6.30; CDI ...6.32; CDD ...6.50; RIA ...6.39; Cure palliative ...6.51; Intervento educazionale ...6.35.",
+        "comment": "Sistemi ammessi: Ambulatoriale urn:oid:2.16.840.1.113883.2.9.2.30.6.11; Vaccinale urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.13.6.26; Codice regionale vaccino urn:oid:2.16.840.1.113883.2.9.2.30.6.2 (in aggiunta alla vaccinale); Ricovero ...6.28; ADI ...6.29; Cure intermedie ...6.30; CDI ...6.32; CDD ...6.50; RIA ...6.39; Cure palliative ...6.51; Intervento educazionale ...6.35 (prefisso urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.13).",
         "min": 0,
         "max": "1"
       },
@@ -176,9 +177,10 @@
         "id": "ServiceRequest.quantity[x].unit",
         "path": "ServiceRequest.quantity[x].unit",
         "short": "Unità",
-        "comment": "Per la Quantità annua: {times}/a.",
+        "comment": "Quantità annua: valore fisso {times}/a (si applica solo se l'elemento è presente).",
         "min": 0,
-        "max": "1"
+        "max": "1",
+        "fixedString": "{times}/a"
       },
       {
         "id": "ServiceRequest.subject",
@@ -223,7 +225,8 @@
           {
             "code": "Duration"
           }
-        ]
+        ],
+        "comment": "Durata. Tipo limitato a Duration (boundsDuration)."
       },
       {
         "id": "ServiceRequest.occurrence[x].repeat.bounds[x].value",
@@ -233,10 +236,27 @@
         "max": "1"
       },
       {
+        "id": "ServiceRequest.occurrence[x].repeat.bounds[x].unit",
+        "path": "ServiceRequest.occurrence[x].repeat.bounds[x].unit",
+        "short": "Unità di misura",
+        "comment": "Descrizione dell'unità di misura CRS-SISS (OID 2.16.840.1.113883.2.9.2.30.3.1.3.13.6.43).",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "ServiceRequest.occurrence[x].repeat.bounds[x].system",
+        "path": "ServiceRequest.occurrence[x].repeat.bounds[x].system",
+        "short": "Sistema di codifica dell'unità",
+        "min": 0,
+        "max": "1",
+        "fixedUri": "http://unitsofmeasure.org",
+        "comment": "Valorizzato solo insieme a code."
+      },
+      {
         "id": "ServiceRequest.occurrence[x].repeat.bounds[x].code",
         "path": "ServiceRequest.occurrence[x].repeat.bounds[x].code",
         "short": "Unità di misura",
-        "comment": "Unità di misura (OID 2.16.840.1.113883.2.9.2.30.3.1.3.13.6.43).",
+        "comment": "Codice UCUM dell'unità di misura (es. d, wk, mo, a), ottenuto dalla descrizione dell'unità CRS-SISS (OID 2.16.840.1.113883.2.9.2.30.3.1.3.13.6.43) tramite la ConceptMap UnitaMisuraUCUM. Valorizzato, insieme a system UCUM, solo se l'unità è mappata e la durata (value) è presente; altrimenti è riportato solo unit.",
         "min": 0,
         "max": "1"
       },
@@ -272,7 +292,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/StructureDefinition/Organization"
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLOrganizationErogatorePAI"
             ]
           }
         ]
@@ -294,6 +314,7 @@
         "id": "ServiceRequest.locationCode.coding.system",
         "path": "ServiceRequest.locationCode.coding.system",
         "short": "Sistema di codifica",
+        "comment": "CRS-SISS (OID 2.16.840.1.113883.2.9.2.30.3.1.3.13.6.55)",
         "min": 0,
         "max": "1",
         "fixedUri": "urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.13.6.55"

@@ -9,6 +9,8 @@ Il profilo RLObservationCaratterizzazioniClinichePAI è stato strutturato a part
 
 Per ciascuna caratterizzazione clinica è prevista una risorsa Observation, con code fisso (CRS-SISS 6.7, codice 1 "Caratterizzazioni Cliniche") e la caratterizzazione codificata in valueCodeableConcept.
 
+La risorsa è referenziata direttamente come entry dalla sezione Presa in carico della Composition ({{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCompositionPAI}}).
+
 Di seguito è presentato il contenuto del profilo in diversi formati. La corrispondente definizione è consultabile al seguente link: {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationCaratterizzazioniClinichePAI}}.
 
 <br>

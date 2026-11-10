@@ -780,6 +780,11 @@
       <td>Coverage</td>
       <td>Esenzioni</td>
       <td>{{link:Coverage/Example-CoverageEsenzioni-1-PSS}}</td>
+    <tr>
+      <td>PAI</td>
+      <td>Condition</td>
+      <td>Patologia addizionale referenziata dalla prestazione correlata (Procedure)</td>
+      <td>{{link:Condition/Example-Condition-2-PAI}}</td>
     </tr>
   </tbody>
 </table>

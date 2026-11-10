@@ -144,7 +144,7 @@
         "short": "Versione del sistema di codifica",
         "min": 0,
         "max": "1",
-        "fixedString": "CRS-SISS"
+        "comment": "Es. CRS-SISS"
       },
       {
         "id": "Composition.type.coding.code",
@@ -189,7 +189,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLEncounterCore"
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLEncounterPAI"
             ]
           }
         ]
@@ -569,7 +569,10 @@
             "code": "Reference",
             "targetProfile": [
               "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLChargeItemPAI",
-              "http://hl7.org/fhir/StructureDefinition/Encounter"
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLEncounterPAI",
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLConditionPAI",
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLProcedurePAI",
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationCaratterizzazioniClinichePAI"
             ]
           }
         ]
@@ -648,7 +651,10 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/StructureDefinition/Observation"
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationFumoPAI",
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationAlcolPAI",
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationSedentarietaPAI",
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationEccessoPonderalePAI"
             ]
           }
         ]
@@ -674,7 +680,7 @@
         "id": "Composition.section:allergie.code",
         "path": "Composition.section.code",
         "short": "Codice che identifica il tipo di sezione",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "patternCodeableConcept": {
           "coding": [
@@ -690,7 +696,7 @@
         "path": "Composition.section.code.coding.system",
         "short": "Sistema di codifica",
         "comment": "LOINC (OID 2.16.840.1.113883.6.1)",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "fixedUri": "http://loinc.org"
       },
@@ -699,14 +705,14 @@
         "path": "Composition.section.code.coding.version",
         "short": "Versione del sistema di codifica",
         "comment": "Es. LOINC 2.19",
-        "min": 0,
+        "min": 1,
         "max": "1"
       },
       {
         "id": "Composition.section:allergie.code.coding.code",
         "path": "Composition.section.code.coding.code",
         "short": "Valore del codice",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "fixedCode": "48765-2"
       },
@@ -714,7 +720,7 @@
         "id": "Composition.section:allergie.code.coding.display",
         "path": "Composition.section.code.coding.display",
         "short": "Descrizione leggibile del codice",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "fixedString": "Allergie"
       },
@@ -735,7 +741,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/StructureDefinition/AllergyIntolerance"
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLAllergyIntolerancePAI"
             ]
           }
         ]
@@ -814,10 +820,10 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/StructureDefinition/ServiceRequest",
-              "http://hl7.org/fhir/StructureDefinition/MedicationRequest",
-              "http://hl7.org/fhir/StructureDefinition/DeviceRequest",
-              "http://hl7.org/fhir/StructureDefinition/CommunicationRequest"
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLServiceRequestPAI",
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLMedicationRequestPAI",
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLDeviceRequestPAI",
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCommunicationRequestPAI"
             ]
           }
         ]
@@ -842,7 +848,7 @@
         "id": "Composition.section:raccomandazioniCliniche.code",
         "path": "Composition.section.code",
         "short": "Codice che identifica il tipo di sezione",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "patternCodeableConcept": {
           "coding": [
@@ -858,7 +864,7 @@
         "path": "Composition.section.code.coding.system",
         "short": "Sistema di codifica",
         "comment": "CRS-SISS (OID 2.16.840.1.113883.2.9.2.30.3.1.3.13.6.1)",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "fixedUri": "urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.13.6.1"
       },
@@ -866,7 +872,7 @@
         "id": "Composition.section:raccomandazioniCliniche.code.coding.code",
         "path": "Composition.section.code.coding.code",
         "short": "Valore del codice",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "fixedCode": "5"
       },
@@ -874,7 +880,7 @@
         "id": "Composition.section:raccomandazioniCliniche.code.coding.display",
         "path": "Composition.section.code.coding.display",
         "short": "Descrizione leggibile del codice",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "fixedString": "Raccomandazioni Cliniche"
       },
@@ -896,7 +902,7 @@
             "code": "Reference",
             "targetProfile": [
               "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCarePlanPAI",
-              "http://hl7.org/fhir/StructureDefinition/Observation"
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationRaccomandazionePAI"
             ]
           }
         ]
@@ -921,7 +927,7 @@
         "id": "Composition.section:motivoEsenzione.code",
         "path": "Composition.section.code",
         "short": "Codice che identifica il tipo di sezione",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "patternCodeableConcept": {
           "coding": [
@@ -937,7 +943,7 @@
         "path": "Composition.section.code.coding.system",
         "short": "Sistema di codifica",
         "comment": "LOINC (OID 2.16.840.1.113883.6.1)",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "fixedUri": "http://loinc.org"
       },
@@ -946,14 +952,14 @@
         "path": "Composition.section.code.coding.version",
         "short": "Versione del sistema di codifica",
         "comment": "Es. LOINC 2.19",
-        "min": 0,
+        "min": 1,
         "max": "1"
       },
       {
         "id": "Composition.section:motivoEsenzione.code.coding.code",
         "path": "Composition.section.code.coding.code",
         "short": "Valore del codice",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "fixedCode": "57827-8"
       },
@@ -961,7 +967,7 @@
         "id": "Composition.section:motivoEsenzione.code.coding.display",
         "path": "Composition.section.code.coding.display",
         "short": "Descrizione leggibile del codice",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "fixedString": "Motivo Esenzione dal co-pagamento"
       },
@@ -982,7 +988,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/StructureDefinition/Coverage"
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCoveragePAI"
             ]
           }
         ]
@@ -1007,7 +1013,7 @@
         "id": "Composition.section:retiPatologia.code",
         "path": "Composition.section.code",
         "short": "Codice che identifica il tipo di sezione",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "patternCodeableConcept": {
           "coding": [
@@ -1023,7 +1029,7 @@
         "path": "Composition.section.code.coding.system",
         "short": "Sistema di codifica",
         "comment": "CRS-SISS (OID 2.16.840.1.113883.2.9.2.30.3.1.3.13.6.1)",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "fixedUri": "urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.13.6.1"
       },
@@ -1031,7 +1037,7 @@
         "id": "Composition.section:retiPatologia.code.coding.code",
         "path": "Composition.section.code.coding.code",
         "short": "Valore del codice",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "fixedCode": "6"
       },
@@ -1039,7 +1045,7 @@
         "id": "Composition.section:retiPatologia.code.coding.display",
         "path": "Composition.section.code.coding.display",
         "short": "Descrizione leggibile del codice",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "fixedString": "Reti di Patologia"
       },
@@ -1060,7 +1066,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/StructureDefinition/OrganizationAffiliation"
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLOrganizationAffiliationPAI"
             ]
           }
         ]

@@ -33,6 +33,13 @@
       "reference": "Condition/Example-Condition-CondizioniErogabilita-2-PTI"
     }
   ],
+  "activity": [
+    {
+      "reference": {
+        "reference": "MedicationRequest/Example-MedicationRequest-2-PTI"
+      }
+    }
+  ],
   "supportingInfo": [
     {
       "reference": "Condition/Example-Condition-CriteriEsclusione-1-PTI"

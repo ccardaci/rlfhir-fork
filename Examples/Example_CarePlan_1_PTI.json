@@ -48,5 +48,12 @@
     {
       "reference": "Condition/Example-Condition-CondizioniErogabilita-1-PTI"
     }
+  ],
+  "activity": [
+    {
+      "reference": {
+        "reference": "MedicationRequest/Example-MedicationRequest-1-PTI"
+      }
+    }
   ]
 }

@@ -5,7 +5,7 @@
   - [ValueSet](#valueset)
 
 ## Descrizione
-Il profilo RLObservationDurataMalattiaPti è stato strutturato a partire dalla risorsa generica FHIR [Observation](http://hl7.org/fhir/R4/observation.html) per rappresentare la durata della malattia (BPCO) nel contesto del Piano Terapeutico Individuale – Regione Lombardia. Il codice è fissato a 04 (Durata della malattia) e il valore è espresso in anni.
+Il profilo RLObservationDurataMalattiaPti è stato strutturato a partire dalla risorsa generica FHIR [Observation](http://hl7.org/fhir/R4/observation.html) per rappresentare la durata della malattia (BPCO) nel contesto del Piano Terapeutico Individuale – Regione Lombardia. Il codice è fissato a 04 (Durata della malattia) e il valore è espresso in anni. È referenziato dalla sotto-sezione Dati Anamnestici e Obbiettivi e da CarePlan.supportingInfo.
 
 Di seguito è presentato il contenuto del profilo in diversi formati. La corrispondente definizione è consultabile al seguente link: {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationDurataMalattiaPti}}.
 

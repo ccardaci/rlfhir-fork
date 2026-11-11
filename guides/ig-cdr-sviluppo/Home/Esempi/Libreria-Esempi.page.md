@@ -114,6 +114,12 @@
   </tr>
   <tr>
    <td>PTI</td>
+   <td>Composition</td>
+   <td>Piano Terapeutico Individuale (3)</td>
+   <td>{{link:Composition/Example-Composition-3-PTI}}</td>
+  </tr>
+  <tr>
+   <td>PTI</td>
    <td>CarePlan</td>
    <td>Piano Terapeutico (1)</td>
    <td>{{link:CarePlan/Example-CarePlan-1-PTI}}</td>
@@ -126,6 +132,12 @@
   </tr>
   <tr>
    <td>PTI</td>
+   <td>CarePlan</td>
+   <td>Piano Terapeutico (3)</td>
+   <td>{{link:CarePlan/Example-CarePlan-3-PTI}}</td>
+  </tr>
+  <tr>
+   <td>PTI</td>
    <td>Condition</td>
    <td>Condizioni di Erogabilità (1)</td>
    <td>{{link:Condition/Example-Condition-CondizioniErogabilita-1-PTI}}</td>
@@ -135,6 +147,12 @@
    <td>Condition</td>
    <td>Condizioni di Erogabilità (2)</td>
    <td>{{link:Condition/Example-Condition-CondizioniErogabilita-2-PTI}}</td>
+  </tr>
+  <tr>
+   <td>PTI</td>
+   <td>Condition</td>
+   <td>Condizioni di Erogabilità (3)</td>
+   <td>{{link:Condition/Example-Condition-CondizioniErogabilita-3-PTI}}</td>
   </tr>
   <tr>
    <td>PTI</td>
@@ -186,6 +204,12 @@
   </tr>
   <tr>
    <td>PTI</td>
+   <td>MedicationRequest</td>
+   <td>Programma Terapeutico (3)</td>
+   <td>{{link:MedicationRequest/Example-MedicationRequest-3-PTI}}</td>
+  </tr>
+  <tr>
+   <td>PTI</td>
    <td>Medication</td>
    <td>Farmaco (1)</td>
    <td>{{link:Medication/Example-Medication-1-PTI}}</td>
@@ -195,6 +219,12 @@
    <td>Medication</td>
    <td>Farmaco (2)</td>
    <td>{{link:Medication/Example-Medication-2-PTI}}</td>
+  </tr>
+  <tr>
+   <td>PTI</td>
+   <td>Medication</td>
+   <td>Farmaco (3)</td>
+   <td>{{link:Medication/Example-Medication-3-PTI}}</td>
   </tr>
     <tr>
    <td>LDO</td>

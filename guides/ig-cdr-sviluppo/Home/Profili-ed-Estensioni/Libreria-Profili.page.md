@@ -221,22 +221,6 @@
             {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationPrecedentiEsamiEseguitiRad}}
           </td>
         </tr>
-        <tr>
-          <td>RAD</td>
-          <td>
-            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLPatientRAD.page.md}}
-          </td>
-          <td>
-            <a href="http://hl7.org/fhir/R4/patient.html">Patient</a>
-          </td>
-          <td>
-            Profilo che descrive un paziente
-          </td>
-          <td>
-            {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPatientRAD}}
-          </td>
-        </tr>
-        <tr>
  <td>RAD</td>
  <td>
  {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLImagingStudyRad.page.md}}
@@ -1291,7 +1275,7 @@
         <tr>
           <td>PAI</td>
           <td>
-            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLObservationAnamnesiAlcolPAI.page.md}}
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLObservationAnamnesiAlcoolPAI.page.md}}
           </td>
           <td>
             <a href="http://hl7.org/fhir/R4/observation.html">Observation</a>
@@ -1396,7 +1380,7 @@
         <tr>
           <td>PAI</td>
           <td>
-            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLMedicationRequestProgrammazionePAI.page.md}}
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLMedicationRequestProgrammazione_PAI.page.md}}
           </td>
           <td>
             <a href="http://hl7.org/fhir/R4/medicationrequest.html">MedicationRequest</a>

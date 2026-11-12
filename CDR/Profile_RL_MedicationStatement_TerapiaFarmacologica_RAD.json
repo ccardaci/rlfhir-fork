@@ -1,7 +1,7 @@
 {
   "resourceType": "StructureDefinition",
-  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLMedicationStatementTerapiaFarmacologica",
-  "name": "RLMedicationStatementTerapiaFarmacologica",
+  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLMedicationStatementRAD",
+  "name": "RLMedicationStatementRAD",
   "status": "draft",
   "fhirVersion": "4.0.1",
   "kind": "resource",

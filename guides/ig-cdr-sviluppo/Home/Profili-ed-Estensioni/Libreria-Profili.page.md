@@ -281,22 +281,6 @@
  </td>
 </tr>
 <tr>
- <td>RAD</td>
- <td>
- {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLObservationQuesitoDiagnosticoRad.page.md}}
- </td>
- <td>
- <a href="http://hl7.org/fhir/R4/observation.html">Observation</a>
- </td>
- <td>
- Profilo che descrive il quesito diagnostico nel contesto del referto di radiologia
- </td>
- <td>
- {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationQuesitoDiagnosticoRad}}
- </td>
-</tr>
-
-<tr>
  <td>PTI</td>
  <td>
  {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLCompositionPti.page.md}}
@@ -1768,10 +1752,6 @@
           </td>
           <td>
             {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCoverageEsenzioniPSS}}
-            Profilo che descrive le prestazioni correlate alla patologia nella presa in carico del Piano Assistenziale Individuale
-          </td>
-          <td>
-            {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLProcedurePAI}}
           </td>
         </tr>
         <tr>

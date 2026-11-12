@@ -20,6 +20,10 @@ Di seguito è presentato il contenuto del profilo in diversi formati. La corrisp
   <button class="tablinks" onclick="openTab(event, 'JSON View')">JSON View</button>
   <button class="tablinks" onclick="openTab(event, 'Esempi')">Esempi applicati al profilo</button>
 </div>
+<script>
+var tabMap={'Hybrid View':'Hybrid View','Snapshot View':'Snapshot View','Differential View':'Differential View','Table View':'Table View','XML View':'XML View','JSON View':'JSON View','Esempi applicati al profilo':'Esempi'};
+$('.tablinks').off('click.tabs').on('click.tabs',function(){var n=tabMap[$(this).text().trim()]; if(n){openTab({target:this},n);}});
+</script>
 
 <div id="Snapshot View" class="tabcontent">
   <h3>Snapshot View</h3>

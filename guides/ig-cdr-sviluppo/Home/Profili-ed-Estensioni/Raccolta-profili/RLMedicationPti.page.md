@@ -5,7 +5,7 @@
   - [ValueSet](#valueset)
 
 ## Descrizione
-Il profilo RLMedicationPti è stato strutturato a partire dalla risorsa generica FHIR [Medication](http://hl7.org/fhir/R4/medication.html) per rappresentare il farmaco prescritto nel contesto del Piano Terapeutico Individuale – Regione Lombardia. Il codice del farmaco può essere ATC, AIC o Gruppo di Equivalenza.
+Il profilo RLMedicationPti è stato strutturato a partire dalla risorsa generica FHIR [Medication](http://hl7.org/fhir/R4/medication.html) per rappresentare il farmaco prescritto nel contesto del Piano Terapeutico Individuale – Regione Lombardia. Il codice ATC è sempre presente; possono essere presenti anche AIC, Gruppo di Equivalenza o Preparati Allestiti. Grammatura e quantità nella confezione hanno denominatore fisso a 1.
 
 Di seguito è presentato il contenuto del profilo in diversi formati. La corrispondente definizione è consultabile al seguente link: {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLMedicationPti}}.
 
@@ -56,9 +56,11 @@ Farmaco (1): {{link:Medication/Example-Medication-1-PTI}}
 <br>
 Farmaco (2): {{link:Medication/Example-Medication-2-PTI}}
 <br>
+Farmaco (3): {{link:Medication/Example-Medication-3-PTI}}
+<br>
 </div>
 
 <!-- ===================================================FINE SEZIONE=================================================== -->
 
 ## ValueSet
-Nessun ValueSet specifico è associato a questo profilo. I sistemi di codifica utilizzati per `code` sono i CodeSystem DDC-FarmacoATC, DDC-FarmacoAIC e DDC-FarmacoGE (`https://fhir.siss.regione.lombardia.it/CodeSystem/`).
+Nessun ValueSet specifico è associato a questo profilo. I sistemi di codifica utilizzati per `code` sono identificati da OID: ATC (`urn:oid:2.16.840.1.113883.6.73`), AIC (`urn:oid:2.16.840.1.113883.2.9.6.1.5`), Gruppo di Equivalenza (`urn:oid:2.16.840.1.113883.2.9.6.1.51`) e Preparati Allestiti (`urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.9.6.100.10`).

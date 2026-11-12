@@ -5,7 +5,7 @@
   - [ValueSet](#valueset)
 
 ## Descrizione
-Il profilo RLCompositionPti è stato strutturato a partire dalla risorsa generica FHIR [Composition](http://hl7.org/fhir/R4/composition.html) per rappresentare il documento Piano Terapeutico Individuale nel contesto del Piano Terapeutico Individuale – Regione Lombardia. Il tipo di documento è fissato a LOINC 77604-7 (PIANO DI TRATTAMENTO FARMACOLOGICO.BREVE). Il documento contiene le sezioni Dati Diagnosi e Condizione Clinica, Programma Terapeutico e Attributi del Piano Terapeutico.
+Il profilo RLCompositionPti è stato strutturato a partire dalla risorsa generica FHIR [Composition](http://hl7.org/fhir/R4/composition.html) per rappresentare il documento Piano Terapeutico Individuale nel contesto del Piano Terapeutico Individuale – Regione Lombardia. Il tipo di documento è fissato a LOINC 77604-7 (PIANO DI TRATTAMENTO FARMACOLOGICO.BREVE). Il documento contiene le sezioni Dati Diagnosi e Condizione Clinica, Programma Terapeutico e Attributi del Piano Terapeutico. Il medico curante (MMG) che riceve copia del documento è rappresentato come attester con mode = professional.
 
 Di seguito è presentato il contenuto del profilo in diversi formati. La corrispondente definizione è consultabile al seguente link: {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCompositionPti}}.
 
@@ -55,6 +55,8 @@ Di seguito è presentato il contenuto del profilo in diversi formati. La corrisp
 Piano Terapeutico Individuale (1): {{link:Composition/Example-Composition-1-PTI}}
 <br>
 Piano Terapeutico Individuale (2): {{link:Composition/Example-Composition-2-PTI}}
+<br>
+Piano Terapeutico Individuale (3): {{link:Composition/Example-Composition-3-PTI}}
 <br>
 </div>
 

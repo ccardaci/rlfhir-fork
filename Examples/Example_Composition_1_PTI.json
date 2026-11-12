@@ -10,12 +10,6 @@
     {
       "url": "http://hl7.org/fhir/StructureDefinition/composition-clinicaldocument-versionNumber",
       "valueString": "2"
-    },
-    {
-      "url": "http://hl7.eu/fhir/StructureDefinition/information-recipient",
-      "valueReference": {
-        "reference": "Practitioner/practitioner-pti-mmg-001"
-      }
     }
   ],
   "identifier": {
@@ -58,6 +52,12 @@
       "party": {
         "reference": "PractitionerRole/practitionerrole-pti-001"
       }
+    },
+    {
+      "mode": "professional",
+      "party": {
+        "reference": "Practitioner/practitioner-pti-mmg-001"
+      }
     }
   ],
   "custodian": {
@@ -90,7 +90,7 @@
       },
       "section": [
         {
-          "title": "Condizioni Cliniche",
+          "title": "Condizioni cliniche",
           "code": {
             "coding": [
               {
@@ -111,7 +111,7 @@
           ]
         },
         {
-          "title": "Dati Anamnestici e Obiettivi",
+          "title": "Dati Anamnestici e Obbiettivi",
           "code": {
             "coding": [
               {
@@ -161,7 +161,7 @@
           {
             "system": "urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.15.6.12",
             "code": "1",
-            "display": "Attributi del Piano Terapeutico"
+            "display": "ATTRIBUTI_DEL_PIANO_TERAPEUTICO"
           }
         ]
       },

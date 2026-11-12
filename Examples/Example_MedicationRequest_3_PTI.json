@@ -1,0 +1,49 @@
+{
+  "resourceType": "MedicationRequest",
+  "id": "Example-MedicationRequest-3-PTI",
+  "meta": {
+    "profile": [
+      "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLMedicationRequestPti"
+    ]
+  },
+  "status": "active",
+  "intent": "order",
+  "medicationReference": {
+    "reference": "Medication/Example-Medication-3-PTI"
+  },
+  "subject": {
+    "reference": "Patient/patient-pti-003"
+  },
+  "dosageInstruction": [
+    {
+      "timing": {
+        "repeat": {
+          "boundsDuration": {
+            "value": 12,
+            "unit": "mesi",
+            "system": "http://unitsofmeasure.org",
+            "code": "mo"
+          }
+        }
+      },
+      "doseAndRate": [
+        {
+          "doseQuantity": {
+            "value": 1,
+            "unit": "@unità_dosaggio@"
+          },
+          "rateQuantity": {
+            "value": 1,
+            "unit": "@unità_frequenza@"
+          }
+        }
+      ]
+    }
+  ],
+  "dispenseRequest": {
+    "quantity": {
+      "value": 3,
+      "unit": "confezioni"
+    }
+  }
+}

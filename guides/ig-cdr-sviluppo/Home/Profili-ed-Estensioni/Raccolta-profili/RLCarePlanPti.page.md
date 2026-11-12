@@ -5,7 +5,7 @@
   - [ValueSet](#valueset)
 
 ## Descrizione
-Il profilo RLCarePlanPti è stato strutturato a partire dalla risorsa generica FHIR [CarePlan](http://hl7.org/fhir/R4/careplan.html) per rappresentare il piano terapeutico nel contesto del Piano Terapeutico Individuale – Regione Lombardia. Contiene la data di scadenza del piano, i flag di prescrizione e i riferimenti alle condizioni di erogabilità e ai criteri di esclusione. Lo stato è revoked in presenza di criteri di esclusione, altrimenti active.
+Il profilo RLCarePlanPti è stato strutturato a partire dalla risorsa generica FHIR [CarePlan](http://hl7.org/fhir/R4/careplan.html) per rappresentare il piano terapeutico nel contesto del Piano Terapeutico Individuale – Regione Lombardia. Contiene la data di scadenza del piano, i flag di prescrizione, i riferimenti alle condizioni di erogabilità, ai criteri di esclusione e alla durata della malattia (BPCO), e una activity per ogni MedicationRequest del Programma Terapeutico. Lo stato è revoked se è presente un criterio di esclusione, altrimenti active.
 
 Di seguito è presentato il contenuto del profilo in diversi formati. La corrispondente definizione è consultabile al seguente link: {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCarePlanPti}}.
 
@@ -55,6 +55,8 @@ Di seguito è presentato il contenuto del profilo in diversi formati. La corrisp
 Piano Terapeutico (1): {{link:CarePlan/Example-CarePlan-1-PTI}}
 <br>
 Piano Terapeutico (2): {{link:CarePlan/Example-CarePlan-2-PTI}}
+<br>
+Piano Terapeutico (3): {{link:CarePlan/Example-CarePlan-3-PTI}}
 <br>
 </div>
 

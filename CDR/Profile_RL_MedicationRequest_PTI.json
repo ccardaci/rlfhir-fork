@@ -4,7 +4,7 @@
   "name": "RLMedicationRequestPti",
   "title": "MedicationRequest PTI - Programma Terapeutico",
   "status": "draft",
-  "date": "2026-10-28",
+  "date": "2026-11-10",
   "description": "Profilo della risorsa MedicationRequest per la sezione Programma Terapeutico del Piano Terapeutico Individuale.",
   "fhirVersion": "4.0.1",
   "kind": "resource",
@@ -136,7 +136,7 @@
         "id": "MedicationRequest.dosageInstruction.route",
         "path": "MedicationRequest.dosageInstruction.route",
         "short": "Via di somministrazione",
-        "min": 1
+        "comment": "CDA2 4.2. Via di somministrazione obbligatoria solo per Cannabis (ERRORE-706); se presente, code, system e display sono valorizzati."
       },
       {
         "id": "MedicationRequest.dosageInstruction.route.coding",
@@ -148,7 +148,7 @@
         "id": "MedicationRequest.dosageInstruction.route.coding.system",
         "path": "MedicationRequest.dosageInstruction.route.coding.system",
         "short": "Sistema di codifica",
-        "min": 1,
+        "min": 0,
         "max": "1",
         "fixedUri": "http://terminology.hl7.org/CodeSystem/v3-RouteOfAdministration"
       },
@@ -156,15 +156,15 @@
         "id": "MedicationRequest.dosageInstruction.route.coding.code",
         "path": "MedicationRequest.dosageInstruction.route.coding.code",
         "short": "Via di somministrazione - codice",
-        "comment": "CDA2 4.2.",
-        "min": 1,
+        "comment": "CDA2 4.2. Via di somministrazione obbligatoria solo per Cannabis (ERRORE-706); se presente, code, system e display sono valorizzati.",
+        "min": 0,
         "max": "1"
       },
       {
         "id": "MedicationRequest.dosageInstruction.route.coding.display",
         "path": "MedicationRequest.dosageInstruction.route.coding.display",
         "short": "Via di somministrazione - descrizione",
-        "min": 1,
+        "min": 0,
         "max": "1"
       },
       {
@@ -172,7 +172,7 @@
         "path": "MedicationRequest.dosageInstruction.doseAndRate",
         "short": "Dosaggio cronico e, se presente, dosaggio di carico",
         "comment": "Nessuna slice: il dosaggio cronico e mantenimento è l'elemento senza type (con dose e frequenza); il dosaggio di carico è l'elemento con type = 04.",
-        "min": 1,
+        "min": 0,
         "max": "2"
       },
       {
@@ -218,7 +218,6 @@
         "path": "MedicationRequest.dosageInstruction.doseAndRate.dose[x]",
         "short": "Dosaggio",
         "comment": "Dosaggio cronico e mantenimento (@dosaggio_cronico@) oppure dosaggio di carico (@dosaggio_carico@).",
-        "min": 1,
         "type": [
           {
             "code": "Quantity"
@@ -234,15 +233,15 @@
         "id": "MedicationRequest.dosageInstruction.doseAndRate.doseQuantity.value",
         "path": "MedicationRequest.dosageInstruction.doseAndRate.doseQuantity.value",
         "short": "Valore del dosaggio",
-        "comment": "CDA2 4.3 (REAL). Antitrombotici: obbligatorio per ATC B01AC24 e B01AC22. Il dosaggio cronico è il doseAndRate senza type. Per il dosaggio di carico: CDA2 4.9 (REAL).",
-        "min": 1,
+        "comment": "CDA2 4.3 (REAL). Antitrombotici: obbligatorio per ATC B01AC24 e B01AC22. Il dosaggio cronico è il doseAndRate senza type. Obbligatorio in tutti i piani tranne Antiepilettici. Per il dosaggio di carico: CDA2 4.9 (REAL).",
+        "min": 0,
         "max": "1"
       },
       {
         "id": "MedicationRequest.dosageInstruction.doseAndRate.rate[x]",
         "path": "MedicationRequest.dosageInstruction.doseAndRate.rate[x]",
         "short": "Frequenza",
-        "comment": "Obbligatoria nel dosaggio cronico e mantenimento.",
+        "comment": "Valorizzata solo nel dosaggio cronico e mantenimento.",
         "type": [
           {
             "code": "Quantity"
@@ -258,8 +257,8 @@
         "id": "MedicationRequest.dosageInstruction.doseAndRate.rateQuantity.value",
         "path": "MedicationRequest.dosageInstruction.doseAndRate.rateQuantity.value",
         "short": "Frequenza - valore",
-        "comment": "CDA2 4.4 (@frequenza@, ST). Antitrombotici: obbligatorio per ATC B01AC24 e B01AC22. Antivirali: 5 a settimana se Condizione di erogabilità = 00, 3 a settimana se = 01.",
-        "min": 1,
+        "comment": "CDA2 4.4 (@frequenza@, ST). Antitrombotici: obbligatorio per ATC B01AC24 e B01AC22. Antivirali: 5 a settimana se Condizione di erogabilità = 00, 3 a settimana se = 01. Obbligatoria per Cannabis, Antitrombotici, Antivirali, BPCO e Ranelato; non per Antiepilettici e Sedativi. Intero > 0 (ERRORE-519). Tradotta in rateQuantity (confermato): così si mantiene l'unità di misura.",
+        "min": 0,
         "max": "1"
       },
       {
@@ -267,7 +266,7 @@
         "path": "MedicationRequest.dosageInstruction.doseAndRate.rateQuantity.unit",
         "short": "Frequenza - unità",
         "comment": "CDA2: substanceAdministration/rateQuantity/@unit.",
-        "min": 1,
+        "min": 0,
         "max": "1"
       },
       {
@@ -287,10 +286,9 @@
         "id": "MedicationRequest.dispenseRequest.quantity.value",
         "path": "MedicationRequest.dispenseRequest.quantity.value",
         "short": "Valore",
-        "comment": "CDA2: supply/quantity/@value (INT).",
+        "comment": "CDA2: supply/quantity/@value (INT > 0, ERRORE-544). Nessun valore fisso.",
         "min": 1,
-        "max": "1",
-        "fixedDecimal": 1.0
+        "max": "1"
       }
     ]
   }

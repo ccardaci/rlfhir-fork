@@ -4,7 +4,7 @@
   "name": "RLMedicationPti",
   "title": "Medication PTI - Piano Terapeutico Individuale",
   "status": "draft",
-  "date": "2026-10-28",
+  "date": "2026-11-10",
   "description": "Profilo della risorsa Medication per il farmaco prescritto nella sezione Programma Terapeutico del Piano Terapeutico Individuale.",
   "fhirVersion": "4.0.1",
   "kind": "resource",
@@ -48,8 +48,8 @@
         "path": "Medication.code.coding",
         "sliceName": "atc",
         "short": "Codifica ATC",
-        "comment": "Usata quando @OID_codifica_farmaco@ è la codifica ATC.",
-        "min": 0,
+        "comment": "Usata quando @OID_codifica_farmaco@ è la codifica ATC. ATC obbligatorio in tutti i piani: compare esattamente una volta, nel code o in una translation (ERRORE-528).",
+        "min": 1,
         "max": "1"
       },
       {
@@ -58,7 +58,7 @@
         "short": "Sistema di codifica",
         "min": 1,
         "max": "1",
-        "fixedUri": "https://fhir.siss.regione.lombardia.it/CodeSystem/DDC-FarmacoATC"
+        "fixedUri": "urn:oid:2.16.840.1.113883.6.73"
       },
       {
         "id": "Medication.code.coding:atc.code",
@@ -89,7 +89,7 @@
         "short": "Sistema di codifica",
         "min": 1,
         "max": "1",
-        "fixedUri": "https://fhir.siss.regione.lombardia.it/CodeSystem/DDC-FarmacoAIC"
+        "fixedUri": "urn:oid:2.16.840.1.113883.2.9.6.1.5"
       },
       {
         "id": "Medication.code.coding:aic.code",
@@ -120,7 +120,7 @@
         "short": "Sistema di codifica",
         "min": 1,
         "max": "1",
-        "fixedUri": "https://fhir.siss.regione.lombardia.it/CodeSystem/DDC-FarmacoGE"
+        "fixedUri": "urn:oid:2.16.840.1.113883.2.9.6.1.51"
       },
       {
         "id": "Medication.code.coding:gruppoEquivalenza.code",
@@ -137,11 +137,42 @@
         "max": "1"
       },
       {
+        "id": "Medication.code.coding:preparatiAllestiti",
+        "path": "Medication.code.coding",
+        "sliceName": "preparatiAllestiti",
+        "short": "Codifica Preparati Allestiti (PA)",
+        "comment": "Ammesso solo in translation (schematron v1.0.0, ERRORE-527). Stessa convenzione OID di ATC/AIC/GE.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Medication.code.coding:preparatiAllestiti.system",
+        "path": "Medication.code.coding.system",
+        "short": "Sistema di codifica",
+        "min": 1,
+        "max": "1",
+        "fixedUri": "urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.9.6.100.10"
+      },
+      {
+        "id": "Medication.code.coding:preparatiAllestiti.code",
+        "path": "Medication.code.coding.code",
+        "short": "Codice del farmaco",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Medication.code.coding:preparatiAllestiti.display",
+        "path": "Medication.code.coding.display",
+        "short": "Descrizione del farmaco",
+        "min": 1,
+        "max": "1"
+      },
+      {
         "id": "Medication.form",
         "path": "Medication.form",
         "short": "Forma farmaceutica",
-        "comment": "CDA2 4.5. Cannabis: valori accettati cd 10 (Dizionario \"Forme Farmaceutiche\") e cd 01, 02 (Dizionario \"Altre Forme Farmaceutiche\").",
-        "min": 1,
+        "comment": "CDA2 4.5. Cannabis: valori accettati cd 10 (Dizionario \"Forme Farmaceutiche\") e cd 01, 02 (Dizionario \"Altre Forme Farmaceutiche\"). Obbligatoria solo per Cannabis (ERRORE-701).",
+        "min": 0,
         "max": "1"
       },
       {
@@ -181,9 +212,25 @@
         "id": "Medication.amount.numerator",
         "path": "Medication.amount.numerator",
         "short": "Quantità nella confezione",
-        "comment": "CDA2 4.8 (code 02, codeSystem 2.16.840.1.113883.2.9.2.30.3.1.3.15.6.10, @quantita_confezione@, REAL). Cannabis: obbligatorio se la Forma Farmaceutica è \"01\" (Dizionario \"Altre Forme Farmaceutiche\").",
+        "comment": "CDA2 4.8 (code 02, codeSystem 2.16.840.1.113883.2.9.2.30.3.1.3.15.6.10, @quantita_confezione@, REAL). Cannabis: obbligatorio se la Forma Farmaceutica è \"01\" (Dizionario \"Altre Forme Farmaceutiche\"). amount è di tipo Ratio (rat-1): denominator.value = 1 fisso, senza unità di misura.",
         "min": 0,
         "max": "1"
+      },
+      {
+        "id": "Medication.amount.denominator",
+        "path": "Medication.amount.denominator",
+        "short": "Denominatore della quantità nella confezione",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Medication.amount.denominator.value",
+        "path": "Medication.amount.denominator.value",
+        "short": "Denominatore della quantità nella confezione",
+        "comment": "Non presente nel CDA2. Il Ratio richiede numerator e denominator (vincolo FHIR rat-1): denominator.value = 1, senza unità di misura.",
+        "min": 1,
+        "max": "1",
+        "fixedDecimal": 1.0
       },
       {
         "id": "Medication.ingredient",
@@ -194,7 +241,7 @@
         "id": "Medication.ingredient.item[x]",
         "path": "Medication.ingredient.item[x]",
         "short": "Principio attivo",
-        "comment": "Cannabis: stesso contenuto di Medication.code. Obbligatorio in FHIR quando ingredient è valorizzato.",
+        "comment": "Valorizzare in tutti i piani in cui è presente la Grammatura, con il codice del farmaco (Medication.code); Cannabis: stesso contenuto di Medication.code.",
         "min": 1,
         "max": "1",
         "type": [
@@ -212,9 +259,25 @@
         "id": "Medication.ingredient.strength.numerator",
         "path": "Medication.ingredient.strength.numerator",
         "short": "Grammatura",
-        "comment": "CDA2 4.7 (code 01, codeSystem 2.16.840.1.113883.2.9.2.30.3.1.3.15.6.10, @grammatura@, REAL). Cannabis: obbligatorio ingredient.itemCodeableConcept con lo stesso contenuto di Medication.code. Antiepilettici: obbligatorio per ATC N03AF04. Antitrombotici: obbligatorio per ATC B01AC24 (60 per Ticagrel 60 mg, 90 per Ticagrel 90 mg).",
+        "comment": "CDA2 4.7 (code 01, codeSystem 2.16.840.1.113883.2.9.2.30.3.1.3.15.6.10, @grammatura@, REAL). Cannabis: obbligatorio ingredient.itemCodeableConcept con lo stesso contenuto di Medication.code. Antiepilettici: obbligatorio per ATC N03AF04. Antitrombotici: obbligatorio per ATC B01AC24 (60 per Ticagrel 60 mg, 90 per Ticagrel 90 mg). strength è di tipo Ratio (rat-1): denominator.value = 1 fisso. L'unità di misura non è necessaria (Quantity.unit è 0..1).",
         "min": 0,
         "max": "1"
+      },
+      {
+        "id": "Medication.ingredient.strength.denominator",
+        "path": "Medication.ingredient.strength.denominator",
+        "short": "Denominatore della grammatura",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Medication.ingredient.strength.denominator.value",
+        "path": "Medication.ingredient.strength.denominator.value",
+        "short": "Denominatore della grammatura",
+        "comment": "Non presente nel CDA2. Il Ratio richiede numerator e denominator (vincolo FHIR rat-1): denominator.value = 1, senza unità di misura.",
+        "min": 1,
+        "max": "1",
+        "fixedDecimal": 1.0
       }
     ]
   }

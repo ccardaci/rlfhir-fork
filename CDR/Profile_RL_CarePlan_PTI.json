@@ -4,7 +4,7 @@
   "name": "RLCarePlanPti",
   "title": "CarePlan PTI - Piano Terapeutico Individuale",
   "status": "draft",
-  "date": "2026-10-28",
+  "date": "2026-11-10",
   "description": "Profilo della risorsa CarePlan per il Piano Terapeutico Individuale. La stessa istanza è referenziata dalle sezioni Condizioni Cliniche e Attributi del Piano Terapeutico.",
   "fhirVersion": "4.0.1",
   "kind": "resource",
@@ -73,7 +73,7 @@
         "id": "CarePlan.status",
         "path": "CarePlan.status",
         "short": "Stato del piano",
-        "comment": "Valorizzare con revoked in presenza di criteri di esclusione (sezione Condizioni Cliniche, 5.2), altrimenti con active.",
+        "comment": "Valorizzare con revoked se è presente un criterio di esclusione (sezione Condizioni Cliniche, 5.2), altrimenti con active: il criterio è valorizzato solo se il paziente è escluso (regola confermata il 06/11/2026).",
         "min": 1,
         "max": "1"
       },
@@ -104,15 +104,15 @@
         "id": "CarePlan.period",
         "path": "CarePlan.period",
         "short": "Periodo di validità del piano",
-        "min": 1,
+        "min": 0,
         "max": "1"
       },
       {
         "id": "CarePlan.period.end",
         "path": "CarePlan.period.end",
         "short": "Data scadenza piano terapeutico",
-        "comment": "CDA2 code 01 (@dt_scadenza_piano@, codeSystem 2.16.840.1.113883.2.9.2.30.3.1.3.15.6.11). Conversione formato: YYYYMMDD[HHMMSS] → YYYY-MM-DD[Thh:mm:ss+zz:zz].",
-        "min": 1,
+        "comment": "CDA2 code 01 (@dt_scadenza_piano@, codeSystem 2.16.840.1.113883.2.9.2.30.3.1.3.15.6.11). Conversione formato: YYYYMMDD[HHMMSS] → YYYY-MM-DD[Thh:mm:ss+zz:zz]. Obbligatoria solo per Cannabis (ERRORE-711).",
+        "min": 0,
         "max": "1"
       },
       {
@@ -135,7 +135,7 @@
         "id": "CarePlan.supportingInfo",
         "path": "CarePlan.supportingInfo",
         "short": "Criteri di esclusione (ove previsto) e durata della malattia (BPCO)",
-        "comment": "CDA2 organizer code 02 (\"Criteri di Esclusione\"). In presenza di criteri di esclusione CarePlan.status=revoked. CDA2 4.2 (code 04). BPCO: obbligatoria solo alla prima prescrizione.",
+        "comment": "CDA2 organizer code 02 (\"Criteri di Esclusione\"), previsto solo per Antitrombotici e Antivirali. In presenza di un criterio di esclusione CarePlan.status=revoked (vedi status). CDA2 4.2 (code 04). BPCO: obbligatoria solo alla prima prescrizione.",
         "min": 0,
         "max": "*",
         "type": [
@@ -144,6 +144,29 @@
             "targetProfile": [
               "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLConditionCriteriEsclusionePti",
               "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationDurataMalattiaPti"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "CarePlan.activity",
+        "path": "CarePlan.activity",
+        "short": "Attività del piano",
+        "min": 1,
+        "max": "*"
+      },
+      {
+        "id": "CarePlan.activity.reference",
+        "path": "CarePlan.activity.reference",
+        "short": "Terapia farmacologica programmata",
+        "comment": "CDA2 sezione Programma Terapeutico, 4.6: ogni MedicationRequest creata per la substanceAdministration va referenziata anche in CarePlan.activity.reference. Lo schematron (ERRORE-504) impone una sola substanceAdministration, quindi oggi nasce una sola activity.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLMedicationRequestPti"
             ]
           }
         ]

@@ -4,7 +4,7 @@
   "name": "RLCompositionPti",
   "title": "Composition PTI - Piano Terapeutico Individuale",
   "status": "draft",
-  "date": "2026-10-28",
+  "date": "2026-11-10",
   "description": "Profilo della risorsa Composition per il documento Piano Terapeutico Individuale (PTI) di Regione Lombardia.",
   "fhirVersion": "4.0.1",
   "kind": "resource",
@@ -36,27 +36,10 @@
         ]
       },
       {
-        "id": "Composition.extension:information-recipient",
-        "path": "Composition.extension",
-        "sliceName": "information-recipient",
-        "short": "Professionista sanitario che riceve una copia del documento (MMG).",
-        "comment": "CDA2: informationRecipient (CF, nome, cognome, recapiti). Per i piani Cannabis nullFlavor MSK.",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "http://hl7.eu/fhir/StructureDefinition/information-recipient"
-            ]
-          }
-        ]
-      },
-      {
         "id": "Composition.identifier",
         "path": "Composition.identifier",
         "short": "Identificativo del documento",
-        "comment": "CDA2: setId (@setId@, root 2.16.840.1.113883.2.9.2.30.4.4, Regione Lombardia). ClinicalDocument/id (@extensionId@) va in Bundle.identifier.",
+        "comment": "CDA2: setId (@setId@, root 2.16.840.1.113883.2.9.2.30.4.4, Regione Lombardia). FULLHEADER nazionale: Composition.identifier = setId se presente, altrimenti ClinicalDocument/id. ClinicalDocument/id va in Bundle.identifier (essendo il Bundle di tipo transaction l'identifier viene perso).",
         "min": 1,
         "max": "1"
       },
@@ -204,8 +187,8 @@
         "path": "Composition.attester",
         "sliceName": "legalAuthenticator",
         "short": "Firmatario del documento FHIR.",
-        "comment": "CDA2: legalAuthenticator (CF, nome, cognome, titolo, organizzazione).",
-        "min": 1,
+        "comment": "CDA2: legalAuthenticator (CF, nome, cognome, titolo, organizzazione). legalAuthenticator 0..1 nel CDA (ERRORE-22: se presente, unico).",
+        "min": 0,
         "max": "1"
       },
       {
@@ -237,6 +220,38 @@
             "targetProfile": [
               "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPractitionerCore",
               "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPractitionerRoleCore"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.attester:professional",
+        "path": "Composition.attester",
+        "sliceName": "professional",
+        "short": "Medico curante (MMG) che riceve una copia del documento.",
+        "comment": "CDA2: informationRecipient (CF, nome, cognome, recapiti). Nel transformer il MMG è tradotto come attester con mode = professional (sostituisce l'extension HL7 EU information-recipient). Per i piani Cannabis (nullFlavor MSK) l'attester non viene valorizzato.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Composition.attester:professional.mode",
+        "path": "Composition.attester.mode",
+        "short": "Modalità di attestazione",
+        "min": 1,
+        "max": "1",
+        "fixedCode": "professional"
+      },
+      {
+        "id": "Composition.attester:professional.party",
+        "path": "Composition.attester.party",
+        "short": "Medico curante (MMG)",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPractitionerCore"
             ]
           }
         ]
@@ -313,25 +328,27 @@
         "path": "Composition.section.title",
         "short": "Titolo della sezione",
         "comment": "Valore previsto: Dati Diagnosi e Condizione Clinica.",
-        "min": 0,
+        "min": 1,
         "max": "1"
       },
       {
         "id": "Composition.section:datiDiagnosiCondizioneClinica.code",
         "path": "Composition.section.code",
         "short": "Codice che identifica il tipo di sezione",
-        "min": 0,
+        "comment": "code e coding obbligatori: le sezioni sono distinte dal code (slicing su section.code). Titolo obbligatorio nel CDA (ERRORE-306).",
+        "min": 1,
         "max": "1"
       },
       {
         "id": "Composition.section:datiDiagnosiCondizioneClinica.code.coding",
-        "path": "Composition.section.code.coding"
+        "path": "Composition.section.code.coding",
+        "min": 1
       },
       {
         "id": "Composition.section:datiDiagnosiCondizioneClinica.code.coding.system",
         "path": "Composition.section.code.coding.system",
         "short": "Sistema di codifica",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "fixedUri": "http://loinc.org"
       },
@@ -347,7 +364,7 @@
         "id": "Composition.section:datiDiagnosiCondizioneClinica.code.coding.code",
         "path": "Composition.section.code.coding.code",
         "short": "Valore del codice",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "fixedCode": "55752-0"
       },
@@ -355,7 +372,7 @@
         "id": "Composition.section:datiDiagnosiCondizioneClinica.code.coding.display",
         "path": "Composition.section.code.coding.display",
         "short": "Descrizione leggibile del codice",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "fixedString": "Informazioni Cliniche"
       },
@@ -392,26 +409,27 @@
         "id": "Composition.section:datiDiagnosiCondizioneClinica.section:condizioniCliniche.title",
         "path": "Composition.section.section.title",
         "short": "Titolo della sezione",
-        "comment": "Valore previsto: Condizioni Cliniche.",
-        "min": 0,
+        "comment": "Valore come nel CDA (ERRORE-382b). Valore previsto: Condizioni cliniche.",
+        "min": 1,
         "max": "1"
       },
       {
         "id": "Composition.section:datiDiagnosiCondizioneClinica.section:condizioniCliniche.code",
         "path": "Composition.section.section.code",
         "short": "Codice che identifica il tipo di sezione",
-        "min": 0,
+        "min": 1,
         "max": "1"
       },
       {
         "id": "Composition.section:datiDiagnosiCondizioneClinica.section:condizioniCliniche.code.coding",
-        "path": "Composition.section.section.code.coding"
+        "path": "Composition.section.section.code.coding",
+        "min": 1
       },
       {
         "id": "Composition.section:datiDiagnosiCondizioneClinica.section:condizioniCliniche.code.coding.system",
         "path": "Composition.section.section.code.coding.system",
         "short": "Sistema di codifica",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "fixedUri": "http://loinc.org"
       },
@@ -427,7 +445,7 @@
         "id": "Composition.section:datiDiagnosiCondizioneClinica.section:condizioniCliniche.code.coding.code",
         "path": "Composition.section.section.code.coding.code",
         "short": "Valore del codice",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "fixedCode": "67804-5"
       },
@@ -435,7 +453,7 @@
         "id": "Composition.section:datiDiagnosiCondizioneClinica.section:condizioniCliniche.code.coding.display",
         "path": "Composition.section.section.code.coding.display",
         "short": "Descrizione leggibile del codice",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "fixedString": "Condizioni relative alla salute"
       },
@@ -476,25 +494,26 @@
         "path": "Composition.section.section.title",
         "short": "Titolo della sezione",
         "comment": "Valore previsto: Diagnosi.",
-        "min": 0,
+        "min": 1,
         "max": "1"
       },
       {
         "id": "Composition.section:datiDiagnosiCondizioneClinica.section:diagnosi.code",
         "path": "Composition.section.section.code",
         "short": "Codice che identifica il tipo di sezione",
-        "min": 0,
+        "min": 1,
         "max": "1"
       },
       {
         "id": "Composition.section:datiDiagnosiCondizioneClinica.section:diagnosi.code.coding",
-        "path": "Composition.section.section.code.coding"
+        "path": "Composition.section.section.code.coding",
+        "min": 1
       },
       {
         "id": "Composition.section:datiDiagnosiCondizioneClinica.section:diagnosi.code.coding.system",
         "path": "Composition.section.section.code.coding.system",
         "short": "Sistema di codifica",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "fixedUri": "http://loinc.org"
       },
@@ -510,7 +529,7 @@
         "id": "Composition.section:datiDiagnosiCondizioneClinica.section:diagnosi.code.coding.code",
         "path": "Composition.section.section.code.coding.code",
         "short": "Valore del codice",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "fixedCode": "29308-4"
       },
@@ -518,7 +537,7 @@
         "id": "Composition.section:datiDiagnosiCondizioneClinica.section:diagnosi.code.coding.display",
         "path": "Composition.section.section.code.coding.display",
         "short": "Descrizione leggibile del codice",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "fixedString": "DIAGNOSI"
       },
@@ -542,26 +561,27 @@
         "id": "Composition.section:datiDiagnosiCondizioneClinica.section:datiAnamnesticiObiettivi.title",
         "path": "Composition.section.section.title",
         "short": "Titolo della sezione",
-        "comment": "Valore previsto: Dati Anamnestici e Obiettivi.",
-        "min": 0,
+        "comment": "Valore come nel CDA (ERRORE-352b). Valore previsto: Dati Anamnestici e Obbiettivi.",
+        "min": 1,
         "max": "1"
       },
       {
         "id": "Composition.section:datiDiagnosiCondizioneClinica.section:datiAnamnesticiObiettivi.code",
         "path": "Composition.section.section.code",
         "short": "Codice che identifica il tipo di sezione",
-        "min": 0,
+        "min": 1,
         "max": "1"
       },
       {
         "id": "Composition.section:datiDiagnosiCondizioneClinica.section:datiAnamnesticiObiettivi.code.coding",
-        "path": "Composition.section.section.code.coding"
+        "path": "Composition.section.section.code.coding",
+        "min": 1
       },
       {
         "id": "Composition.section:datiDiagnosiCondizioneClinica.section:datiAnamnesticiObiettivi.code.coding.system",
         "path": "Composition.section.section.code.coding.system",
         "short": "Sistema di codifica",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "fixedUri": "http://loinc.org"
       },
@@ -577,7 +597,7 @@
         "id": "Composition.section:datiDiagnosiCondizioneClinica.section:datiAnamnesticiObiettivi.code.coding.code",
         "path": "Composition.section.section.code.coding.code",
         "short": "Valore del codice",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "fixedCode": "11329-0"
       },
@@ -585,7 +605,7 @@
         "id": "Composition.section:datiDiagnosiCondizioneClinica.section:datiAnamnesticiObiettivi.code.coding.display",
         "path": "Composition.section.section.code.coding.display",
         "short": "Descrizione leggibile del codice",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "fixedString": "STORIA GENERALE"
       },
@@ -600,14 +620,15 @@
         "id": "Composition.section:datiDiagnosiCondizioneClinica.section:datiAnamnesticiObiettivi.entry",
         "path": "Composition.section.section.entry",
         "short": "Risorse FHIR referenziate dalla sezione",
-        "comment": "4.1 Peso: Composition.section.section.entry(Observation). 4.2 Durata malattia (BPCO): CarePlan.supportingInfo(Observation); obbligatoria solo alla prima prescrizione.",
+        "comment": "4.1 Peso e 4.2 Durata malattia (BPCO): Composition.section.section.entry(Observation). La Durata malattia è referenziata anche da CarePlan.supportingInfo; obbligatoria solo alla prima prescrizione BPCO (ERRORE-780). Un solo campo per piano (01 o 04).",
         "min": 0,
         "max": "1",
         "type": [
           {
             "code": "Reference",
             "targetProfile": [
-              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationPesoPti"
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationPesoPti",
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationDurataMalattiaPti"
             ]
           }
         ]
@@ -626,25 +647,26 @@
         "path": "Composition.section.title",
         "short": "Titolo della sezione",
         "comment": "Valore previsto: Programma Terapeutico.",
-        "min": 0,
+        "min": 1,
         "max": "1"
       },
       {
         "id": "Composition.section:programmaTerapeutico.code",
         "path": "Composition.section.code",
         "short": "Codice che identifica il tipo di sezione",
-        "min": 0,
+        "min": 1,
         "max": "1"
       },
       {
         "id": "Composition.section:programmaTerapeutico.code.coding",
-        "path": "Composition.section.code.coding"
+        "path": "Composition.section.code.coding",
+        "min": 1
       },
       {
         "id": "Composition.section:programmaTerapeutico.code.coding.system",
         "path": "Composition.section.code.coding.system",
         "short": "Sistema di codifica",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "fixedUri": "http://loinc.org"
       },
@@ -660,7 +682,7 @@
         "id": "Composition.section:programmaTerapeutico.code.coding.code",
         "path": "Composition.section.code.coding.code",
         "short": "Valore del codice",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "fixedCode": "55753-8"
       },
@@ -668,7 +690,7 @@
         "id": "Composition.section:programmaTerapeutico.code.coding.display",
         "path": "Composition.section.code.coding.display",
         "short": "Descrizione leggibile del codice",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "fixedString": "Terapia, Informazioni"
       },
@@ -709,25 +731,26 @@
         "path": "Composition.section.title",
         "short": "Titolo della sezione",
         "comment": "Valore previsto: Attributi del Piano Terapeutico.",
-        "min": 0,
+        "min": 1,
         "max": "1"
       },
       {
         "id": "Composition.section:attributiPianoTerapeutico.code",
         "path": "Composition.section.code",
         "short": "Codice che identifica il tipo di sezione",
-        "min": 0,
+        "min": 1,
         "max": "1"
       },
       {
         "id": "Composition.section:attributiPianoTerapeutico.code.coding",
-        "path": "Composition.section.code.coding"
+        "path": "Composition.section.code.coding",
+        "min": 1
       },
       {
         "id": "Composition.section:attributiPianoTerapeutico.code.coding.system",
         "path": "Composition.section.code.coding.system",
         "short": "Sistema di codifica",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "fixedUri": "urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.15.6.12"
       },
@@ -735,7 +758,7 @@
         "id": "Composition.section:attributiPianoTerapeutico.code.coding.code",
         "path": "Composition.section.code.coding.code",
         "short": "Valore del codice",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "fixedCode": "1"
       },
@@ -743,9 +766,9 @@
         "id": "Composition.section:attributiPianoTerapeutico.code.coding.display",
         "path": "Composition.section.code.coding.display",
         "short": "Descrizione leggibile del codice",
-        "min": 0,
-        "max": "1",
-        "fixedString": "Attributi del Piano Terapeutico"
+        "comment": "Nessun valore fisso: nel CDA displayName DOVREBBE essere \"ATTRIBUTI_DEL_PIANO_TERAPEUTICO\" (schematron W602). Valore previsto: ATTRIBUTI_DEL_PIANO_TERAPEUTICO.",
+        "min": 1,
+        "max": "1"
       },
       {
         "id": "Composition.section:attributiPianoTerapeutico.text",

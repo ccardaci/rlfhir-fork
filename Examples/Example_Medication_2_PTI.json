@@ -9,7 +9,7 @@
   "code": {
     "coding": [
       {
-        "system": "https://fhir.siss.regione.lombardia.it/CodeSystem/DDC-FarmacoATC",
+        "system": "urn:oid:2.16.840.1.113883.6.73",
         "code": "B01AC24",
         "display": "ticagrelor"
       }
@@ -29,7 +29,7 @@
       "itemCodeableConcept": {
         "coding": [
           {
-            "system": "https://fhir.siss.regione.lombardia.it/CodeSystem/DDC-FarmacoATC",
+            "system": "urn:oid:2.16.840.1.113883.6.73",
             "code": "B01AC24",
             "display": "ticagrelor"
           }
@@ -43,8 +43,7 @@
           "code": "mg"
         },
         "denominator": {
-          "value": 1,
-          "unit": "compressa"
+          "value": 1
         }
       }
     }

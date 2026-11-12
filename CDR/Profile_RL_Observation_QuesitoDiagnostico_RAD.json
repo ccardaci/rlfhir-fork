@@ -1,7 +1,7 @@
 {
   "resourceType": "StructureDefinition",
-  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationQuesitoDiagnostico",
-  "name": "RLObservationQuesitoDiagnostico",
+  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationQuesitoDiagnosticoRad",
+  "name": "RLObservationQuesitoDiagnosticoRad",
   "title": "RL Observation Quesito Diagnostico",
   "status": "draft",
   "fhirVersion": "4.0.1",

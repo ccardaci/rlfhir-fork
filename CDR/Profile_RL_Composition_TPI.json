@@ -1,7 +1,7 @@
 {
   "resourceType": "StructureDefinition",
-  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCompositionTesseraPortatoreImpianto",
-  "name": "RLCompositionTesseraPortatoreImpianto",
+  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCompositionTPI",
+  "name": "RLCompositionTPI",
   "title": "RL Composition Tessera Portatore Impianto",
   "status": "draft",
   "fhirVersion": "4.0.1",

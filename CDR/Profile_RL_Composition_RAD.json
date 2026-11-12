@@ -1,7 +1,7 @@
 {
     "resourceType": "StructureDefinition",
-    "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCompositionRefertoRadiologia",
-    "name": "RLCompositionRefertoRadiologia",
+    "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/StructureDefinition/RLCompositionRAD",
+    "name": "RLCompositionRAD",
     "title": "RL Composition Referto Radiologia",
     "status": "draft",
     "fhirVersion": "4.0.1",

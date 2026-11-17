@@ -70,7 +70,7 @@
         </tr>
         <tr>
           <td>CORE</td>
-          <td><a href="https://simplifier.net/guide/progetto-fhir-rl-core-sviluppo/home/profili-ed-estensioni/raccolta-profili/rlconditioncore.page.md?version=current">
+          <td><a href="https://simplifier.net/guide/progetto-fhir-rl-core-sviluppo/home/profili-ed-estensioni/raccolta-profili/RLConditionProblem.page.md?version=current">
           RLConditionCore
       </a>
           </td>

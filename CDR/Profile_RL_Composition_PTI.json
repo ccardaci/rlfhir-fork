@@ -1,7 +1,7 @@
 {
   "resourceType": "StructureDefinition",
-  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCompositionPti",
-  "name": "RLCompositionPti",
+  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCompositionTesseraPortatoreImpianto",
+  "name": "RLCompositionTesseraPortatoreImpianto",
   "title": "Composition PTI - Piano Terapeutico Individuale",
   "status": "draft",
   "date": "2026-11-10",

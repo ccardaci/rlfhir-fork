@@ -1,0 +1,407 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "CodeSystem-RLCodiceRegionaleVaccino",
+  "url": "https://fhir.siss.regione.lombardia.it/CodeSystem/RLCodiceRegionaleVaccino",
+  "identifier": [
+    {
+      "system": "urn:ietf:rfc:3986",
+      "value": "urn:oid:2.16.840.1.113883.2.9.2.30.6.2"
+    }
+  ],
+  "version": "1.0",
+  "name": "RLCodiceRegionaleVaccino",
+  "title": "Codice regionale del vaccino",
+  "status": "active",
+  "experimental": false,
+  "date": "2026-11-16",
+  "publisher": "Regione Lombardia",
+  "description": "OID: 2.16.840.1.113883.2.9.2.30.6.2",
+  "caseSensitive": true,
+  "content": "complete",
+  "concept": [
+    {
+      "code": "001",
+      "display": "ANTI POLIO SALK-TETANICA-DIFTERICA PED.-PERTOSSE-EPATITE B PEDIATRICA-HAEMOPHILUS"
+    },
+    {
+      "code": "002",
+      "display": "ANTI TETANICA-DIFTERICA ADULTI"
+    },
+    {
+      "code": "003",
+      "display": "ANTI TETANICA-DIFTERICA PED."
+    },
+    {
+      "code": "004",
+      "display": "ANTI TETANICA-DIFTERICA PED.-PERTOSSE"
+    },
+    {
+      "code": "005",
+      "display": "ANTI TETANICA-DIFTERICA ADULTI-PERTOSSE"
+    },
+    {
+      "code": "006",
+      "display": "ANTI POLIO SALK-TETANICA-DIFTERICA PED.-PERTOSSE-HAEMOPHILUS"
+    },
+    {
+      "code": "007",
+      "display": "ANTI POLIO SALK-TETANICA-DIFTERICA PED.-PERTOSSE"
+    },
+    {
+      "code": "008",
+      "display": "ANTI POLIO SALK-TETANICA-DIFTERICA ADULTI"
+    },
+    {
+      "code": "009",
+      "display": "ANTI TETANICA-DIFTERICA PED.-PERTOSSE-EPATITE B PEDIATRICA"
+    },
+    {
+      "code": "010",
+      "display": "ANTI POLIO SALK-TETANICA-DIFTERICA PED.-PERTOSSE-EPATITE B PEDIATRICA"
+    },
+    {
+      "code": "011",
+      "display": "ANTI EPATITE B PEDIATRICA-HAEMOPHILUS"
+    },
+    {
+      "code": "012",
+      "display": "ANTI MORBILLO-ROSOLIA"
+    },
+    {
+      "code": "013",
+      "display": "ANTI MORBILLO-PAROTITE-ROSOLIA"
+    },
+    {
+      "code": "014",
+      "display": "ANTI MORBILLO-PAROTITE-ROSOLIA-VARICELLA"
+    },
+    {
+      "code": "015",
+      "display": "ANTI EPATITE A PEDIATRICA-EPATITE B PEDIATRICA"
+    },
+    {
+      "code": "016",
+      "display": "ANTI EPATITE A ADULTI-EPATITE B ADULTI"
+    },
+    {
+      "code": "017",
+      "display": "ANTI POLIO SALK"
+    },
+    {
+      "code": "018",
+      "display": "ANTI POLIO SABIN"
+    },
+    {
+      "code": "019",
+      "display": "ANTI TETANICA"
+    },
+    {
+      "code": "020",
+      "display": "ANTI DIFTERICA PED."
+    },
+    {
+      "code": "021",
+      "display": "ANTI PERTOSSE"
+    },
+    {
+      "code": "022",
+      "display": "ANTI EPATITE B PEDIATRICA"
+    },
+    {
+      "code": "023",
+      "display": "ANTI HAEMOPHILUS"
+    },
+    {
+      "code": "024",
+      "display": "ANTI MORBILLO"
+    },
+    {
+      "code": "025",
+      "display": "ANTI PAROTITE"
+    },
+    {
+      "code": "026",
+      "display": "ANTI ROSOLIA"
+    },
+    {
+      "code": "027",
+      "display": "ANTI EPATITE B ADULTI"
+    },
+    {
+      "code": "028",
+      "display": "ANTI DIFTERICA ADULTI"
+    },
+    {
+      "code": "029",
+      "display": "ANTI EPATITE B PER DIALIZZATI"
+    },
+    {
+      "code": "030",
+      "display": "ANTI MENINGOCOCCO C CONIUGATO"
+    },
+    {
+      "code": "031",
+      "display": "ANTI MENINGOCOCCO ACWY POLISACCARIDICO"
+    },
+    {
+      "code": "032",
+      "display": "ANTI PNEUMOCOCCO 7-VALENTE CONIUGATO"
+    },
+    {
+      "code": "033",
+      "display": "ANTI PNEUMOCOCCO 23-VALENTE POLISACCARIDICO"
+    },
+    {
+      "code": "034",
+      "display": "ANTI EPATITE A PEDIATRICA"
+    },
+    {
+      "code": "035",
+      "display": "ANTI EPATITE A ADULTI"
+    },
+    {
+      "code": "036",
+      "display": "ANTI TIFO ORALE"
+    },
+    {
+      "code": "037",
+      "display": "ANTI TIFO INIETTABILE"
+    },
+    {
+      "code": "038",
+      "display": "ANTI FEBBRE GIALLA"
+    },
+    {
+      "code": "039",
+      "display": "ANTI RABBIA"
+    },
+    {
+      "code": "040",
+      "display": "ANTI ENCEFALITE DA ZECCHE ADULTI"
+    },
+    {
+      "code": "041",
+      "display": "ANTI ENCEFALITE DA ZECCHE PEDIATRICO"
+    },
+    {
+      "code": "042",
+      "display": "ANTI ENCEFALITE GIAPPONESE"
+    },
+    {
+      "code": "043",
+      "display": "ANTI COLERA ORALE"
+    },
+    {
+      "code": "044",
+      "display": "ANTI COLERA INIETTABILE"
+    },
+    {
+      "code": "045",
+      "display": "ANTI VARICELLA"
+    },
+    {
+      "code": "046",
+      "display": "ANTI ROTAVIRUS"
+    },
+    {
+      "code": "047",
+      "display": "ANTI PAPILLOMAVIRUS 4 VAL"
+    },
+    {
+      "code": "048",
+      "display": "ANTI PAPILLOMAVIRUS 2 VAL"
+    },
+    {
+      "code": "049",
+      "display": "ANTI INFLUENZA INTERO"
+    },
+    {
+      "code": "050",
+      "display": "ANTI INFLUENZA SUBUNITA'"
+    },
+    {
+      "code": "051",
+      "display": "ANTI INFLUENZA SPLIT"
+    },
+    {
+      "code": "052",
+      "display": "ANTI INFLUENZA VIROSOMALE"
+    },
+    {
+      "code": "053",
+      "display": "ANTI INFLUENZA ADIUVATO CON MF59"
+    },
+    {
+      "code": "054",
+      "display": "ANTI INFLUENZA PEDIATRICO"
+    },
+    {
+      "code": "055",
+      "display": "ANTI TUBERCOLARE (BCG)"
+    },
+    {
+      "code": "056",
+      "display": "ANTI LEPTOSPIRA"
+    },
+    {
+      "code": "057",
+      "display": "ANTI VAIOLOSA"
+    },
+    {
+      "code": "058",
+      "display": "ANTI POLIO"
+    },
+    {
+      "code": "059",
+      "display": "ANTI MENINGOCOCCO"
+    },
+    {
+      "code": "060",
+      "display": "ANTI PNEUMOCOCCO"
+    },
+    {
+      "code": "061",
+      "display": "ANTI INFLUENZA"
+    },
+    {
+      "code": "062",
+      "display": "ANTI EPATITE"
+    },
+    {
+      "code": "063",
+      "display": "ANTI DIFTERICA"
+    },
+    {
+      "code": "064",
+      "display": "ANTI COLERA"
+    },
+    {
+      "code": "065",
+      "display": "ANTI ENCEFALITE DA ZECCHE"
+    },
+    {
+      "code": "066",
+      "display": "ANTI TETANICA-DIFTERICA PED.-EPATITE B PEDIATRICA"
+    },
+    {
+      "code": "067",
+      "display": "ANTI POLIO SALK-TETANICA-DIFTERICA ADULTI-PERTOSSE"
+    },
+    {
+      "code": "068",
+      "display": "ANTI EPATITE A ADULTI-TIFO INIETTABILE"
+    },
+    {
+      "code": "069",
+      "display": "ANTI TETANICA-DIFTERICA PED.-PERTOSSE-EPATITE B PEDIATRICA-HAEMOPHILUS"
+    },
+    {
+      "code": "070",
+      "display": "ANTI TETANICA-DIFTERICA PED.-PERTOSSE-HAEMOPHILUS"
+    },
+    {
+      "code": "071",
+      "display": "ANTI MENINGOCOCCO C CONIUGATO-HAEMOPHILUS"
+    },
+    {
+      "code": "072",
+      "display": "ANTI MENINGOCOCCO B CONIUGATO"
+    },
+    {
+      "code": "073",
+      "display": "ANTI TIFO"
+    },
+    {
+      "code": "074",
+      "display": "ANTI EPATITE A"
+    },
+    {
+      "code": "075",
+      "display": "ANTI EPATITE B"
+    },
+    {
+      "code": "076",
+      "display": "ANTI MORBILLO-PAROTITE"
+    },
+    {
+      "code": "077",
+      "display": "ANTI MENINGOCOCCO ACWY CONIUGATO"
+    },
+    {
+      "code": "078",
+      "display": "ANTI MENINGOCOCCO AC POLISACCARIDICO"
+    },
+    {
+      "code": "079",
+      "display": "ANTI INFLUENZA PANDEMICA"
+    },
+    {
+      "code": "080",
+      "display": "ANTI TETANICA-DIFTERICA"
+    },
+    {
+      "code": "081",
+      "display": "ANTI TETANICA-DIFTERICA-PERTOSSE"
+    },
+    {
+      "code": "082",
+      "display": "ANTI EPATITE A-EPATITE B"
+    },
+    {
+      "code": "083",
+      "display": "ANTI POLIO SALK-TETANICA-DIFTERICA-PERTOSSE"
+    },
+    {
+      "code": "084",
+      "display": "ANTI PNEUMOCOCCO 10-VALENTE CONIUGATO"
+    },
+    {
+      "code": "085",
+      "display": "ANTI PNEUMOCOCCO 13-VALENTE CONIUGATO"
+    },
+    {
+      "code": "086",
+      "display": "ANTI INFLUENZALE INTRADERMICA 9 MCG."
+    },
+    {
+      "code": "087",
+      "display": "ANTI INFLUENZALE INTRADERMICA 15 MCG."
+    },
+    {
+      "code": "088",
+      "display": "ANTI MENINGOCOCCO A CONIUGATO"
+    },
+    {
+      "code": "089",
+      "display": "ANTI HERPES ZOSTER"
+    },
+    {
+      "code": "090",
+      "display": "ANTI INFLUENZALE SPLIT QUADRIVALENTE"
+    },
+    {
+      "code": "091",
+      "display": "ANTI PAPILLOMAVIRUS 9 VAL"
+    },
+    {
+      "code": "098",
+      "display": "SARS-COV-2 PFIZER"
+    },
+    {
+      "code": "099",
+      "display": "SARS-COV-2 MODERNA"
+    },
+    {
+      "code": "100",
+      "display": "SARS-COV-2 ASTRA ZENECA"
+    },
+    {
+      "code": "101",
+      "display": "SARS-COV-2 JOHNSON-JOHNSON"
+    },
+    {
+      "code": "999",
+      "display": "NON VACCINATO"
+    }
+  ]
+}

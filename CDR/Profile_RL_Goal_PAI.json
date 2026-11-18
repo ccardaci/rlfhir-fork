@@ -31,7 +31,11 @@
         "path": "Goal.description",
         "short": "Obiettivo presa in carico",
         "min": 1,
-        "max": "1"
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://fhir.siss.regione.lombardia.it/ValueSet/RLObiettiviPresaInCarico"
+        }
       },
       {
         "id": "Goal.description.coding",

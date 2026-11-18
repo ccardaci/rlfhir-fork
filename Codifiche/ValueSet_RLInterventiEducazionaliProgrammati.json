@@ -1,0 +1,21 @@
+{
+  "resourceType": "ValueSet",
+  "id": "ValueSet-RLInterventiEducazionaliProgrammati",
+  "url": "https://fhir.siss.regione.lombardia.it/ValueSet/RLInterventiEducazionaliProgrammati",
+  "version": "1.0",
+  "name": "RLInterventiEducazionaliProgrammati",
+  "title": "PAI - Interventi educazionali programmati",
+  "status": "active",
+  "experimental": false,
+  "date": "2026-11-16",
+  "publisher": "Regione Lombardia",
+  "description": "Interventi educazionali programmati (OID: 2.16.840.1.113883.2.9.2.30.3.1.3.13.6.35)",
+  "compose": {
+    "include": [
+      {
+        "system": "https://fhir.siss.regione.lombardia.it/CodeSystem/RLInterventiEducazionaliProgrammati",
+        "version": "1.0"
+      }
+    ]
+  }
+}

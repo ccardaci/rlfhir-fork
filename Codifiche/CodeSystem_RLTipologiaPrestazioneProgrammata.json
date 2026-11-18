@@ -1,0 +1,55 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "CodeSystem-RLTipologiaPrestazioneProgrammata",
+  "url": "https://fhir.siss.regione.lombardia.it/CodeSystem/RLTipologiaPrestazioneProgrammata",
+  "identifier": [
+    {
+      "system": "urn:ietf:rfc:3986",
+      "value": "urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.13.6.18"
+    }
+  ],
+  "version": "1.0",
+  "name": "RLTipologiaPrestazioneProgrammata",
+  "title": "PAI - Tipologia della prestazione programmata",
+  "status": "active",
+  "experimental": false,
+  "date": "2026-11-16",
+  "publisher": "Regione Lombardia",
+  "description": "OID: 2.16.840.1.113883.2.9.2.30.3.1.3.13.6.18",
+  "caseSensitive": true,
+  "content": "complete",
+  "concept": [
+    {
+      "code": "00",
+      "display": "Ambulatoriale"
+    },
+    {
+      "code": "01",
+      "display": "Farmaceutica"
+    },
+    {
+      "code": "02",
+      "display": "Protesica"
+    },
+    {
+      "code": "03",
+      "display": "Bisogni Socio Sanitari"
+    },
+    {
+      "code": "04",
+      "display": "Ricoveri"
+    },
+    {
+      "code": "05",
+      "display": "Vaccinale"
+    },
+    {
+      "code": "06",
+      "display": "Contatto Telefonico Programmato"
+    },
+    {
+      "code": "07",
+      "display": "Interventi Educazionali / Counseling"
+    }
+  ]
+}

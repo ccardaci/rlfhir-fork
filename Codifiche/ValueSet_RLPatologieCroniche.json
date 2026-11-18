@@ -1,0 +1,21 @@
+{
+  "resourceType": "ValueSet",
+  "id": "ValueSet-RLPatologieCroniche",
+  "url": "https://fhir.siss.regione.lombardia.it/ValueSet/RLPatologieCroniche",
+  "version": "1.0",
+  "name": "RLPatologieCroniche",
+  "title": "Patologie croniche del paziente (storia clinica)",
+  "status": "active",
+  "experimental": false,
+  "date": "2026-11-16",
+  "publisher": "Regione Lombardia",
+  "description": "Codifica delle patologie croniche del paziente (storia clinica) (OID: 2.16.840.1.113883.2.9.77.22.11.10)",
+  "compose": {
+    "include": [
+      {
+        "system": "https://fhir.siss.regione.lombardia.it/CodeSystem/RLPatologieCroniche",
+        "version": "1.0"
+      }
+    ]
+  }
+}

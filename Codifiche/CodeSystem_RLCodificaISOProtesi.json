@@ -1,0 +1,21 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "CodeSystem-RLCodificaISOProtesi",
+  "url": "https://fhir.siss.regione.lombardia.it/CodeSystem/RLCodificaISOProtesi",
+  "identifier": [
+    {
+      "system": "urn:ietf:rfc:3986",
+      "value": "urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.13.6.25"
+    }
+  ],
+  "version": "1.0",
+  "name": "RLCodificaISOProtesi",
+  "title": "PAI - Codifica ISO delle protesi e degli ausili",
+  "status": "active",
+  "experimental": false,
+  "date": "2026-11-16",
+  "publisher": "Regione Lombardia",
+  "description": "OID: 2.16.840.1.113883.2.9.2.30.3.1.3.13.6.25",
+  "caseSensitive": true,
+  "content": "not-present"
+}

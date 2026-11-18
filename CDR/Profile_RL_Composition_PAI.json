@@ -121,7 +121,11 @@
         "path": "Composition.type",
         "short": "Identifica la tipologia di documento",
         "min": 1,
-        "max": "1"
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://fhir.siss.regione.lombardia.it/ValueSet/RLTipologiaDocumento"
+        }
       },
       {
         "id": "Composition.type.coding",
@@ -367,6 +371,10 @@
               "code": "1"
             }
           ]
+        },
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://fhir.siss.regione.lombardia.it/ValueSet/RLSezioniPAI"
         }
       },
       {
@@ -446,6 +454,10 @@
               "code": "9"
             }
           ]
+        },
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://fhir.siss.regione.lombardia.it/ValueSet/RLSezioniPAI"
         }
       },
       {
@@ -524,6 +536,10 @@
               "code": "2"
             }
           ]
+        },
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://fhir.siss.regione.lombardia.it/ValueSet/RLSezioniPAI"
         }
       },
       {
@@ -607,6 +623,10 @@
               "code": "3"
             }
           ]
+        },
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://fhir.siss.regione.lombardia.it/ValueSet/RLSezioniPAI"
         }
       },
       {
@@ -776,6 +796,10 @@
               "code": "4"
             }
           ]
+        },
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://fhir.siss.regione.lombardia.it/ValueSet/RLSezioniPAI"
         }
       },
       {
@@ -823,7 +847,9 @@
               "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLServiceRequestPAI",
               "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLMedicationRequestPAI",
               "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLDeviceRequestPAI",
-              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCommunicationRequestPAI"
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCommunicationRequestPAI",
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCarePlanPAI",
+              "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationValutazionePAI"
             ]
           }
         ]
@@ -857,6 +883,10 @@
               "code": "5"
             }
           ]
+        },
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://fhir.siss.regione.lombardia.it/ValueSet/RLSezioniPAI"
         }
       },
       {
@@ -1022,6 +1052,10 @@
               "code": "6"
             }
           ]
+        },
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://fhir.siss.regione.lombardia.it/ValueSet/RLSezioniPAI"
         }
       },
       {
@@ -1100,6 +1134,10 @@
               "code": "7"
             }
           ]
+        },
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://fhir.siss.regione.lombardia.it/ValueSet/RLSezioniPAI"
         }
       },
       {

@@ -1,0 +1,63 @@
+{
+  "resourceType": "ValueSet",
+  "id": "ValueSet-RLOsservazioniProgrammazione",
+  "url": "https://fhir.siss.regione.lombardia.it/ValueSet/RLOsservazioniProgrammazione",
+  "version": "1.0",
+  "name": "RLOsservazioniProgrammazione",
+  "title": "PAI - Osservazioni della programmazione clinico assistenziale",
+  "status": "active",
+  "experimental": false,
+  "date": "2026-11-16",
+  "publisher": "Regione Lombardia",
+  "description": "Codici delle osservazioni della programmazione clinico assistenziale (OID: 2.16.840.1.113883.2.9.2.30.3.1.3.13.6.17)",
+  "compose": {
+    "include": [
+      {
+        "system": "https://fhir.siss.regione.lombardia.it/CodeSystem/RLOsservazioniProgrammazione",
+        "version": "1.0",
+        "concept": [
+          {
+            "code": "1",
+            "display": "Numero sedute per ciclo"
+          },
+          {
+            "code": "18",
+            "display": "Data_ultima_valutazione"
+          },
+          {
+            "code": "19",
+            "display": "Durata"
+          },
+          {
+            "code": "2",
+            "display": "Quantità"
+          },
+          {
+            "code": "20",
+            "display": "Posologia e note"
+          },
+          {
+            "code": "21",
+            "display": "Unità farmaco"
+          },
+          {
+            "code": "22",
+            "display": "Note"
+          },
+          {
+            "code": "23",
+            "display": "Quantità Annua"
+          },
+          {
+            "code": "24",
+            "display": "Intervallo"
+          },
+          {
+            "code": "3",
+            "display": "Frequenza"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -292,7 +292,7 @@
  Profilo che descrive il documento Piano Terapeutico Individuale
  </td>
  <td>
- {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCompositionPti}}
+ {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCompositionTesseraPortatoreImpianto}}
  </td>
 </tr>
 <tr>

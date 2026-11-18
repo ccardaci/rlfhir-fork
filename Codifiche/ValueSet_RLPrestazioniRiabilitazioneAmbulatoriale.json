@@ -1,0 +1,21 @@
+{
+  "resourceType": "ValueSet",
+  "id": "ValueSet-RLPrestazioniRiabilitazioneAmbulatoriale",
+  "url": "https://fhir.siss.regione.lombardia.it/ValueSet/RLPrestazioniRiabilitazioneAmbulatoriale",
+  "version": "1.0",
+  "name": "RLPrestazioniRiabilitazioneAmbulatoriale",
+  "title": "PAI - Prestazioni di riabilitazione ambulatoriale",
+  "status": "active",
+  "experimental": false,
+  "date": "2026-11-16",
+  "publisher": "Regione Lombardia",
+  "description": "Prestazioni di riabilitazione ambulatoriale (OID: 2.16.840.1.113883.2.9.2.30.3.1.3.13.6.39)",
+  "compose": {
+    "include": [
+      {
+        "system": "https://fhir.siss.regione.lombardia.it/CodeSystem/RLPrestazioniRiabilitazioneAmbulatoriale",
+        "version": "1.0"
+      }
+    ]
+  }
+}

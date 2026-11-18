@@ -48,7 +48,11 @@
         "sliceName": "atc",
         "short": "Codice ATC",
         "min": 0,
-        "max": "1"
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.it/fhir/itcore/ValueSet/vs-whoatc"
+        }
       },
       {
         "id": "Medication.code.coding:atc.system",
@@ -79,7 +83,11 @@
         "sliceName": "aic",
         "short": "Codice AIC",
         "min": 0,
-        "max": "1"
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.it/fhir/lab-report/ValueSet/aifa-aic"
+        }
       },
       {
         "id": "Medication.code.coding:aic.system",
@@ -110,7 +118,11 @@
         "sliceName": "ge",
         "short": "Codice GE",
         "min": 0,
-        "max": "1"
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.it/fhir/itcore/ValueSet/vs-aifa-ge"
+        }
       },
       {
         "id": "Medication.code.coding:ge.system",

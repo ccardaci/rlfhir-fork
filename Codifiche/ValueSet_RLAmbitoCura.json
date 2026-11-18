@@ -1,0 +1,27 @@
+{
+  "resourceType": "ValueSet",
+  "id": "ValueSet-RLAmbitoCura",
+  "url": "https://fhir.siss.regione.lombardia.it/ValueSet/RLAmbitoCura",
+  "version": "1.0",
+  "name": "RLAmbitoCura",
+  "title": "PAI - Ambito di cura",
+  "status": "active",
+  "experimental": false,
+  "date": "2026-11-16",
+  "publisher": "Regione Lombardia",
+  "description": "Ambito di cura della presa in carico del Piano Assistenziale Individuale (OID: 2.16.840.1.113883.2.9.2.30.3.1.3.13.6.2)",
+  "compose": {
+    "include": [
+      {
+        "system": "https://fhir.siss.regione.lombardia.it/CodeSystem/RLAmbitoCura",
+        "version": "1.0",
+        "concept": [
+          {
+            "code": "GEN",
+            "display": "DGR 6551"
+          }
+        ]
+      }
+    ]
+  }
+}

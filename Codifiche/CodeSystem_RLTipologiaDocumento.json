@@ -1,0 +1,31 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "CodeSystem-RLTipologiaDocumento",
+  "url": "https://fhir.siss.regione.lombardia.it/CodeSystem/RLTipologiaDocumento",
+  "identifier": [
+    {
+      "system": "urn:ietf:rfc:3986",
+      "value": "urn:oid:2.16.840.1.113883.2.9.2.30.3.1.6.10"
+    }
+  ],
+  "version": "1.0",
+  "name": "RLTipologiaDocumento",
+  "title": "Tipologia di documento",
+  "status": "active",
+  "experimental": false,
+  "date": "2026-11-16",
+  "publisher": "Regione Lombardia",
+  "description": "OID: 2.16.840.1.113883.2.9.2.30.3.1.6.10",
+  "caseSensitive": true,
+  "content": "complete",
+  "concept": [
+    {
+      "code": "17",
+      "display": "PIANO TERAPEUTICO INDIVIDUALE"
+    },
+    {
+      "code": "31",
+      "display": "PIANO ASSISTENZIALE INDIVIDUALE"
+    }
+  ]
+}

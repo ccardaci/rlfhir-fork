@@ -1,0 +1,27 @@
+{
+  "resourceType": "ValueSet",
+  "id": "ValueSet-RLStileVitaFumo",
+  "url": "https://fhir.siss.regione.lombardia.it/ValueSet/RLStileVitaFumo",
+  "version": "1.0",
+  "name": "RLStileVitaFumo",
+  "title": "PAI - Stile di vita: fumo",
+  "status": "active",
+  "experimental": false,
+  "date": "2026-11-16",
+  "publisher": "Regione Lombardia",
+  "description": "Valori dello stile di vita relativo al fumo (OID: 2.16.840.1.113883.2.9.2.30.3.1.3.13.6.13)",
+  "compose": {
+    "include": [
+      {
+        "system": "https://fhir.siss.regione.lombardia.it/CodeSystem/RLStileVitaFumo",
+        "version": "1.0",
+        "concept": [
+          {
+            "code": "01",
+            "display": "Fumatore moderato (<20 sigarette)"
+          }
+        ]
+      }
+    ]
+  }
+}

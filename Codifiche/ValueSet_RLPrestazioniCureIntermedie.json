@@ -1,0 +1,21 @@
+{
+  "resourceType": "ValueSet",
+  "id": "ValueSet-RLPrestazioniCureIntermedie",
+  "url": "https://fhir.siss.regione.lombardia.it/ValueSet/RLPrestazioniCureIntermedie",
+  "version": "1.0",
+  "name": "RLPrestazioniCureIntermedie",
+  "title": "PAI - Prestazioni di cure intermedie",
+  "status": "active",
+  "experimental": false,
+  "date": "2026-11-16",
+  "publisher": "Regione Lombardia",
+  "description": "Prestazioni di cure intermedie (OID: 2.16.840.1.113883.2.9.2.30.3.1.3.13.6.30)",
+  "compose": {
+    "include": [
+      {
+        "system": "https://fhir.siss.regione.lombardia.it/CodeSystem/RLPrestazioniCureIntermedie",
+        "version": "1.0"
+      }
+    ]
+  }
+}

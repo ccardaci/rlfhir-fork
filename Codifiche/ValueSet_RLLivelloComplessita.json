@@ -1,0 +1,27 @@
+{
+  "resourceType": "ValueSet",
+  "id": "ValueSet-RLLivelloComplessita",
+  "url": "https://fhir.siss.regione.lombardia.it/ValueSet/RLLivelloComplessita",
+  "version": "1.0",
+  "name": "RLLivelloComplessita",
+  "title": "PAI - Livello di complessità della patologia principale",
+  "status": "active",
+  "experimental": false,
+  "date": "2026-11-16",
+  "publisher": "Regione Lombardia",
+  "description": "Livello di complessità della patologia principale del Piano Assistenziale Individuale (OID: 2.16.840.1.113883.2.9.2.30.3.1.3.13.6.49)",
+  "compose": {
+    "include": [
+      {
+        "system": "https://fhir.siss.regione.lombardia.it/CodeSystem/RLLivelloComplessita",
+        "version": "1.0",
+        "concept": [
+          {
+            "code": "3",
+            "display": "Livello 3"
+          }
+        ]
+      }
+    ]
+  }
+}

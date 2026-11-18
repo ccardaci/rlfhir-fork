@@ -1,0 +1,21 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "CodeSystem-RLPatologieCroniche",
+  "url": "https://fhir.siss.regione.lombardia.it/CodeSystem/RLPatologieCroniche",
+  "identifier": [
+    {
+      "system": "urn:ietf:rfc:3986",
+      "value": "urn:oid:2.16.840.1.113883.2.9.77.22.11.10"
+    }
+  ],
+  "version": "1.0",
+  "name": "RLPatologieCroniche",
+  "title": "Patologie croniche del paziente (storia clinica)",
+  "status": "active",
+  "experimental": false,
+  "date": "2026-11-16",
+  "publisher": "Regione Lombardia",
+  "description": "OID: 2.16.840.1.113883.2.9.77.22.11.10",
+  "caseSensitive": true,
+  "content": "not-present"
+}

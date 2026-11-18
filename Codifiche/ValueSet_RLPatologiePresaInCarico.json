@@ -1,0 +1,35 @@
+{
+  "resourceType": "ValueSet",
+  "id": "ValueSet-RLPatologiePresaInCarico",
+  "url": "https://fhir.siss.regione.lombardia.it/ValueSet/RLPatologiePresaInCarico",
+  "version": "1.0",
+  "name": "RLPatologiePresaInCarico",
+  "title": "PAI - Patologie della presa in carico",
+  "status": "active",
+  "experimental": false,
+  "date": "2026-11-16",
+  "publisher": "Regione Lombardia",
+  "description": "Patologie della presa in carico del Piano Assistenziale Individuale (OID: 2.16.840.1.113883.2.9.2.30.3.1.3.13.6.10)",
+  "compose": {
+    "include": [
+      {
+        "system": "https://fhir.siss.regione.lombardia.it/CodeSystem/RLPatologiePresaInCarico",
+        "version": "1.0",
+        "concept": [
+          {
+            "code": "48",
+            "display": "IPERCOLESTEROLEMIE FAMILIARI E NON"
+          },
+          {
+            "code": "T49",
+            "display": "[TEST] Patologia secondaria"
+          },
+          {
+            "code": "T50",
+            "display": "[TEST] Patologia addizionale"
+          }
+        ]
+      }
+    ]
+  }
+}

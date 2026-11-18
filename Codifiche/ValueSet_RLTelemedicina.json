@@ -1,0 +1,21 @@
+{
+  "resourceType": "ValueSet",
+  "id": "ValueSet-RLTelemedicina",
+  "url": "https://fhir.siss.regione.lombardia.it/ValueSet/RLTelemedicina",
+  "version": "1.0",
+  "name": "RLTelemedicina",
+  "title": "PAI - Indicazione di erogazione in telemedicina",
+  "status": "active",
+  "experimental": false,
+  "date": "2026-11-16",
+  "publisher": "Regione Lombardia",
+  "description": "Indicazione di erogazione in telemedicina (OID: 2.16.840.1.113883.2.9.2.30.3.1.3.13.6.55)",
+  "compose": {
+    "include": [
+      {
+        "system": "https://fhir.siss.regione.lombardia.it/CodeSystem/RLTelemedicina",
+        "version": "1.0"
+      }
+    ]
+  }
+}

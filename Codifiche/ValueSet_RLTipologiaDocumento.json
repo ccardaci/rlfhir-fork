@@ -1,0 +1,31 @@
+{
+  "resourceType": "ValueSet",
+  "id": "ValueSet-RLTipologiaDocumento",
+  "url": "https://fhir.siss.regione.lombardia.it/ValueSet/RLTipologiaDocumento",
+  "version": "1.0",
+  "name": "RLTipologiaDocumento",
+  "title": "Tipologia di documento",
+  "status": "active",
+  "experimental": false,
+  "date": "2026-11-16",
+  "publisher": "Regione Lombardia",
+  "description": "Tipologia di documento (31 = Piano Assistenziale Individuale) (OID: 2.16.840.1.113883.2.9.2.30.3.1.6.10)",
+  "compose": {
+    "include": [
+      {
+        "system": "https://fhir.siss.regione.lombardia.it/CodeSystem/RLTipologiaDocumento",
+        "version": "1.0",
+        "concept": [
+          {
+            "code": "17",
+            "display": "PIANO TERAPEUTICO INDIVIDUALE"
+          },
+          {
+            "code": "31",
+            "display": "PIANO ASSISTENZIALE INDIVIDUALE"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -24,7 +24,11 @@
         "short": "Livello di complessità",
         "comment": "Valorizzato per la Patologia Principale.",
         "min": 0,
-        "max": "1"
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://fhir.siss.regione.lombardia.it/ValueSet/RLLivelloComplessita"
+        }
       },
       {
         "id": "Condition.severity.coding",
@@ -61,7 +65,11 @@
         "short": "Patologia",
         "comment": "Patologia Principale, Patologia Secondaria o Patologia Addizionale; la posizione è indicata in Encounter.diagnosis.rank.",
         "min": 1,
-        "max": "1"
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://fhir.siss.regione.lombardia.it/ValueSet/RLPatologiePresaInCarico"
+        }
       },
       {
         "id": "Condition.code.coding",

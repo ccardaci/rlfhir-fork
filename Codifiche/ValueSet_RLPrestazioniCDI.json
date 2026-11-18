@@ -1,0 +1,21 @@
+{
+  "resourceType": "ValueSet",
+  "id": "ValueSet-RLPrestazioniCDI",
+  "url": "https://fhir.siss.regione.lombardia.it/ValueSet/RLPrestazioniCDI",
+  "version": "1.0",
+  "name": "RLPrestazioniCDI",
+  "title": "PAI - Prestazioni del centro diurno integrato",
+  "status": "active",
+  "experimental": false,
+  "date": "2026-11-16",
+  "publisher": "Regione Lombardia",
+  "description": "Prestazioni del centro diurno integrato (OID: 2.16.840.1.113883.2.9.2.30.3.1.3.13.6.32)",
+  "compose": {
+    "include": [
+      {
+        "system": "https://fhir.siss.regione.lombardia.it/CodeSystem/RLPrestazioniCDI",
+        "version": "1.0"
+      }
+    ]
+  }
+}

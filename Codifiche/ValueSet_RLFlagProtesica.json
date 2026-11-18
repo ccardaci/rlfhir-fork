@@ -1,0 +1,21 @@
+{
+  "resourceType": "ValueSet",
+  "id": "ValueSet-RLFlagProtesica",
+  "url": "https://fhir.siss.regione.lombardia.it/ValueSet/RLFlagProtesica",
+  "version": "1.0",
+  "name": "RLFlagProtesica",
+  "title": "PAI - Flag protesica",
+  "status": "active",
+  "experimental": false,
+  "date": "2026-11-16",
+  "publisher": "Regione Lombardia",
+  "description": "Flag protesica della richiesta di protesi o ausili (OID: 2.16.840.1.113883.2.9.2.30.3.1.3.13.6.23)",
+  "compose": {
+    "include": [
+      {
+        "system": "https://fhir.siss.regione.lombardia.it/CodeSystem/RLFlagProtesica",
+        "version": "1.0"
+      }
+    ]
+  }
+}

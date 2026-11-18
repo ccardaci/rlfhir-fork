@@ -1,0 +1,21 @@
+{
+  "resourceType": "ValueSet",
+  "id": "ValueSet-RLErogatoriCDI",
+  "url": "https://fhir.siss.regione.lombardia.it/ValueSet/RLErogatoriCDI",
+  "version": "1.0",
+  "name": "RLErogatoriCDI",
+  "title": "PAI - Erogatori dei centri diurni integrati",
+  "status": "active",
+  "experimental": false,
+  "date": "2026-11-16",
+  "publisher": "Regione Lombardia",
+  "description": "Codici degli erogatori dei centri diurni integrati (OID: 2.16.840.1.113883.2.9.2.30.3.1.3.13.6.45)",
+  "compose": {
+    "include": [
+      {
+        "system": "https://fhir.siss.regione.lombardia.it/CodeSystem/RLErogatoriCDI",
+        "version": "1.0"
+      }
+    ]
+  }
+}

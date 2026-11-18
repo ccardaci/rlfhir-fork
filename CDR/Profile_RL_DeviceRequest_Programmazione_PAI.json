@@ -75,7 +75,11 @@
           {
             "code": "CodeableConcept"
           }
-        ]
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://fhir.siss.regione.lombardia.it/ValueSet/RLCodificaISOProtesi"
+        }
       },
       {
         "id": "DeviceRequest.code[x].coding",

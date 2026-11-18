@@ -1,0 +1,21 @@
+{
+  "resourceType": "ValueSet",
+  "id": "ValueSet-RLUnitaMisuraDurataPrestazione",
+  "url": "https://fhir.siss.regione.lombardia.it/ValueSet/RLUnitaMisuraDurataPrestazione",
+  "version": "1.0",
+  "name": "RLUnitaMisuraDurataPrestazione",
+  "title": "PAI - Unità di misura della durata della prestazione programmata",
+  "status": "active",
+  "experimental": false,
+  "date": "2026-11-16",
+  "publisher": "Regione Lombardia",
+  "description": "Unità di misura della durata della prestazione programmata (OID: 2.16.840.1.113883.2.9.2.30.3.1.3.13.6.43)",
+  "compose": {
+    "include": [
+      {
+        "system": "https://fhir.siss.regione.lombardia.it/CodeSystem/RLUnitaMisuraDurataPrestazione",
+        "version": "1.0"
+      }
+    ]
+  }
+}

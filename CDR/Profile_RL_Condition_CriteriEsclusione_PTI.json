@@ -60,7 +60,11 @@
         "short": "Stato del criterio di esclusione",
         "comment": "CDA2: observation/value (xsi:type CD). Valorizzato con il dizionario \"Stato Criteri Esclusione\" (PRJ_PT_StCriteriEscl_LOMB, 2.16.840.1.113883.2.9.2.30.3.1.3.15.6.2). Antitrombotici: criterio richiesto per Ticagrel 60 mg (ATC B01AC24).",
         "min": 1,
-        "max": "1"
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://fhir.siss.regione.lombardia.it/ValueSet/RLStatoCriterioEsclusione"
+        }
       },
       {
         "id": "Condition.code.coding",

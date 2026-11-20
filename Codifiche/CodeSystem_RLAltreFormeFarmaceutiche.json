@@ -1,0 +1,21 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "CodeSystem-RLAltreFormeFarmaceutiche",
+  "url": "https://fhir.siss.regione.lombardia.it/CodeSystem/RLAltreFormeFarmaceutiche",
+  "identifier": [
+    {
+      "system": "urn:ietf:rfc:3986",
+      "value": "urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.15.6.14"
+    }
+  ],
+  "version": "1.0",
+  "name": "RLAltreFormeFarmaceutiche",
+  "title": "PTI - Altre forme farmaceutiche",
+  "status": "active",
+  "experimental": false,
+  "date": "2026-11-19",
+  "publisher": "Regione Lombardia",
+  "description": "OID: 2.16.840.1.113883.2.9.2.30.3.1.3.15.6.14",
+  "caseSensitive": true,
+  "content": "not-present"
+}

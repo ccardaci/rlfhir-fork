@@ -1,0 +1,21 @@
+{
+  "resourceType": "ValueSet",
+  "id": "ValueSet-RLOsservazioniProgrammaTerapeutico",
+  "url": "https://fhir.siss.regione.lombardia.it/ValueSet/RLOsservazioniProgrammaTerapeutico",
+  "version": "1.0",
+  "name": "RLOsservazioniProgrammaTerapeutico",
+  "title": "PTI - Osservazioni del programma terapeutico",
+  "status": "active",
+  "experimental": false,
+  "date": "2026-11-19",
+  "publisher": "Regione Lombardia",
+  "description": "Codici delle osservazioni della sezione Programma Terapeutico (Dosaggio di carico, Grammatura, Quantità nella confezione, Descrizione della prescrizione) (dizionario PRJ_PT_SezProgTer_LOMB, OID: 2.16.840.1.113883.2.9.2.30.3.1.3.15.6.10)",
+  "compose": {
+    "include": [
+      {
+        "system": "https://fhir.siss.regione.lombardia.it/CodeSystem/RLOsservazioniProgrammaTerapeutico",
+        "version": "1.0"
+      }
+    ]
+  }
+}

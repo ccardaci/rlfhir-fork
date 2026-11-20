@@ -7,7 +7,7 @@
 ## Descrizione
 Il profilo RLObservationQuesitoDiagnosticoRad è stato strutturato a partire dalla risorsa generica FHIR [Observation](http://hl7.org/fhir/R4/observation.html) per rappresentare il quesito diagnostico nel contesto del Referto di Radiologia – Regione Lombardia.
 
-Di seguito è presentato il contenuto del profilo in diversi formati. La corrispondente definizione è consultabile al seguente link: {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationQuesitoDiagnosticoRad}}.
+Di seguito è presentato il contenuto del profilo in diversi formati. La corrispondente definizione è consultabile al seguente link: {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationQuesitoDiagnostico}}.
 
 <br>
 <div class="tab">
@@ -22,32 +22,32 @@ Di seguito è presentato il contenuto del profilo in diversi formati. La corrisp
 
 <div id="Snapshot View" class="tabcontent">
   <h3>Snapshot View</h3>
-{{tree:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationQuesitoDiagnosticoRad, snapshot}}
+{{tree:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationQuesitoDiagnostico, snapshot}}
 </div>
 
 <div id="Differential View" class="tabcontent">
   <h3>Differential View</h3>
-{{tree:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationQuesitoDiagnosticoRad, diff}}
+{{tree:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationQuesitoDiagnostico, diff}}
 </div>
 
 <div id="Hybrid View" class="tabcontent" style="display:block">
   <h3>Hybrid View</h3>
-{{tree:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationQuesitoDiagnosticoRad, hybrid}}
+{{tree:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationQuesitoDiagnostico, hybrid}}
 </div>
 
 <div id="Table View" class="tabcontent">
   <h3>Table View</h3>
-{{table:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationQuesitoDiagnosticoRad, snapshot}}
+{{table:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationQuesitoDiagnostico, snapshot}}
 </div>
 
 <div id="XML View" class="tabcontent">
   <h3>XML View</h3>
-{{xml:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationQuesitoDiagnosticoRad, snapshot}}
+{{xml:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationQuesitoDiagnostico, snapshot}}
 </div>
 
 <div id="JSON View" class="tabcontent">
   <h3>JSON View</h3>
-{{json:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationQuesitoDiagnosticoRad, snapshot}}
+{{json:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationQuesitoDiagnostico, snapshot}}
 </div>
 
 <div id="Esempi" class="tabcontent">

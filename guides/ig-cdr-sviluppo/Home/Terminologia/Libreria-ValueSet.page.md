@@ -444,6 +444,153 @@
       <td>Codici degli erogatori di cure palliative</td>
       <td>urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.13.6.52</td>
     </tr>
+    <tr>
+      <td>
+        {{link:https://fhir.siss.regione.lombardia.it/ValueSet/RLStatoCondizioneErogabilita}}
+      </td>
+      <td>Stato della condizione di erogabilità del piano terapeutico</td>
+      <td>urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.15.6.1</td>
+    </tr>
+    <tr>
+      <td>
+        {{link:https://fhir.siss.regione.lombardia.it/ValueSet/RLStatoCriterioEsclusione}}
+      </td>
+      <td>Stato del criterio di esclusione del piano terapeutico</td>
+      <td>urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.15.6.2</td>
+    </tr>
+    <tr>
+      <td>
+        {{link:https://fhir.siss.regione.lombardia.it/ValueSet/RLFlagPrescrizione}}
+      </td>
+      <td>Flag prescrizione del piano terapeutico (prima prescrizione, prosecuzione della cura)</td>
+      <td>urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.15.6.3</td>
+    </tr>
+    <tr>
+      <td>
+        {{link:https://fhir.siss.regione.lombardia.it/ValueSet/RLFlagModificaPrescrizione}}
+      </td>
+      <td>Flag modifica della prescrizione del piano terapeutico</td>
+      <td>urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.15.6.4</td>
+    </tr>
+    <tr>
+      <td>
+        {{link:https://fhir.siss.regione.lombardia.it/ValueSet/RLCondizioniErogabilitaCannabis}}
+      </td>
+      <td>Condizioni di erogabilità del piano terapeutico per la prescrizione di Cannabis</td>
+      <td>urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.15.6.5</td>
+    </tr>
+    <tr>
+      <td>
+        {{link:https://fhir.siss.regione.lombardia.it/ValueSet/RLCondizioniErogabilitaAntiepilettici}}
+      </td>
+      <td>Condizioni di erogabilità del piano terapeutico per la prescrizione di Antiepilettici</td>
+      <td>urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.15.6.15</td>
+    </tr>
+    <tr>
+      <td>
+        {{link:https://fhir.siss.regione.lombardia.it/ValueSet/RLCondizioniErogabilitaAntitrombotici}}
+      </td>
+      <td>Condizioni di erogabilità del piano terapeutico per la prescrizione di Antitrombotici</td>
+      <td>urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.15.6.16</td>
+    </tr>
+    <tr>
+      <td>
+        {{link:https://fhir.siss.regione.lombardia.it/ValueSet/RLCondizioniErogabilitaAntivirali}}
+      </td>
+      <td>Condizioni di erogabilità del piano terapeutico per la prescrizione di Antivirali</td>
+      <td>urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.15.6.17</td>
+    </tr>
+    <tr>
+      <td>
+        {{link:https://fhir.siss.regione.lombardia.it/ValueSet/RLCondizioniErogabilitaBPCO}}
+      </td>
+      <td>Condizioni di erogabilità del piano terapeutico per la prescrizione per BPCO</td>
+      <td>urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.15.6.18</td>
+    </tr>
+    <tr>
+      <td>
+        {{link:https://fhir.siss.regione.lombardia.it/ValueSet/RLCondizioniErogabilitaRanelatoStronzio}}
+      </td>
+      <td>Condizioni di erogabilità del piano terapeutico per la prescrizione di Ranelato di Stronzio</td>
+      <td>urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.15.6.19</td>
+    </tr>
+    <tr>
+      <td>
+        {{link:https://fhir.siss.regione.lombardia.it/ValueSet/RLCondizioniErogabilitaSedativi}}
+      </td>
+      <td>Condizioni di erogabilità del piano terapeutico per la prescrizione di Sedativi</td>
+      <td>urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.15.6.20</td>
+    </tr>
+    <tr>
+      <td>
+        {{link:https://fhir.siss.regione.lombardia.it/ValueSet/RLCriteriEsclusioneAntitrombotici}}
+      </td>
+      <td>Criteri di esclusione del piano terapeutico per la prescrizione di Antitrombotici</td>
+      <td>urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.15.6.21</td>
+    </tr>
+    <tr>
+      <td>
+        {{link:https://fhir.siss.regione.lombardia.it/ValueSet/RLCriteriEsclusioneAntivirali}}
+      </td>
+      <td>Criteri di esclusione del piano terapeutico per la prescrizione di Antivirali</td>
+      <td>urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.15.6.22</td>
+    </tr>
+    <tr>
+      <td>
+        {{link:https://fhir.siss.regione.lombardia.it/ValueSet/RLFormaFarmaceutica}}
+      </td>
+      <td>Forme farmaceutiche del farmaco prescritto nel piano terapeutico</td>
+      <td>urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.15.6.6</td>
+    </tr>
+    <tr>
+      <td>
+        {{link:https://fhir.siss.regione.lombardia.it/ValueSet/RLAltreFormeFarmaceutiche}}
+      </td>
+      <td>Altre forme farmaceutiche del farmaco prescritto nel piano terapeutico</td>
+      <td>urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.15.6.14</td>
+    </tr>
+    <tr>
+      <td>
+        {{link:https://fhir.siss.regione.lombardia.it/ValueSet/RLOsservazioniAnamnestiche}}
+      </td>
+      <td>Codici delle osservazioni della sezione Dati Anamnestici e Obiettivi (Peso, Durata malattia)</td>
+      <td>urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.15.6.8</td>
+    </tr>
+    <tr>
+      <td>
+        {{link:https://fhir.siss.regione.lombardia.it/ValueSet/RLSezioniCondizioniCliniche}}
+      </td>
+      <td>Codici delle sezioni Condizioni di erogabilità e Criteri di esclusione</td>
+      <td>urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.15.6.9</td>
+    </tr>
+    <tr>
+      <td>
+        {{link:https://fhir.siss.regione.lombardia.it/ValueSet/RLOsservazioniProgrammaTerapeutico}}
+      </td>
+      <td>Codici delle osservazioni della sezione Programma Terapeutico (Dosaggio di carico, Grammatura, Quantità nella confezione, Descrizione della prescrizione)</td>
+      <td>urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.15.6.10</td>
+    </tr>
+    <tr>
+      <td>
+        {{link:https://fhir.siss.regione.lombardia.it/ValueSet/RLAttributiPianoTerapeutico}}
+      </td>
+      <td>Codici degli attributi del piano terapeutico (data scadenza, flag prescrizione, flag modifica prescrizione, motivo prosecuzione)</td>
+      <td>urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.15.6.11</td>
+    </tr>
+    <tr>
+      <td>
+        {{link:https://fhir.siss.regione.lombardia.it/ValueSet/RLSezioniPTI}}
+      </td>
+      <td>Codici delle sezioni del Piano Terapeutico Individuale</td>
+      <td>urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.15.6.12</td>
+    </tr>
+    <tr>
+      <td>
+        {{link:https://fhir.siss.regione.lombardia.it/ValueSet/RLPreparatiAllestiti}}
+      </td>
+      <td>Codici dei preparati allestiti</td>
+      <td>urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.9.6.100.10</td>
+    </tr>
   </tbody>
 </table>
   </body>

@@ -1,0 +1,21 @@
+{
+  "resourceType": "ValueSet",
+  "id": "ValueSet-RLSezioniCondizioniCliniche",
+  "url": "https://fhir.siss.regione.lombardia.it/ValueSet/RLSezioniCondizioniCliniche",
+  "version": "1.0",
+  "name": "RLSezioniCondizioniCliniche",
+  "title": "PTI - Sezioni condizioni cliniche",
+  "status": "active",
+  "experimental": false,
+  "date": "2026-11-19",
+  "publisher": "Regione Lombardia",
+  "description": "Codici delle sezioni Condizioni di erogabilità e Criteri di esclusione (dizionario PRJ_PT_SezCondClin_LOMB, OID: 2.16.840.1.113883.2.9.2.30.3.1.3.15.6.9)",
+  "compose": {
+    "include": [
+      {
+        "system": "https://fhir.siss.regione.lombardia.it/CodeSystem/RLSezioniCondizioniCliniche",
+        "version": "1.0"
+      }
+    ]
+  }
+}

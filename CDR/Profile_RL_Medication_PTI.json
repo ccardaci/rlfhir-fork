@@ -50,7 +50,11 @@
         "short": "Codifica ATC",
         "comment": "Usata quando @OID_codifica_farmaco@ è la codifica ATC. ATC obbligatorio in tutti i piani: compare esattamente una volta, nel code o in una translation (ERRORE-528).",
         "min": 1,
-        "max": "1"
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.it/fhir/itcore/ValueSet/vs-whoatc"
+        }
       },
       {
         "id": "Medication.code.coding:atc.system",
@@ -81,7 +85,11 @@
         "short": "Codifica AIC",
         "comment": "Usata quando @OID_codifica_farmaco@ è la codifica AIC.",
         "min": 0,
-        "max": "1"
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.it/fhir/lab-report/ValueSet/aifa-aic"
+        }
       },
       {
         "id": "Medication.code.coding:aic.system",
@@ -112,7 +120,11 @@
         "short": "Codifica Gruppo di Equivalenza",
         "comment": "Usata quando @OID_codifica_farmaco@ è la codifica GE.",
         "min": 0,
-        "max": "1"
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.it/fhir/itcore/ValueSet/vs-aifa-ge"
+        }
       },
       {
         "id": "Medication.code.coding:gruppoEquivalenza.system",
@@ -143,7 +155,11 @@
         "short": "Codifica Preparati Allestiti (PA)",
         "comment": "Ammesso solo in translation (schematron v1.0.0, ERRORE-527). Stessa convenzione OID di ATC/AIC/GE.",
         "min": 0,
-        "max": "1"
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://fhir.siss.regione.lombardia.it/ValueSet/RLPreparatiAllestiti"
+        }
       },
       {
         "id": "Medication.code.coding:preparatiAllestiti.system",
@@ -185,7 +201,7 @@
         "id": "Medication.form.coding.system",
         "path": "Medication.form.coding.system",
         "short": "Sistema di codifica",
-        "comment": "Valore previsto: urn:oid:@OID_codifica_forma_farmaceutica@.",
+        "comment": "Valori previsti: urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.15.6.6 (dizionario PRJ_PT_FrmFarma_LOMB, forme farmaceutiche) oppure urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.15.6.14 (dizionario PRJ_PT_AltrFrmFarma_LOMB, altre forme farmaceutiche, usato dal piano Cannabis). Nessun fixedUri né binding: i sistemi ammessi sono due (ValueSet RLFormaFarmaceutica e RLAltreFormeFarmaceutiche).",
         "min": 1,
         "max": "1"
       },

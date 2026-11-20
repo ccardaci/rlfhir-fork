@@ -1,0 +1,21 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "CodeSystem-RLSezioniPTI",
+  "url": "https://fhir.siss.regione.lombardia.it/CodeSystem/RLSezioniPTI",
+  "identifier": [
+    {
+      "system": "urn:ietf:rfc:3986",
+      "value": "urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.15.6.12"
+    }
+  ],
+  "version": "1.0",
+  "name": "RLSezioniPTI",
+  "title": "PTI - Sezioni del piano terapeutico",
+  "status": "active",
+  "experimental": false,
+  "date": "2026-11-19",
+  "publisher": "Regione Lombardia",
+  "description": "OID: 2.16.840.1.113883.2.9.2.30.3.1.3.15.6.12",
+  "caseSensitive": true,
+  "content": "not-present"
+}

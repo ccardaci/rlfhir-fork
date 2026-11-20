@@ -7,7 +7,7 @@
 ## Descrizione
 Il profilo RLCompositionRAD è stato strutturato a partire dalla risorsa generica FHIR [Composition](https://hl7.org/fhir/R4/composition.html) per contenere le informazioni relative all'assistenza sanitaria del paziente assistito in Regione Lombardia.
 
-Di seguito è presentato il contenuto del profilo in diversi formati. La corrispondente definizione è consultabile al seguente link: {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCompositionRAD}}.
+Di seguito è presentato il contenuto del profilo in diversi formati. La corrispondente definizione è consultabile al seguente link: {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCompositionRefertoRadiologia}}.
 
 <br>
 <div class="tab">
@@ -22,32 +22,32 @@ Di seguito è presentato il contenuto del profilo in diversi formati. La corrisp
 
 <div id="Snapshot View" class="tabcontent">
   <h3>Snapshot View</h3>
-{{tree:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCompositionRAD, snapshot}}
+{{tree:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCompositionRefertoRadiologia, snapshot}}
 </div>
 
 <div id="Differential View" class="tabcontent">
   <h3>Differential View</h3>
-{{tree:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCompositionRAD, diff}}
+{{tree:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCompositionRefertoRadiologia, diff}}
 </div>
 
 <div id="Hybrid View" class="tabcontent"  style="display:block">
   <h3>Hybrid View</h3>
-{{tree:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCompositionRAD, hybrid}}
+{{tree:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCompositionRefertoRadiologia, hybrid}}
 </div>
 
 <div id="Table View" class="tabcontent">
   <h3>Table View</h3>
-{{table:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCompositionRAD, snapshot}}
+{{table:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCompositionRefertoRadiologia, snapshot}}
 </div>
 
 <div id="XML View" class="tabcontent">
   <h3>XML View</h3>
-{{xml:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCompositionRAD, snapshot}}
+{{xml:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCompositionRefertoRadiologia, snapshot}}
 </div>
 
 <div id="JSON View" class="tabcontent">
   <h3>JSON View</h3>
-{{json:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCompositionRAD, snapshot}}
+{{json:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCompositionRefertoRadiologia, snapshot}}
 </div>
 
 <div id="Esempi" class="tabcontent">

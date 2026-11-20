@@ -21,7 +21,7 @@
       {
         "id": "Observation.status",
         "path": "Observation.status",
-        "short": "Stato dell’osservazione",
+        "short": "Stato dell osservazione",
         "comment": "Non presente nel CDA2.",
         "min": 1,
         "max": "1",
@@ -33,7 +33,11 @@
         "short": "Peso",
         "comment": "Antiepilettici: richiesto per Perampanel (ATC N03AX22). Antitrombotici: richiesto per Prasugrel (ATC B01AC22).",
         "min": 1,
-        "max": "1"
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://fhir.siss.regione.lombardia.it/ValueSet/RLOsservazioniAnamnestiche"
+        }
       },
       {
         "id": "Observation.code.coding",

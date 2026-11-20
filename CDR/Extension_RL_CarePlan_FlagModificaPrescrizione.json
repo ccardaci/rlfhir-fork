@@ -39,7 +39,11 @@
           {
             "code": "CodeableConcept"
           }
-        ]
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://fhir.siss.regione.lombardia.it/ValueSet/RLFlagModificaPrescrizione"
+        }
       },
       {
         "id": "Extension.valueCodeableConcept",

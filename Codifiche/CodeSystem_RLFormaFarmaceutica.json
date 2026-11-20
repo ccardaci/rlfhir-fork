@@ -1,0 +1,1199 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "CodeSystem-RLFormaFarmaceutica",
+  "url": "https://fhir.siss.regione.lombardia.it/CodeSystem/RLFormaFarmaceutica",
+  "identifier": [
+    {
+      "system": "urn:ietf:rfc:3986",
+      "value": "urn:oid:2.16.840.1.113883.2.9.2.30.3.1.3.15.6.6"
+    }
+  ],
+  "version": "1.0",
+  "name": "RLFormaFarmaceutica",
+  "title": "PTI - Forme farmaceutiche",
+  "status": "active",
+  "experimental": false,
+  "date": "2026-11-19",
+  "publisher": "Regione Lombardia",
+  "description": "OID: 2.16.840.1.113883.2.9.2.30.3.1.3.15.6.6",
+  "caseSensitive": true,
+  "content": "complete",
+  "concept": [
+    {
+      "code": "01",
+      "display": "FIALESIRINGHE"
+    },
+    {
+      "code": "02",
+      "display": "FIALE"
+    },
+    {
+      "code": "03",
+      "display": "FIALE + FIALE SOLVENTE"
+    },
+    {
+      "code": "04",
+      "display": "FLACONCINI + FIALE SOLVENTE"
+    },
+    {
+      "code": "05",
+      "display": "FLACONCINI/FIALOIDI"
+    },
+    {
+      "code": "06",
+      "display": "PREPARAZIONE INIETTABILE"
+    },
+    {
+      "code": "07",
+      "display": "COMPRESSE"
+    },
+    {
+      "code": "08",
+      "display": "COMPRESSE GASTRORESISTENTI"
+    },
+    {
+      "code": "09",
+      "display": "PILLOLE"
+    },
+    {
+      "code": "10",
+      "display": "CAPSULE"
+    },
+    {
+      "code": "11",
+      "display": "PERLONGETTEN"
+    },
+    {
+      "code": "12",
+      "display": "GOCCE ORALI"
+    },
+    {
+      "code": "13",
+      "display": "POLVERE ORALE"
+    },
+    {
+      "code": "14",
+      "display": "GRANULATO"
+    },
+    {
+      "code": "15",
+      "display": "SCIROPPO"
+    },
+    {
+      "code": "16",
+      "display": "SOSPENSIONE ORALE"
+    },
+    {
+      "code": "17",
+      "display": "FLACONCINI OS"
+    },
+    {
+      "code": "18",
+      "display": "PERLE"
+    },
+    {
+      "code": "19",
+      "display": "CIALDINI/CACHET"
+    },
+    {
+      "code": "20",
+      "display": "BOLI"
+    },
+    {
+      "code": "21",
+      "display": "CREMA"
+    },
+    {
+      "code": "22",
+      "display": "POMATA"
+    },
+    {
+      "code": "23",
+      "display": "UNGUENTO"
+    },
+    {
+      "code": "24",
+      "display": "GEL"
+    },
+    {
+      "code": "25",
+      "display": "EMULSIONE"
+    },
+    {
+      "code": "26",
+      "display": "SOLUZIONE"
+    },
+    {
+      "code": "27",
+      "display": "SOSPENSIONE USO ESTERNO"
+    },
+    {
+      "code": "28",
+      "display": "POLVERE USO ESTERNO"
+    },
+    {
+      "code": "29",
+      "display": "LIQUIDO USO ESTERNO"
+    },
+    {
+      "code": "30",
+      "display": "GOCCE OTORINOLARINGOLOGICHE"
+    },
+    {
+      "code": "31",
+      "display": "COLLIRIO"
+    },
+    {
+      "code": "32",
+      "display": "POMATA OFTALMICA"
+    },
+    {
+      "code": "33",
+      "display": "BAGNO OCULARE"
+    },
+    {
+      "code": "34",
+      "display": "SPRAY"
+    },
+    {
+      "code": "35",
+      "display": "SUPPOSTE"
+    },
+    {
+      "code": "36",
+      "display": "CLISMA"
+    },
+    {
+      "code": "37",
+      "display": "CREMA VAGINALE"
+    },
+    {
+      "code": "38",
+      "display": "COMPRESSE VAGINALI"
+    },
+    {
+      "code": "39",
+      "display": "OVULI VAGINALI"
+    },
+    {
+      "code": "40",
+      "display": "LAVANDA VAGINALE"
+    },
+    {
+      "code": "41",
+      "display": "COLLUTORIO"
+    },
+    {
+      "code": "42",
+      "display": "LATTE"
+    },
+    {
+      "code": "43",
+      "display": "CONFETTI"
+    },
+    {
+      "code": "44",
+      "display": "LOZIONE"
+    },
+    {
+      "code": "45",
+      "display": "TINTURA"
+    },
+    {
+      "code": "46",
+      "display": "DISCOIDI"
+    },
+    {
+      "code": "47",
+      "display": "GARZE"
+    },
+    {
+      "code": "48",
+      "display": "SCHIUMA"
+    },
+    {
+      "code": "49",
+      "display": "AEROSOL"
+    },
+    {
+      "code": "50",
+      "display": "ELISIR"
+    },
+    {
+      "code": "51",
+      "display": "CEROTTI TRANSDERMICI"
+    },
+    {
+      "code": "52",
+      "display": "CANDELETTE VAGINALI"
+    },
+    {
+      "code": "53",
+      "display": "PASTA"
+    },
+    {
+      "code": "54",
+      "display": "COMPRESSE MASTICABILI"
+    },
+    {
+      "code": "55",
+      "display": "TISANA"
+    },
+    {
+      "code": "56",
+      "display": "TEST DIAGNOSTICO"
+    },
+    {
+      "code": "57",
+      "display": "CARAMELLE E PASTIGLIE"
+    },
+    {
+      "code": "58",
+      "display": "SALI"
+    },
+    {
+      "code": "59",
+      "display": "VARIE U.E.: OVATTA, STICK..."
+    },
+    {
+      "code": "60",
+      "display": "MARMELLATA"
+    },
+    {
+      "code": "61",
+      "display": "PESSARI/SPUGNE"
+    },
+    {
+      "code": "62",
+      "display": "BISCOTTI"
+    },
+    {
+      "code": "63",
+      "display": "TUBO SIRINGA"
+    },
+    {
+      "code": "64",
+      "display": "CARPULE"
+    },
+    {
+      "code": "65",
+      "display": "GAS"
+    },
+    {
+      "code": "66",
+      "display": "COMPRESSE DELITESCENTI"
+    },
+    {
+      "code": "67",
+      "display": "COMPRESSE EFFERVESCENTI / COMPRESSE SOLUBILI"
+    },
+    {
+      "code": "68",
+      "display": "SHAMPOO"
+    },
+    {
+      "code": "69",
+      "display": "GEL OFTALMICO"
+    },
+    {
+      "code": "70",
+      "display": "UNGUENTO OFTALMICO"
+    },
+    {
+      "code": "71",
+      "display": "CARTUCCIA"
+    },
+    {
+      "code": "72",
+      "display": "POLVERE PER INALAZIONE"
+    },
+    {
+      "code": "73",
+      "display": "FIALA + SIRINGA"
+    },
+    {
+      "code": "74",
+      "display": "COMPRESSE RIVESTITE"
+    },
+    {
+      "code": "75",
+      "display": "COMPRESSE ORODISPERSIBILI / COMPRESSE SUBLINGUALI"
+    },
+    {
+      "code": "76",
+      "display": "SOSPENSIONE DENTALE"
+    },
+    {
+      "code": "77",
+      "display": "GRANULI"
+    },
+    {
+      "code": "78",
+      "display": "GEL RETTALE"
+    },
+    {
+      "code": "79",
+      "display": "SCHIUMA RETTALE"
+    },
+    {
+      "code": "80",
+      "display": "SOSPENSIONE RETTALE"
+    },
+    {
+      "code": "81",
+      "display": "CEROTTI + COMPRESSE RIVESTITE"
+    },
+    {
+      "code": "82",
+      "display": "SISTEMA A RILASCIO VAGINALE"
+    },
+    {
+      "code": "83",
+      "display": "SOLUZIONE PER CONSERVAZIONE DI ORGANI"
+    },
+    {
+      "code": "84",
+      "display": "EMULSIONE ORALE"
+    },
+    {
+      "code": "85",
+      "display": "IMPIANTO"
+    },
+    {
+      "code": "86",
+      "display": "GEL INTESTINALE"
+    },
+    {
+      "code": "87",
+      "display": "INSERTO DENTALE"
+    },
+    {
+      "code": "88",
+      "display": "INSERTO OFTALMICO"
+    },
+    {
+      "code": "89",
+      "display": "BASTONCINO URETRALE/DISPOSITIVO TRANSURETRALE"
+    },
+    {
+      "code": "90",
+      "display": "LIOFILIZZATO ORALE"
+    },
+    {
+      "code": "91",
+      "display": "POLVERE PER SOSPENSIONE ENDOVESCICALE"
+    },
+    {
+      "code": "92",
+      "display": "SISTEMA A RILASCIO INTRAUTERINO"
+    },
+    {
+      "code": "93",
+      "display": "PRECURSORE RADIOFARMACEUTICO"
+    },
+    {
+      "code": "94",
+      "display": "SOLUZIONE ADESIVO TISSUTALE"
+    },
+    {
+      "code": "95",
+      "display": "MATITA CUTANEA"
+    },
+    {
+      "code": "96",
+      "display": "COLLARE"
+    },
+    {
+      "code": "97",
+      "display": "FILM ORODISPERSIBILE"
+    },
+    {
+      "code": "98",
+      "display": "SOLUZIONE RETTALE"
+    },
+    {
+      "code": "99",
+      "display": "SOLUZIONE PER IRRIGAZIONE"
+    },
+    {
+      "code": "A1",
+      "display": "CAPSULE GASTRORESISTENTI"
+    },
+    {
+      "code": "A2",
+      "display": "SMALTO MEDICATO"
+    },
+    {
+      "code": "A3",
+      "display": "SISTEMA A RILASCIO INTRARUMINALE"
+    },
+    {
+      "code": "A4",
+      "display": "POLVERE PER SOLUZIONE"
+    },
+    {
+      "code": "A5",
+      "display": "SOLUZIONE PER MUCOSA ORALE"
+    },
+    {
+      "code": "A6",
+      "display": "COMPRESSE SOLUBILI E MASTICABILI"
+    },
+    {
+      "code": "A7",
+      "display": "GEL ORALE"
+    },
+    {
+      "code": "A8",
+      "display": "POLVERE E SOLVENTE PER ADESIVO TISSUTALE"
+    },
+    {
+      "code": "A9",
+      "display": "CAPSULE MOLLI"
+    },
+    {
+      "code": "B1",
+      "display": "CAPSULE RIGIDE"
+    },
+    {
+      "code": "B2",
+      "display": "CAPSULE RIGIDE GASTRORESISTENTI"
+    },
+    {
+      "code": "B3",
+      "display": "CAPSULE RIGIDE RILASCIO MODIFICATO"
+    },
+    {
+      "code": "B4",
+      "display": "CAPSULE RIGIDE RILASCIO PROLUNGATO"
+    },
+    {
+      "code": "B5",
+      "display": "CAPSULE RILASCIO MODIFICATO"
+    },
+    {
+      "code": "B6",
+      "display": "CAPSULE RILASCIO PROLUNGATO"
+    },
+    {
+      "code": "B7",
+      "display": "CAPSULE VAGINALI"
+    },
+    {
+      "code": "B8",
+      "display": "CARAMELLE"
+    },
+    {
+      "code": "B9",
+      "display": "POLVERE E SOLVENTE PER COLLIRIO SOLUZIONE"
+    },
+    {
+      "code": "C1",
+      "display": "COLLIRIO RILASCIO PROLUNGATO"
+    },
+    {
+      "code": "C2",
+      "display": "COLLIRIO SOLUZIONE"
+    },
+    {
+      "code": "C3",
+      "display": "COLLIRIO SOSPENSIONE"
+    },
+    {
+      "code": "C4",
+      "display": "COLLODIO"
+    },
+    {
+      "code": "C5",
+      "display": "CONCENTRATO PER COLLUTORIO"
+    },
+    {
+      "code": "C6",
+      "display": "COMPRESSE DISPERSIBILI"
+    },
+    {
+      "code": "C7",
+      "display": "COMPRESSE DIVISIBILI"
+    },
+    {
+      "code": "C8",
+      "display": "COMPRESSE DIVISIBILI RILASCIO MODIFICATO"
+    },
+    {
+      "code": "C9",
+      "display": "COMPRESSE DIVISIBILI RILASCIO PROLUNGATO"
+    },
+    {
+      "code": "D1",
+      "display": "COMPRESSE GASTRORESISTENTI RILASCIO MODIFICATO"
+    },
+    {
+      "code": "D2",
+      "display": "COMPRESSE GASTRORESISTENTI RILASCIO PROLUNGATO"
+    },
+    {
+      "code": "D3",
+      "display": "COMPRESSE MUCOADESIVE"
+    },
+    {
+      "code": "D4",
+      "display": "COMPRESSE PER SUFFUMIGI"
+    },
+    {
+      "code": "D5",
+      "display": "COMPRESSE RILASCIO CONTROLLATO"
+    },
+    {
+      "code": "D6",
+      "display": "COMPRESSE RIVESTITE DIVISIBILI"
+    },
+    {
+      "code": "D7",
+      "display": "COMPRESSE RIVESTITE GASTRORESISTENTI"
+    },
+    {
+      "code": "D8",
+      "display": "COMPRESSE RIVESTITE MASTICABILI"
+    },
+    {
+      "code": "D9",
+      "display": "COMPRESSE RIVESTITE RILASCIO MODIFICATO"
+    },
+    {
+      "code": "E1",
+      "display": "COMPRESSE RIVESTITE RILASCIO PROLUNGATO"
+    },
+    {
+      "code": "E2",
+      "display": "COMPRESSE RILASCIO MODIFICATO"
+    },
+    {
+      "code": "E3",
+      "display": "COMPRESSE RILASCIO PROLUNGATO"
+    },
+    {
+      "code": "E4",
+      "display": "COMPRESSE PER SOLUZIONE CUTANEA"
+    },
+    {
+      "code": "E5",
+      "display": "COMPRESSE SUBLINGUALI"
+    },
+    {
+      "code": "E6",
+      "display": "CREMA GENGIVALE"
+    },
+    {
+      "code": "E7",
+      "display": "CREMA OFTALMICA"
+    },
+    {
+      "code": "E8",
+      "display": "CREMA RETTALE"
+    },
+    {
+      "code": "E9",
+      "display": "EMULSIONE PER INFUSIONE"
+    },
+    {
+      "code": "F1",
+      "display": "CONCENTRATO PER EMULSIONE PER INFUSIONE"
+    },
+    {
+      "code": "F2",
+      "display": "GEL DENTALE"
+    },
+    {
+      "code": "F3",
+      "display": "GEL NASALE"
+    },
+    {
+      "code": "F4",
+      "display": "GEL URETRALE"
+    },
+    {
+      "code": "F5",
+      "display": "GEL VAGINALE"
+    },
+    {
+      "code": "F6",
+      "display": "GENGIVARIO"
+    },
+    {
+      "code": "F7",
+      "display": "CONCENTRATO GENGIVARIO"
+    },
+    {
+      "code": "F8",
+      "display": "GOCCE AURICOLARI"
+    },
+    {
+      "code": "F9",
+      "display": "GOCCE AURICOLARI SOLUZIONE"
+    },
+    {
+      "code": "G1",
+      "display": "GOCCE AURICOLARI SOSPENSIONE"
+    },
+    {
+      "code": "G2",
+      "display": "GOCCE NASALI"
+    },
+    {
+      "code": "G3",
+      "display": "GOCCE NASALI SOLUZIONE"
+    },
+    {
+      "code": "G4",
+      "display": "GOCCE ORALI EMULSIONE"
+    },
+    {
+      "code": "G5",
+      "display": "GOCCE ORALI SOLUZIONE"
+    },
+    {
+      "code": "G6",
+      "display": "GOCCE ORALI SOSPENSIONE"
+    },
+    {
+      "code": "G7",
+      "display": "GOCCE OTORINOLARINGOLOGICHE SOSPENSIONE"
+    },
+    {
+      "code": "G8",
+      "display": "GRANULATO PER SOLUZIONE ORALE"
+    },
+    {
+      "code": "G9",
+      "display": "GRANULATO PER SOSPENSIONE ORALE"
+    },
+    {
+      "code": "H1",
+      "display": "GRANULATO RILASCIO MODIFICATO"
+    },
+    {
+      "code": "H2",
+      "display": "IMPIANTO RILASCIO PROLUNGATO"
+    },
+    {
+      "code": "H3",
+      "display": "POLVERE PER LAVANDA VAGINALE"
+    },
+    {
+      "code": "H4",
+      "display": "LIQUIDO LUBRIFICANTE"
+    },
+    {
+      "code": "H5",
+      "display": "LIQUIDO PER INALAZIONE"
+    },
+    {
+      "code": "H6",
+      "display": "MICROCLISMA"
+    },
+    {
+      "code": "H7",
+      "display": "OVULI RILASCIO PROLUNGATO"
+    },
+    {
+      "code": "H8",
+      "display": "PASTA DENTALE"
+    },
+    {
+      "code": "H9",
+      "display": "PASTA GENGIVALE"
+    },
+    {
+      "code": "I1",
+      "display": "PASTA ORALE"
+    },
+    {
+      "code": "I2",
+      "display": "PASTIGLIE"
+    },
+    {
+      "code": "I3",
+      "display": "POLVERE PARODONTALE"
+    },
+    {
+      "code": "I4",
+      "display": "POMATA RETTALE"
+    },
+    {
+      "code": "I5",
+      "display": "POMATA RINOLOGICA"
+    },
+    {
+      "code": "I6",
+      "display": "SCHIUMA GINECOLOGICA"
+    },
+    {
+      "code": "I7",
+      "display": "SOLUZIONE ANTICOAGULANTE"
+    },
+    {
+      "code": "I8",
+      "display": "SOLUZIONE CUTANEA"
+    },
+    {
+      "code": "I9",
+      "display": "POLVERE E SOLVENTE PER SOLUZIONE CUTANEA"
+    },
+    {
+      "code": "J1",
+      "display": "CONCENTRATO SOLUZIONE CUTANEA"
+    },
+    {
+      "code": "J2",
+      "display": "SOLUZIONE PER NEBULIZZAZIONE"
+    },
+    {
+      "code": "J3",
+      "display": "POLVERE E SOLVENTE PER SOLUZIONE PER NEBULIZZAZIONE"
+    },
+    {
+      "code": "J4",
+      "display": "POLVERE PER SOLUZIONE PER NEBULIZZAZIONE"
+    },
+    {
+      "code": "J5",
+      "display": "SOLUZIONE PER NEBULIZZAZIONE E ORALE"
+    },
+    {
+      "code": "J6",
+      "display": "SOLUZIONE DENTALE"
+    },
+    {
+      "code": "J7",
+      "display": "POLVERE E SOLVENTE PER SOLUZIONE GASTROENTERICA"
+    },
+    {
+      "code": "J8",
+      "display": "SOLUZIONE GENGIVALE"
+    },
+    {
+      "code": "J9",
+      "display": "SOLUZIONE INIETTABILE PER INALAZIONE E TOPICA"
+    },
+    {
+      "code": "K1",
+      "display": "SOLUZIONE INIETTABILE"
+    },
+    {
+      "code": "K2",
+      "display": "POLVERE E SOLVENTE PER SOLUZIONE INIETTABILE"
+    },
+    {
+      "code": "K3",
+      "display": "CONCENTRATO E SOLVENTE PER SOLUZIONE INIETTABILE"
+    },
+    {
+      "code": "K4",
+      "display": "SOLUZIONE INIETTABILE RILASCIO PROLUNGATO"
+    },
+    {
+      "code": "K5",
+      "display": "SOLUZIONE INIETTABILE E ORALE"
+    },
+    {
+      "code": "K6",
+      "display": "SOLUZIONE ORALE"
+    },
+    {
+      "code": "K7",
+      "display": "POLVERE E SOLVENTE PER SOLUZIONE ORALE"
+    },
+    {
+      "code": "K8",
+      "display": "POLVERE PER SOLUZIONE ORALE"
+    },
+    {
+      "code": "K9",
+      "display": "CONCENTRATO PER SOLUZIONE ORALE"
+    },
+    {
+      "code": "L1",
+      "display": "SOLUZIONE ORALE E CLISMA"
+    },
+    {
+      "code": "L2",
+      "display": "POLVERE E SOLVENTE PER SOLUZIONE OTOLOGICA"
+    },
+    {
+      "code": "L3",
+      "display": "SOLUZIONE PER DIALISI PERITONEALE"
+    },
+    {
+      "code": "L4",
+      "display": "SOLUZIONE PER EMODIALISI"
+    },
+    {
+      "code": "L5",
+      "display": "SOLUZIONE PER INALAZIONE"
+    },
+    {
+      "code": "L6",
+      "display": "SOLUZIONE PER INFUSIONE"
+    },
+    {
+      "code": "L7",
+      "display": "POLVERE E SOLVENTE PER SOLUZIONE PER INFUSIONE"
+    },
+    {
+      "code": "L8",
+      "display": "POLV CONC SOLUZIONE PER INFUS"
+    },
+    {
+      "code": "L9",
+      "display": "POLVERE PER SOLUZIONE PER INFUSIONE"
+    },
+    {
+      "code": "M1",
+      "display": "CONCENTRATO PER SOLUZIONE PER INFUSIONE"
+    },
+    {
+      "code": "M2",
+      "display": "SOLUZIONE OFTALMICA"
+    },
+    {
+      "code": "M3",
+      "display": "SOLUZIONE PRESSURIZZATA PER INALAZIONE"
+    },
+    {
+      "code": "M4",
+      "display": "SOLUZIONE VAGINALE"
+    },
+    {
+      "code": "M5",
+      "display": "CONCENTRATO E SOLVENTE PER SOLUZIONE VAGINALE"
+    },
+    {
+      "code": "M6",
+      "display": "SOLVENTE USO PARENTERALE"
+    },
+    {
+      "code": "M7",
+      "display": "SOSPENSIONE PER NEBULIZZAZIONE"
+    },
+    {
+      "code": "M8",
+      "display": "POLVERE E SOLVENTE PER SOSPENSIONE ENDOVESCICALE"
+    },
+    {
+      "code": "M9",
+      "display": "SOSPENSIONE INIETTABILE"
+    },
+    {
+      "code": "N1",
+      "display": "POLVERE E SOLVENTE PER SOSPENSIONE INIETTABILE"
+    },
+    {
+      "code": "N2",
+      "display": "POLVERE PER SOSPENSIONE INIETTABILE"
+    },
+    {
+      "code": "N3",
+      "display": "SOSPENSIONE INIETTABILE RILASCIO PROLUNGATO"
+    },
+    {
+      "code": "N4",
+      "display": "POLVERE E SOLVENTE PER SOSPENSIONE INIETTABILE RILASCIO PROLUNGATO"
+    },
+    {
+      "code": "N5",
+      "display": "POLVERE E SOLVENTE PER SOSPENSIONE ORALE"
+    },
+    {
+      "code": "N6",
+      "display": "POLVERE PER SOSPENSIONE ORALE"
+    },
+    {
+      "code": "N7",
+      "display": "POLVERE PER SOSPENSIONE ORALE/RETTALE"
+    },
+    {
+      "code": "N8",
+      "display": "POLVERE PER SOSPENSIONE PER IMPIANTO"
+    },
+    {
+      "code": "N9",
+      "display": "POLVERE PER SOSPENSIONE PER INFUSIONE"
+    },
+    {
+      "code": "O1",
+      "display": "CONCENTRATO PER SOSPENSIONE PER INFUSIONE"
+    },
+    {
+      "code": "O2",
+      "display": "SOSPENSIONE PER INSTILLAZIONE ENDOTRACHEOBRONCHIALE"
+    },
+    {
+      "code": "O3",
+      "display": "SOSPENSIONE PRESSURIZZATA PER INALAZIONE"
+    },
+    {
+      "code": "O4",
+      "display": "POLVERE PER SOSPENSIONE RETTALE"
+    },
+    {
+      "code": "O5",
+      "display": "SOSPENSIONE SPRAY PER MUCOSA ORALE"
+    },
+    {
+      "code": "O6",
+      "display": "SPRAY CUTANEO SOLUZIONE"
+    },
+    {
+      "code": "O7",
+      "display": "SPRAY CUTANEO SOSPENSIONE"
+    },
+    {
+      "code": "O8",
+      "display": "SPRAY MUCOSA ORALE"
+    },
+    {
+      "code": "O9",
+      "display": "SPRAY NASALE"
+    },
+    {
+      "code": "P1",
+      "display": "SPRAY NASALE SOLUZIONE"
+    },
+    {
+      "code": "P2",
+      "display": "SPRAY NASALE SOSPENSIONE"
+    },
+    {
+      "code": "P3",
+      "display": "SPRAY NASALE/ORALE SOLUZIONE"
+    },
+    {
+      "code": "P4",
+      "display": "SPRAY SUBLINGUALE"
+    },
+    {
+      "code": "P5",
+      "display": "UNGUENTO DERMATOLOGICO"
+    },
+    {
+      "code": "P6",
+      "display": "UNGUENTO RETTALE"
+    },
+    {
+      "code": "P7",
+      "display": "UNGUENTO RINOLOGICO"
+    },
+    {
+      "code": "P8",
+      "display": "CREMA DERMATOLOGICA"
+    },
+    {
+      "code": "P9",
+      "display": "UNGUENTO PER INALAZIONE"
+    },
+    {
+      "code": "Q1",
+      "display": "GEL TRANSDERMICO"
+    },
+    {
+      "code": "Q2",
+      "display": "EMULSIONE DERMATOLOGICA"
+    },
+    {
+      "code": "Q3",
+      "display": "SOLUZIONE PER SUFFUMIGI"
+    },
+    {
+      "code": "Q4",
+      "display": "LATTE DERMATOLOGICO"
+    },
+    {
+      "code": "Q5",
+      "display": "STICK PER INALAZIONE"
+    },
+    {
+      "code": "Q6",
+      "display": "TAMPONE"
+    },
+    {
+      "code": "Q7",
+      "display": "SPUGNA MEDICATA"
+    },
+    {
+      "code": "Q8",
+      "display": "COMPRESSE ORODISPERSIBILI"
+    },
+    {
+      "code": "Q9",
+      "display": "COMPRESSE SOLUBILI"
+    },
+    {
+      "code": "R1",
+      "display": "COMPRESSE EFFERVESCENTI"
+    },
+    {
+      "code": "R2",
+      "display": "POLVERE PER SOSPENSIONE ENDOVESCICALE"
+    },
+    {
+      "code": "R3",
+      "display": "POLVERE PER SOLUZIONE INIETTABILE"
+    },
+    {
+      "code": "R4",
+      "display": "SOLUZIONE POUR ON"
+    },
+    {
+      "code": "R5",
+      "display": "SOLUZIONE SPOT ON"
+    },
+    {
+      "code": "R6",
+      "display": "POLVERE PER SOSPENSIONE"
+    },
+    {
+      "code": "R7",
+      "display": "EMULSIONE INIETTABILE"
+    },
+    {
+      "code": "R8",
+      "display": "POMATA INTRAMAMMARIA"
+    },
+    {
+      "code": "R9",
+      "display": "GENERATORE DI RADIONUCLIDI"
+    },
+    {
+      "code": "S1",
+      "display": "MATRICE SIGILLANTE"
+    },
+    {
+      "code": "S2",
+      "display": "COLLIRIO EMULSIONE"
+    },
+    {
+      "code": "S3",
+      "display": "TESSUTO VIVENTE DA COLTURA DI CELLULE"
+    },
+    {
+      "code": "S4",
+      "display": "STRISCIA PER ALVEARE"
+    },
+    {
+      "code": "S5",
+      "display": "TAVOLETTA IN GEL PER API"
+    },
+    {
+      "code": "S6",
+      "display": "DISPERSIONE PER INFUSIONE"
+    },
+    {
+      "code": "S7",
+      "display": "COMPRESSE EFFERVESCENTI DIVISIBILI"
+    },
+    {
+      "code": "S8",
+      "display": "EMPIASTRO MEDICATO"
+    },
+    {
+      "code": "S9",
+      "display": "CEROTTI MEDICATI"
+    },
+    {
+      "code": "T1",
+      "display": "DISPERSIONE PER ALVEARE"
+    },
+    {
+      "code": "T2",
+      "display": "POLVERE PER SOLUZIONE INIETTABILE/INFUSIONE O PER SOLUZIONE DA NEBULIZZARE"
+    },
+    {
+      "code": "T3",
+      "display": "GEL INTRAMAMMARIO"
+    },
+    {
+      "code": "T4",
+      "display": "SOSPENSIONE INTRAMAMMARIA"
+    },
+    {
+      "code": "T5",
+      "display": "SPRAY LARINGOFARINGEO"
+    },
+    {
+      "code": "T6",
+      "display": "GLOBULI"
+    },
+    {
+      "code": "T7",
+      "display": "POLVERE PER SOLUZIONE ENDOVESCICALE"
+    },
+    {
+      "code": "T8",
+      "display": "POLVERE PER DISPERSIONE PER INFUSIONE"
+    },
+    {
+      "code": "T9",
+      "display": "POLVERE NASALE"
+    },
+    {
+      "code": "U1",
+      "display": "COLLARE MEDICATO"
+    },
+    {
+      "code": "U2",
+      "display": "GAS MEDICINALE LIQUEFATTO"
+    },
+    {
+      "code": "U3",
+      "display": "GAS MEDICINALE COMPRESSO"
+    },
+    {
+      "code": "U4",
+      "display": "GAS MEDICINALE SINTETICO COMPRESSO"
+    },
+    {
+      "code": "U5",
+      "display": "GAS MEDICINALE CRIOGENICO"
+    },
+    {
+      "code": "U6",
+      "display": "CEROTTO"
+    },
+    {
+      "code": "U7",
+      "display": "UNGUENTO TRANSDERMICO"
+    },
+    {
+      "code": "U8",
+      "display": "FILM SUBLINGUALE"
+    },
+    {
+      "code": "U9",
+      "display": "SOSPENSIONE INIET CONC SOLV"
+    },
+    {
+      "code": "Z1",
+      "display": "SOLUZIONE PER FERITE A RP"
+    },
+    {
+      "code": "Z2",
+      "display": "GEL INTRAUTERINO"
+    },
+    {
+      "code": "Z3",
+      "display": "DISPERSIONE INIETTABILE CONC"
+    },
+    {
+      "code": "Z4",
+      "display": "POLV+SOLV SOLUZ INIET INFUS OS"
+    },
+    {
+      "code": "Z5",
+      "display": "POLV+SOLV SOLUZ NEBUL/ENDOTR"
+    },
+    {
+      "code": "Z6",
+      "display": "DISPERSIONE INIETTABILE RP"
+    }
+  ]
+}

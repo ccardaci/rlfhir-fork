@@ -923,7 +923,7 @@
             Profilo che descrive header e body della Tessera per il Portatore di Impianto
           </td>
           <td>
-            {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCompositionTesseraPortatoreImpianto}}
+            {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLCompositionPti}}
           </td>
         </tr>
         <tr>

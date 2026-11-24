@@ -1,7 +1,7 @@
 {
   "resourceType": "StructureDefinition",
   "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLMedicationTerapiaConsigliataRSA",
-  "name": "RLMedicationTerapiaConsigliataRSA",
+  "name": "RLMedicationRSA",
   "title": "Medication Terapia Farmacologica Consigliata RSA",
   "status": "draft",
   "date": "2026-10-12",

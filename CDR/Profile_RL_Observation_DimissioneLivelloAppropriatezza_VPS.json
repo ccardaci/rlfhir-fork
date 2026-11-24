@@ -1,7 +1,7 @@
 {
   "resourceType": "StructureDefinition",
   "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationLivelloAppropriatezzaVPS",
-  "name": "RLObservationLivelloAppropriatezzaVPS",
+  "name": "RLObservationAppropriatezzaVPS",
   "title": "Observation Livello Appropriatezza VPS",
   "status": "draft",
   "date": "2026-10-02",

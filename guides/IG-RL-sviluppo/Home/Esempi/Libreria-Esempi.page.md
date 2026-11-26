@@ -362,8 +362,8 @@
     <tr>
       <td>PIC</td>
       <td>Bundle</td>
-      <td>Esempio RLBundleMOST per una valutazione di dimissioni protette con due allegati</td>
-      <td>{{link:Examples/Example_RL_Bundle_MOST_DimissioniProtette.json}}</td>
+      <td>Esempio RLBundleMOSST per una valutazione di dimissioni protette con due allegati</td>
+      <td>{{link:Examples/Example_RL_Bundle_MOSST_DimissioniProtette.json}}</td>
     </tr>
     <tr>
       <td>PIC</td>

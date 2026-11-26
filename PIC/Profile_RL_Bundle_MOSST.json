@@ -1,10 +1,10 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "RLBundleMOST",
-  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLBundleMOST",
-  "name": "RLBundleMOST",
+  "id": "RLBundleMOSST",
+  "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLBundleMOSST",
+  "name": "RLBundleMOSST",
   "status": "active",
-  "description": "Profilo volto a descrivere il contenuto del Bundle inviato da SGDT a MOST",
+  "description": "Profilo volto a descrivere il contenuto del Bundle inviato da SGDT a MOSST",
   "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
@@ -33,7 +33,7 @@
         "short": "Profilo al quale la risorsa si riferisce",
         "min": 1,
         "max": "1",
-        "fixedCanonical": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLBundleMOST"
+        "fixedCanonical": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLBundleMOSST"
       },
       {
         "id": "Bundle.type",

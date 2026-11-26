@@ -644,7 +644,7 @@
         <tr>
           <td>VPS</td>
           <td>
-            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLMedicationRequestTerapiaFarmacoDimissioneVPS.page.md}}
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLMedicationRequestTerapiaDimissioneVPS.page.md}}
           </td>
           <td>
             <a href="http://hl7.org/fhir/R4/medicationrequest.html">MedicationRequest</a>
@@ -719,7 +719,7 @@
         <tr>
           <td>VPS</td>
           <td>
-            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLObservationDimissioneLivelloAppropriatezzaVPS.page.md}}
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLObservationDimissioneAppropriatezzaVPS.page.md}}
           </td>
           <td>
             <a href="http://hl7.org/fhir/R4/observation.html">Observation</a>
@@ -779,7 +779,7 @@
         <tr>
           <td>VPS</td>
           <td>
-            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLObservationDimissioneRichiestaAutopsiaVPS.page.md}}
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLObservationRichiestaAutopsiaVPS.page.md}}
           </td>
           <td>
             <a href="http://hl7.org/fhir/R4/observation.html">Observation</a>
@@ -1034,7 +1034,7 @@
         <tr>
           <td>RSA</td>
           <td>
-            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLObservationAccertamentiEControlliConsigliatiRSA.page.md}}
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLObservationAccertamentiConsigliatiRSA.page.md}}
           </td>
           <td>
             <a href="http://hl7.org/fhir/R4/observation.html">Observation</a>
@@ -1289,7 +1289,7 @@
         <tr>
           <td>PAI</td>
           <td>
-            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLObservationPresaInCaricoCaratterizzazioniClinichePAI.page.md}}
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLObservationPICCaratterizzazioniClinichePAI.page.md}}
           </td>
           <td>
             <a href="http://hl7.org/fhir/R4/observation.html">Observation</a>
@@ -1469,7 +1469,7 @@
         <tr>
           <td>PSS</td>
           <td>
-            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLMedicationStatementTerapieFarmacologichePSS.page.md}}
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLMedicationStatementTerapiePSS.page.md}}
           </td>
           <td>
             <a href="http://hl7.org/fhir/R4/medicationstatement.html">MedicationStatement</a>
@@ -1649,7 +1649,7 @@
         <tr>
           <td>PSS</td>
           <td>
-            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLObservationAssensoDissensoDonazioneOrganiPSS.page.md}}
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLObservationDonazioneOrganiPSS.page.md}}
           </td>
           <td>
             <a href="http://hl7.org/fhir/R4/observation.html">Observation</a>

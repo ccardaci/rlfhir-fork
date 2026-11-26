@@ -79,6 +79,7 @@
         "path": "QuestionnaireResponse.extension",
         "sliceName": "TipologiaValutazione",
         "short": "Tipologia di valutazione",
+        "definition": "In caso la valutazione non richieda la distinzione tra prima valutazione e rivalutazione, inserire il valore \"N\" - \"Valutazione non ADI\"",
         "comment": "Per il dettaglio esaustivo della codifica consultare la Tabella delle tipologia di valutazione contenuta nella sezione dei value-set del profilo presente nell'Implementation Guide.",
         "min": 1,
         "max": "1",

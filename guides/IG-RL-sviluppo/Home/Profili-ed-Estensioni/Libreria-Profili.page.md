@@ -693,6 +693,21 @@
         <tr>
           <td>PIC</td>
           <td>
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLBundleMOST.page.md}}
+          </td>
+          <td>
+            <a href="http://hl7.org/fhir/R4/bundle.html">Bundle</a>
+          </td>
+          <td>
+            Profilo volto a descrivere il contenuto del Bundle inviato da SGDT a MOST.
+          </td>
+          <td>
+            {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLBundleMOST}}
+          </td>
+        </tr>
+        <tr>
+          <td>PIC</td>
+          <td>
             {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLBundleMMG.page.md}}
           </td>
           <td>

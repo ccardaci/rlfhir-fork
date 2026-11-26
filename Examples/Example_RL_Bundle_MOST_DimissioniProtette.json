@@ -1,0 +1,191 @@
+{
+  "resourceType": "Bundle",
+  "id": "esempio-RLBundleMOST-dimissioni-protette",
+  "meta": {
+    "versionId": "1",
+    "lastUpdated": "2026-11-26T16:30:00.000+01:00",
+    "profile": [
+      "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLBundleMOST"
+    ]
+  },
+  "type": "message",
+  "timestamp": "2026-11-26T16:30:00.000+01:00",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:a1b2c3d4-e5f6-4789-abcd-ef1234567890",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "a1b2c3d4-e5f6-4789-abcd-ef1234567890",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-11-26T16:30:00.000+01:00",
+          "profile": [
+            "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPatientCittadino"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "http://hl7.it/sid/codiceFiscale",
+            "value": "RSSMRA80A01F205X"
+          }
+        ],
+        "active": true,
+        "name": [
+          {
+            "family": "Rossi",
+            "given": [
+              "Mario"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1980-01-01"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:b2c3d4e5-f6a7-4890-bcde-f12345678901",
+      "resource": {
+        "resourceType": "Questionnaire",
+        "id": "b2c3d4e5-f6a7-4890-bcde-f12345678901",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-11-26T16:30:00.000+01:00",
+          "profile": [
+            "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLQuestionnaireValutazione"
+          ]
+        },
+        "title": "Scheda di dimissioni protette",
+        "status": "active"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:c3d4e5f6-a7b8-4901-cdef-123456789012",
+      "resource": {
+        "resourceType": "QuestionnaireResponse",
+        "id": "c3d4e5f6-a7b8-4901-cdef-123456789012",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-11-26T16:30:00.000+01:00",
+          "profile": [
+            "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLQuestionnaireResponseValutazione"
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLQuestionnaireResponseTipologiaValutazione",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://fhir.siss.regione.lombardia.it/CodeSystem/SGDT-TipologiaValutazione",
+                  "code": "N",
+                  "display": "Valutazione non ADI"
+                }
+              ]
+            }
+          }
+        ],
+        "questionnaire": "Questionnaire/b2c3d4e5-f6a7-4890-bcde-f12345678901",
+        "status": "completed",
+        "authored": "2026-11-26T16:25:00.000+01:00",
+        "author": {
+          "reference": "Practitioner/d4e5f6a7-b8c9-4012-def1-234567890123",
+          "display": "Infermiere Mario Verdi"
+        },
+        "source": {
+          "reference": "Patient/a1b2c3d4-e5f6-4789-abcd-ef1234567890",
+          "display": "Mario Rossi"
+        },
+        "item": [
+          {
+            "linkId": "1",
+            "text": "Data prevista di dimissione",
+            "answer": [
+              {
+                "valueDate": "2026-12-02"
+              }
+            ]
+          },
+          {
+            "linkId": "2",
+            "text": "Presenza di caregiver",
+            "answer": [
+              {
+                "valueBoolean": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:d4e5f6a7-b8c9-4012-def1-234567890123",
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "d4e5f6a7-b8c9-4012-def1-234567890123",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-11-26T16:30:00.000+01:00",
+          "profile": [
+            "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLDocumentReferenceDocumento"
+          ]
+        },
+        "status": "current",
+        "subject": {
+          "reference": "Patient/a1b2c3d4-e5f6-4789-abcd-ef1234567890"
+        },
+        "date": "2026-11-26T16:20:00.000+01:00",
+        "author": [
+          {
+            "reference": "PractitionerRole/e5f6a7b8-c9d0-4123-ef12-345678901234"
+          }
+        ],
+        "description": "Scheda di valutazione dimissione protetta",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "application/pdf",
+              "data": "JVBERi0xLjQKJcOkw7zDtsOfCjEgMCBvYmoK",
+              "title": "Scheda di valutazione dimissione protetta",
+              "creation": "2026-11-26"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:e5f6a7b8-c9d0-4123-ef12-345678901234",
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "e5f6a7b8-c9d0-4123-ef12-345678901234",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-11-26T16:30:00.000+01:00",
+          "profile": [
+            "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLDocumentReferenceDocumento"
+          ]
+        },
+        "status": "current",
+        "subject": {
+          "reference": "Patient/a1b2c3d4-e5f6-4789-abcd-ef1234567890"
+        },
+        "date": "2026-11-26T16:22:00.000+01:00",
+        "author": [
+          {
+            "reference": "PractitionerRole/e5f6a7b8-c9d0-4123-ef12-345678901234"
+          }
+        ],
+        "description": "Piano di assistenza domiciliare",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "application/pdf",
+              "data": "JVBERi0xLjQKJcOkw7zDtsOfCjIgMCBvYmoK",
+              "title": "Piano di assistenza domiciliare",
+              "creation": "2026-11-26"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

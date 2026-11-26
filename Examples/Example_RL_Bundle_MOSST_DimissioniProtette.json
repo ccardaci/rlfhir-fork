@@ -2,8 +2,6 @@
   "resourceType": "Bundle",
   "id": "esempio-RLBundleMOSST-dimissioni-protette",
   "meta": {
-    "versionId": "1",
-    "lastUpdated": "2026-11-26T16:30:00.000+01:00",
     "profile": [
       "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLBundleMOSST"
     ]
@@ -12,10 +10,9 @@
   "timestamp": "2026-11-26T16:30:00.000+01:00",
   "entry": [
     {
-      "fullUrl": "urn:uuid:a1b2c3d4-e5f6-4789-abcd-ef1234567890",
       "resource": {
         "resourceType": "Patient",
-        "id": "a1b2c3d4-e5f6-4789-abcd-ef1234567890",
+        "id": "94f89259-2d71-4df0-841f-68fdd1746af8",
         "meta": {
           "versionId": "1",
           "lastUpdated": "2026-11-26T16:30:00.000+01:00",
@@ -23,19 +20,31 @@
             "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPatientCittadino"
           ]
         },
+        "extension": [
+          {
+            "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPatientASSTdiRiferimento",
+            "valueCode": "030701"
+          }
+        ],
         "identifier": [
           {
             "system": "http://hl7.it/sid/codiceFiscale",
             "value": "RSSMRA80A01F205X"
           }
         ],
-        "active": true,
         "name": [
           {
-            "family": "Rossi",
+            "family": "ROSSI",
             "given": [
-              "Mario"
+              "MARIO"
             ]
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "+39 333 1234567",
+            "use": "mobile"
           }
         ],
         "gender": "male",
@@ -43,23 +52,6 @@
       }
     },
     {
-      "fullUrl": "urn:uuid:b2c3d4e5-f6a7-4890-bcde-f12345678901",
-      "resource": {
-        "resourceType": "Questionnaire",
-        "id": "b2c3d4e5-f6a7-4890-bcde-f12345678901",
-        "meta": {
-          "versionId": "1",
-          "lastUpdated": "2026-11-26T16:30:00.000+01:00",
-          "profile": [
-            "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLQuestionnaireValutazione"
-          ]
-        },
-        "title": "Scheda di dimissioni protette",
-        "status": "active"
-      }
-    },
-    {
-      "fullUrl": "urn:uuid:c3d4e5f6-a7b8-4901-cdef-123456789012",
       "resource": {
         "resourceType": "QuestionnaireResponse",
         "id": "c3d4e5f6-a7b8-4901-cdef-123456789012",
@@ -88,29 +80,137 @@
         "status": "completed",
         "authored": "2026-11-26T16:25:00.000+01:00",
         "author": {
-          "reference": "Practitioner/d4e5f6a7-b8c9-4012-def1-234567890123",
-          "display": "Infermiere Mario Verdi"
+          "reference": "Practitioner/c3d4e5f6-0003-11ed-b856-02001700b287",
+          "display": "VERDI MARIO"
         },
         "source": {
-          "reference": "Patient/a1b2c3d4-e5f6-4789-abcd-ef1234567890",
-          "display": "Mario Rossi"
+          "reference": "Patient/94f89259-2d71-4df0-841f-68fdd1746af8",
+          "display": "ROSSI MARIO"
         },
         "item": [
           {
             "linkId": "1",
-            "text": "Data prevista di dimissione",
+            "text": "Dispositivi e Terapie in corso - 1",
             "answer": [
               {
-                "valueDate": "2026-12-02"
+                "valueString": "Ossigenoterapia",
+                "item": [
+                  {
+                    "linkId": "B"
+                  }
+                ]
+              },
+              {
+                "valueString": "Catetere Vescicale",
+                "item": [
+                  {
+                    "linkId": "N"
+                  }
+                ]
               }
             ]
           },
           {
             "linkId": "2",
-            "text": "Presenza di caregiver",
+            "text": "Dispositivi e Terapie in corso - 2",
             "answer": [
               {
-                "valueBoolean": true
+                "valueString": "Terapia anticoagulante orale",
+                "item": [
+                  {
+                    "linkId": "B"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "linkId": "3",
+            "text": "Lesioni - Tipologia",
+            "answer": [
+              {
+                "valueString": "Sacro-coccigeo",
+                "item": [
+                  {
+                    "linkId": "A"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "linkId": "4",
+            "text": "Lesioni - Sede",
+            "answer": [
+              {
+                "valueString": "Regione sacrale destra",
+                "item": [
+                  {
+                    "linkId": "A"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "linkId": "5",
+            "text": "Scale di valutazione",
+            "answer": [
+              {
+                "valueInteger": 3,
+                "item": [
+                  {
+                    "linkId": "A"
+                  }
+                ]
+              },
+              {
+                "valueInteger": 12,
+                "item": [
+                  {
+                    "linkId": "B"
+                  }
+                ]
+              },
+              {
+                "valueInteger": 4,
+                "item": [
+                  {
+                    "linkId": "C"
+                  }
+                ]
+              },
+              {
+                "valueInteger": 15,
+                "item": [
+                  {
+                    "linkId": "D"
+                  }
+                ]
+              },
+              {
+                "valueInteger": 2,
+                "item": [
+                  {
+                    "linkId": "E"
+                  }
+                ]
+              },
+              {
+                "valueInteger": 4,
+                "item": [
+                  {
+                    "linkId": "F"
+                  }
+                ]
+              },
+              {
+                "valueInteger": 3,
+                "item": [
+                  {
+                    "linkId": "G"
+                  }
+                ]
               }
             ]
           }
@@ -118,10 +218,51 @@
       }
     },
     {
-      "fullUrl": "urn:uuid:d4e5f6a7-b8c9-4012-def1-234567890123",
+      "resource": {
+        "resourceType": "Questionnaire",
+        "id": "b2c3d4e5-f6a7-4890-bcde-f12345678901",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-11-26T16:30:00.000+01:00",
+          "profile": [
+            "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLQuestionnaireValutazione"
+          ]
+        },
+        "title": "Scheda di dimissioni protette",
+        "status": "active"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "c3d4e5f6-0003-11ed-b856-02001700b287",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-11-26T16:30:00.000+01:00",
+          "profile": [
+            "https://fhir.siss.regione.lombardia.it/StructureDefinition/RLPractitionerProfessionistaSanitario"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "http://hl7.it/sid/codiceFiscale",
+            "value": "VRDMRA75C12F205Z"
+          }
+        ],
+        "name": [
+          {
+            "family": "VERDI",
+            "given": [
+              "MARIO"
+            ]
+          }
+        ]
+      }
+    },
+    {
       "resource": {
         "resourceType": "DocumentReference",
-        "id": "d4e5f6a7-b8c9-4012-def1-234567890123",
+        "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
         "meta": {
           "versionId": "1",
           "lastUpdated": "2026-11-26T16:30:00.000+01:00",
@@ -131,12 +272,12 @@
         },
         "status": "current",
         "subject": {
-          "reference": "Patient/a1b2c3d4-e5f6-4789-abcd-ef1234567890"
+          "reference": "Patient/94f89259-2d71-4df0-841f-68fdd1746af8"
         },
         "date": "2026-11-26T16:20:00.000+01:00",
         "author": [
           {
-            "reference": "PractitionerRole/e5f6a7b8-c9d0-4123-ef12-345678901234"
+            "reference": "PractitionerRole/b2c3d4e5-0002-11ed-b856-02001700b287"
           }
         ],
         "description": "Scheda di valutazione dimissione protetta",
@@ -144,7 +285,7 @@
           {
             "attachment": {
               "contentType": "application/pdf",
-              "data": "JVBERi0xLjQKJcOkw7zDtsOfCjEgMCBvYmoK",
+              "data": "JVBERi0xLjQKJcOkw7zDtsOfCjIgMCBvYmoK",
               "title": "Scheda di valutazione dimissione protetta",
               "creation": "2026-11-26"
             }
@@ -153,7 +294,6 @@
       }
     },
     {
-      "fullUrl": "urn:uuid:e5f6a7b8-c9d0-4123-ef12-345678901234",
       "resource": {
         "resourceType": "DocumentReference",
         "id": "e5f6a7b8-c9d0-4123-ef12-345678901234",
@@ -166,12 +306,12 @@
         },
         "status": "current",
         "subject": {
-          "reference": "Patient/a1b2c3d4-e5f6-4789-abcd-ef1234567890"
+          "reference": "Patient/94f89259-2d71-4df0-841f-68fdd1746af8"
         },
         "date": "2026-11-26T16:22:00.000+01:00",
         "author": [
           {
-            "reference": "PractitionerRole/e5f6a7b8-c9d0-4123-ef12-345678901234"
+            "reference": "PractitionerRole/b2c3d4e5-0002-11ed-b856-02001700b287"
           }
         ],
         "description": "Piano di assistenza domiciliare",

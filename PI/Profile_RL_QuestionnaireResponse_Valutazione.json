@@ -227,7 +227,7 @@
       {
         "id": "QuestionnaireResponse.source",
         "path": "QuestionnaireResponse.source",
-        "short": "Paziente sottopposto alla valutazione",
+        "short": "Paziente sottoposto alla valutazione",
         "definition": "Reference alla risorsa RLPatientCittadino contenente i dettagli anagrafici del paziente",
         "comment": "Il dato è detenuto dal SGDT",
         "min": 1,

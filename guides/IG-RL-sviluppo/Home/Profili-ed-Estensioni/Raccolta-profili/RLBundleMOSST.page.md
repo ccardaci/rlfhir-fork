@@ -52,7 +52,7 @@ Di seguito è presentato il contenuto del profilo in diversi formati. La corrisp
 
 <div id="Esempi" class="tabcontent">
   <h3>Esempi</h3>
-  {{link:Examples/Example_RL_Bundle_MOSST_DimissioniProtette.json}}
+  {{link:esempio-RLBundleMOSST-dimissioni-protette}}
   <br>
 </div>
 

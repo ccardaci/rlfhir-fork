@@ -94,7 +94,8 @@
         "path": "Bundle.entry",
         "sliceName": "RLQuestionnaireResponseValutazione",
         "short": "Profilo volto a mostrare il dettaglio delle risposte ai quesiti della valutazione alla quale il paziente è stato sottoposto.",
-        "min": 0
+        "min": 0,
+        "max": "*"
       },
       {
         "id": "Bundle.entry:RLQuestionnaireResponseValutazione.resource",
@@ -115,7 +116,8 @@
         "path": "Bundle.entry",
         "sliceName": "RLQuestionnaireValutazione",
         "short": "Profilo volto a descrivere la tipologia della valutazione alla quale il paziente è stato sottoposto.",
-        "min": 0
+        "min": 0,
+        "max": "*"
       },
       {
         "id": "Bundle.entry:RLQuestionnaireValutazione.resource",
@@ -136,7 +138,8 @@
         "path": "Bundle.entry",
         "sliceName": "RLDocumentReferenceDocumento",
         "short": "Profilo volto a descrivere il documento caricato.",
-        "min": 0
+        "min": 0,
+        "max": "*"
       },
       {
         "id": "Bundle.entry:RLDocumentReferenceDocumento.resource",
@@ -157,7 +160,8 @@
         "path": "Bundle.entry",
         "sliceName": "RLPractitionerProfessionistaSanitario",
         "short": "Profilo contenente i dettagli anagrafici di un professionista sanitario.",
-        "min": 0
+        "min": 0,
+        "max": "*"
       },
       {
         "id": "Bundle.entry:RLPractitionerProfessionistaSanitario.resource",

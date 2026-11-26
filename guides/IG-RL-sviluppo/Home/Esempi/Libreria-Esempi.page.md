@@ -362,6 +362,12 @@
     <tr>
       <td>PIC</td>
       <td>Bundle</td>
+      <td>Esempio RLBundleMOST per una valutazione di dimissioni protette con due allegati</td>
+      <td>{{link:Examples/Example_RL_Bundle_MOST_DimissioniProtette.json}}</td>
+    </tr>
+    <tr>
+      <td>PIC</td>
+      <td>Bundle</td>
       <td>Esempio Bundle Risposta del messaggio con esito positivo</td>
       <td>{{link:Bundle/RLBundleRispostaMMGPositiva}}</td>
     </tr>

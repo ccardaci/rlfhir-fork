@@ -629,7 +629,7 @@
         <tr>
           <td>VPS</td>
           <td>
-            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLMedicationAdministrationTerapiaFarmacoInPSVPS.page.md}}
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLMedicationAdministrationTerapiaInPSVPS.page.md}}
           </td>
           <td>
             <a href="http://hl7.org/fhir/R4/medicationadministration.html">MedicationAdministration</a>
@@ -1094,7 +1094,7 @@
         <tr>
           <td>RSA</td>
           <td>
-            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLMedicationAdministrationTerapiaFarmacologicaConsigliataRSA.page.md}}
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLMedicationAdministrationTerapiaConsigliataRSA.page.md}}
           </td>
           <td>
             <a href="http://hl7.org/fhir/R4/medicationadministration.html">MedicationAdministration</a>
@@ -1109,7 +1109,7 @@
         <tr>
           <td>RSA</td>
           <td>
-            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLMedicationRequestTerapiaFarmacologicaConsigliataRSA.page.md}}
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLMedicationRequestTerapiaConsigliataRSA.page.md}}
           </td>
           <td>
             <a href="http://hl7.org/fhir/R4/medicationrequest.html">MedicationRequest</a>
@@ -1124,7 +1124,7 @@
         <tr>
           <td>RSA</td>
           <td>
-            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLMedicationTerapiaFarmacologicaConsigliataRSA.page.md}}
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLMedicationTerapiaConsigliataRSA.page.md}}
           </td>
           <td>
             <a href="http://hl7.org/fhir/R4/medication.html">Medication</a>

@@ -614,7 +614,7 @@
         <tr>
           <td>VPS</td>
           <td>
-            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLMedicationAdministrationInPSVPS.page.md}}
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLMedicationAdministrationTerapiaInPSVPS.page.md}}
           </td>
           <td>
             <a href="http://hl7.org/fhir/R4/medicationadministration.html">MedicationAdministration</a>

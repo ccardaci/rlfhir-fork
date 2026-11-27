@@ -6,7 +6,7 @@
 
 
 ## Descrizione
-Il profilo RLImmunizationEsonero è stato strutturato a partire dalla risorsa standard FHIR [ImagingStudy](https://hl7.org/fhir/R4/immunization.html) volto a contenere le vaccinazioni esonerate al paziente in Regione Lombardia.
+Il profilo RLImmunizationEsonero è stato strutturato a partire dalla risorsa standard FHIR [Immunization](https://hl7.org/fhir/R4/immunization.html) volto a contenere le vaccinazioni esonerate al paziente in Regione Lombardia.
 
 Di seguito è presentato il contenuto del profilo in diversi formati. La corrispondente definizione è consultabile al seguente link: {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLImmunizationEsonero}}.
 

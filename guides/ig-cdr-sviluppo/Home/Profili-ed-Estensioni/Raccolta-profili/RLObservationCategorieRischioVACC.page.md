@@ -5,7 +5,7 @@
   - [ValueSet](#valueset)
 
 ## Descrizione
-Il profilo RLObservationCategorieRischio è stato strutturato a partire dalla risorsa generica FHIR [Observation](http://hl7.org/fhir/R4/observation.html) per rappresentare le categorie a rischio per una vaccinazione nel contesto del Referto di Radiologia – Regione Lombardia.
+Il profilo RLObservationCategorieRischio è stato strutturato a partire dalla risorsa generica FHIR [Observation](http://hl7.org/fhir/R4/observation.html) per rappresentare le categorie a rischio correlate alla vaccinazione.
 
 Di seguito è presentato il contenuto del profilo in diversi formati. La corrispondente definizione è consultabile al seguente link: {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationCategorieRischio}}.
 

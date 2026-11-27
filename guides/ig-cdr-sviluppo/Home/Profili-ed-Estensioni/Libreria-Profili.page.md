@@ -206,21 +206,6 @@
             {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationComplicanzeRad}}
           </td>
         </tr>
-        <tr>
-          <td>RAD</td>
-          <td>
-            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLObservationPrecedentiEsamiEseguitiRad.page.md}}
-          </td>
-          <td>
-            <a href="http://hl7.org/fhir/R4/observation.html">Observation</a>
-          </td>
-          <td>
-            Profilo che descrive i precedenti esami eseguiti
-          </td>
-          <td>
-            {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLObservationPrecedentiEsamiEseguitiRad}}
-          </td>
-        </tr>
  <td>RAD</td>
  <td>
  {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLImagingStudyRad.page.md}}
@@ -629,7 +614,7 @@
         <tr>
           <td>VPS</td>
           <td>
-            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLMedicationAdministrationTerapiaInPSVPS.page.md}}
+            {{pagelink:Home/Profili-ed-Estensioni/Raccolta-profili/RLMedicationAdministrationInPSVPS.page.md}}
           </td>
           <td>
             <a href="http://hl7.org/fhir/R4/medicationadministration.html">MedicationAdministration</a>
@@ -650,7 +635,7 @@
             <a href="http://hl7.org/fhir/R4/medicationrequest.html">MedicationRequest</a>
           </td>
           <td>
-            Profilo che descrive la richiesta di terapia farmacologica in Pronto Soccorso
+            Profilo che descrive la richiesta di terapia farmacologica prescritta in Pronto Soccorso
           </td>
           <td>
             {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLMedicationRequestTerapiaPSVPS}}
@@ -665,7 +650,7 @@
             <a href="http://hl7.org/fhir/R4/medicationrequest.html">MedicationRequest</a>
           </td>
           <td>
-            Profilo che descrive la terapia farmacologica prescritta alla dimissione
+            Profilo che descrive la terapia farmacologica prescritta alla dimissione dal Pronto Soccorso
           </td>
           <td>
             {{link:https://fhir.siss.regione.lombardia.it/StructureDefinition/RLMedicationRequestVPS}}

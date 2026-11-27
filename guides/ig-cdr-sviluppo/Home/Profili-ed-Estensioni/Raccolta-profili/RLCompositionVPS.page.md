@@ -65,6 +65,6 @@ Nella seguente tabella sono elencati i value set e i sistemi di codifica relativ
 | Nome | Descrizione | Riferimento al dettaglio della codifica |
 |---|---|---|
 | type | Tipologia di documento | La codifica è definita dal sistema [LOINC](http://loinc.org) |
-| status | Stato del documento | La codifica è definita dal ValueSet [CompositionStatus](http://hl7.org/fhir/ValueSet/composition-status). status = final |
+| status | Stato del documento | La codifica è definita dal ValueSet [CompositionStatus](http://hl7.org/fhir/ValueSet/composition-status) |
 | attester.mode | Modalità di attestazione del documento | La codifica è definita dal ValueSet [CompositionAttestationMode](http://hl7.org/fhir/ValueSet/composition-attestation-mode) |
 | section.code | Codice identificativo di ciascuna sezione e sotto-sezione del documento | La codifica è definita dal sistema [LOINC](http://loinc.org) |
